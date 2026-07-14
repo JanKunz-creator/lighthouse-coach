@@ -1,19 +1,16 @@
-# Lumi English Adventure PWA v0.4
+# Lumi English Adventure PWA v0.5
 
-Diese Version enthält die vollständige Task-Bank für Klasse 6, Unit 1 (`tasks-g6-u1.json`) und nutzt diese Aufgaben direkt in der App.
+Enthält jetzt die Task-Banks für:
 
-## Upload zu GitHub
+- `tasks-g6-u1.json` – Klasse 6 Unit 1 · Together again
+- `tasks-g6-u2.json` – Klasse 6 Unit 2 · Neighbours
 
-Alle Dateien aus diesem Ordner in das Repository hochladen und vorhandene Dateien ersetzen:
+## GitHub Pages Update
 
-- `index.html`
-- `manifest.webmanifest`
-- `service-worker.js`
-- `tasks-g6-u1.json`
-- `icons/`
+Alle Dateien aus diesem Ordner in das bestehende Repository hochladen und vorhandene Dateien ersetzen.
 
-Nach dem Commit wird GitHub Pages automatisch aktualisiert. Auf dem iPad die Seite danach einmal neu laden. Wenn noch die alte Version erscheint, Safari-Websitedaten für die GitHub-Pages-Adresse löschen.
+Wichtig nach dem Upload:
 
-
-## v0.4.1
-Die Unit-1-Task-Bank ist zusätzlich direkt in `index.html` eingebettet. Dadurch startet die App auch dann, wenn die JSON-Datei beim ersten Laden noch nicht erreichbar ist.
+1. `index.html` in GitHub öffnen und prüfen, ob sie mit `<!DOCTYPE html>` beginnt.
+2. `tasks-g6-u2.json` über die GitHub-Pages-Adresse direkt testen.
+3. Auf dem iPad die App neu laden. Falls alte Inhalte erscheinen, Safari-Websitedaten für die GitHub-Pages-Adresse löschen.

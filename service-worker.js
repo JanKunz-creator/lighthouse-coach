@@ -1,8 +1,10 @@
-const CACHE_NAME = "lumi-english-adventure-v041";
+const CACHE_NAME = "lumi-english-adventure-v050";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./manifest.webmanifest",
+  "./tasks-g6-u1.json",
+  "./tasks-g6-u2.json",
   "./icons/icon-180.png",
   "./icons/icon-192.png",
   "./icons/icon-512.png"
