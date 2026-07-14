@@ -1,37 +1,26 @@
-const CACHE_NAME = "lumi-english-adventure-v060";
-const APP_SHELL = [
-  "./",
-  "./index.html",
-  "./manifest.webmanifest",
-  "./tasks-g6-u1.json",
-  "./tasks-g6-u2.json",
-  "./tasks-g6-u3.json",
-  "./icons/icon-180.png",
-  "./icons/icon-192.png",
-  "./icons/icon-512.png"
-];
+# Lumi English Adventure PWA v1.1
 
-self.addEventListener("install", event => {
-  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)));
-  self.skipWaiting();
-});
+Diese Version wurde ausschließlich aus den in diesem Chat neu hochgeladenen Dateien gebaut.
 
-self.addEventListener("activate", event => {
-  event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))
-    )
-  );
-  self.clients.claim();
-});
+Enthaltene Dateien:
 
-self.addEventListener("fetch", event => {
-  if (event.request.method !== "GET") return;
-  event.respondWith(
-    fetch(event.request).then(response => {
-      const copy = response.clone();
-      caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
-      return response;
-    }).catch(() => caches.match(event.request).then(cached => cached || caches.match("./index.html")))
-  );
-});
+- `tasks-g6-u1.json` – Together again
+- `tasks-g6-u2.json` – Neighbours
+- `tasks-g6-u3.json` – Teen talk
+- `tasks-g6-u4.json` – Feeling good
+- `tasks-g6-u5.json` – Dartmoor adventures
+- `tasks-g6-u6.json` – A journey in time
+- `class6-review-and-test-bank.json` – gemischte Wiederholungen und Tests
+
+## Upload bei GitHub Pages
+
+Alle Dateien aus diesem Ordner ins Repository hochladen und vorhandene Dateien ersetzen. Danach prüfen:
+
+1. `index.html` muss mit `<!DOCTYPE html>` beginnen.
+2. Jede JSON-Datei muss über die GitHub-Pages-Adresse als Text sichtbar sein.
+3. Auf dem iPad die App einmal komplett schließen und neu öffnen.
+4. Falls alte Inhalte erscheinen, Safari-Websitedaten für die GitHub-Pages-Adresse löschen.
+
+## Cache
+
+Der Offline-Cache heißt `lumi-english-adventure-v110`.

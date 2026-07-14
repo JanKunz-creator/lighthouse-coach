@@ -2,10 +2,10 @@
   "schemaVersion": "0.4.0",
   "fileType": "task-bank",
   "grade": 6,
-  "unitId": "g6-u1",
-  "unitTitle": "Together again",
-  "appWorld": "Back to Lighthouse Island",
-  "unitTheme": "Holidays, back at school, school clubs, friendship, simple past and better texts",
+  "unitId": "g6-u4",
+  "unitTitle": "Feeling good",
+  "appWorld": "Health Mountain",
+  "unitTheme": "Health, food, illness, advice, much/many/lots of, should and present perfect",
   "passThresholdPercent": 80,
   "estimatedTotalMissions": 7,
   "skillCodes": {
@@ -23,13 +23,13 @@
   "contentRule": "All tasks, texts, examples and feedback are original app content. The structure follows the textbook unit order and learning goals, but does not copy original exercises or reading texts.",
   "missions": [
     {
-      "missionId": "g6-u1-m1",
-      "missionTitle": "After the Holidays",
+      "missionId": "g6-u4-m1",
+      "missionTitle": "Health Quiz",
       "bookSection": "Lead-in",
       "durationMinutes": 20,
-      "storyIntro": "Lumi startet die Mission 'After the Holidays' in Back to Lighthouse Island. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "storyIntro": "Lumi startet die Mission 'Health Quiz' in Health Mountain. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "I can talk about my holidays and the weather.",
+        "I can answer simple health questions.",
         "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
         "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
@@ -41,413 +41,45 @@
         "WRI"
       ],
       "vocabFields": [
-        "holidays",
-        "weather",
-        "feelings"
+        "health",
+        "sport",
+        "free time"
       ],
       "grammarFocus": [
-        "was/were"
+        "health questions"
       ],
       "reward": {
         "stars": 1,
         "item": "Lichtfunke",
-        "message": "Mission 'After the Holidays' abgeschlossen."
+        "message": "Mission 'Health Quiz' abgeschlossen."
       },
       "tasks": [
         {
-          "id": "g6-u1-m1-t01",
+          "id": "g6-u4-m1-t01",
           "type": "matching",
           "skill": "VOC",
           "difficulty": 1,
-          "errorCategory": "holidays-vocabulary",
-          "prompt": "Match words from the field: holidays, weather, feelings.",
+          "errorCategory": "health-vocabulary",
+          "prompt": "Match words from the field: health, sport, free time.",
           "pairs": [
             {
-              "left": "holidays",
-              "right": "holidays word field"
+              "left": "health",
+              "right": "health word field"
             },
             {
-              "left": "weather",
-              "right": "weather word field"
+              "left": "sport",
+              "right": "sport word field"
             },
             {
-              "left": "feelings",
-              "right": "feelings word field"
+              "left": "free time",
+              "right": "free time word field"
             }
           ],
           "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
           "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u1-m1-g01",
-          "type": "multiple-choice",
-          "skill": "GRA",
-          "difficulty": 1,
-          "errorCategory": "was-were",
-          "prompt": "Choose the correct sentence.",
-          "options": [
-            "I were tired.",
-            "I was tired.",
-            "I am tired yesterday."
-          ],
-          "answer": 1,
-          "feedbackCorrect": "Richtig. Gut gemacht.",
-          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
-        },
-        {
-          "id": "g6-u1-m1-g02",
-          "type": "gap-fill",
-          "skill": "GRA",
-          "difficulty": 1,
-          "errorCategory": "simple-past-positive",
-          "prompt": "Yesterday we ___ football.",
-          "acceptedAnswers": [
-            "played"
-          ],
-          "feedbackCorrect": "Richtig.",
-          "feedbackWrong": "Fast. Achte auf die Form im Satz."
-        },
-        {
-          "id": "g6-u1-m1-t04",
-          "type": "multiple-choice",
-          "skill": "SPE",
-          "difficulty": 1,
-          "errorCategory": "holidays-phrases",
-          "prompt": "Which sentence fits this mission: After the Holidays?",
-          "options": [
-            "I can talk about my holidays and the weather.",
-            "The pencil is under yesterday.",
-            "Because football table."
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Gut gemacht.",
-          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
-        },
-        {
-          "id": "g6-u1-m1-t05",
-          "type": "reading-check",
-          "skill": "REA",
-          "difficulty": 2,
-          "errorCategory": "holidays-reading",
-          "text": "Lumi is working on after the holidays at Back to Lighthouse Island. The topic is holidays, weather, feelings. After a short task, the students understand the mission better and collect a new light spark.",
-          "prompt": "What do the students collect?",
-          "options": [
-            "a new light spark",
-            "a broken chair",
-            "a train ticket"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
-          "feedbackWrong": "Lies den Text noch einmal langsam."
-        },
-        {
-          "id": "g6-u1-m1-t06",
-          "type": "sentence-builder",
-          "skill": "WRI",
-          "difficulty": 2,
-          "errorCategory": "word-order",
-          "prompt": "Put the words in the correct order.",
-          "words": [
-            "Lumi",
-            "helps",
-            "with",
-            "holidays"
-          ],
-          "answer": "Lumi helps with holidays.",
-          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
-          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
-        },
-        {
-          "id": "g6-u1-m1-t07",
-          "type": "gap-fill",
-          "skill": "WRI",
-          "difficulty": 1,
-          "errorCategory": "holidays-sentence",
-          "prompt": "Complete: I can talk about holidays in ___.",
-          "acceptedAnswers": [
-            "English"
-          ],
-          "feedbackCorrect": "Richtig.",
-          "feedbackWrong": "Fast. Achte auf die Form im Satz."
-        },
-        {
-          "id": "g6-u1-m1-t08",
-          "type": "mini-writing",
-          "skill": "WRI",
-          "difficulty": 2,
-          "errorCategory": "holidays-writing",
-          "prompt": "Write two to four sentences for the mission: After the Holidays.",
-          "support": [
-            "I can say ...",
-            "I think ... because ...",
-            "First, ...",
-            "Then, ..."
-          ],
-          "minSentences": 2,
-          "manualReview": true,
-          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
-          "requirements": [
-            "Use clear English sentences.",
-            "Use one word from this mission."
-          ]
-        }
-      ],
-      "miniChallenge": [
-        {
-          "prompt": "Name one word from this mission about holidays.",
-          "type": "text-input",
-          "manualReview": true
-        },
-        {
-          "prompt": "Write one correct English sentence.",
-          "type": "mini-writing",
-          "manualReview": true
-        }
-      ]
-    },
-    {
-      "missionId": "g6-u1-m2",
-      "missionTitle": "Back at School",
-      "bookSection": "Theme 1",
-      "durationMinutes": 20,
-      "storyIntro": "Lumi startet die Mission 'Back at School' in Back to Lighthouse Island. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
-      "learningGoals": [
-        "I can talk about my first school day.",
-        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
-        "Ich kann Fehler erkennen und gezielt wiederholen."
-      ],
-      "skills": [
-        "VOC",
-        "GRA",
-        "REA",
-        "SPE",
-        "WRI"
-      ],
-      "vocabFields": [
-        "school",
-        "lessons",
-        "timetable"
-      ],
-      "grammarFocus": [
-        "was/were",
-        "simple past"
-      ],
-      "reward": {
-        "stars": 1,
-        "item": "Lichtfunke",
-        "message": "Mission 'Back at School' abgeschlossen."
-      },
-      "tasks": [
-        {
-          "id": "g6-u1-m2-t01",
-          "type": "matching",
-          "skill": "VOC",
-          "difficulty": 1,
-          "errorCategory": "school-vocabulary",
-          "prompt": "Match words from the field: school, lessons, timetable.",
-          "pairs": [
-            {
-              "left": "school",
-              "right": "school word field"
-            },
-            {
-              "left": "lessons",
-              "right": "lessons word field"
-            },
-            {
-              "left": "timetable",
-              "right": "timetable word field"
-            }
-          ],
-          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
-          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
-        },
-        {
-          "id": "g6-u1-m2-g01",
-          "type": "multiple-choice",
-          "skill": "GRA",
-          "difficulty": 1,
-          "errorCategory": "was-were",
-          "prompt": "Choose the correct sentence.",
-          "options": [
-            "I were tired.",
-            "I was tired.",
-            "I am tired yesterday."
-          ],
-          "answer": 1,
-          "feedbackCorrect": "Richtig. Gut gemacht.",
-          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
-        },
-        {
-          "id": "g6-u1-m2-g02",
-          "type": "gap-fill",
-          "skill": "GRA",
-          "difficulty": 1,
-          "errorCategory": "simple-past-positive",
-          "prompt": "Yesterday we ___ football.",
-          "acceptedAnswers": [
-            "played"
-          ],
-          "feedbackCorrect": "Richtig.",
-          "feedbackWrong": "Fast. Achte auf die Form im Satz."
-        },
-        {
-          "id": "g6-u1-m2-t04",
-          "type": "multiple-choice",
-          "skill": "SPE",
-          "difficulty": 1,
-          "errorCategory": "school-phrases",
-          "prompt": "Which sentence fits this mission: Back at School?",
-          "options": [
-            "I can talk about my first school day.",
-            "The pencil is under yesterday.",
-            "Because football table."
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Gut gemacht.",
-          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
-        },
-        {
-          "id": "g6-u1-m2-t05",
-          "type": "reading-check",
-          "skill": "REA",
-          "difficulty": 2,
-          "errorCategory": "school-reading",
-          "text": "Lumi is working on back at school at Back to Lighthouse Island. The topic is school, lessons, timetable. After a short task, the students understand the mission better and collect a new light spark.",
-          "prompt": "What do the students collect?",
-          "options": [
-            "a new light spark",
-            "a broken chair",
-            "a train ticket"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
-          "feedbackWrong": "Lies den Text noch einmal langsam."
-        },
-        {
-          "id": "g6-u1-m2-t06",
-          "type": "sentence-builder",
-          "skill": "WRI",
-          "difficulty": 2,
-          "errorCategory": "word-order",
-          "prompt": "Put the words in the correct order.",
-          "words": [
-            "Lumi",
-            "helps",
-            "with",
-            "school"
-          ],
-          "answer": "Lumi helps with school.",
-          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
-          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
-        },
-        {
-          "id": "g6-u1-m2-t07",
-          "type": "gap-fill",
-          "skill": "WRI",
-          "difficulty": 1,
-          "errorCategory": "school-sentence",
-          "prompt": "Complete: I can talk about school in ___.",
-          "acceptedAnswers": [
-            "English"
-          ],
-          "feedbackCorrect": "Richtig.",
-          "feedbackWrong": "Fast. Achte auf die Form im Satz."
-        },
-        {
-          "id": "g6-u1-m2-t08",
-          "type": "mini-writing",
-          "skill": "WRI",
-          "difficulty": 2,
-          "errorCategory": "school-writing",
-          "prompt": "Write two to four sentences for the mission: Back at School.",
-          "support": [
-            "I can say ...",
-            "I think ... because ...",
-            "First, ...",
-            "Then, ..."
-          ],
-          "minSentences": 2,
-          "manualReview": true,
-          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
-          "requirements": [
-            "Use clear English sentences.",
-            "Use one word from this mission."
-          ]
-        }
-      ],
-      "miniChallenge": [
-        {
-          "prompt": "Name one word from this mission about school.",
-          "type": "text-input",
-          "manualReview": true
-        },
-        {
-          "prompt": "Write one correct English sentence.",
-          "type": "mini-writing",
-          "manualReview": true
-        }
-      ]
-    },
-    {
-      "missionId": "g6-u1-m3",
-      "missionTitle": "Club Explorer",
-      "bookSection": "Theme 2",
-      "durationMinutes": 20,
-      "storyIntro": "Lumi startet die Mission 'Club Explorer' in Back to Lighthouse Island. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
-      "learningGoals": [
-        "I can talk about school clubs and give reasons.",
-        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
-        "Ich kann Fehler erkennen und gezielt wiederholen."
-      ],
-      "skills": [
-        "VOC",
-        "GRA",
-        "REA",
-        "SPE",
-        "WRI"
-      ],
-      "vocabFields": [
-        "school clubs",
-        "activities",
-        "because"
-      ],
-      "grammarFocus": [
-        "I’d like to",
-        "because"
-      ],
-      "reward": {
-        "stars": 1,
-        "item": "Lichtfunke",
-        "message": "Mission 'Club Explorer' abgeschlossen."
-      },
-      "tasks": [
-        {
-          "id": "g6-u1-m3-t01",
-          "type": "matching",
-          "skill": "VOC",
-          "difficulty": 1,
-          "errorCategory": "school clubs-vocabulary",
-          "prompt": "Match words from the field: school clubs, activities, because.",
-          "pairs": [
-            {
-              "left": "school clubs",
-              "right": "school clubs word field"
-            },
-            {
-              "left": "activities",
-              "right": "activities word field"
-            },
-            {
-              "left": "because",
-              "right": "because word field"
-            }
-          ],
-          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
-          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
-        },
-        {
-          "id": "g6-u1-m3-g01",
+          "id": "g6-u4-m1-g01",
           "type": "multiple-choice",
           "skill": "GRA",
           "difficulty": 1,
@@ -463,14 +95,14 @@
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m3-t04",
+          "id": "g6-u4-m1-t04",
           "type": "multiple-choice",
           "skill": "SPE",
           "difficulty": 1,
-          "errorCategory": "school clubs-phrases",
-          "prompt": "Which sentence fits this mission: Club Explorer?",
+          "errorCategory": "health-phrases",
+          "prompt": "Which sentence fits this mission: Health Quiz?",
           "options": [
-            "I can talk about school clubs and give reasons.",
+            "I can answer simple health questions.",
             "The pencil is under yesterday.",
             "Because football table."
           ],
@@ -479,12 +111,12 @@
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m3-t05",
+          "id": "g6-u4-m1-t05",
           "type": "reading-check",
           "skill": "REA",
           "difficulty": 2,
-          "errorCategory": "school clubs-reading",
-          "text": "Lumi is working on club explorer at Back to Lighthouse Island. The topic is school clubs, activities, because. After a short task, the students understand the mission better and collect a new light spark.",
+          "errorCategory": "health-reading",
+          "text": "Lumi is working on health quiz at Health Mountain. The topic is health, sport, free time. After a short task, the students understand the mission better and collect a new light spark.",
           "prompt": "What do the students collect?",
           "options": [
             "a new light spark",
@@ -496,7 +128,7 @@
           "feedbackWrong": "Lies den Text noch einmal langsam."
         },
         {
-          "id": "g6-u1-m3-t06",
+          "id": "g6-u4-m1-t06",
           "type": "sentence-builder",
           "skill": "WRI",
           "difficulty": 2,
@@ -506,19 +138,19 @@
             "Lumi",
             "helps",
             "with",
-            "school clubs"
+            "health"
           ],
-          "answer": "Lumi helps with school clubs.",
+          "answer": "Lumi helps with health.",
           "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
           "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
-          "id": "g6-u1-m3-t07",
+          "id": "g6-u4-m1-t07",
           "type": "gap-fill",
           "skill": "WRI",
           "difficulty": 1,
-          "errorCategory": "school clubs-sentence",
-          "prompt": "Complete: I can talk about school clubs in ___.",
+          "errorCategory": "health-sentence",
+          "prompt": "Complete: I can talk about health in ___.",
           "acceptedAnswers": [
             "English"
           ],
@@ -526,12 +158,12 @@
           "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
-          "id": "g6-u1-m3-t08",
+          "id": "g6-u4-m1-t08",
           "type": "mini-writing",
           "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "school clubs-writing",
-          "prompt": "Write two to four sentences for the mission: Club Explorer.",
+          "errorCategory": "health-writing",
+          "prompt": "Write two to four sentences for the mission: Health Quiz.",
           "support": [
             "I can say ...",
             "I think ... because ...",
@@ -549,7 +181,7 @@
       ],
       "miniChallenge": [
         {
-          "prompt": "Name one word from this mission about school clubs.",
+          "prompt": "Name one word from this mission about health.",
           "type": "text-input",
           "manualReview": true
         },
@@ -561,13 +193,13 @@
       ]
     },
     {
-      "missionId": "g6-u1-m4",
-      "missionTitle": "Past Pro",
-      "bookSection": "Focus on Language",
+      "missionId": "g6-u4-m2",
+      "missionTitle": "Food Balance",
+      "bookSection": "Theme 1",
       "durationMinutes": 20,
-      "storyIntro": "Lumi startet die Mission 'Past Pro' in Back to Lighthouse Island. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "storyIntro": "Lumi startet die Mission 'Food Balance' in Health Mountain. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "I can say what happened and what didn’t happen.",
+        "I can talk about healthy food.",
         "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
         "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
@@ -579,83 +211,267 @@
         "WRI"
       ],
       "vocabFields": [
-        "regular verbs",
-        "irregular verbs",
-        "yesterday"
+        "food",
+        "drinks",
+        "quantities"
       ],
       "grammarFocus": [
-        "simple past positive",
-        "simple past negative"
+        "much/many/lots of"
       ],
       "reward": {
         "stars": 1,
         "item": "Lichtfunke",
-        "message": "Mission 'Past Pro' abgeschlossen."
+        "message": "Mission 'Food Balance' abgeschlossen."
       },
       "tasks": [
         {
-          "id": "g6-u1-m4-t01",
+          "id": "g6-u4-m2-t01",
           "type": "matching",
           "skill": "VOC",
           "difficulty": 1,
-          "errorCategory": "regular verbs-vocabulary",
-          "prompt": "Match words from the field: regular verbs, irregular verbs, yesterday.",
+          "errorCategory": "food-vocabulary",
+          "prompt": "Match words from the field: food, drinks, quantities.",
           "pairs": [
             {
-              "left": "regular verbs",
-              "right": "regular verbs word field"
+              "left": "food",
+              "right": "food word field"
             },
             {
-              "left": "irregular verbs",
-              "right": "irregular verbs word field"
+              "left": "drinks",
+              "right": "drinks word field"
             },
             {
-              "left": "yesterday",
-              "right": "yesterday word field"
+              "left": "quantities",
+              "right": "quantities word field"
             }
           ],
           "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
           "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u1-m4-g01",
+          "id": "g6-u4-m2-g01",
           "type": "multiple-choice",
           "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "simple-past-negative",
-          "prompt": "Choose the correct negative sentence.",
+          "difficulty": 1,
+          "errorCategory": "much-many-lots-of",
+          "prompt": "How ___ apples do we need?",
           "options": [
-            "I didn’t watched TV.",
-            "I didn’t watch TV.",
-            "I don’t watched TV."
+            "much",
+            "many",
+            "any"
           ],
           "answer": 1,
           "feedbackCorrect": "Richtig. Gut gemacht.",
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m4-g02",
+          "id": "g6-u4-m2-g02",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "much-many-lots-of",
+          "prompt": "Choose the correct phrase.",
+          "options": [
+            "much water",
+            "many water",
+            "a many water"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u4-m2-t04",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "food-phrases",
+          "prompt": "Which sentence fits this mission: Food Balance?",
+          "options": [
+            "I can talk about healthy food.",
+            "The pencil is under yesterday.",
+            "Because football table."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u4-m2-t05",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "food-reading",
+          "text": "Lumi is working on food balance at Health Mountain. The topic is food, drinks, quantities. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
+          "options": [
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u4-m2-t06",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "food"
+          ],
+          "answer": "Lumi helps with food.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
+        },
+        {
+          "id": "g6-u4-m2-t07",
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "food-sentence",
+          "prompt": "Complete: I can talk about food in ___.",
+          "acceptedAnswers": [
+            "English"
+          ],
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
+        },
+        {
+          "id": "g6-u4-m2-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "food-writing",
+          "prompt": "Write two to four sentences for the mission: Food Balance.",
+          "support": [
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
+          ],
+          "minSentences": 2,
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "Name one word from this mission about food.",
+          "type": "text-input",
+          "manualReview": true
+        },
+        {
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
+        }
+      ]
+    },
+    {
+      "missionId": "g6-u4-m3",
+      "missionTitle": "Doctor Lumi",
+      "bookSection": "Theme 2",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi startet die Mission 'Doctor Lumi' in Health Mountain. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "learningGoals": [
+        "I can give simple advice.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
+      ],
+      "skills": [
+        "VOC",
+        "GRA",
+        "REA",
+        "SPE",
+        "WRI"
+      ],
+      "vocabFields": [
+        "illness",
+        "body",
+        "advice"
+      ],
+      "grammarFocus": [
+        "should/shouldn’t"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Lichtfunke",
+        "message": "Mission 'Doctor Lumi' abgeschlossen."
+      },
+      "tasks": [
+        {
+          "id": "g6-u4-m3-t01",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "illness-vocabulary",
+          "prompt": "Match words from the field: illness, body, advice.",
+          "pairs": [
+            {
+              "left": "illness",
+              "right": "illness word field"
+            },
+            {
+              "left": "body",
+              "right": "body word field"
+            },
+            {
+              "left": "advice",
+              "right": "advice word field"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
+        },
+        {
+          "id": "g6-u4-m3-g01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "should-advice",
+          "prompt": "I’m tired. Choose the best advice.",
+          "options": [
+            "You should sleep.",
+            "You should to sleep.",
+            "You should sleeping."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u4-m3-g02",
           "type": "error-correction",
           "skill": "GRA",
           "difficulty": 2,
-          "errorCategory": "simple-past-negative",
-          "prompt": "Correct: She didn’t went home.",
+          "errorCategory": "should-advice",
+          "prompt": "Correct: You should to drink water.",
           "acceptedAnswers": [
-            "She didn't go home.",
-            "She did not go home."
+            "You should drink water."
           ],
           "feedbackCorrect": "Genau. So ist der Satz richtig.",
           "feedbackWrong": "Achte auf die Grammatikregel dieser Mission."
         },
         {
-          "id": "g6-u1-m4-t04",
+          "id": "g6-u4-m3-t04",
           "type": "multiple-choice",
           "skill": "SPE",
           "difficulty": 1,
-          "errorCategory": "regular verbs-phrases",
-          "prompt": "Which sentence fits this mission: Past Pro?",
+          "errorCategory": "illness-phrases",
+          "prompt": "Which sentence fits this mission: Doctor Lumi?",
           "options": [
-            "I can say what happened and what didn’t happen.",
+            "I can give simple advice.",
             "The pencil is under yesterday.",
             "Because football table."
           ],
@@ -664,12 +480,12 @@
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m4-t05",
+          "id": "g6-u4-m3-t05",
           "type": "reading-check",
           "skill": "REA",
           "difficulty": 2,
-          "errorCategory": "regular verbs-reading",
-          "text": "Lumi is working on past pro at Back to Lighthouse Island. The topic is regular verbs, irregular verbs, yesterday. After a short task, the students understand the mission better and collect a new light spark.",
+          "errorCategory": "illness-reading",
+          "text": "Lumi is working on doctor lumi at Health Mountain. The topic is illness, body, advice. After a short task, the students understand the mission better and collect a new light spark.",
           "prompt": "What do the students collect?",
           "options": [
             "a new light spark",
@@ -681,7 +497,7 @@
           "feedbackWrong": "Lies den Text noch einmal langsam."
         },
         {
-          "id": "g6-u1-m4-t06",
+          "id": "g6-u4-m3-t06",
           "type": "sentence-builder",
           "skill": "WRI",
           "difficulty": 2,
@@ -691,19 +507,19 @@
             "Lumi",
             "helps",
             "with",
-            "regular verbs"
+            "illness"
           ],
-          "answer": "Lumi helps with regular verbs.",
+          "answer": "Lumi helps with illness.",
           "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
           "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
-          "id": "g6-u1-m4-t07",
+          "id": "g6-u4-m3-t07",
           "type": "gap-fill",
           "skill": "WRI",
           "difficulty": 1,
-          "errorCategory": "regular verbs-sentence",
-          "prompt": "Complete: I can talk about regular verbs in ___.",
+          "errorCategory": "illness-sentence",
+          "prompt": "Complete: I can talk about illness in ___.",
           "acceptedAnswers": [
             "English"
           ],
@@ -711,12 +527,12 @@
           "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
-          "id": "g6-u1-m4-t08",
+          "id": "g6-u4-m3-t08",
           "type": "mini-writing",
           "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "regular verbs-writing",
-          "prompt": "Write two to four sentences for the mission: Past Pro.",
+          "errorCategory": "illness-writing",
+          "prompt": "Write two to four sentences for the mission: Doctor Lumi.",
           "support": [
             "I can say ...",
             "I think ... because ...",
@@ -734,7 +550,7 @@
       ],
       "miniChallenge": [
         {
-          "prompt": "Name one word from this mission about regular verbs.",
+          "prompt": "Name one word from this mission about illness.",
           "type": "text-input",
           "manualReview": true
         },
@@ -746,13 +562,13 @@
       ]
     },
     {
-      "missionId": "g6-u1-m5",
-      "missionTitle": "Friendship Story",
-      "bookSection": "Story",
+      "missionId": "g6-u4-m4",
+      "missionTitle": "Already Done",
+      "bookSection": "Focus on Language",
       "durationMinutes": 20,
-      "storyIntro": "Lumi startet die Mission 'Friendship Story' in Back to Lighthouse Island. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "storyIntro": "Lumi startet die Mission 'Already Done' in Health Mountain. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "I can understand a short story about friendship.",
+        "I can say what has already happened.",
         "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
         "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
@@ -764,81 +580,82 @@
         "WRI"
       ],
       "vocabFields": [
-        "friendship",
-        "feelings",
-        "school"
+        "chores",
+        "health",
+        "done today"
       ],
       "grammarFocus": [
-        "simple past in stories"
+        "present perfect"
       ],
       "reward": {
         "stars": 1,
-        "item": "Lichtkristall",
-        "message": "Mission 'Friendship Story' abgeschlossen."
+        "item": "Lichtfunke",
+        "message": "Mission 'Already Done' abgeschlossen."
       },
       "tasks": [
         {
-          "id": "g6-u1-m5-t01",
+          "id": "g6-u4-m4-t01",
           "type": "matching",
           "skill": "VOC",
           "difficulty": 1,
-          "errorCategory": "friendship-vocabulary",
-          "prompt": "Match words from the field: friendship, feelings, school.",
+          "errorCategory": "chores-vocabulary",
+          "prompt": "Match words from the field: chores, health, done today.",
           "pairs": [
             {
-              "left": "friendship",
-              "right": "friendship word field"
+              "left": "chores",
+              "right": "chores word field"
             },
             {
-              "left": "feelings",
-              "right": "feelings word field"
+              "left": "health",
+              "right": "health word field"
             },
             {
-              "left": "school",
-              "right": "school word field"
+              "left": "done today",
+              "right": "done today word field"
             }
           ],
           "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
           "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u1-m5-g01",
+          "id": "g6-u4-m4-g01",
           "type": "multiple-choice",
           "skill": "GRA",
           "difficulty": 1,
-          "errorCategory": "was-were",
+          "errorCategory": "present-perfect-have-has",
           "prompt": "Choose the correct sentence.",
           "options": [
-            "I were tired.",
-            "I was tired.",
-            "I am tired yesterday."
+            "She has done her homework.",
+            "She have done her homework.",
+            "She has did her homework."
           ],
-          "answer": 1,
+          "answer": 0,
           "feedbackCorrect": "Richtig. Gut gemacht.",
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m5-g02",
+          "id": "g6-u4-m4-g02",
           "type": "gap-fill",
           "skill": "GRA",
           "difficulty": 1,
-          "errorCategory": "simple-past-positive",
-          "prompt": "Yesterday we ___ football.",
+          "errorCategory": "present-perfect-have-has",
+          "prompt": "I ___ cleaned my room.",
           "acceptedAnswers": [
-            "played"
+            "have",
+            "'ve"
           ],
           "feedbackCorrect": "Richtig.",
           "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
-          "id": "g6-u1-m5-t04",
+          "id": "g6-u4-m4-t04",
           "type": "multiple-choice",
           "skill": "SPE",
           "difficulty": 1,
-          "errorCategory": "friendship-phrases",
-          "prompt": "Which sentence fits this mission: Friendship Story?",
+          "errorCategory": "chores-phrases",
+          "prompt": "Which sentence fits this mission: Already Done?",
           "options": [
-            "I can understand a short story about friendship.",
+            "I can say what has already happened.",
             "The pencil is under yesterday.",
             "Because football table."
           ],
@@ -847,12 +664,12 @@
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m5-t05",
+          "id": "g6-u4-m4-t05",
           "type": "reading-check",
           "skill": "REA",
           "difficulty": 2,
-          "errorCategory": "friendship-reading",
-          "text": "Lumi is working on friendship story at Back to Lighthouse Island. The topic is friendship, feelings, school. After a short task, the students understand the mission better and collect a new light spark.",
+          "errorCategory": "chores-reading",
+          "text": "Lumi is working on already done at Health Mountain. The topic is chores, health, done today. After a short task, the students understand the mission better and collect a new light spark.",
           "prompt": "What do the students collect?",
           "options": [
             "a new light spark",
@@ -864,7 +681,7 @@
           "feedbackWrong": "Lies den Text noch einmal langsam."
         },
         {
-          "id": "g6-u1-m5-t06",
+          "id": "g6-u4-m4-t06",
           "type": "sentence-builder",
           "skill": "WRI",
           "difficulty": 2,
@@ -874,14 +691,184 @@
             "Lumi",
             "helps",
             "with",
-            "friendship"
+            "chores"
           ],
-          "answer": "Lumi helps with friendship.",
+          "answer": "Lumi helps with chores.",
           "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
           "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
-          "id": "g6-u1-m5-t07",
+          "id": "g6-u4-m4-t07",
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "chores-sentence",
+          "prompt": "Complete: I can talk about chores in ___.",
+          "acceptedAnswers": [
+            "English"
+          ],
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
+        },
+        {
+          "id": "g6-u4-m4-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "chores-writing",
+          "prompt": "Write two to four sentences for the mission: Already Done.",
+          "support": [
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
+          ],
+          "minSentences": 2,
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "Name one word from this mission about chores.",
+          "type": "text-input",
+          "manualReview": true
+        },
+        {
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
+        }
+      ]
+    },
+    {
+      "missionId": "g6-u4-m5",
+      "missionTitle": "Comic Health Story",
+      "bookSection": "Story",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi startet die Mission 'Comic Health Story' in Health Mountain. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "learningGoals": [
+        "I can understand a comic-style story.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
+      ],
+      "skills": [
+        "VOC",
+        "GRA",
+        "REA",
+        "SPE",
+        "WRI"
+      ],
+      "vocabFields": [
+        "feelings",
+        "health",
+        "motivation"
+      ],
+      "grammarFocus": [
+        "reading strategies"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Lichtkristall",
+        "message": "Mission 'Comic Health Story' abgeschlossen."
+      },
+      "tasks": [
+        {
+          "id": "g6-u4-m5-t01",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "feelings-vocabulary",
+          "prompt": "Match words from the field: feelings, health, motivation.",
+          "pairs": [
+            {
+              "left": "feelings",
+              "right": "feelings word field"
+            },
+            {
+              "left": "health",
+              "right": "health word field"
+            },
+            {
+              "left": "motivation",
+              "right": "motivation word field"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
+        },
+        {
+          "id": "g6-u4-m5-g01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "grammar-review",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "This sentence is correct.",
+            "Correct this sentence is.",
+            "Sentence correct this."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u4-m5-t04",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "feelings-phrases",
+          "prompt": "Which sentence fits this mission: Comic Health Story?",
+          "options": [
+            "I can understand a comic-style story.",
+            "The pencil is under yesterday.",
+            "Because football table."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u4-m5-t05",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "feelings-reading",
+          "text": "Lumi is working on comic health story at Health Mountain. The topic is feelings, health, motivation. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
+          "options": [
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u4-m5-t06",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "feelings"
+          ],
+          "answer": "Lumi helps with feelings.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
+        },
+        {
+          "id": "g6-u4-m5-t07",
           "type": "sorting",
           "skill": "REA",
           "difficulty": 2,
@@ -903,12 +890,12 @@
           "feedbackWrong": "Achte auf Wörter wie first, then, after that und finally."
         },
         {
-          "id": "g6-u1-m5-t08",
+          "id": "g6-u4-m5-t08",
           "type": "mini-writing",
           "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "friendship-writing",
-          "prompt": "Write two to four sentences for the mission: Friendship Story.",
+          "errorCategory": "feelings-writing",
+          "prompt": "Write two to four sentences for the mission: Comic Health Story.",
           "support": [
             "I can say ...",
             "I think ... because ...",
@@ -926,7 +913,7 @@
       ],
       "miniChallenge": [
         {
-          "prompt": "Name one word from this mission about friendship.",
+          "prompt": "Name one word from this mission about feelings.",
           "type": "text-input",
           "manualReview": true
         },
@@ -938,13 +925,13 @@
       ]
     },
     {
-      "missionId": "g6-u1-m6",
-      "missionTitle": "Text Builder",
+      "missionId": "g6-u4-m6",
+      "missionTitle": "Health Communication",
       "bookSection": "Skills",
       "durationMinutes": 20,
-      "storyIntro": "Lumi startet die Mission 'Text Builder' in Back to Lighthouse Island. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "storyIntro": "Lumi startet die Mission 'Health Communication' in Health Mountain. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "I can make short texts clearer.",
+        "I can describe people and write a simple email.",
         "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
         "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
@@ -956,52 +943,50 @@
         "WRI"
       ],
       "vocabFields": [
-        "word fields",
-        "opposites",
-        "time words",
-        "linking words"
+        "people",
+        "emails",
+        "sports",
+        "opinions"
       ],
       "grammarFocus": [
-        "because",
-        "so",
-        "but"
+        "agree/disagree"
       ],
       "reward": {
         "stars": 1,
         "item": "Lichtfunke",
-        "message": "Mission 'Text Builder' abgeschlossen."
+        "message": "Mission 'Health Communication' abgeschlossen."
       },
       "tasks": [
         {
-          "id": "g6-u1-m6-t01",
+          "id": "g6-u4-m6-t01",
           "type": "matching",
           "skill": "VOC",
           "difficulty": 1,
-          "errorCategory": "word fields-vocabulary",
-          "prompt": "Match words from the field: word fields, opposites, time words.",
+          "errorCategory": "people-vocabulary",
+          "prompt": "Match words from the field: people, emails, sports.",
           "pairs": [
             {
-              "left": "word fields",
-              "right": "word fields word field"
+              "left": "people",
+              "right": "people word field"
             },
             {
-              "left": "opposites",
-              "right": "opposites word field"
+              "left": "emails",
+              "right": "emails word field"
             },
             {
-              "left": "time words",
-              "right": "time words word field"
+              "left": "sports",
+              "right": "sports word field"
             },
             {
-              "left": "linking words",
-              "right": "linking words word field"
+              "left": "opinions",
+              "right": "opinions word field"
             }
           ],
           "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
           "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u1-m6-g01",
+          "id": "g6-u4-m6-g01",
           "type": "multiple-choice",
           "skill": "GRA",
           "difficulty": 1,
@@ -1017,14 +1002,14 @@
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m6-t04",
+          "id": "g6-u4-m6-t04",
           "type": "multiple-choice",
           "skill": "SPE",
           "difficulty": 1,
-          "errorCategory": "word fields-phrases",
-          "prompt": "Which sentence fits this mission: Text Builder?",
+          "errorCategory": "people-phrases",
+          "prompt": "Which sentence fits this mission: Health Communication?",
           "options": [
-            "I can make short texts clearer.",
+            "I can describe people and write a simple email.",
             "The pencil is under yesterday.",
             "Because football table."
           ],
@@ -1033,12 +1018,12 @@
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m6-t05",
+          "id": "g6-u4-m6-t05",
           "type": "reading-check",
           "skill": "REA",
           "difficulty": 2,
-          "errorCategory": "word fields-reading",
-          "text": "Lumi is working on text builder at Back to Lighthouse Island. The topic is word fields, opposites, time words. After a short task, the students understand the mission better and collect a new light spark.",
+          "errorCategory": "people-reading",
+          "text": "Lumi is working on health communication at Health Mountain. The topic is people, emails, sports. After a short task, the students understand the mission better and collect a new light spark.",
           "prompt": "What do the students collect?",
           "options": [
             "a new light spark",
@@ -1050,7 +1035,7 @@
           "feedbackWrong": "Lies den Text noch einmal langsam."
         },
         {
-          "id": "g6-u1-m6-t06",
+          "id": "g6-u4-m6-t06",
           "type": "sentence-builder",
           "skill": "WRI",
           "difficulty": 2,
@@ -1060,22 +1045,22 @@
             "Lumi",
             "helps",
             "with",
-            "word fields"
+            "people"
           ],
-          "answer": "Lumi helps with word fields.",
+          "answer": "Lumi helps with people.",
           "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
           "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
-          "id": "g6-u1-m6-t07",
+          "id": "g6-u4-m6-t07",
           "type": "viewing-scene",
           "skill": "VIE",
           "difficulty": 2,
-          "errorCategory": "word fields-viewing",
-          "sceneDescription": "A student looks at a scene about text builder. There are clues connected to word fields, opposites.",
+          "errorCategory": "people-viewing",
+          "sceneDescription": "A student looks at a scene about health communication. There are clues connected to people, emails.",
           "prompt": "What is the scene mainly about?",
           "options": [
-            "Text Builder",
+            "Health Communication",
             "a maths test",
             "a shoe shop"
           ],
@@ -1084,12 +1069,12 @@
           "feedbackWrong": "Achte auf die Details in der Szene."
         },
         {
-          "id": "g6-u1-m6-t08",
+          "id": "g6-u4-m6-t08",
           "type": "mini-writing",
           "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "word fields-writing",
-          "prompt": "Write two to four sentences for the mission: Text Builder.",
+          "errorCategory": "people-writing",
+          "prompt": "Write two to four sentences for the mission: Health Communication.",
           "support": [
             "I can say ...",
             "I think ... because ...",
@@ -1107,7 +1092,7 @@
       ],
       "miniChallenge": [
         {
-          "prompt": "Name one word from this mission about word fields.",
+          "prompt": "Name one word from this mission about people.",
           "type": "text-input",
           "manualReview": true
         },
@@ -1119,13 +1104,13 @@
       ]
     },
     {
-      "missionId": "g6-u1-m7",
-      "missionTitle": "Together Again Check",
+      "missionId": "g6-u4-m7",
+      "missionTitle": "Feeling Good Check",
       "bookSection": "Stop Check Go",
       "durationMinutes": 20,
-      "storyIntro": "Lumi startet die Mission 'Together Again Check' in Back to Lighthouse Island. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "storyIntro": "Lumi startet die Mission 'Feeling Good Check' in Health Mountain. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "I can review Unit 1.",
+        "I can review Unit 4.",
         "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
         "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
@@ -1138,49 +1123,49 @@
       ],
       "vocabFields": [
         "unit review",
-        "school",
-        "clubs",
-        "past"
+        "health",
+        "food",
+        "advice"
       ],
       "grammarFocus": [
-        "mixed Unit 1 grammar"
+        "mixed Unit 4 grammar"
       ],
       "reward": {
         "stars": 3,
         "item": "Lichtkristall",
-        "message": "Mission 'Together Again Check' abgeschlossen."
+        "message": "Mission 'Feeling Good Check' abgeschlossen."
       },
       "tasks": [
         {
-          "id": "g6-u1-m7-t01",
+          "id": "g6-u4-m7-t01",
           "type": "matching",
           "skill": "VOC",
           "difficulty": 1,
           "errorCategory": "unit review-vocabulary",
-          "prompt": "Match words from the field: unit review, school, clubs.",
+          "prompt": "Match words from the field: unit review, health, food.",
           "pairs": [
             {
               "left": "unit review",
               "right": "unit review word field"
             },
             {
-              "left": "school",
-              "right": "school word field"
+              "left": "health",
+              "right": "health word field"
             },
             {
-              "left": "clubs",
-              "right": "clubs word field"
+              "left": "food",
+              "right": "food word field"
             },
             {
-              "left": "past",
-              "right": "past word field"
+              "left": "advice",
+              "right": "advice word field"
             }
           ],
           "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
           "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u1-m7-g01",
+          "id": "g6-u4-m7-g01",
           "type": "multiple-choice",
           "skill": "GRA",
           "difficulty": 1,
@@ -1196,14 +1181,14 @@
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m7-t04",
+          "id": "g6-u4-m7-t04",
           "type": "multiple-choice",
           "skill": "SPE",
           "difficulty": 1,
           "errorCategory": "unit review-phrases",
-          "prompt": "Which sentence fits this mission: Together Again Check?",
+          "prompt": "Which sentence fits this mission: Feeling Good Check?",
           "options": [
-            "I can review Unit 1.",
+            "I can review Unit 4.",
             "The pencil is under yesterday.",
             "Because football table."
           ],
@@ -1212,12 +1197,12 @@
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m7-t05",
+          "id": "g6-u4-m7-t05",
           "type": "reading-check",
           "skill": "REA",
           "difficulty": 2,
           "errorCategory": "unit review-reading",
-          "text": "Lumi is working on together again check at Back to Lighthouse Island. The topic is unit review, school, clubs. After a short task, the students understand the mission better and collect a new light spark.",
+          "text": "Lumi is working on feeling good check at Health Mountain. The topic is unit review, health, food. After a short task, the students understand the mission better and collect a new light spark.",
           "prompt": "What do the students collect?",
           "options": [
             "a new light spark",
@@ -1229,7 +1214,7 @@
           "feedbackWrong": "Lies den Text noch einmal langsam."
         },
         {
-          "id": "g6-u1-m7-t06",
+          "id": "g6-u4-m7-t06",
           "type": "sentence-builder",
           "skill": "WRI",
           "difficulty": 2,
@@ -1246,7 +1231,7 @@
           "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
-          "id": "g6-u1-m7-t07",
+          "id": "g6-u4-m7-t07",
           "type": "gap-fill",
           "skill": "WRI",
           "difficulty": 1,
@@ -1259,12 +1244,12 @@
           "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
-          "id": "g6-u1-m7-t08",
+          "id": "g6-u4-m7-t08",
           "type": "mini-writing",
           "skill": "WRI",
           "difficulty": 2,
           "errorCategory": "unit review-writing",
-          "prompt": "Write two to four sentences for the mission: Together Again Check.",
+          "prompt": "Write two to four sentences for the mission: Feeling Good Check.",
           "support": [
             "I can say ...",
             "I think ... because ...",
@@ -1296,29 +1281,29 @@
   ],
   "diagnosticRules": [
     {
-      "ifErrorCategory": "was-were",
-      "recommendReviewMission": "g6-u1-m1",
-      "message": "Bitte wiederhole: was-were."
+      "ifErrorCategory": "much-many-lots-of",
+      "recommendReviewMission": "g6-u4-m2",
+      "message": "Bitte wiederhole: much-many-lots-of."
     },
     {
-      "ifErrorCategory": "simple-past-positive",
-      "recommendReviewMission": "g6-u1-m4",
-      "message": "Bitte wiederhole: simple-past-positive."
+      "ifErrorCategory": "should-advice",
+      "recommendReviewMission": "g6-u4-m3",
+      "message": "Bitte wiederhole: should-advice."
     },
     {
-      "ifErrorCategory": "simple-past-negative",
-      "recommendReviewMission": "g6-u1-m4",
-      "message": "Bitte wiederhole: simple-past-negative."
+      "ifErrorCategory": "present-perfect-have-has",
+      "recommendReviewMission": "g6-u4-m4",
+      "message": "Bitte wiederhole: present-perfect-have-has."
     },
     {
-      "ifErrorCategory": "linking-words",
-      "recommendReviewMission": "g6-u1-m6",
-      "message": "Bitte wiederhole: linking-words."
+      "ifErrorCategory": "past-participle",
+      "recommendReviewMission": "g6-u4-m4",
+      "message": "Bitte wiederhole: past-participle."
     },
     {
-      "ifErrorCategory": "time-words",
-      "recommendReviewMission": "g6-u1-m6",
-      "message": "Bitte wiederhole: time-words."
+      "ifErrorCategory": "health-vocabulary",
+      "recommendReviewMission": "g6-u4-m1",
+      "message": "Bitte wiederhole: health-vocabulary."
     }
   ]
 }

@@ -1,0 +1,924 @@
+{
+  "schemaVersion": "0.4.0",
+  "fileType": "task-bank",
+  "grade": 6,
+  "unitId": "g6-u6",
+  "unitTitle": "A journey in time",
+  "appWorld": "Time Castle",
+  "unitTheme": "British history, theatre, fantasy play, past progressive, Plymouth sights and viewing",
+  "passThresholdPercent": 80,
+  "estimatedTotalMissions": 5,
+  "skillCodes": {
+    "VOC": "Vocabulary",
+    "GRA": "Grammar",
+    "REA": "Reading",
+    "LIS": "Listening",
+    "SPE": "Speaking",
+    "WRI": "Writing",
+    "MED": "Mediation",
+    "VIE": "Viewing",
+    "STU": "Study skills",
+    "INT": "Intercultural competence"
+  },
+  "contentRule": "All tasks, texts, examples and feedback are original app content. The structure follows the textbook unit order and learning goals, but does not copy original exercises or reading texts.",
+  "missions": [
+    {
+      "missionId": "g6-u6-m1",
+      "missionTitle": "Time Portal",
+      "bookSection": "Lead-in",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi startet die Mission 'Time Portal' in Time Castle. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "learningGoals": [
+        "I can talk about history and time travel.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
+      ],
+      "skills": [
+        "VOC",
+        "GRA",
+        "REA",
+        "SPE",
+        "WRI"
+      ],
+      "vocabFields": [
+        "history",
+        "time travel",
+        "British history"
+      ],
+      "grammarFocus": [
+        "history phrases"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Lichtfunke",
+        "message": "Mission 'Time Portal' abgeschlossen."
+      },
+      "tasks": [
+        {
+          "id": "g6-u6-m1-t01",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "history-vocabulary",
+          "prompt": "Match words from the field: history, time travel, British history.",
+          "pairs": [
+            {
+              "left": "history",
+              "right": "history word field"
+            },
+            {
+              "left": "time travel",
+              "right": "time travel word field"
+            },
+            {
+              "left": "British history",
+              "right": "British history word field"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
+        },
+        {
+          "id": "g6-u6-m1-g01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "grammar-review",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "This sentence is correct.",
+            "Correct this sentence is.",
+            "Sentence correct this."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u6-m1-t04",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "history-phrases",
+          "prompt": "Which sentence fits this mission: Time Portal?",
+          "options": [
+            "I can talk about history and time travel.",
+            "The pencil is under yesterday.",
+            "Because football table."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u6-m1-t05",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "history-reading",
+          "text": "Lumi is working on time portal at Time Castle. The topic is history, time travel, British history. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
+          "options": [
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u6-m1-t06",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "history"
+          ],
+          "answer": "Lumi helps with history.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
+        },
+        {
+          "id": "g6-u6-m1-t07",
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "history-sentence",
+          "prompt": "Complete: I can talk about history in ___.",
+          "acceptedAnswers": [
+            "English"
+          ],
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
+        },
+        {
+          "id": "g6-u6-m1-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "history-writing",
+          "prompt": "Write two to four sentences for the mission: Time Portal.",
+          "support": [
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
+          ],
+          "minSentences": 2,
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "Name one word from this mission about history.",
+          "type": "text-input",
+          "manualReview": true
+        },
+        {
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
+        }
+      ]
+    },
+    {
+      "missionId": "g6-u6-m2",
+      "missionTitle": "History Kids",
+      "bookSection": "Story / Play",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi startet die Mission 'History Kids' in Time Castle. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "learningGoals": [
+        "I can understand a fantasy play.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
+      ],
+      "skills": [
+        "VOC",
+        "GRA",
+        "REA",
+        "SPE",
+        "WRI"
+      ],
+      "vocabFields": [
+        "theatre",
+        "fantasy",
+        "dialogue"
+      ],
+      "grammarFocus": [
+        "play dialogue"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Lichtkristall",
+        "message": "Mission 'History Kids' abgeschlossen."
+      },
+      "tasks": [
+        {
+          "id": "g6-u6-m2-t01",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "theatre-vocabulary",
+          "prompt": "Match words from the field: theatre, fantasy, dialogue.",
+          "pairs": [
+            {
+              "left": "theatre",
+              "right": "theatre word field"
+            },
+            {
+              "left": "fantasy",
+              "right": "fantasy word field"
+            },
+            {
+              "left": "dialogue",
+              "right": "dialogue word field"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
+        },
+        {
+          "id": "g6-u6-m2-g01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "grammar-review",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "This sentence is correct.",
+            "Correct this sentence is.",
+            "Sentence correct this."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u6-m2-t04",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "theatre-phrases",
+          "prompt": "Which sentence fits this mission: History Kids?",
+          "options": [
+            "I can understand a fantasy play.",
+            "The pencil is under yesterday.",
+            "Because football table."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u6-m2-t05",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "theatre-reading",
+          "text": "Lumi is working on history kids at Time Castle. The topic is theatre, fantasy, dialogue. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
+          "options": [
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u6-m2-t06",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "theatre"
+          ],
+          "answer": "Lumi helps with theatre.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
+        },
+        {
+          "id": "g6-u6-m2-t07",
+          "type": "sorting",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "story-sequence",
+          "prompt": "Put the story events in order.",
+          "items": [
+            "The mission starts.",
+            "Lumi finds a clue.",
+            "The students solve the problem.",
+            "The light spark appears."
+          ],
+          "answer": [
+            "The mission starts.",
+            "Lumi finds a clue.",
+            "The students solve the problem.",
+            "The light spark appears."
+          ],
+          "feedbackCorrect": "Sehr gut. Die Reihenfolge stimmt.",
+          "feedbackWrong": "Achte auf Wörter wie first, then, after that und finally."
+        },
+        {
+          "id": "g6-u6-m2-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "theatre-writing",
+          "prompt": "Write two to four sentences for the mission: History Kids.",
+          "support": [
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
+          ],
+          "minSentences": 2,
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "Name one word from this mission about theatre.",
+          "type": "text-input",
+          "manualReview": true
+        },
+        {
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
+        }
+      ]
+    },
+    {
+      "missionId": "g6-u6-m3",
+      "missionTitle": "What Was Happening?",
+      "bookSection": "Focus on Language",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi startet die Mission 'What Was Happening?' in Time Castle. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "learningGoals": [
+        "I can describe what was happening in the past.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
+      ],
+      "skills": [
+        "VOC",
+        "GRA",
+        "REA",
+        "SPE",
+        "WRI"
+      ],
+      "vocabFields": [
+        "past progressive",
+        "background actions"
+      ],
+      "grammarFocus": [
+        "past progressive"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Lichtfunke",
+        "message": "Mission 'What Was Happening?' abgeschlossen."
+      },
+      "tasks": [
+        {
+          "id": "g6-u6-m3-t01",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "past progressive-vocabulary",
+          "prompt": "Match words from the field: past progressive, background actions.",
+          "pairs": [
+            {
+              "left": "past progressive",
+              "right": "past progressive word field"
+            },
+            {
+              "left": "background actions",
+              "right": "background actions word field"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
+        },
+        {
+          "id": "g6-u6-m3-g01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "past-progressive",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "I was reading.",
+            "I were reading.",
+            "I reading."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u6-m3-g02",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "was-were-ing",
+          "prompt": "They were ___ through the castle.",
+          "acceptedAnswers": [
+            "walking"
+          ],
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
+        },
+        {
+          "id": "g6-u6-m3-t04",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "past progressive-phrases",
+          "prompt": "Which sentence fits this mission: What Was Happening??",
+          "options": [
+            "I can describe what was happening in the past.",
+            "The pencil is under yesterday.",
+            "Because football table."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u6-m3-t05",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "past progressive-reading",
+          "text": "Lumi is working on what was happening? at Time Castle. The topic is past progressive, background actions. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
+          "options": [
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u6-m3-t06",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "past progressive"
+          ],
+          "answer": "Lumi helps with past progressive.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
+        },
+        {
+          "id": "g6-u6-m3-t07",
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "past progressive-sentence",
+          "prompt": "Complete: I can talk about past progressive in ___.",
+          "acceptedAnswers": [
+            "English"
+          ],
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
+        },
+        {
+          "id": "g6-u6-m3-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "past progressive-writing",
+          "prompt": "Write two to four sentences for the mission: What Was Happening?.",
+          "support": [
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
+          ],
+          "minSentences": 2,
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "Name one word from this mission about past progressive.",
+          "type": "text-input",
+          "manualReview": true
+        },
+        {
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
+        }
+      ]
+    },
+    {
+      "missionId": "g6-u6-m4",
+      "missionTitle": "Theatre and Sights",
+      "bookSection": "Viewing / Intercultural",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi startet die Mission 'Theatre and Sights' in Time Castle. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "learningGoals": [
+        "I can understand scenes and sights.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
+      ],
+      "skills": [
+        "VOC",
+        "GRA",
+        "REA",
+        "SPE",
+        "WRI"
+      ],
+      "vocabFields": [
+        "sights",
+        "Plymouth",
+        "theatre"
+      ],
+      "grammarFocus": [
+        "scene description"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Lichtfunke",
+        "message": "Mission 'Theatre and Sights' abgeschlossen."
+      },
+      "tasks": [
+        {
+          "id": "g6-u6-m4-t01",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "sights-vocabulary",
+          "prompt": "Match words from the field: sights, Plymouth, theatre.",
+          "pairs": [
+            {
+              "left": "sights",
+              "right": "sights word field"
+            },
+            {
+              "left": "Plymouth",
+              "right": "Plymouth word field"
+            },
+            {
+              "left": "theatre",
+              "right": "theatre word field"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
+        },
+        {
+          "id": "g6-u6-m4-g01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "grammar-review",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "This sentence is correct.",
+            "Correct this sentence is.",
+            "Sentence correct this."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u6-m4-t04",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "sights-phrases",
+          "prompt": "Which sentence fits this mission: Theatre and Sights?",
+          "options": [
+            "I can understand scenes and sights.",
+            "The pencil is under yesterday.",
+            "Because football table."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u6-m4-t05",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "sights-reading",
+          "text": "Lumi is working on theatre and sights at Time Castle. The topic is sights, Plymouth, theatre. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
+          "options": [
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u6-m4-t06",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "sights"
+          ],
+          "answer": "Lumi helps with sights.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
+        },
+        {
+          "id": "g6-u6-m4-t07",
+          "type": "viewing-scene",
+          "skill": "VIE",
+          "difficulty": 2,
+          "errorCategory": "sights-viewing",
+          "sceneDescription": "A student looks at a scene about theatre and sights. There are clues connected to sights, Plymouth.",
+          "prompt": "What is the scene mainly about?",
+          "options": [
+            "Theatre and Sights",
+            "a maths test",
+            "a shoe shop"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Szene verstanden.",
+          "feedbackWrong": "Achte auf die Details in der Szene."
+        },
+        {
+          "id": "g6-u6-m4-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "sights-writing",
+          "prompt": "Write two to four sentences for the mission: Theatre and Sights.",
+          "support": [
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
+          ],
+          "minSentences": 2,
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "Name one word from this mission about sights.",
+          "type": "text-input",
+          "manualReview": true
+        },
+        {
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
+        }
+      ]
+    },
+    {
+      "missionId": "g6-u6-m5",
+      "missionTitle": "Time Castle Check",
+      "bookSection": "Stop Check Go",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi startet die Mission 'Time Castle Check' in Time Castle. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "learningGoals": [
+        "I can review Unit 6.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
+      ],
+      "skills": [
+        "VOC",
+        "GRA",
+        "REA",
+        "SPE",
+        "WRI"
+      ],
+      "vocabFields": [
+        "unit review",
+        "history",
+        "theatre",
+        "past progressive"
+      ],
+      "grammarFocus": [
+        "mixed Unit 6 grammar"
+      ],
+      "reward": {
+        "stars": 3,
+        "item": "Lichtkristall",
+        "message": "Mission 'Time Castle Check' abgeschlossen."
+      },
+      "tasks": [
+        {
+          "id": "g6-u6-m5-t01",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "unit review-vocabulary",
+          "prompt": "Match words from the field: unit review, history, theatre.",
+          "pairs": [
+            {
+              "left": "unit review",
+              "right": "unit review word field"
+            },
+            {
+              "left": "history",
+              "right": "history word field"
+            },
+            {
+              "left": "theatre",
+              "right": "theatre word field"
+            },
+            {
+              "left": "past progressive",
+              "right": "past progressive word field"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
+        },
+        {
+          "id": "g6-u6-m5-g01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "grammar-review",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "This sentence is correct.",
+            "Correct this sentence is.",
+            "Sentence correct this."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u6-m5-t04",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "unit review-phrases",
+          "prompt": "Which sentence fits this mission: Time Castle Check?",
+          "options": [
+            "I can review Unit 6.",
+            "The pencil is under yesterday.",
+            "Because football table."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u6-m5-t05",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "unit review-reading",
+          "text": "Lumi is working on time castle check at Time Castle. The topic is unit review, history, theatre. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
+          "options": [
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u6-m5-t06",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "unit review"
+          ],
+          "answer": "Lumi helps with unit review.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
+        },
+        {
+          "id": "g6-u6-m5-t07",
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "unit review-sentence",
+          "prompt": "Complete: I can talk about unit review in ___.",
+          "acceptedAnswers": [
+            "English"
+          ],
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
+        },
+        {
+          "id": "g6-u6-m5-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "unit review-writing",
+          "prompt": "Write two to four sentences for the mission: Time Castle Check.",
+          "support": [
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
+          ],
+          "minSentences": 2,
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "Name one word from this mission about unit review.",
+          "type": "text-input",
+          "manualReview": true
+        },
+        {
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
+        }
+      ]
+    }
+  ],
+  "diagnosticRules": [
+    {
+      "ifErrorCategory": "past-progressive",
+      "recommendReviewMission": "g6-u6-m3",
+      "message": "Bitte wiederhole: past-progressive."
+    },
+    {
+      "ifErrorCategory": "was-were-ing",
+      "recommendReviewMission": "g6-u6-m3",
+      "message": "Bitte wiederhole: was-were-ing."
+    },
+    {
+      "ifErrorCategory": "theatre-vocabulary",
+      "recommendReviewMission": "g6-u6-m2",
+      "message": "Bitte wiederhole: theatre-vocabulary."
+    },
+    {
+      "ifErrorCategory": "sights-vocabulary",
+      "recommendReviewMission": "g6-u6-m4",
+      "message": "Bitte wiederhole: sights-vocabulary."
+    }
+  ]
+}

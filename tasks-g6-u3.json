@@ -1,13 +1,25 @@
 {
-  "schemaVersion": "0.3.0",
+  "schemaVersion": "0.4.0",
   "fileType": "task-bank",
   "grade": 6,
   "unitId": "g6-u3",
   "unitTitle": "Teen talk",
   "appWorld": "Teen Talk Coast",
-  "unitTheme": "Weekend activities, pocket money, chores, arrangements, going to-future and comparisons",
+  "unitTheme": "Weekend activities, pocket money, chores, arrangements, going to and comparisons",
   "passThresholdPercent": 80,
   "estimatedTotalMissions": 7,
+  "skillCodes": {
+    "VOC": "Vocabulary",
+    "GRA": "Grammar",
+    "REA": "Reading",
+    "LIS": "Listening",
+    "SPE": "Speaking",
+    "WRI": "Writing",
+    "MED": "Mediation",
+    "VIE": "Viewing",
+    "STU": "Study skills",
+    "INT": "Intercultural competence"
+  },
   "contentRule": "All tasks, texts, examples and feedback are original app content. The structure follows the textbook unit order and learning goals, but does not copy original exercises or reading texts.",
   "missions": [
     {
@@ -15,118 +27,105 @@
       "missionTitle": "Perfect Weekend",
       "bookSection": "Lead-in",
       "durationMinutes": 20,
-      "storyIntro": "Lumi kommt an der Teen Talk Coast an. Alle reden über das perfekte Wochenende. Um das neue Gebiet zu öffnen, musst du verstehen, was Jugendliche gerne am Wochenende machen.",
+      "storyIntro": "Lumi startet die Mission 'Perfect Weekend' in Teen Talk Coast. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "Ich kann über Wochenendaktivitäten sprechen.",
-        "Ich kann einfache Umfrageergebnisse verstehen.",
-        "Ich kann sagen, warum ich eine Aktivität mag."
+        "I can talk about a perfect weekend.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
       "skills": [
         "VOC",
+        "GRA",
+        "REA",
         "SPE",
-        "LIS",
         "WRI"
       ],
       "vocabFields": [
         "weekend activities",
-        "free time",
-        "opinions"
+        "opinions",
+        "because"
+      ],
+      "grammarFocus": [
+        "because"
       ],
       "reward": {
         "stars": 1,
         "item": "Lichtfunke",
-        "message": "Der erste Funkpunkt an der Teen Talk Coast leuchtet."
+        "message": "Mission 'Perfect Weekend' abgeschlossen."
       },
       "tasks": [
         {
           "id": "g6-u3-m1-t01",
-          "type": "multiple-choice",
-          "skill": "VOC",
-          "difficulty": 1,
-          "errorCategory": "weekend-vocabulary",
-          "prompt": "Which activity is a weekend activity?",
-          "options": [
-            "meet friends",
-            "spell a word",
-            "clean a grammar rule"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Genau. Meet friends passt zum Thema Wochenende.",
-          "feedbackWrong": "Gesucht ist etwas, das man am Wochenende machen kann."
-        },
-        {
-          "id": "g6-u3-m1-t02",
           "type": "matching",
           "skill": "VOC",
           "difficulty": 1,
-          "errorCategory": "weekend-vocabulary",
-          "prompt": "Match the weekend activities.",
+          "errorCategory": "weekend activities-vocabulary",
+          "prompt": "Match words from the field: weekend activities, opinions, because.",
           "pairs": [
             {
-              "left": "go shopping",
-              "right": "einkaufen gehen"
+              "left": "weekend activities",
+              "right": "weekend activities word field"
             },
             {
-              "left": "meet friends",
-              "right": "Freunde treffen"
+              "left": "opinions",
+              "right": "opinions word field"
             },
             {
-              "left": "watch a film",
-              "right": "einen Film anschauen"
-            },
-            {
-              "left": "do sport",
-              "right": "Sport machen"
+              "left": "because",
+              "right": "because word field"
             }
           ],
-          "feedbackCorrect": "Super. Diese Wörter brauchst du, um über dein Wochenende zu sprechen.",
-          "feedbackWrong": "Überlege, welche Aktivität zu welcher Bedeutung passt."
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u3-m1-t03",
+          "id": "g6-u3-m1-g01",
           "type": "multiple-choice",
-          "skill": "SPE",
+          "skill": "GRA",
           "difficulty": 1,
-          "errorCategory": "giving-reasons",
-          "prompt": "Which sentence gives a reason?",
+          "errorCategory": "grammar-review",
+          "prompt": "Choose the correct sentence.",
           "options": [
-            "I like gaming because it is fun.",
-            "I like gaming yesterday.",
-            "Gaming table friend."
+            "This sentence is correct.",
+            "Correct this sentence is.",
+            "Sentence correct this."
           ],
           "answer": 0,
-          "feedbackCorrect": "Richtig. Because erklärt den Grund.",
-          "feedbackWrong": "Ein guter Grund wird oft mit because eingeleitet."
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u3-m1-t04",
-          "type": "gap-fill",
-          "skill": "WRI",
+          "type": "multiple-choice",
+          "skill": "SPE",
           "difficulty": 1,
-          "errorCategory": "linking-words",
-          "prompt": "Complete the sentence: I like watching films ___ they are exciting.",
-          "acceptedAnswers": [
-            "because"
+          "errorCategory": "weekend activities-phrases",
+          "prompt": "Which sentence fits this mission: Perfect Weekend?",
+          "options": [
+            "I can talk about a perfect weekend.",
+            "The pencil is under yesterday.",
+            "Because football table."
           ],
-          "feedbackCorrect": "Genau. Because leitet eine Begründung ein.",
-          "feedbackWrong": "Hier brauchst du ein Wort für den Grund."
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u3-m1-t05",
           "type": "reading-check",
           "skill": "REA",
           "difficulty": 2,
-          "errorCategory": "reading-detail",
-          "text": "Four students talked about their perfect weekend. Two students wanted to meet friends. One student wanted to play football. One student wanted to stay at home and read comics.",
-          "prompt": "How many students wanted to meet friends?",
+          "errorCategory": "weekend activities-reading",
+          "text": "Lumi is working on perfect weekend at Teen Talk Coast. The topic is weekend activities, opinions, because. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
           "options": [
-            "one",
-            "two",
-            "four"
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
           ],
-          "answer": 1,
-          "feedbackCorrect": "Richtig. Zwei Schüler wollten Freunde treffen.",
-          "feedbackWrong": "Achte auf den zweiten Satz."
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
         },
         {
           "id": "g6-u3-m1-t06",
@@ -136,78 +135,60 @@
           "errorCategory": "word-order",
           "prompt": "Put the words in the correct order.",
           "words": [
-            "like",
-            "because",
-            "I",
-            "fun",
-            "it",
-            "is",
-            "football"
+            "Lumi",
+            "helps",
+            "with",
+            "weekend activities"
           ],
-          "answer": "I like football because it is fun.",
-          "feedbackCorrect": "Sehr gut. Der Satz gibt eine klare Meinung mit Begründung.",
-          "feedbackWrong": "Beginne mit I like football."
+          "answer": "Lumi helps with weekend activities.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
           "id": "g6-u3-m1-t07",
-          "type": "multiple-choice",
-          "skill": "STU",
-          "difficulty": 2,
-          "errorCategory": "survey-language",
-          "prompt": "Which sentence describes a survey result?",
-          "options": [
-            "Three students like music best.",
-            "I am a new pencil.",
-            "Because the weekend."
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "weekend activities-sentence",
+          "prompt": "Complete: I can talk about weekend activities in ___.",
+          "acceptedAnswers": [
+            "English"
           ],
-          "answer": 0,
-          "feedbackCorrect": "Genau. Das ist eine einfache Auswertung einer Umfrage.",
-          "feedbackWrong": "Ein survey result sagt, was mehrere Personen geantwortet haben."
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
           "id": "g6-u3-m1-t08",
           "type": "mini-writing",
           "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "weekend-writing",
-          "prompt": "Write three sentences about your perfect weekend.",
-          "requirements": [
-            "Say one activity.",
-            "Use because once.",
-            "Use one opinion word."
-          ],
+          "errorCategory": "weekend activities-writing",
+          "prompt": "Write two to four sentences for the mission: Perfect Weekend.",
           "support": [
-            "My perfect weekend is ...",
-            "I like ...",
-            "It is fun because ...",
-            "I also want to ..."
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
           ],
+          "minSentences": 2,
           "manualReview": true,
-          "feedbackAfterSubmit": "Gut gemacht. Mit because klingt deine Meinung viel stärker."
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
         }
       ],
       "miniChallenge": [
         {
-          "prompt": "I like music ___ it is fun.",
-          "acceptedAnswers": [
-            "because"
-          ]
+          "prompt": "Name one word from this mission about weekend activities.",
+          "type": "text-input",
+          "manualReview": true
         },
         {
-          "prompt": "Meet friends means ___.",
-          "acceptedAnswers": [
-            "Freunde treffen",
-            "freunde treffen"
-          ]
-        },
-        {
-          "prompt": "A survey asks ___ people.",
-          "acceptedAnswers": [
-            "different",
-            "several",
-            "many",
-            "mehrere"
-          ]
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
         }
       ]
     },
@@ -216,14 +197,15 @@
       "missionTitle": "Money Mission",
       "bookSection": "Theme 1",
       "durationMinutes": 20,
-      "storyIntro": "Am Strand der Teen Talk Coast sprechen alle über Taschengeld, kleine Jobs und Aufgaben zu Hause. Lumi möchte wissen, wofür Jugendliche Geld bekommen und was sie dafür tun.",
+      "storyIntro": "Lumi startet die Mission 'Money Mission' in Teen Talk Coast. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "Ich kann über Taschengeld sprechen.",
-        "Ich kann sagen, welche Aufgaben ich zu Hause erledige.",
-        "Ich kann einfache Aussagen über Jobs und Geld verstehen."
+        "I can talk about pocket money and chores.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
       "skills": [
         "VOC",
+        "GRA",
         "REA",
         "SPE",
         "WRI"
@@ -231,178 +213,152 @@
       "vocabFields": [
         "pocket money",
         "jobs",
-        "chores",
-        "money"
+        "chores"
+      ],
+      "grammarFocus": [
+        "have to"
       ],
       "reward": {
         "stars": 1,
         "item": "Lichtfunke",
-        "message": "Die Money Mission ist geschafft."
+        "message": "Mission 'Money Mission' abgeschlossen."
       },
       "tasks": [
         {
           "id": "g6-u3-m2-t01",
-          "type": "multiple-choice",
-          "skill": "VOC",
-          "difficulty": 1,
-          "errorCategory": "money-vocabulary",
-          "prompt": "What does pocket money mean?",
-          "options": [
-            "Taschengeld",
-            "Hosentasche",
-            "Schulgeld"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Pocket money heißt Taschengeld.",
-          "feedbackWrong": "Pocket money ist Geld, das Kinder oder Jugendliche regelmäßig bekommen."
-        },
-        {
-          "id": "g6-u3-m2-t02",
           "type": "matching",
           "skill": "VOC",
           "difficulty": 1,
-          "errorCategory": "chores-vocabulary",
-          "prompt": "Match the chores.",
+          "errorCategory": "pocket money-vocabulary",
+          "prompt": "Match words from the field: pocket money, jobs, chores.",
           "pairs": [
             {
-              "left": "tidy my room",
-              "right": "mein Zimmer aufräumen"
+              "left": "pocket money",
+              "right": "pocket money word field"
             },
             {
-              "left": "walk the dog",
-              "right": "mit dem Hund spazieren gehen"
+              "left": "jobs",
+              "right": "jobs word field"
             },
             {
-              "left": "lay the table",
-              "right": "den Tisch decken"
-            },
-            {
-              "left": "wash the dishes",
-              "right": "das Geschirr spülen"
+              "left": "chores",
+              "right": "chores word field"
             }
           ],
-          "feedbackCorrect": "Sehr gut. Das sind wichtige Wörter für Aufgaben zu Hause.",
-          "feedbackWrong": "Chores sind Aufgaben, die man zu Hause erledigt."
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u3-m2-t03",
+          "id": "g6-u3-m2-g01",
           "type": "multiple-choice",
-          "skill": "SPE",
+          "skill": "GRA",
           "difficulty": 1,
-          "errorCategory": "money-phrases",
-          "prompt": "Which sentence is correct?",
+          "errorCategory": "grammar-review",
+          "prompt": "Choose the correct sentence.",
           "options": [
-            "I get pocket money every week.",
-            "I become pocket money every week.",
-            "I make pocket every money."
+            "This sentence is correct.",
+            "Correct this sentence is.",
+            "Sentence correct this."
           ],
           "answer": 0,
-          "feedbackCorrect": "Genau. Auf Englisch sagt man I get pocket money.",
-          "feedbackWrong": "Achte darauf: Taschengeld bekommen heißt get pocket money."
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u3-m2-t04",
-          "type": "gap-fill",
-          "skill": "VOC",
+          "type": "multiple-choice",
+          "skill": "SPE",
           "difficulty": 1,
-          "errorCategory": "chores-vocabulary",
-          "prompt": "Complete the sentence: I ___ my room every Saturday.",
-          "acceptedAnswers": [
-            "tidy",
-            "clean"
+          "errorCategory": "pocket money-phrases",
+          "prompt": "Which sentence fits this mission: Money Mission?",
+          "options": [
+            "I can talk about pocket money and chores.",
+            "The pencil is under yesterday.",
+            "Because football table."
           ],
-          "feedbackCorrect": "Richtig. Tidy my room heißt mein Zimmer aufräumen.",
-          "feedbackWrong": "Hier passt ein Verb für Zimmer aufräumen oder putzen."
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u3-m2-t05",
           "type": "reading-check",
           "skill": "REA",
           "difficulty": 2,
-          "errorCategory": "reading-detail",
-          "text": "Amy gets five pounds every week. She has to tidy her room and feed the cat. She saves her money because she wants to buy new headphones.",
-          "prompt": "Why does Amy save her money?",
+          "errorCategory": "pocket money-reading",
+          "text": "Lumi is working on money mission at Teen Talk Coast. The topic is pocket money, jobs, chores. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
           "options": [
-            "She wants to buy new headphones.",
-            "She wants a cat.",
-            "She hates money."
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
           ],
           "answer": 0,
-          "feedbackCorrect": "Richtig. Amy spart für neue Kopfhörer.",
-          "feedbackWrong": "Lies den letzten Satz noch einmal."
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
         },
         {
           "id": "g6-u3-m2-t06",
-          "type": "multiple-choice",
-          "skill": "VOC",
-          "difficulty": 2,
-          "errorCategory": "money-vocabulary",
-          "prompt": "What does save money mean?",
-          "options": [
-            "Geld sparen",
-            "Geld verlieren",
-            "Geld malen"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Genau. Save money heißt Geld sparen.",
-          "feedbackWrong": "Save bedeutet hier sparen."
-        },
-        {
-          "id": "g6-u3-m2-t07",
           "type": "sentence-builder",
           "skill": "WRI",
           "difficulty": 2,
           "errorCategory": "word-order",
           "prompt": "Put the words in the correct order.",
           "words": [
-            "have",
-            "I",
-            "the",
-            "table",
-            "to",
-            "lay"
+            "Lumi",
+            "helps",
+            "with",
+            "pocket money"
           ],
-          "answer": "I have to lay the table.",
-          "feedbackCorrect": "Sehr gut. Have to beschreibt eine Aufgabe oder Pflicht.",
-          "feedbackWrong": "Beginne mit I have to."
+          "answer": "Lumi helps with pocket money.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
+        },
+        {
+          "id": "g6-u3-m2-t07",
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "pocket money-sentence",
+          "prompt": "Complete: I can talk about pocket money in ___.",
+          "acceptedAnswers": [
+            "English"
+          ],
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
           "id": "g6-u3-m2-t08",
           "type": "mini-writing",
           "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "money-writing",
-          "prompt": "Write three sentences about pocket money or chores.",
+          "errorCategory": "pocket money-writing",
+          "prompt": "Write two to four sentences for the mission: Money Mission.",
           "support": [
-            "I get pocket money.",
-            "I don’t get pocket money.",
-            "I have to ...",
-            "I save money for ..."
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
           ],
+          "minSentences": 2,
           "manualReview": true,
-          "feedbackAfterSubmit": "Gut. Du kannst jetzt über Taschengeld und Aufgaben sprechen."
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
         }
       ],
       "miniChallenge": [
         {
-          "prompt": "Pocket money means ___.",
-          "acceptedAnswers": [
-            "Taschengeld",
-            "taschengeld"
-          ]
+          "prompt": "Name one word from this mission about pocket money.",
+          "type": "text-input",
+          "manualReview": true
         },
         {
-          "prompt": "I ___ my room.",
-          "acceptedAnswers": [
-            "tidy",
-            "clean"
-          ]
-        },
-        {
-          "prompt": "Save money means Geld ___.",
-          "acceptedAnswers": [
-            "sparen"
-          ]
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
         }
       ]
     },
@@ -411,17 +367,17 @@
       "missionTitle": "Plan the Future",
       "bookSection": "Theme 2",
       "durationMinutes": 20,
-      "storyIntro": "An der Teen Talk Coast planen die Jugendlichen ihr nächstes Treffen. Lumi braucht Hilfe, Verabredungen zu verstehen und Zukunftspläne mit going to zu bilden.",
+      "storyIntro": "Lumi startet die Mission 'Plan the Future' in Teen Talk Coast. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "Ich kann eine Verabredung machen.",
-        "Ich kann Pläne mit going to ausdrücken.",
-        "Ich kann sagen, was ich vorhabe."
+        "I can make arrangements and talk about plans.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
       "skills": [
+        "VOC",
         "GRA",
-        "SPE",
         "REA",
-        "LIS",
+        "SPE",
         "WRI"
       ],
       "vocabFields": [
@@ -429,176 +385,163 @@
         "future plans",
         "time phrases"
       ],
+      "grammarFocus": [
+        "going to-future"
+      ],
       "reward": {
-        "stars": 2,
+        "stars": 1,
         "item": "Lichtfunke",
-        "badge": "Future Planner",
-        "message": "Du hast den Future Planner Badge freigeschaltet."
-      },
-      "ruleCard": {
-        "title": "going to-future",
-        "rules": [
-          "Mit going to sprichst du über Pläne und Vorhaben.",
-          "Du brauchst eine Form von be: am, is oder are.",
-          "Danach kommt going to und die Grundform des Verbs."
-        ],
-        "examples": [
-          "I am going to meet my friends.",
-          "She is going to watch a film.",
-          "We are going to play football.",
-          "Are you going to come with us?"
-        ]
+        "message": "Mission 'Plan the Future' abgeschlossen."
       },
       "tasks": [
         {
           "id": "g6-u3-m3-t01",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "arrangements-vocabulary",
+          "prompt": "Match words from the field: arrangements, future plans, time phrases.",
+          "pairs": [
+            {
+              "left": "arrangements",
+              "right": "arrangements word field"
+            },
+            {
+              "left": "future plans",
+              "right": "future plans word field"
+            },
+            {
+              "left": "time phrases",
+              "right": "time phrases word field"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
+        },
+        {
+          "id": "g6-u3-m3-g01",
           "type": "multiple-choice",
           "skill": "GRA",
           "difficulty": 1,
           "errorCategory": "going-to-future",
           "prompt": "Choose the correct sentence.",
           "options": [
-            "I am going to meet my friends.",
-            "I going to meet my friends.",
-            "I am go to meet my friends."
+            "I am going to meet Tom.",
+            "I going to meet Tom.",
+            "I am go to meet Tom."
           ],
           "answer": 0,
-          "feedbackCorrect": "Richtig. I am going to + Grundform ist korrekt.",
-          "feedbackWrong": "Du brauchst am going to und danach die Grundform."
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u3-m3-t02",
+          "id": "g6-u3-m3-g02",
           "type": "gap-fill",
           "skill": "GRA",
           "difficulty": 1,
           "errorCategory": "going-to-future",
-          "prompt": "Complete the sentence: She ___ going to start a new class.",
+          "prompt": "She ___ going to start a new club.",
           "acceptedAnswers": [
             "is"
           ],
-          "feedbackCorrect": "Genau. Bei she benutzt du is.",
-          "feedbackWrong": "Bei she brauchst du is."
-        },
-        {
-          "id": "g6-u3-m3-t03",
-          "type": "multiple-choice",
-          "skill": "SPE",
-          "difficulty": 1,
-          "errorCategory": "arrangements",
-          "prompt": "Which sentence is useful for making arrangements?",
-          "options": [
-            "Let’s meet at six.",
-            "My pencil is nervous.",
-            "The dog is a timetable."
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Genau. Let’s meet at six ist eine klare Verabredung.",
-          "feedbackWrong": "Gesucht ist ein Satz, mit dem man ein Treffen planen kann."
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
           "id": "g6-u3-m3-t04",
-          "type": "sentence-builder",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "going-to-future",
-          "prompt": "Put the words in the correct order.",
-          "words": [
-            "are",
-            "We",
-            "play",
-            "going",
-            "football",
-            "to"
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "arrangements-phrases",
+          "prompt": "Which sentence fits this mission: Plan the Future?",
+          "options": [
+            "I can make arrangements and talk about plans.",
+            "The pencil is under yesterday.",
+            "Because football table."
           ],
-          "answer": "We are going to play football.",
-          "feedbackCorrect": "Sehr gut. We are going to play football.",
-          "feedbackWrong": "Beginne mit We are going to."
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u3-m3-t05",
-          "type": "error-correction",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "going-to-future",
-          "prompt": "Correct the sentence: He going to watch TV.",
-          "acceptedAnswers": [
-            "He is going to watch TV."
-          ],
-          "feedbackCorrect": "Genau. Bei he brauchst du is.",
-          "feedbackWrong": "Es fehlt die Form von be. Bei he ist das is."
-        },
-        {
-          "id": "g6-u3-m3-t06",
           "type": "reading-check",
           "skill": "REA",
           "difficulty": 2,
-          "errorCategory": "reading-detail",
-          "text": "Mia and Ben are going to meet at the cinema at half past five. After the film, they are going to eat pizza. Tom can’t come because he has to visit his grandma.",
-          "prompt": "Where are Mia and Ben going to meet?",
+          "errorCategory": "arrangements-reading",
+          "text": "Lumi is working on plan the future at Teen Talk Coast. The topic is arrangements, future plans, time phrases. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
           "options": [
-            "at the cinema",
-            "at the zoo",
-            "at school"
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
           ],
           "answer": 0,
-          "feedbackCorrect": "Richtig. Sie treffen sich am Kino.",
-          "feedbackWrong": "Lies den ersten Satz noch einmal."
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u3-m3-t06",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "arrangements"
+          ],
+          "answer": "Lumi helps with arrangements.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
           "id": "g6-u3-m3-t07",
-          "type": "multiple-choice",
-          "skill": "SPE",
-          "difficulty": 2,
-          "errorCategory": "arrangements",
-          "prompt": "Choose the best reply: Let’s meet at five.",
-          "options": [
-            "Good idea.",
-            "I am a table.",
-            "No, yesterday."
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "arrangements-sentence",
+          "prompt": "Complete: I can talk about arrangements in ___.",
+          "acceptedAnswers": [
+            "English"
           ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Good idea passt als Antwort.",
-          "feedbackWrong": "Eine passende Antwort stimmt dem Vorschlag zu oder lehnt ihn höflich ab."
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
           "id": "g6-u3-m3-t08",
           "type": "mini-writing",
           "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "future-writing",
-          "prompt": "Write three sentences about your plans for the weekend.",
-          "requirements": [
-            "Use going to in at least two sentences.",
-            "Use one time phrase."
-          ],
+          "errorCategory": "arrangements-writing",
+          "prompt": "Write two to four sentences for the mission: Plan the Future.",
           "support": [
-            "On Saturday I am going to ...",
-            "I am going to meet ...",
-            "We are going to ...",
-            "At six o’clock ..."
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
           ],
+          "minSentences": 2,
           "manualReview": true,
-          "feedbackAfterSubmit": "Sehr gut. Going to hilft dir, echte Pläne auszudrücken."
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
         }
       ],
       "miniChallenge": [
         {
-          "prompt": "I ___ going to play football.",
-          "acceptedAnswers": [
-            "am"
-          ]
+          "prompt": "Name one word from this mission about arrangements.",
+          "type": "text-input",
+          "manualReview": true
         },
         {
-          "prompt": "She ___ going to watch a film.",
-          "acceptedAnswers": [
-            "is"
-          ]
-        },
-        {
-          "prompt": "We ___ going to meet at six.",
-          "acceptedAnswers": [
-            "are"
-          ]
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
         }
       ]
     },
@@ -607,205 +550,182 @@
       "missionTitle": "Compare Tower",
       "bookSection": "Focus on Language",
       "durationMinutes": 20,
-      "storyIntro": "Auf einem Turm an der Küste vergleicht Lumi alles: Strände, Spiele, Filme und Clubs. Du hilfst ihr, Steigerungsformen richtig zu benutzen.",
+      "storyIntro": "Lumi startet die Mission 'Compare Tower' in Teen Talk Coast. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "Ich kann kurze Adjektive steigern.",
-        "Ich kann längere Adjektive mit more und most steigern.",
-        "Ich kann Dinge und Personen vergleichen."
+        "I can compare people and things.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
       "skills": [
+        "VOC",
         "GRA",
+        "REA",
         "SPE",
-        "WRI",
-        "STU"
+        "WRI"
       ],
       "vocabFields": [
         "adjectives",
         "opinions",
         "comparisons"
       ],
+      "grammarFocus": [
+        "comparative",
+        "superlative"
+      ],
       "reward": {
-        "stars": 2,
+        "stars": 1,
         "item": "Lichtfunke",
-        "badge": "Compare Master",
-        "message": "Der Compare Tower ist wieder hell."
-      },
-      "ruleCard": {
-        "title": "Comparison of adjectives",
-        "rules": [
-          "Kurze Adjektive bekommen oft -er und -est.",
-          "Nach dem Komparativ steht oft than.",
-          "Längere Adjektive steigerst du mit more und the most.",
-          "Bei Superlativen steht meistens the."
-        ],
-        "examples": [
-          "small, smaller, the smallest",
-          "nice, nicer, the nicest",
-          "interesting, more interesting, the most interesting",
-          "Football is more exciting than tennis."
-        ]
+        "message": "Mission 'Compare Tower' abgeschlossen."
       },
       "tasks": [
         {
           "id": "g6-u3-m4-t01",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "adjectives-vocabulary",
+          "prompt": "Match words from the field: adjectives, opinions, comparisons.",
+          "pairs": [
+            {
+              "left": "adjectives",
+              "right": "adjectives word field"
+            },
+            {
+              "left": "opinions",
+              "right": "opinions word field"
+            },
+            {
+              "left": "comparisons",
+              "right": "comparisons word field"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
+        },
+        {
+          "id": "g6-u3-m4-g01",
           "type": "multiple-choice",
           "skill": "GRA",
           "difficulty": 1,
           "errorCategory": "comparison-adjectives",
-          "prompt": "Choose the correct form: My bike is ___ than yours.",
+          "prompt": "My bike is ___ than yours.",
           "options": [
             "fast",
             "faster",
             "the fastest"
           ],
           "answer": 1,
-          "feedbackCorrect": "Richtig. Mit than brauchst du faster.",
-          "feedbackWrong": "Bei einem Vergleich mit than passt die -er-Form."
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u3-m4-t02",
+          "id": "g6-u3-m4-g02",
           "type": "gap-fill",
-          "skill": "GRA",
-          "difficulty": 1,
-          "errorCategory": "comparison-adjectives",
-          "prompt": "Complete the sentence: This is the ___ game in the shop. Use good.",
-          "acceptedAnswers": [
-            "best"
-          ],
-          "feedbackCorrect": "Genau. Good wird zu the best.",
-          "feedbackWrong": "Good ist unregelmäßig: good, better, the best."
-        },
-        {
-          "id": "g6-u3-m4-t03",
-          "type": "multiple-choice",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "comparison-adjectives",
-          "prompt": "Choose the correct sentence.",
-          "options": [
-            "This film is more interesting than that film.",
-            "This film is interestinger than that film.",
-            "This film is the more interesting than that film."
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Interesting ist länger, deshalb more interesting.",
-          "feedbackWrong": "Bei längeren Adjektiven benutzt du more."
-        },
-        {
-          "id": "g6-u3-m4-t04",
-          "type": "matching",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "comparison-adjectives",
-          "prompt": "Match the adjective forms.",
-          "pairs": [
-            {
-              "left": "big",
-              "right": "bigger"
-            },
-            {
-              "left": "nice",
-              "right": "nicer"
-            },
-            {
-              "left": "easy",
-              "right": "easier"
-            },
-            {
-              "left": "good",
-              "right": "better"
-            }
-          ],
-          "feedbackCorrect": "Sehr gut. Du erkennst wichtige Vergleichsformen.",
-          "feedbackWrong": "Achte besonders auf easy und good."
-        },
-        {
-          "id": "g6-u3-m4-t05",
-          "type": "error-correction",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "comparison-adjectives",
-          "prompt": "Correct the sentence: My phone is expensiver than yours.",
-          "acceptedAnswers": [
-            "My phone is more expensive than yours."
-          ],
-          "feedbackCorrect": "Genau. Expensive ist länger, deshalb more expensive.",
-          "feedbackWrong": "Bei expensive benutzt du more, nicht -er."
-        },
-        {
-          "id": "g6-u3-m4-t06",
-          "type": "multiple-choice",
           "skill": "GRA",
           "difficulty": 2,
           "errorCategory": "superlative",
-          "prompt": "Choose the superlative.",
-          "options": [
-            "the funniest",
-            "more funny",
-            "funny than"
+          "prompt": "This is the ___ idea. Use good.",
+          "acceptedAnswers": [
+            "best"
           ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Funny wird zu the funniest.",
-          "feedbackWrong": "Der Superlativ beginnt hier mit the."
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
-          "id": "g6-u3-m4-t07",
+          "id": "g6-u3-m4-t04",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "adjectives-phrases",
+          "prompt": "Which sentence fits this mission: Compare Tower?",
+          "options": [
+            "I can compare people and things.",
+            "The pencil is under yesterday.",
+            "Because football table."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u3-m4-t05",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "adjectives-reading",
+          "text": "Lumi is working on compare tower at Teen Talk Coast. The topic is adjectives, opinions, comparisons. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
+          "options": [
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u3-m4-t06",
           "type": "sentence-builder",
           "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "comparison-word-order",
+          "errorCategory": "word-order",
           "prompt": "Put the words in the correct order.",
           "words": [
-            "is",
-            "than",
-            "Tennis",
-            "football",
-            "easier"
+            "Lumi",
+            "helps",
+            "with",
+            "adjectives"
           ],
-          "answer": "Tennis is easier than football.",
-          "feedbackCorrect": "Sehr gut. Easier than ist richtig eingesetzt.",
-          "feedbackWrong": "Beginne mit Tennis is."
+          "answer": "Lumi helps with adjectives.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
+        },
+        {
+          "id": "g6-u3-m4-t07",
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "adjectives-sentence",
+          "prompt": "Complete: I can talk about adjectives in ___.",
+          "acceptedAnswers": [
+            "English"
+          ],
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
           "id": "g6-u3-m4-t08",
           "type": "mini-writing",
           "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "comparison-writing",
-          "prompt": "Write three comparison sentences.",
-          "requirements": [
-            "Use one sentence with than.",
-            "Use one sentence with more.",
-            "Use one sentence with the most or the -est form."
-          ],
+          "errorCategory": "adjectives-writing",
+          "prompt": "Write two to four sentences for the mission: Compare Tower.",
           "support": [
-            "Football is more exciting than ...",
-            "Maths is easier than ...",
-            "This is the best ...",
-            "My phone is newer than ..."
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
           ],
+          "minSentences": 2,
           "manualReview": true,
-          "feedbackAfterSubmit": "Stark. Vergleiche machen deine Texte genauer."
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
         }
       ],
       "miniChallenge": [
         {
-          "prompt": "fast →",
-          "acceptedAnswers": [
-            "faster"
-          ]
+          "prompt": "Name one word from this mission about adjectives.",
+          "type": "text-input",
+          "manualReview": true
         },
         {
-          "prompt": "good →",
-          "acceptedAnswers": [
-            "better"
-          ]
-        },
-        {
-          "prompt": "interesting →",
-          "acceptedAnswers": [
-            "more interesting"
-          ]
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
         }
       ]
     },
@@ -814,401 +734,11 @@
       "missionTitle": "Money Story",
       "bookSection": "Story",
       "durationMinutes": 20,
-      "storyIntro": "Lumi erzählt eine Geschichte über Geld, Wünsche und Entscheidungen. Nicht alles, was man haben möchte, kann man sofort kaufen.",
+      "storyIntro": "Lumi startet die Mission 'Money Story' in Teen Talk Coast. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "Ich kann eine Geschichte über Geld und Wünsche verstehen.",
-        "Ich kann erkennen, warum eine Figur eine Entscheidung trifft.",
-        "Ich kann Bilder oder Szenen als Verständnishilfe nutzen."
-      ],
-      "skills": [
-        "REA",
-        "VOC",
-        "WRI",
-        "STU"
-      ],
-      "vocabFields": [
-        "money",
-        "wishes",
-        "decisions",
-        "feelings"
-      ],
-      "reward": {
-        "stars": 1,
-        "item": "Lichtkristall",
-        "badge": "Smart Saver",
-        "message": "Du hast den Smart Saver Kristall gefunden."
-      },
-      "readingText": {
-        "id": "g6-u3-m5-reading-01",
-        "title": "Not Enough Money",
-        "text": "Leo wanted a new skateboard. It was expensive, and he didn’t have enough money. On Saturday, his neighbour asked him to help in the garden. Leo worked for two hours and got five pounds. He was tired, but he was happy too. Later, he decided to save his money for the skateboard."
-      },
-      "tasks": [
-        {
-          "id": "g6-u3-m5-t01",
-          "type": "reading-check",
-          "skill": "REA",
-          "difficulty": 1,
-          "errorCategory": "reading-main-idea",
-          "prompt": "What did Leo want?",
-          "options": [
-            "a new skateboard",
-            "a new dog",
-            "a new school"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Leo wollte ein neues Skateboard.",
-          "feedbackWrong": "Lies den ersten Satz noch einmal."
-        },
-        {
-          "id": "g6-u3-m5-t02",
-          "type": "reading-check",
-          "skill": "REA",
-          "difficulty": 2,
-          "errorCategory": "reading-detail",
-          "prompt": "Why couldn’t Leo buy the skateboard at first?",
-          "options": [
-            "He didn’t have enough money.",
-            "He didn’t like skateboards.",
-            "The shop was closed forever."
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Genau. Er hatte nicht genug Geld.",
-          "feedbackWrong": "Achte auf It was expensive und didn’t have enough money."
-        },
-        {
-          "id": "g6-u3-m5-t03",
-          "type": "reading-check",
-          "skill": "REA",
-          "difficulty": 2,
-          "errorCategory": "reading-detail",
-          "prompt": "What did Leo do on Saturday?",
-          "options": [
-            "He helped in the garden.",
-            "He bought a car.",
-            "He went to the cinema."
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Leo half im Garten.",
-          "feedbackWrong": "Lies den Satz mit Saturday noch einmal."
-        },
-        {
-          "id": "g6-u3-m5-t04",
-          "type": "multiple-choice",
-          "skill": "VOC",
-          "difficulty": 2,
-          "errorCategory": "money-vocabulary",
-          "prompt": "What does expensive mean?",
-          "options": [
-            "teuer",
-            "billig",
-            "kaputt"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Genau. Expensive heißt teuer.",
-          "feedbackWrong": "Expensive beschreibt etwas, das viel Geld kostet."
-        },
-        {
-          "id": "g6-u3-m5-t05",
-          "type": "sorting",
-          "skill": "REA",
-          "difficulty": 2,
-          "errorCategory": "story-sequence",
-          "prompt": "Put the events in the correct order.",
-          "items": [
-            "Leo wanted a skateboard.",
-            "His neighbour asked for help.",
-            "Leo worked in the garden.",
-            "Leo decided to save his money."
-          ],
-          "answer": [
-            "Leo wanted a skateboard.",
-            "His neighbour asked for help.",
-            "Leo worked in the garden.",
-            "Leo decided to save his money."
-          ],
-          "feedbackCorrect": "Sehr gut. Du hast die Geschichte verstanden.",
-          "feedbackWrong": "Achte auf die Reihenfolge im Text."
-        },
-        {
-          "id": "g6-u3-m5-t06",
-          "type": "multiple-choice",
-          "skill": "REA",
-          "difficulty": 2,
-          "errorCategory": "character-motivation",
-          "prompt": "Why was Leo happy after the work?",
-          "options": [
-            "He got money for his goal.",
-            "He lost his skateboard.",
-            "He had no homework ever again."
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Er kam seinem Ziel näher.",
-          "feedbackWrong": "Denke daran, wofür er sparen wollte."
-        },
-        {
-          "id": "g6-u3-m5-t07",
-          "type": "text-input",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "simple-past-recognition",
-          "prompt": "Find one Simple Past verb from the story.",
-          "acceptedAnswers": [
-            "wanted",
-            "was",
-            "didn't",
-            "asked",
-            "worked",
-            "got",
-            "decided"
-          ],
-          "feedbackCorrect": "Richtig. Das ist ein Verb aus der Vergangenheit.",
-          "feedbackWrong": "Suche nach Verben, die erzählen, was passiert ist."
-        },
-        {
-          "id": "g6-u3-m5-t08",
-          "type": "mini-writing",
-          "skill": "WRI",
-          "difficulty": 2,
-          "errorCategory": "story-opinion-writing",
-          "prompt": "Write two sentences: Was Leo’s decision good? Why?",
-          "support": [
-            "I think it was a good decision because ...",
-            "Saving money is good because ...",
-            "I think Leo was smart."
-          ],
-          "manualReview": true,
-          "feedbackAfterSubmit": "Gut. Du hast eine Meinung mit Begründung geschrieben."
-        }
-      ]
-    },
-    {
-      "missionId": "g6-u3-m6",
-      "missionTitle": "Short Talk Challenge",
-      "bookSection": "Listening / Speaking / Reading / Viewing",
-      "durationMinutes": 20,
-      "storyIntro": "Auf der Bühne der Teen Talk Coast bereiten alle einen kurzen Vortrag vor. Danach geht es um Lieblingssendungen, Zoo-Pläne und klare Meinungen.",
-      "learningGoals": [
-        "Ich kann einem kurzen Vortrag wichtige Informationen entnehmen.",
-        "Ich kann einen kurzen Vortrag vorbereiten.",
-        "Ich kann über Fernsehprogramme sprechen.",
-        "Ich kann sagen, was ich am liebsten mag."
-      ],
-      "skills": [
-        "LIS",
-        "SPE",
-        "REA",
-        "VIE",
-        "INT",
-        "STU",
-        "WRI"
-      ],
-      "vocabFields": [
-        "short talks",
-        "TV programmes",
-        "zoo",
-        "opinions"
-      ],
-      "reward": {
-        "stars": 1,
-        "item": "Lichtkristall",
-        "badge": "Talk Star",
-        "message": "Du hast den Talk Star Kristall erhalten."
-      },
-      "tasks": [
-        {
-          "id": "g6-u3-m6-t01",
-          "type": "multiple-choice",
-          "skill": "SPE",
-          "difficulty": 1,
-          "errorCategory": "short-talk-phrases",
-          "prompt": "Which sentence is a good start for a short talk?",
-          "options": [
-            "Today I’m going to talk about my favourite hobby.",
-            "Yesterday chair because blue.",
-            "The end is first."
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. So kann ein Kurzvortrag beginnen.",
-          "feedbackWrong": "Ein Kurzvortrag beginnt klar mit dem Thema."
-        },
-        {
-          "id": "g6-u3-m6-t02",
-          "type": "sorting",
-          "skill": "STU",
-          "difficulty": 2,
-          "errorCategory": "short-talk-structure",
-          "prompt": "Put the parts of a short talk in a useful order.",
-          "items": [
-            "Thank you for listening.",
-            "First, I want to tell you about ...",
-            "Today I’m going to talk about ...",
-            "My favourite part is ..."
-          ],
-          "answer": [
-            "Today I’m going to talk about ...",
-            "First, I want to tell you about ...",
-            "My favourite part is ...",
-            "Thank you for listening."
-          ],
-          "feedbackCorrect": "Sehr gut. Dein Vortrag hat eine klare Struktur.",
-          "feedbackWrong": "Beginne mit dem Thema und beende den Vortrag freundlich."
-        },
-        {
-          "id": "g6-u3-m6-t03",
-          "type": "matching",
-          "skill": "VOC",
-          "difficulty": 1,
-          "errorCategory": "tv-vocabulary",
-          "prompt": "Match the TV programme types.",
-          "pairs": [
-            {
-              "left": "comedy",
-              "right": "funny programme"
-            },
-            {
-              "left": "documentary",
-              "right": "programme with facts"
-            },
-            {
-              "left": "quiz show",
-              "right": "programme with questions"
-            },
-            {
-              "left": "cartoon",
-              "right": "animated programme"
-            }
-          ],
-          "feedbackCorrect": "Super. Jetzt kennst du wichtige TV-Wörter.",
-          "feedbackWrong": "Überlege, was man in der Sendung sieht."
-        },
-        {
-          "id": "g6-u3-m6-t04",
-          "type": "multiple-choice",
-          "skill": "SPE",
-          "difficulty": 1,
-          "errorCategory": "tv-opinions",
-          "prompt": "Which sentence gives an opinion about TV?",
-          "options": [
-            "I like documentaries because they are interesting.",
-            "The TV is under Tuesday.",
-            "Cartoon table is money."
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Der Satz enthält Meinung und Begründung.",
-          "feedbackWrong": "Eine Meinung enthält oft I like oder I don’t like."
-        },
-        {
-          "id": "g6-u3-m6-t05",
-          "type": "reading-check",
-          "skill": "REA",
-          "difficulty": 2,
-          "errorCategory": "reading-detail",
-          "text": "Dartmoor Zoo is not a very big zoo, but many visitors like it because it has an interesting story. Families can see animals, learn about nature and spend a day outside.",
-          "prompt": "Why do many visitors like Dartmoor Zoo?",
-          "options": [
-            "because it has an interesting story",
-            "because it is under the sea",
-            "because it has no animals"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Viele Besucher mögen die interessante Geschichte.",
-          "feedbackWrong": "Lies den ersten Satz genau."
-        },
-        {
-          "id": "g6-u3-m6-t06",
-          "type": "viewing-scene",
-          "skill": "VIE",
-          "difficulty": 2,
-          "errorCategory": "viewing-detail",
-          "sceneDescription": "You see a family standing in front of a zoo map. A girl points at the penguins. Her brother looks at the café sign.",
-          "prompt": "What does the girl point at?",
-          "options": [
-            "the penguins",
-            "the café",
-            "the car park"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Sie zeigt auf die Pinguine.",
-          "feedbackWrong": "Achte auf points at the penguins."
-        },
-        {
-          "id": "g6-u3-m6-t07",
-          "type": "sentence-builder",
-          "skill": "SPE",
-          "difficulty": 2,
-          "errorCategory": "short-talk-phrases",
-          "prompt": "Put the words in the correct order.",
-          "words": [
-            "for",
-            "Thank",
-            "listening",
-            "you"
-          ],
-          "answer": "Thank you for listening.",
-          "feedbackCorrect": "Perfekt. So beendest du einen Vortrag freundlich.",
-          "feedbackWrong": "Beginne mit Thank you."
-        },
-        {
-          "id": "g6-u3-m6-t08",
-          "type": "mini-writing",
-          "skill": "WRI",
-          "difficulty": 3,
-          "errorCategory": "short-talk-writing",
-          "prompt": "Prepare a short talk about your favourite hobby, TV programme or animal.",
-          "requirements": [
-            "Write at least four sentences.",
-            "Use a clear beginning.",
-            "Use because once.",
-            "End with Thank you for listening."
-          ],
-          "support": [
-            "Today I’m going to talk about ...",
-            "I like it because ...",
-            "My favourite part is ...",
-            "Thank you for listening."
-          ],
-          "manualReview": true,
-          "feedbackAfterSubmit": "Stark. Das ist ein guter Anfang für einen echten Kurzvortrag."
-        }
-      ],
-      "miniChallenge": [
-        {
-          "prompt": "A comedy is usually ___.",
-          "acceptedAnswers": [
-            "funny",
-            "lustig"
-          ]
-        },
-        {
-          "prompt": "Thank you for ___.",
-          "acceptedAnswers": [
-            "listening"
-          ]
-        },
-        {
-          "prompt": "Documentary means ___.",
-          "acceptedAnswers": [
-            "Dokumentation",
-            "dokumentation",
-            "facts",
-            "Sachsendung"
-          ]
-        }
-      ]
-    },
-    {
-      "missionId": "g6-u3-m7",
-      "missionTitle": "Teen Talk Check",
-      "bookSection": "Stop Check Go",
-      "durationMinutes": 20,
-      "storyIntro": "Der letzte Lichtkristall der Teen Talk Coast liegt auf dem Compare Tower. Im Unit Check wiederholst du Wochenende, Taschengeld, going to, Vergleiche und Kurzvorträge.",
-      "learningGoals": [
-        "Ich kann Unit 3 wiederholen.",
-        "Ich kann Pläne mit going to ausdrücken.",
-        "Ich kann Adjektive steigern.",
-        "Ich kann über Geld, Jobs und Wochenenden sprechen.",
-        "Ich erkenne, welche Themen ich noch wiederholen sollte."
+        "I can understand a story about money.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
       "skills": [
         "VOC",
@@ -1218,194 +748,525 @@
         "WRI"
       ],
       "vocabFields": [
-        "weekend",
         "money",
-        "chores",
-        "future plans",
+        "wishes",
+        "decisions"
+      ],
+      "grammarFocus": [
+        "simple past review"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Lichtkristall",
+        "message": "Mission 'Money Story' abgeschlossen."
+      },
+      "tasks": [
+        {
+          "id": "g6-u3-m5-t01",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "money-vocabulary",
+          "prompt": "Match words from the field: money, wishes, decisions.",
+          "pairs": [
+            {
+              "left": "money",
+              "right": "money word field"
+            },
+            {
+              "left": "wishes",
+              "right": "wishes word field"
+            },
+            {
+              "left": "decisions",
+              "right": "decisions word field"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
+        },
+        {
+          "id": "g6-u3-m5-g01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "was-were",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "I were tired.",
+            "I was tired.",
+            "I am tired yesterday."
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u3-m5-g02",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "simple-past-positive",
+          "prompt": "Yesterday we ___ football.",
+          "acceptedAnswers": [
+            "played"
+          ],
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
+        },
+        {
+          "id": "g6-u3-m5-t04",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "money-phrases",
+          "prompt": "Which sentence fits this mission: Money Story?",
+          "options": [
+            "I can understand a story about money.",
+            "The pencil is under yesterday.",
+            "Because football table."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u3-m5-t05",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "money-reading",
+          "text": "Lumi is working on money story at Teen Talk Coast. The topic is money, wishes, decisions. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
+          "options": [
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u3-m5-t06",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "money"
+          ],
+          "answer": "Lumi helps with money.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
+        },
+        {
+          "id": "g6-u3-m5-t07",
+          "type": "sorting",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "story-sequence",
+          "prompt": "Put the story events in order.",
+          "items": [
+            "The mission starts.",
+            "Lumi finds a clue.",
+            "The students solve the problem.",
+            "The light spark appears."
+          ],
+          "answer": [
+            "The mission starts.",
+            "Lumi finds a clue.",
+            "The students solve the problem.",
+            "The light spark appears."
+          ],
+          "feedbackCorrect": "Sehr gut. Die Reihenfolge stimmt.",
+          "feedbackWrong": "Achte auf Wörter wie first, then, after that und finally."
+        },
+        {
+          "id": "g6-u3-m5-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "money-writing",
+          "prompt": "Write two to four sentences for the mission: Money Story.",
+          "support": [
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
+          ],
+          "minSentences": 2,
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "Name one word from this mission about money.",
+          "type": "text-input",
+          "manualReview": true
+        },
+        {
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
+        }
+      ]
+    },
+    {
+      "missionId": "g6-u3-m6",
+      "missionTitle": "Short Talk Challenge",
+      "bookSection": "Skills",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi startet die Mission 'Short Talk Challenge' in Teen Talk Coast. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "learningGoals": [
+        "I can prepare a short talk.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
+      ],
+      "skills": [
+        "VOC",
+        "GRA",
+        "REA",
+        "SPE",
+        "WRI"
+      ],
+      "vocabFields": [
+        "short talks",
+        "TV programmes",
+        "zoo"
+      ],
+      "grammarFocus": [
+        "presentation phrases"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Lichtfunke",
+        "message": "Mission 'Short Talk Challenge' abgeschlossen."
+      },
+      "tasks": [
+        {
+          "id": "g6-u3-m6-t01",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "short talks-vocabulary",
+          "prompt": "Match words from the field: short talks, TV programmes, zoo.",
+          "pairs": [
+            {
+              "left": "short talks",
+              "right": "short talks word field"
+            },
+            {
+              "left": "TV programmes",
+              "right": "TV programmes word field"
+            },
+            {
+              "left": "zoo",
+              "right": "zoo word field"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
+        },
+        {
+          "id": "g6-u3-m6-g01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "grammar-review",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "This sentence is correct.",
+            "Correct this sentence is.",
+            "Sentence correct this."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u3-m6-t04",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "short talks-phrases",
+          "prompt": "Which sentence fits this mission: Short Talk Challenge?",
+          "options": [
+            "I can prepare a short talk.",
+            "The pencil is under yesterday.",
+            "Because football table."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u3-m6-t05",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "short talks-reading",
+          "text": "Lumi is working on short talk challenge at Teen Talk Coast. The topic is short talks, TV programmes, zoo. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
+          "options": [
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u3-m6-t06",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "short talks"
+          ],
+          "answer": "Lumi helps with short talks.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
+        },
+        {
+          "id": "g6-u3-m6-t07",
+          "type": "viewing-scene",
+          "skill": "VIE",
+          "difficulty": 2,
+          "errorCategory": "short talks-viewing",
+          "sceneDescription": "A student looks at a scene about short talk challenge. There are clues connected to short talks, TV programmes.",
+          "prompt": "What is the scene mainly about?",
+          "options": [
+            "Short Talk Challenge",
+            "a maths test",
+            "a shoe shop"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Szene verstanden.",
+          "feedbackWrong": "Achte auf die Details in der Szene."
+        },
+        {
+          "id": "g6-u3-m6-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "short talks-writing",
+          "prompt": "Write two to four sentences for the mission: Short Talk Challenge.",
+          "support": [
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
+          ],
+          "minSentences": 2,
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "Name one word from this mission about short talks.",
+          "type": "text-input",
+          "manualReview": true
+        },
+        {
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
+        }
+      ]
+    },
+    {
+      "missionId": "g6-u3-m7",
+      "missionTitle": "Teen Talk Check",
+      "bookSection": "Stop Check Go",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi startet die Mission 'Teen Talk Check' in Teen Talk Coast. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "learningGoals": [
+        "I can review Unit 3.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
+      ],
+      "skills": [
+        "VOC",
+        "GRA",
+        "REA",
+        "SPE",
+        "WRI"
+      ],
+      "vocabFields": [
+        "unit review",
+        "money",
+        "future",
         "comparisons"
+      ],
+      "grammarFocus": [
+        "mixed Unit 3 grammar"
       ],
       "reward": {
         "stars": 3,
         "item": "Lichtkristall",
-        "badge": "Teen Talk Hero",
-        "message": "Unit 3 abgeschlossen. Health Mountain wird freigeschaltet."
-      },
-      "assessment": {
-        "gold": 90,
-        "pass": 80,
-        "review": 60
+        "message": "Mission 'Teen Talk Check' abgeschlossen."
       },
       "tasks": [
         {
           "id": "g6-u3-m7-t01",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "unit review-vocabulary",
+          "prompt": "Match words from the field: unit review, money, future.",
+          "pairs": [
+            {
+              "left": "unit review",
+              "right": "unit review word field"
+            },
+            {
+              "left": "money",
+              "right": "money word field"
+            },
+            {
+              "left": "future",
+              "right": "future word field"
+            },
+            {
+              "left": "comparisons",
+              "right": "comparisons word field"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
+        },
+        {
+          "id": "g6-u3-m7-g01",
           "type": "multiple-choice",
           "skill": "GRA",
           "difficulty": 1,
-          "errorCategory": "going-to-future",
+          "errorCategory": "grammar-review",
           "prompt": "Choose the correct sentence.",
           "options": [
-            "We are going to watch a film.",
-            "We going to watch a film.",
-            "We are going watch a film."
+            "This sentence is correct.",
+            "Correct this sentence is.",
+            "Sentence correct this."
           ],
           "answer": 0,
-          "feedbackCorrect": "Richtig. We are going to watch a film.",
-          "feedbackWrong": "Du brauchst are going to und danach die Grundform."
-        },
-        {
-          "id": "g6-u3-m7-t02",
-          "type": "gap-fill",
-          "skill": "GRA",
-          "difficulty": 1,
-          "errorCategory": "going-to-future",
-          "prompt": "Complete the sentence: I ___ going to meet my friends.",
-          "acceptedAnswers": [
-            "am"
-          ],
-          "feedbackCorrect": "Genau. Bei I heißt es am.",
-          "feedbackWrong": "Bei I brauchst du am."
-        },
-        {
-          "id": "g6-u3-m7-t03",
-          "type": "multiple-choice",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "comparison-adjectives",
-          "prompt": "Choose the correct form: This game is ___ than that game.",
-          "options": [
-            "more exciting",
-            "excitinger",
-            "the most exciting"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Exciting ist länger, deshalb more exciting.",
-          "feedbackWrong": "Bei längeren Adjektiven benutzt du more."
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u3-m7-t04",
           "type": "multiple-choice",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "superlative",
-          "prompt": "Choose the correct sentence.",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "unit review-phrases",
+          "prompt": "Which sentence fits this mission: Teen Talk Check?",
           "options": [
-            "This is the best weekend ever.",
-            "This is the goodest weekend ever.",
-            "This is the better weekend ever."
+            "I can review Unit 3.",
+            "The pencil is under yesterday.",
+            "Because football table."
           ],
           "answer": 0,
-          "feedbackCorrect": "Genau. Good, better, the best.",
-          "feedbackWrong": "Good ist unregelmäßig. Der Superlativ heißt the best."
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u3-m7-t05",
-          "type": "matching",
-          "skill": "VOC",
-          "difficulty": 1,
-          "errorCategory": "chores-vocabulary",
-          "prompt": "Match the words.",
-          "pairs": [
-            {
-              "left": "pocket money",
-              "right": "Taschengeld"
-            },
-            {
-              "left": "tidy my room",
-              "right": "mein Zimmer aufräumen"
-            },
-            {
-              "left": "save money",
-              "right": "Geld sparen"
-            },
-            {
-              "left": "do chores",
-              "right": "Aufgaben zu Hause erledigen"
-            }
-          ],
-          "feedbackCorrect": "Sehr gut. Der Wortschatz sitzt.",
-          "feedbackWrong": "Wiederhole Money Mission noch einmal."
-        },
-        {
-          "id": "g6-u3-m7-t06",
           "type": "reading-check",
           "skill": "REA",
           "difficulty": 2,
-          "errorCategory": "reading-detail",
-          "text": "On Saturday, Lily is going to help her dad in the garden. After that, she is going to meet her friends at the cinema. She thinks the new adventure film is more exciting than the comedy.",
-          "prompt": "What is Lily going to do after helping her dad?",
+          "errorCategory": "unit review-reading",
+          "text": "Lumi is working on teen talk check at Teen Talk Coast. The topic is unit review, money, future. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
           "options": [
-            "meet her friends at the cinema",
-            "buy a skateboard",
-            "clean the dog"
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
           ],
           "answer": 0,
-          "feedbackCorrect": "Richtig. Sie trifft ihre Freunde am Kino.",
-          "feedbackWrong": "Achte auf After that."
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u3-m7-t06",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "unit review"
+          ],
+          "answer": "Lumi helps with unit review.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
           "id": "g6-u3-m7-t07",
-          "type": "error-correction",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "going-to-future",
-          "prompt": "Correct the sentence: She going to visit her grandma.",
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "unit review-sentence",
+          "prompt": "Complete: I can talk about unit review in ___.",
           "acceptedAnswers": [
-            "She is going to visit her grandma."
+            "English"
           ],
-          "feedbackCorrect": "Genau. Bei she brauchst du is.",
-          "feedbackWrong": "Es fehlt is."
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
           "id": "g6-u3-m7-t08",
-          "type": "error-correction",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "comparison-adjectives",
-          "prompt": "Correct the sentence: My bike is more fast than yours.",
-          "acceptedAnswers": [
-            "My bike is faster than yours."
-          ],
-          "feedbackCorrect": "Richtig. Fast ist kurz, deshalb faster.",
-          "feedbackWrong": "Bei kurzen Adjektiven benutzt du meistens -er."
-        },
-        {
-          "id": "g6-u3-m7-t09",
-          "type": "sentence-builder",
-          "skill": "SPE",
-          "difficulty": 2,
-          "errorCategory": "arrangements",
-          "prompt": "Put the words in the correct order.",
-          "words": [
-            "meet",
-            "at",
-            "Let's",
-            "six"
-          ],
-          "answer": "Let's meet at six.",
-          "feedbackCorrect": "Perfekt. Das ist eine passende Verabredung.",
-          "feedbackWrong": "Beginne mit Let's."
-        },
-        {
-          "id": "g6-u3-m7-t10",
           "type": "mini-writing",
           "skill": "WRI",
-          "difficulty": 3,
-          "errorCategory": "unit-writing",
-          "prompt": "Write five sentences about your next weekend.",
-          "requirements": [
-            "Use going to at least twice.",
-            "Use one comparison.",
-            "Use because once.",
-            "Mention one activity."
-          ],
+          "difficulty": 2,
+          "errorCategory": "unit review-writing",
+          "prompt": "Write two to four sentences for the mission: Teen Talk Check.",
           "support": [
-            "On Saturday I am going to ...",
-            "I am also going to ...",
-            "... is better than ...",
-            "I like it because ..."
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
           ],
+          "minSentences": 2,
           "manualReview": true,
-          "feedbackAfterSubmit": "Sehr gut. Das verbindet Zukunftspläne, Meinung und Vergleich."
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "Name one word from this mission about unit review.",
+          "type": "text-input",
+          "manualReview": true
+        },
+        {
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
         }
       ]
     }
@@ -1414,42 +1275,27 @@
     {
       "ifErrorCategory": "going-to-future",
       "recommendReviewMission": "g6-u3-m3",
-      "message": "Going to-future sollte noch einmal geübt werden."
+      "message": "Bitte wiederhole: going-to-future."
     },
     {
       "ifErrorCategory": "comparison-adjectives",
       "recommendReviewMission": "g6-u3-m4",
-      "message": "Steigerung von Adjektiven braucht noch Wiederholung."
+      "message": "Bitte wiederhole: comparison-adjectives."
     },
     {
       "ifErrorCategory": "superlative",
       "recommendReviewMission": "g6-u3-m4",
-      "message": "Superlative wie the best, the biggest und the most interesting wiederholen."
+      "message": "Bitte wiederhole: superlative."
     },
     {
       "ifErrorCategory": "money-vocabulary",
       "recommendReviewMission": "g6-u3-m2",
-      "message": "Wortschatz zu Taschengeld und Geld wiederholen."
-    },
-    {
-      "ifErrorCategory": "chores-vocabulary",
-      "recommendReviewMission": "g6-u3-m2",
-      "message": "Wortschatz zu Aufgaben im Haushalt wiederholen."
+      "message": "Bitte wiederhole: money-vocabulary."
     },
     {
       "ifErrorCategory": "arrangements",
       "recommendReviewMission": "g6-u3-m3",
-      "message": "Verabredungen und passende Antworten noch einmal trainieren."
-    },
-    {
-      "ifErrorCategory": "short-talk-phrases",
-      "recommendReviewMission": "g6-u3-m6",
-      "message": "Kurzvortrag-Formulierungen wiederholen."
-    },
-    {
-      "ifErrorCategory": "weekend-vocabulary",
-      "recommendReviewMission": "g6-u3-m1",
-      "message": "Wochenendaktivitäten wiederholen."
+      "message": "Bitte wiederhole: arrangements."
     }
   ]
 }

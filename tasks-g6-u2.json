@@ -1,13 +1,25 @@
 {
-  "schemaVersion": "0.3.0",
+  "schemaVersion": "0.4.0",
   "fileType": "task-bank",
   "grade": 6,
   "unitId": "g6-u2",
   "unitTitle": "Neighbours",
   "appWorld": "Neighbourhood Gate",
-  "unitTheme": "Neighbourhood, good neighbours, food, pets, past questions and directions",
+  "unitTheme": "Neighbourhood, food, pets, some/any, simple-past questions and directions",
   "passThresholdPercent": 80,
   "estimatedTotalMissions": 7,
+  "skillCodes": {
+    "VOC": "Vocabulary",
+    "GRA": "Grammar",
+    "REA": "Reading",
+    "LIS": "Listening",
+    "SPE": "Speaking",
+    "WRI": "Writing",
+    "MED": "Mediation",
+    "VIE": "Viewing",
+    "STU": "Study skills",
+    "INT": "Intercultural competence"
+  },
   "contentRule": "All tasks, texts, examples and feedback are original app content. The structure follows the textbook unit order and learning goals, but does not copy original exercises or reading texts.",
   "missions": [
     {
@@ -15,189 +27,168 @@
       "missionTitle": "New Neighbour Tour",
       "bookSection": "Lead-in",
       "durationMinutes": 20,
-      "storyIntro": "Lumi öffnet das Neighbourhood Gate. Ein neues Kind zieht auf Lighthouse Island ein. Um die Straße wieder zum Leuchten zu bringen, musst du die wichtigsten Orte in der Nachbarschaft erkennen und beschreiben.",
+      "storyIntro": "Lumi startet die Mission 'New Neighbour Tour' in Neighbourhood Gate. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "Ich kann einer einfachen Tour durch ein Stadtviertel folgen.",
-        "Ich kann von meiner eigenen Nachbarschaft erzählen.",
-        "Ich kann sagen, welche Orte es in meiner Umgebung gibt."
+        "I can describe my neighbourhood.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
       "skills": [
-        "LIS",
-        "WRI",
+        "VOC",
+        "GRA",
+        "REA",
         "SPE",
-        "VOC"
+        "WRI"
       ],
       "vocabFields": [
         "neighbourhood",
         "shops",
-        "places",
-        "streets"
+        "places"
+      ],
+      "grammarFocus": [
+        "there is/there are"
       ],
       "reward": {
         "stars": 1,
         "item": "Lichtfunke",
-        "message": "Das erste Haus im Neighbourhood Gate leuchtet wieder."
+        "message": "Mission 'New Neighbour Tour' abgeschlossen."
       },
       "tasks": [
         {
           "id": "g6-u2-m1-t01",
-          "type": "multiple-choice",
-          "skill": "VOC",
-          "difficulty": 1,
-          "errorCategory": "neighbourhood-vocabulary",
-          "prompt": "What is a neighbourhood?",
-          "options": [
-            "the area around your home",
-            "a school subject",
-            "a kind of sandwich"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Genau. Neighbourhood bedeutet Nachbarschaft oder Wohnumgebung.",
-          "feedbackWrong": "Neighbourhood beschreibt die Gegend rund um dein Zuhause."
-        },
-        {
-          "id": "g6-u2-m1-t02",
           "type": "matching",
           "skill": "VOC",
           "difficulty": 1,
-          "errorCategory": "places-vocabulary",
-          "prompt": "Match the places.",
+          "errorCategory": "neighbourhood-vocabulary",
+          "prompt": "Match words from the field: neighbourhood, shops, places.",
           "pairs": [
             {
-              "left": "supermarket",
-              "right": "where you buy food"
+              "left": "neighbourhood",
+              "right": "neighbourhood word field"
             },
             {
-              "left": "hairdresser’s",
-              "right": "where you get a haircut"
+              "left": "shops",
+              "right": "shops word field"
             },
             {
-              "left": "park",
-              "right": "where you can walk or play"
-            },
-            {
-              "left": "library",
-              "right": "where you borrow books"
+              "left": "places",
+              "right": "places word field"
             }
           ],
-          "feedbackCorrect": "Super. Diese Wörter brauchst du für eine Nachbarschaftsbeschreibung.",
-          "feedbackWrong": "Überlege, was man an jedem Ort machen kann."
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u2-m1-t03",
-          "type": "gap-fill",
+          "id": "g6-u2-m1-g01",
+          "type": "multiple-choice",
           "skill": "GRA",
           "difficulty": 1,
-          "errorCategory": "there-is-there-are",
-          "prompt": "Complete the sentence: In my street there ___ a small shop.",
-          "acceptedAnswers": [
-            "is"
+          "errorCategory": "grammar-review",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "This sentence is correct.",
+            "Correct this sentence is.",
+            "Sentence correct this."
           ],
-          "feedbackCorrect": "Richtig. Ein shop ist Singular, deshalb there is.",
-          "feedbackWrong": "Bei einem einzelnen Ort benutzt du there is."
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u2-m1-t04",
-          "type": "gap-fill",
-          "skill": "GRA",
+          "type": "multiple-choice",
+          "skill": "SPE",
           "difficulty": 1,
-          "errorCategory": "there-is-there-are",
-          "prompt": "Complete the sentence: In my neighbourhood there ___ two parks.",
-          "acceptedAnswers": [
-            "are"
+          "errorCategory": "neighbourhood-phrases",
+          "prompt": "Which sentence fits this mission: New Neighbour Tour?",
+          "options": [
+            "I can describe my neighbourhood.",
+            "The pencil is under yesterday.",
+            "Because football table."
           ],
-          "feedbackCorrect": "Genau. Two parks ist Mehrzahl, deshalb there are.",
-          "feedbackWrong": "Bei mehreren Dingen benutzt du there are."
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u2-m1-t05",
-          "type": "sentence-builder",
-          "skill": "WRI",
-          "difficulty": 1,
-          "errorCategory": "word-order",
-          "prompt": "Put the words in the correct order.",
-          "words": [
-            "is",
-            "a",
-            "near",
-            "There",
-            "bakery",
-            "my house"
-          ],
-          "answer": "There is a bakery near my house.",
-          "feedbackCorrect": "Sehr gut. Das ist ein klarer Satz über deine Umgebung.",
-          "feedbackWrong": "Beginne mit There is."
-        },
-        {
-          "id": "g6-u2-m1-t06",
           "type": "reading-check",
           "skill": "REA",
           "difficulty": 2,
-          "errorCategory": "reading-detail",
-          "text": "Ella lives in a quiet street. There is a supermarket opposite her house and a small park behind the school. Her favourite place is the library because she loves books.",
-          "prompt": "What is Ella’s favourite place?",
+          "errorCategory": "neighbourhood-reading",
+          "text": "Lumi is working on new neighbour tour at Neighbourhood Gate. The topic is neighbourhood, shops, places. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
           "options": [
-            "the supermarket",
-            "the library",
-            "the school"
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
           ],
-          "answer": 1,
-          "feedbackCorrect": "Richtig. Ella mag die library am liebsten.",
-          "feedbackWrong": "Lies den letzten Satz noch einmal."
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u2-m1-t06",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "neighbourhood"
+          ],
+          "answer": "Lumi helps with neighbourhood.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
           "id": "g6-u2-m1-t07",
-          "type": "multiple-choice",
-          "skill": "VOC",
-          "difficulty": 2,
-          "errorCategory": "prepositions-place",
-          "prompt": "What does opposite mean in this sentence: The shop is opposite the school.",
-          "options": [
-            "gegenüber",
-            "hinter",
-            "zwischen"
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "neighbourhood-sentence",
+          "prompt": "Complete: I can talk about neighbourhood in ___.",
+          "acceptedAnswers": [
+            "English"
           ],
-          "answer": 0,
-          "feedbackCorrect": "Genau. Opposite heißt gegenüber.",
-          "feedbackWrong": "Opposite beschreibt etwas auf der anderen Straßenseite."
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
           "id": "g6-u2-m1-t08",
           "type": "mini-writing",
           "skill": "WRI",
-          "difficulty": 1,
+          "difficulty": 2,
           "errorCategory": "neighbourhood-writing",
-          "prompt": "Write two sentences about your neighbourhood.",
+          "prompt": "Write two to four sentences for the mission: New Neighbour Tour.",
           "support": [
-            "In my neighbourhood there is ...",
-            "There are ...",
-            "My favourite place is ...",
-            "Near my home there is ..."
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
           ],
           "minSentences": 2,
           "manualReview": true,
-          "feedbackAfterSubmit": "Gut gemacht. Zwei einfache, richtige Sätze sind ein guter Start."
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
         }
       ],
       "miniChallenge": [
         {
-          "prompt": "There ___ a supermarket near my house.",
-          "acceptedAnswers": [
-            "is"
-          ]
+          "prompt": "Name one word from this mission about neighbourhood.",
+          "type": "text-input",
+          "manualReview": true
         },
         {
-          "prompt": "There ___ three shops in my street.",
-          "acceptedAnswers": [
-            "are"
-          ]
-        },
-        {
-          "prompt": "Opposite means ___.",
-          "acceptedAnswers": [
-            "gegenüber",
-            "across from"
-          ]
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
         }
       ]
     },
@@ -206,205 +197,181 @@
       "missionTitle": "Good Neighbours",
       "bookSection": "Theme 1",
       "durationMinutes": 20,
-      "storyIntro": "Im Neighbourhood Gate findet ein kleines Straßenfest statt. Lumi möchte Tee anbieten, aber die Vorratskiste ist durcheinander. Du hilfst mit some und any.",
+      "storyIntro": "Lumi startet die Mission 'Good Neighbours' in Neighbourhood Gate. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "Ich kann etwas anbieten.",
-        "Ich kann some und any in einfachen Sätzen unterscheiden.",
-        "Ich kann einfache Informationen über Essen und Feste verstehen."
+        "I can offer food and drinks politely.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
       "skills": [
-        "LIS",
-        "SPE",
+        "VOC",
         "GRA",
-        "INT",
+        "REA",
+        "SPE",
         "WRI"
       ],
       "vocabFields": [
         "food",
         "drinks",
-        "festivals",
         "offers"
+      ],
+      "grammarFocus": [
+        "some/any"
       ],
       "reward": {
         "stars": 1,
         "item": "Lichtfunke",
-        "message": "Der Straßenfest-Stand ist bereit."
-      },
-      "ruleCard": {
-        "title": "some und any",
-        "rules": [
-          "Some benutzt du oft in positiven Sätzen und bei Angeboten.",
-          "Any benutzt du oft in Verneinungen und Fragen.",
-          "Bei Angeboten klingt some freundlich und natürlich."
-        ],
-        "examples": [
-          "I have some orange juice.",
-          "Would you like some tea?",
-          "I don’t have any lemonade.",
-          "Do you have any biscuits?"
-        ]
+        "message": "Mission 'Good Neighbours' abgeschlossen."
       },
       "tasks": [
         {
           "id": "g6-u2-m2-t01",
-          "type": "multiple-choice",
-          "skill": "GRA",
+          "type": "matching",
+          "skill": "VOC",
           "difficulty": 1,
-          "errorCategory": "some-any",
-          "prompt": "Choose the correct word: I have ___ apples.",
-          "options": [
-            "some",
-            "any",
-            "much"
+          "errorCategory": "food-vocabulary",
+          "prompt": "Match words from the field: food, drinks, offers.",
+          "pairs": [
+            {
+              "left": "food",
+              "right": "food word field"
+            },
+            {
+              "left": "drinks",
+              "right": "drinks word field"
+            },
+            {
+              "left": "offers",
+              "right": "offers word field"
+            }
           ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. In einem positiven Satz passt some.",
-          "feedbackWrong": "In positiven Sätzen benutzt du oft some."
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u2-m2-t02",
+          "id": "g6-u2-m2-g01",
           "type": "multiple-choice",
           "skill": "GRA",
           "difficulty": 1,
           "errorCategory": "some-any",
-          "prompt": "Choose the correct word: I don’t have ___ fruit tea.",
+          "prompt": "Would you like ___ tea?",
           "options": [
             "some",
             "any",
             "many"
           ],
-          "answer": 1,
-          "feedbackCorrect": "Genau. In Verneinungen passt meistens any.",
-          "feedbackWrong": "Nach don’t have benutzt du hier any."
-        },
-        {
-          "id": "g6-u2-m2-t03",
-          "type": "multiple-choice",
-          "skill": "SPE",
-          "difficulty": 1,
-          "errorCategory": "offering-food",
-          "prompt": "Which sentence is a friendly offer?",
-          "options": [
-            "Would you like some juice?",
-            "You must drink juice.",
-            "Juice is not here."
-          ],
           "answer": 0,
-          "feedbackCorrect": "Sehr gut. Would you like some ... ist ein freundliches Angebot.",
-          "feedbackWrong": "Ein Angebot klingt freundlich und beginnt oft mit Would you like ...?"
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u2-m2-t04",
+          "id": "g6-u2-m2-g02",
           "type": "gap-fill",
           "skill": "GRA",
-          "difficulty": 2,
+          "difficulty": 1,
           "errorCategory": "some-any",
-          "prompt": "Complete the sentence: Do you have ___ sandwiches?",
+          "prompt": "I don’t have ___ biscuits.",
           "acceptedAnswers": [
             "any"
           ],
-          "feedbackCorrect": "Richtig. In Fragen passt häufig any.",
-          "feedbackWrong": "In Fragen benutzt du oft any."
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
+        },
+        {
+          "id": "g6-u2-m2-t04",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "food-phrases",
+          "prompt": "Which sentence fits this mission: Good Neighbours?",
+          "options": [
+            "I can offer food and drinks politely.",
+            "The pencil is under yesterday.",
+            "Because football table."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u2-m2-t05",
-          "type": "matching",
-          "skill": "VOC",
-          "difficulty": 1,
-          "errorCategory": "food-vocabulary",
-          "prompt": "Match the food words.",
-          "pairs": [
-            {
-              "left": "sausage",
-              "right": "Wurst"
-            },
-            {
-              "left": "tea",
-              "right": "Tee"
-            },
-            {
-              "left": "biscuit",
-              "right": "Keks"
-            },
-            {
-              "left": "lemonade",
-              "right": "Limonade"
-            }
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "food-reading",
+          "text": "Lumi is working on good neighbours at Neighbourhood Gate. The topic is food, drinks, offers. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
+          "options": [
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
           ],
-          "feedbackCorrect": "Gut. Diese Wörter passen zum Thema Essen und Trinken.",
-          "feedbackWrong": "Schau dir die Essenswörter noch einmal an."
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
         },
         {
           "id": "g6-u2-m2-t06",
-          "type": "reading-check",
-          "skill": "INT",
+          "type": "sentence-builder",
+          "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "intercultural-food",
-          "text": "At the street party, Ben’s family brings sausages. Mia’s family brings bread and salad. Everybody tries something new. Ben says, “Food is a good way to meet neighbours.”",
-          "prompt": "What does Ben think?",
-          "options": [
-            "Food can help neighbours meet.",
-            "Nobody should try new food.",
-            "Street parties are boring."
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "food"
           ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Ben findet, dass Essen Menschen zusammenbringen kann.",
-          "feedbackWrong": "Achte auf den letzten Satz."
+          "answer": "Lumi helps with food.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
           "id": "g6-u2-m2-t07",
-          "type": "sentence-builder",
-          "skill": "SPE",
-          "difficulty": 2,
-          "errorCategory": "offering-food",
-          "prompt": "Put the words in the correct order.",
-          "words": [
-            "like",
-            "some",
-            "Would",
-            "tea",
-            "you"
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "food-sentence",
+          "prompt": "Complete: I can talk about food in ___.",
+          "acceptedAnswers": [
+            "English"
           ],
-          "answer": "Would you like some tea?",
-          "feedbackCorrect": "Perfekt. Das ist ein höfliches Angebot.",
-          "feedbackWrong": "Die Frage beginnt mit Would you like."
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
           "id": "g6-u2-m2-t08",
           "type": "mini-writing",
           "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "poster-writing",
-          "prompt": "Create a short poster for a street party. Write three short lines.",
+          "errorCategory": "food-writing",
+          "prompt": "Write two to four sentences for the mission: Good Neighbours.",
           "support": [
-            "Street Party on Saturday!",
-            "Bring some food.",
-            "Meet your neighbours.",
-            "Games, music and fun!"
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
           ],
-          "minLines": 3,
+          "minSentences": 2,
           "manualReview": true,
-          "feedbackAfterSubmit": "Gut. Ein Poster braucht kurze, klare Informationen."
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
         }
       ],
       "miniChallenge": [
         {
-          "prompt": "Would you like ___ tea?",
-          "acceptedAnswers": [
-            "some"
-          ]
+          "prompt": "Name one word from this mission about food.",
+          "type": "text-input",
+          "manualReview": true
         },
         {
-          "prompt": "I don’t have ___ biscuits.",
-          "acceptedAnswers": [
-            "any"
-          ]
-        },
-        {
-          "prompt": "Do you have ___ lemonade?",
-          "acceptedAnswers": [
-            "any"
-          ]
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
         }
       ]
     },
@@ -413,196 +380,168 @@
       "missionTitle": "Dogs’ Home Mission",
       "bookSection": "Theme 2",
       "durationMinutes": 20,
-      "storyIntro": "Im Dogs’ Home von Lighthouse Island suchen mehrere Hunde ein neues Zuhause. Lumi braucht Hilfe, die richtigen Informationen zu verstehen.",
+      "storyIntro": "Lumi startet die Mission 'Dogs’ Home Mission' in Neighbourhood Gate. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "Ich kann einem einfachen Text oder Hörtext Informationen entnehmen.",
-        "Ich kann sagen, welches Haustier zu einer Person passt.",
-        "Ich kann einfache Gründe nennen."
+        "I can understand information about pets.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
       "skills": [
-        "LIS",
+        "VOC",
+        "GRA",
         "REA",
         "SPE",
-        "VOC"
+        "WRI"
       ],
       "vocabFields": [
         "pets",
         "dogs",
-        "time",
         "care"
+      ],
+      "grammarFocus": [
+        "giving reasons"
       ],
       "reward": {
         "stars": 1,
         "item": "Lichtfunke",
-        "badge": "Pet Helper",
-        "message": "Ein Hund im Dogs’ Home hat ein passendes Zuhause gefunden."
+        "message": "Mission 'Dogs’ Home Mission' abgeschlossen."
       },
       "tasks": [
         {
           "id": "g6-u2-m3-t01",
-          "type": "multiple-choice",
-          "skill": "VOC",
-          "difficulty": 1,
-          "errorCategory": "pets-vocabulary",
-          "prompt": "What is a dogs’ home?",
-          "options": [
-            "a place for dogs without a family",
-            "a shop for shoes",
-            "a classroom for Maths"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Genau. Ein dogs’ home ist ein Tierheim für Hunde.",
-          "feedbackWrong": "Dogs’ home hat mit Hunden zu tun, die ein Zuhause suchen."
-        },
-        {
-          "id": "g6-u2-m3-t02",
           "type": "matching",
           "skill": "VOC",
           "difficulty": 1,
           "errorCategory": "pets-vocabulary",
-          "prompt": "Match the pet words.",
+          "prompt": "Match words from the field: pets, dogs, care.",
           "pairs": [
             {
-              "left": "walk the dog",
-              "right": "mit dem Hund spazieren gehen"
+              "left": "pets",
+              "right": "pets word field"
             },
             {
-              "left": "feed the dog",
-              "right": "den Hund füttern"
+              "left": "dogs",
+              "right": "dogs word field"
             },
             {
-              "left": "basket",
-              "right": "Körbchen"
-            },
-            {
-              "left": "vet",
-              "right": "Tierarzt"
+              "left": "care",
+              "right": "care word field"
             }
           ],
-          "feedbackCorrect": "Super. Das sind wichtige Wörter rund um Haustiere.",
-          "feedbackWrong": "Überlege, was man für einen Hund tun muss."
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u2-m3-t03",
-          "type": "reading-check",
-          "skill": "REA",
-          "difficulty": 2,
-          "errorCategory": "reading-detail",
-          "text": "Ruby is a small dog. She is friendly, but she needs a quiet home. She likes short walks and sleeps a lot. She is good for an older person.",
-          "prompt": "Who is Ruby good for?",
+          "id": "g6-u2-m3-g01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "grammar-review",
+          "prompt": "Choose the correct sentence.",
           "options": [
-            "an older person",
-            "a very loud family",
-            "a football team"
+            "This sentence is correct.",
+            "Correct this sentence is.",
+            "Sentence correct this."
           ],
           "answer": 0,
-          "feedbackCorrect": "Richtig. Ruby passt gut zu einer älteren Person.",
-          "feedbackWrong": "Lies den letzten Satz noch einmal."
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u2-m3-t04",
-          "type": "reading-check",
-          "skill": "REA",
-          "difficulty": 2,
-          "errorCategory": "reading-detail",
-          "text": "Max is a big dog. He needs long walks every day. He likes running and playing outside. He is not good for a small flat.",
-          "prompt": "Why is Max not good for a small flat?",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "pets-phrases",
+          "prompt": "Which sentence fits this mission: Dogs’ Home Mission?",
           "options": [
-            "He needs a lot of exercise.",
-            "He hates people.",
-            "He is very old."
+            "I can understand information about pets.",
+            "The pencil is under yesterday.",
+            "Because football table."
           ],
           "answer": 0,
-          "feedbackCorrect": "Genau. Max braucht viel Bewegung.",
-          "feedbackWrong": "Achte auf long walks, running und playing outside."
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u2-m3-t05",
-          "type": "multiple-choice",
-          "skill": "SPE",
+          "type": "reading-check",
+          "skill": "REA",
           "difficulty": 2,
-          "errorCategory": "giving-reasons",
-          "prompt": "Which sentence gives a good reason?",
+          "errorCategory": "pets-reading",
+          "text": "Lumi is working on dogs’ home mission at Neighbourhood Gate. The topic is pets, dogs, care. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
           "options": [
-            "Ruby is good for Grandma because she likes quiet homes.",
-            "Ruby Grandma good quiet.",
-            "Because Ruby."
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
           ],
           "answer": 0,
-          "feedbackCorrect": "Sehr gut. Der Satz erklärt den Grund klar.",
-          "feedbackWrong": "Ein guter Grund hat meistens because und einen vollständigen Satz."
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
         },
         {
           "id": "g6-u2-m3-t06",
-          "type": "gap-fill",
-          "skill": "VOC",
-          "difficulty": 1,
-          "errorCategory": "pets-vocabulary",
-          "prompt": "Complete the sentence: A dog needs food, water and lots of ___.",
-          "acceptedAnswers": [
-            "time",
-            "love",
-            "walks"
-          ],
-          "feedbackCorrect": "Richtig. Ein Haustier braucht Pflege und Zeit.",
-          "feedbackWrong": "Überlege, was ein Hund jeden Tag braucht."
-        },
-        {
-          "id": "g6-u2-m3-t07",
           "type": "sentence-builder",
-          "skill": "SPE",
+          "skill": "WRI",
           "difficulty": 2,
           "errorCategory": "word-order",
           "prompt": "Put the words in the correct order.",
           "words": [
-            "needs",
-            "A",
-            "lots",
-            "dog",
-            "time",
-            "of"
+            "Lumi",
+            "helps",
+            "with",
+            "pets"
           ],
-          "answer": "A dog needs lots of time.",
-          "feedbackCorrect": "Genau. Der Satz ist klar und richtig.",
-          "feedbackWrong": "Beginne mit A dog."
+          "answer": "Lumi helps with pets.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
+        },
+        {
+          "id": "g6-u2-m3-t07",
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "pets-sentence",
+          "prompt": "Complete: I can talk about pets in ___.",
+          "acceptedAnswers": [
+            "English"
+          ],
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
           "id": "g6-u2-m3-t08",
           "type": "mini-writing",
           "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "pet-recommendation",
-          "prompt": "Choose a pet for a family and write two sentences.",
+          "errorCategory": "pets-writing",
+          "prompt": "Write two to four sentences for the mission: Dogs’ Home Mission.",
           "support": [
-            "I think Ruby is good for this family.",
-            "She is friendly.",
-            "She doesn’t need very long walks.",
-            "Max is good for active people."
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
           ],
           "minSentences": 2,
           "manualReview": true,
-          "feedbackAfterSubmit": "Gut. Du hast eine Empfehlung mit einem einfachen Grund formuliert."
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
         }
       ],
       "miniChallenge": [
         {
-          "prompt": "A dog needs lots of ___.",
-          "acceptedAnswers": [
-            "time"
-          ]
+          "prompt": "Name one word from this mission about pets.",
+          "type": "text-input",
+          "manualReview": true
         },
         {
-          "prompt": "A quiet dog is good for a quiet ___.",
-          "acceptedAnswers": [
-            "home",
-            "family"
-          ]
-        },
-        {
-          "prompt": "Because means ___.",
-          "acceptedAnswers": [
-            "weil"
-          ]
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
         }
       ]
     },
@@ -611,239 +550,197 @@
       "missionTitle": "Did Detective",
       "bookSection": "Focus on Language",
       "durationMinutes": 20,
-      "storyIntro": "Im Neighbourhood Gate sind Feuerwerksfunken verschwunden. Lumi wird zur Detektivin. Um Hinweise zu sammeln, musst du Fragen im Simple Past stellen.",
+      "storyIntro": "Lumi startet die Mission 'Did Detective' in Neighbourhood Gate. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "Ich kann Fragen im Simple Past bilden.",
-        "Ich kann kurze Antworten mit did und didn’t geben.",
-        "Ich kann Fragewörter mit did benutzen."
+        "I can ask questions in the simple past.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
       "skills": [
+        "VOC",
         "GRA",
-        "WRI",
+        "REA",
         "SPE",
-        "STU"
+        "WRI"
       ],
       "vocabFields": [
         "past questions",
-        "short answers",
-        "events"
+        "short answers"
+      ],
+      "grammarFocus": [
+        "did questions",
+        "short answers"
       ],
       "reward": {
-        "stars": 2,
+        "stars": 1,
         "item": "Lichtfunke",
-        "badge": "Did Detective",
-        "message": "Du hast die Did-Detektivlupe freigeschaltet."
-      },
-      "ruleCard": {
-        "title": "Simple Past questions",
-        "rules": [
-          "Fragen im Simple Past bildest du oft mit did.",
-          "Nach did steht das Verb in der Grundform.",
-          "Kurze Antworten lauten Yes, I did oder No, I didn’t.",
-          "Mit question words fragst du genauer: What did you do? Where did you go?"
-        ],
-        "examples": [
-          "Did you watch the fireworks?",
-          "No, I didn’t.",
-          "What did you eat?",
-          "Where did they go?"
-        ]
+        "message": "Mission 'Did Detective' abgeschlossen."
       },
       "tasks": [
         {
           "id": "g6-u2-m4-t01",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "past questions-vocabulary",
+          "prompt": "Match words from the field: past questions, short answers.",
+          "pairs": [
+            {
+              "left": "past questions",
+              "right": "past questions word field"
+            },
+            {
+              "left": "short answers",
+              "right": "short answers word field"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
+        },
+        {
+          "id": "g6-u2-m4-g01",
           "type": "multiple-choice",
           "skill": "GRA",
           "difficulty": 1,
           "errorCategory": "simple-past-questions",
           "prompt": "Choose the correct question.",
           "options": [
-            "Did you watch the fireworks?",
-            "Did you watched the fireworks?",
-            "Do you watched the fireworks?"
+            "Did you watch TV?",
+            "Did you watched TV?",
+            "Do you watched TV?"
           ],
           "answer": 0,
-          "feedbackCorrect": "Richtig. Nach did steht die Grundform watch.",
-          "feedbackWrong": "Nach did benutzt du nicht watched, sondern watch."
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u2-m4-t02",
+          "id": "g6-u2-m4-g02",
           "type": "gap-fill",
           "skill": "GRA",
           "difficulty": 1,
-          "errorCategory": "simple-past-questions",
-          "prompt": "Complete the question: ___ you have fun?",
-          "acceptedAnswers": [
-            "Did"
-          ],
-          "feedbackCorrect": "Genau. Die Frage im Simple Past beginnt hier mit Did.",
-          "feedbackWrong": "Für eine Simple-Past-Frage brauchst du Did."
-        },
-        {
-          "id": "g6-u2-m4-t03",
-          "type": "multiple-choice",
-          "skill": "GRA",
-          "difficulty": 1,
           "errorCategory": "did-short-answers",
-          "prompt": "Choose the correct short answer: Did Mia call you? No, ___.",
-          "options": [
-            "she didn’t",
-            "she don’t",
-            "she wasn’t"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Die kurze Antwort ist No, she didn’t.",
-          "feedbackWrong": "Bei did-Fragen antwortest du kurz mit did oder didn’t."
-        },
-        {
-          "id": "g6-u2-m4-t04",
-          "type": "sentence-builder",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "simple-past-questions",
-          "prompt": "Put the words in the correct order.",
-          "words": [
-            "you",
-            "What",
-            "eat",
-            "did"
-          ],
-          "answer": "What did you eat?",
-          "feedbackCorrect": "Sehr gut. What did you eat? ist korrekt.",
-          "feedbackWrong": "Nach dem Fragewort kommt did."
-        },
-        {
-          "id": "g6-u2-m4-t05",
-          "type": "error-correction",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "simple-past-questions",
-          "prompt": "Correct the question: Did he went home?",
-          "acceptedAnswers": [
-            "Did he go home?"
-          ],
-          "feedbackCorrect": "Genau. Nach did steht go.",
-          "feedbackWrong": "Nach did steht die Grundform. Also go, nicht went."
-        },
-        {
-          "id": "g6-u2-m4-t06",
-          "type": "multiple-choice",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "question-words",
-          "prompt": "Choose the best question word: ___ did you go after school? To the park.",
-          "options": [
-            "Where",
-            "What",
-            "Who"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Where fragt nach einem Ort.",
-          "feedbackWrong": "To the park ist ein Ort. Dafür passt Where."
-        },
-        {
-          "id": "g6-u2-m4-t07",
-          "type": "gap-fill",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "question-words",
-          "prompt": "Complete the question: What ___ you do yesterday?",
-          "acceptedAnswers": [
-            "did"
-          ],
-          "feedbackCorrect": "Genau. What did you do yesterday?",
-          "feedbackWrong": "Bei Simple-Past-Fragen brauchst du did."
-        },
-        {
-          "id": "g6-u2-m4-t08",
-          "type": "multiple-choice",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "did-short-answers",
-          "prompt": "Choose the correct answer: Did they visit the dogs’ home?",
-          "options": [
-            "Yes, they did.",
-            "Yes, they visited.",
-            "Yes, they do."
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Die kurze Antwort lautet Yes, they did.",
-          "feedbackWrong": "Bei Did-Fragen benutzt du in der Kurzantwort did."
-        },
-        {
-          "id": "g6-u2-m4-t09",
-          "type": "error-correction",
-          "skill": "GRA",
-          "difficulty": 3,
-          "errorCategory": "simple-past-questions",
-          "prompt": "Correct the question: What did you ate?",
-          "acceptedAnswers": [
-            "What did you eat?"
-          ],
-          "feedbackCorrect": "Sehr gut. Nach did steht eat.",
-          "feedbackWrong": "Did übernimmt die Vergangenheit. Das Verb bleibt eat."
-        },
-        {
-          "id": "g6-u2-m4-t10",
-          "type": "mini-writing",
-          "skill": "WRI",
-          "difficulty": 2,
-          "errorCategory": "past-question-writing",
-          "prompt": "Write three Simple Past questions for a friend.",
-          "requirements": [
-            "Use Did in one question.",
-            "Use What did ... in one question.",
-            "Use Where did ... in one question."
-          ],
-          "support": [
-            "Did you ...?",
-            "What did you ...?",
-            "Where did you ...?"
-          ],
-          "manualReview": true,
-          "feedbackAfterSubmit": "Stark. Mit diesen Fragen kannst du über vergangene Ereignisse sprechen."
-        }
-      ],
-      "miniChallenge": [
-        {
-          "prompt": "___ you watch TV yesterday?",
-          "acceptedAnswers": [
-            "Did"
-          ]
-        },
-        {
           "prompt": "No, I ___.",
           "acceptedAnswers": [
             "didn't",
             "did not"
-          ]
+          ],
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
-          "prompt": "What did you ___?",
+          "id": "g6-u2-m4-t04",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "past questions-phrases",
+          "prompt": "Which sentence fits this mission: Did Detective?",
+          "options": [
+            "I can ask questions in the simple past.",
+            "The pencil is under yesterday.",
+            "Because football table."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u2-m4-t05",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "past questions-reading",
+          "text": "Lumi is working on did detective at Neighbourhood Gate. The topic is past questions, short answers. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
+          "options": [
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u2-m4-t06",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "past questions"
+          ],
+          "answer": "Lumi helps with past questions.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
+        },
+        {
+          "id": "g6-u2-m4-t07",
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "past questions-sentence",
+          "prompt": "Complete: I can talk about past questions in ___.",
           "acceptedAnswers": [
-            "do",
-            "eat",
-            "see",
-            "watch"
+            "English"
+          ],
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
+        },
+        {
+          "id": "g6-u2-m4-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "past questions-writing",
+          "prompt": "Write two to four sentences for the mission: Did Detective.",
+          "support": [
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
+          ],
+          "minSentences": 2,
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
           ]
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "Name one word from this mission about past questions.",
+          "type": "text-input",
+          "manualReview": true
+        },
+        {
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
         }
       ]
     },
     {
       "missionId": "g6-u2-m5",
       "missionTitle": "Test Smart",
-      "bookSection": "Story / Do Better in Tests",
+      "bookSection": "Story / Study skills",
       "durationMinutes": 20,
-      "storyIntro": "Im Nachbarschaftstheater wird ein kurzes Stück aufgeführt. Danach zeigt Lumi, wie man Aufgabenstellungen genauer liest und Beispiele clever nutzt.",
+      "storyIntro": "Lumi startet die Mission 'Test Smart' in Neighbourhood Gate. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "Ich kann ein kurzes Theaterstück verstehen.",
-        "Ich kann Arbeitsanweisungen genauer lesen.",
-        "Ich kann Beispiele nutzen, um eigene Antworten zu schreiben."
+        "I can understand a short play and read test instructions.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
       "skills": [
+        "VOC",
+        "GRA",
         "REA",
         "SPE",
-        "STU",
         "WRI"
       ],
       "vocabFields": [
@@ -851,174 +748,172 @@
         "test instructions",
         "letters"
       ],
+      "grammarFocus": [
+        "simple past in a play"
+      ],
       "reward": {
         "stars": 1,
-        "item": "Lichtfunke",
-        "badge": "Test Smart",
-        "message": "Du hast die Test-Smart-Karte bekommen."
-      },
-      "readingText": {
-        "id": "g6-u2-m5-reading-01",
-        "title": "The Missing Cake",
-        "text": "Scene 1: A small kitchen. Sam looks at an empty plate. Sam: Where is the cake? I put it here! Lily: Did you ask Dad? Sam: No, I didn’t. Dad comes in with a smile. Dad: Don’t worry. I took it to the street party. Everybody loved it!"
+        "item": "Lichtkristall",
+        "message": "Mission 'Test Smart' abgeschlossen."
       },
       "tasks": [
         {
           "id": "g6-u2-m5-t01",
-          "type": "reading-check",
-          "skill": "REA",
+          "type": "matching",
+          "skill": "VOC",
           "difficulty": 1,
-          "errorCategory": "reading-main-idea",
-          "prompt": "What is missing at the beginning?",
-          "options": [
-            "a cake",
-            "a dog",
-            "a school bag"
+          "errorCategory": "theatre-vocabulary",
+          "prompt": "Match words from the field: theatre, test instructions, letters.",
+          "pairs": [
+            {
+              "left": "theatre",
+              "right": "theatre word field"
+            },
+            {
+              "left": "test instructions",
+              "right": "test instructions word field"
+            },
+            {
+              "left": "letters",
+              "right": "letters word field"
+            }
           ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Der Kuchen fehlt.",
-          "feedbackWrong": "Lies den Anfang der Szene noch einmal."
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u2-m5-t02",
-          "type": "reading-check",
-          "skill": "REA",
-          "difficulty": 2,
-          "errorCategory": "reading-detail",
-          "prompt": "Who took the cake?",
-          "options": [
-            "Dad",
-            "Lily",
-            "Sam"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Genau. Dad hat den Kuchen mitgenommen.",
-          "feedbackWrong": "Achte auf Dads letzten Satz."
-        },
-        {
-          "id": "g6-u2-m5-t03",
+          "id": "g6-u2-m5-g01",
           "type": "multiple-choice",
-          "skill": "REA",
-          "difficulty": 2,
-          "errorCategory": "story-reaction",
-          "prompt": "Why is Dad smiling?",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "was-were",
+          "prompt": "Choose the correct sentence.",
           "options": [
-            "because everybody liked the cake",
-            "because the plate is broken",
-            "because he hates cake"
+            "I were tired.",
+            "I was tired.",
+            "I am tired yesterday."
           ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Der Kuchen war beim Straßenfest beliebt.",
-          "feedbackWrong": "Sein Lächeln passt zur guten Nachricht."
+          "answer": 1,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u2-m5-g02",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "simple-past-positive",
+          "prompt": "Yesterday we ___ football.",
+          "acceptedAnswers": [
+            "played"
+          ],
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
           "id": "g6-u2-m5-t04",
           "type": "multiple-choice",
-          "skill": "STU",
+          "skill": "SPE",
           "difficulty": 1,
-          "errorCategory": "test-instructions",
-          "prompt": "What should you do first in a test?",
+          "errorCategory": "theatre-phrases",
+          "prompt": "Which sentence fits this mission: Test Smart?",
           "options": [
-            "Read the instruction carefully.",
-            "Guess all answers quickly.",
-            "Skip every example."
+            "I can understand a short play and read test instructions.",
+            "The pencil is under yesterday.",
+            "Because football table."
           ],
           "answer": 0,
-          "feedbackCorrect": "Genau. Die Arbeitsanweisung ist der erste wichtige Hinweis.",
-          "feedbackWrong": "Erst verstehen, was die Aufgabe will."
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u2-m5-t05",
-          "type": "multiple-choice",
-          "skill": "STU",
-          "difficulty": 1,
-          "errorCategory": "using-examples",
-          "prompt": "Why are examples useful?",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "theatre-reading",
+          "text": "Lumi is working on test smart at Neighbourhood Gate. The topic is theatre, test instructions, letters. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
           "options": [
-            "They show you how to answer.",
-            "They are always wrong.",
-            "They replace the whole task."
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
           ],
           "answer": 0,
-          "feedbackCorrect": "Richtig. Beispiele zeigen dir das Muster.",
-          "feedbackWrong": "Ein Beispiel ist oft wie eine kleine Anleitung."
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
         },
         {
           "id": "g6-u2-m5-t06",
-          "type": "matching",
-          "skill": "STU",
+          "type": "sentence-builder",
+          "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "test-instructions",
-          "prompt": "Match the instruction with the meaning.",
-          "pairs": [
-            {
-              "left": "Circle the correct answer.",
-              "right": "Kreise die richtige Antwort ein."
-            },
-            {
-              "left": "Complete the sentence.",
-              "right": "Ergänze den Satz."
-            },
-            {
-              "left": "Match the words.",
-              "right": "Ordne die Wörter zu."
-            },
-            {
-              "left": "Write three sentences.",
-              "right": "Schreibe drei Sätze."
-            }
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "theatre"
           ],
-          "feedbackCorrect": "Sehr gut. Arbeitsanweisungen sind in Tests extrem wichtig.",
-          "feedbackWrong": "Achte auf Verben wie circle, complete, match und write."
+          "answer": "Lumi helps with theatre.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
           "id": "g6-u2-m5-t07",
-          "type": "mini-writing",
-          "skill": "WRI",
+          "type": "sorting",
+          "skill": "REA",
           "difficulty": 2,
-          "errorCategory": "letter-writing",
-          "prompt": "Write the beginning of a short letter to a new neighbour.",
-          "support": [
-            "Dear ...",
-            "Welcome to our street.",
-            "My name is ...",
-            "I live next door."
+          "errorCategory": "story-sequence",
+          "prompt": "Put the story events in order.",
+          "items": [
+            "The mission starts.",
+            "Lumi finds a clue.",
+            "The students solve the problem.",
+            "The light spark appears."
           ],
-          "minSentences": 3,
-          "manualReview": true,
-          "feedbackAfterSubmit": "Gut. Ein Brief beginnt freundlich und klar."
+          "answer": [
+            "The mission starts.",
+            "Lumi finds a clue.",
+            "The students solve the problem.",
+            "The light spark appears."
+          ],
+          "feedbackCorrect": "Sehr gut. Die Reihenfolge stimmt.",
+          "feedbackWrong": "Achte auf Wörter wie first, then, after that und finally."
         },
         {
           "id": "g6-u2-m5-t08",
-          "type": "speaking-prompt",
-          "skill": "SPE",
+          "type": "mini-writing",
+          "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "reading-aloud",
-          "prompt": "Read Sam’s first line aloud: Where is the cake? I put it here!",
+          "errorCategory": "theatre-writing",
+          "prompt": "Write two to four sentences for the mission: Test Smart.",
+          "support": [
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
+          ],
+          "minSentences": 2,
           "manualReview": true,
-          "feedbackAfterSubmit": "Gut gemacht. Beim Theaterstück darf die Stimme ruhig etwas lebendiger klingen."
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
         }
       ],
       "miniChallenge": [
         {
-          "prompt": "Complete means ___.",
-          "acceptedAnswers": [
-            "ergänzen",
-            "vervollständigen"
-          ]
+          "prompt": "Name one word from this mission about theatre.",
+          "type": "text-input",
+          "manualReview": true
         },
         {
-          "prompt": "Match means ___.",
-          "acceptedAnswers": [
-            "zuordnen"
-          ]
-        },
-        {
-          "prompt": "Write three sentences means: Schreibe ___ Sätze.",
-          "acceptedAnswers": [
-            "drei",
-            "3"
-          ]
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
         }
       ]
     },
@@ -1027,153 +922,139 @@
       "missionTitle": "Direction Quest",
       "bookSection": "Speaking / Viewing",
       "durationMinutes": 20,
-      "storyIntro": "Lumi hat sich im Neighbourhood Gate verlaufen. Du hilfst ihr, mit englischen Wegbeschreibungen zurück zum Leuchtturmplatz zu finden.",
+      "storyIntro": "Lumi startet die Mission 'Direction Quest' in Neighbourhood Gate. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "Ich kann nach dem Weg fragen.",
-        "Ich kann einfache Wegbeschreibungen verstehen.",
-        "Ich kann eine kurze Wegbeschreibung geben.",
-        "Ich kann eine Bildszene aus einer englischen Nachbarschaft verstehen."
+        "I can ask for and give directions.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
       "skills": [
-        "LIS",
+        "VOC",
+        "GRA",
+        "REA",
         "SPE",
-        "VIE",
-        "VOC"
+        "WRI"
       ],
       "vocabFields": [
         "directions",
-        "places",
-        "streets"
+        "streets",
+        "places"
+      ],
+      "grammarFocus": [
+        "imperatives"
       ],
       "reward": {
         "stars": 1,
-        "item": "Lichtkristall",
-        "badge": "Direction Guide",
-        "message": "Du hast Lumi sicher durch die Nachbarschaft geführt."
+        "item": "Lichtfunke",
+        "message": "Mission 'Direction Quest' abgeschlossen."
       },
       "tasks": [
         {
           "id": "g6-u2-m6-t01",
-          "type": "multiple-choice",
-          "skill": "SPE",
-          "difficulty": 1,
-          "errorCategory": "directions",
-          "prompt": "Which question asks for directions?",
-          "options": [
-            "Excuse me, how do I get to the park?",
-            "What is your favourite colour?",
-            "Can I have some tea?"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. So fragst du höflich nach dem Weg.",
-          "feedbackWrong": "Achte auf how do I get to ..."
-        },
-        {
-          "id": "g6-u2-m6-t02",
           "type": "matching",
           "skill": "VOC",
           "difficulty": 1,
-          "errorCategory": "directions",
-          "prompt": "Match the direction phrases.",
+          "errorCategory": "directions-vocabulary",
+          "prompt": "Match words from the field: directions, streets, places.",
           "pairs": [
             {
-              "left": "turn left",
-              "right": "links abbiegen"
+              "left": "directions",
+              "right": "directions word field"
             },
             {
-              "left": "turn right",
-              "right": "rechts abbiegen"
+              "left": "streets",
+              "right": "streets word field"
             },
             {
-              "left": "go straight on",
-              "right": "geradeaus gehen"
-            },
-            {
-              "left": "go past the shop",
-              "right": "am Laden vorbeigehen"
+              "left": "places",
+              "right": "places word field"
             }
           ],
-          "feedbackCorrect": "Sehr gut. Diese Phrasen brauchst du für Wegbeschreibungen.",
-          "feedbackWrong": "Stell dir den Weg wie auf einer Karte vor."
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u2-m6-t03",
+          "id": "g6-u2-m6-g01",
           "type": "multiple-choice",
-          "skill": "LIS",
+          "skill": "GRA",
           "difficulty": 1,
-          "errorCategory": "directions",
-          "prompt": "You hear: Go straight on and turn right at the park. Where do you turn?",
+          "errorCategory": "grammar-review",
+          "prompt": "Choose the correct sentence.",
           "options": [
-            "at the park",
-            "at the supermarket",
-            "at the school"
+            "This sentence is correct.",
+            "Correct this sentence is.",
+            "Sentence correct this."
           ],
           "answer": 0,
-          "feedbackCorrect": "Richtig. Du biegst am Park rechts ab.",
-          "feedbackWrong": "Achte auf at the park."
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u2-m6-t04",
-          "type": "sentence-builder",
+          "type": "multiple-choice",
           "skill": "SPE",
-          "difficulty": 2,
-          "errorCategory": "directions",
-          "prompt": "Put the words in the correct order.",
-          "words": [
-            "straight",
-            "Go",
-            "on"
+          "difficulty": 1,
+          "errorCategory": "directions-phrases",
+          "prompt": "Which sentence fits this mission: Direction Quest?",
+          "options": [
+            "I can ask for and give directions.",
+            "The pencil is under yesterday.",
+            "Because football table."
           ],
-          "answer": "Go straight on.",
-          "feedbackCorrect": "Genau. Das ist eine kurze, klare Weganweisung.",
-          "feedbackWrong": "Beginne mit Go."
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u2-m6-t05",
-          "type": "gap-fill",
-          "skill": "VOC",
-          "difficulty": 1,
-          "errorCategory": "directions",
-          "prompt": "Complete the sentence: Turn ___ at the traffic lights.",
-          "acceptedAnswers": [
-            "left",
-            "right"
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "directions-reading",
+          "text": "Lumi is working on direction quest at Neighbourhood Gate. The topic is directions, streets, places. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
+          "options": [
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
           ],
-          "feedbackCorrect": "Richtig. Turn left oder turn right sind beide mögliche Richtungsangaben.",
-          "feedbackWrong": "Nach turn passt left oder right."
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
         },
         {
           "id": "g6-u2-m6-t06",
-          "type": "multiple-choice",
-          "skill": "SPE",
+          "type": "sentence-builder",
+          "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "polite-phrases",
-          "prompt": "Which sentence is the most polite?",
-          "options": [
-            "Excuse me, can you help me, please?",
-            "Help me now.",
-            "Where park?"
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "directions"
           ],
-          "answer": 0,
-          "feedbackCorrect": "Sehr gut. Excuse me und please machen die Frage höflich.",
-          "feedbackWrong": "Eine höfliche Frage beginnt oft mit Excuse me."
+          "answer": "Lumi helps with directions.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
           "id": "g6-u2-m6-t07",
           "type": "viewing-scene",
           "skill": "VIE",
           "difficulty": 2,
-          "errorCategory": "viewing-detail",
-          "sceneDescription": "You see a quiet street with small houses, a red post box, a shop on the corner and children walking home from school.",
-          "prompt": "Which place is probably on the corner?",
+          "errorCategory": "directions-viewing",
+          "sceneDescription": "A student looks at a scene about direction quest. There are clues connected to directions, streets.",
+          "prompt": "What is the scene mainly about?",
           "options": [
-            "a shop",
-            "a beach",
-            "a mountain"
+            "Direction Quest",
+            "a maths test",
+            "a shoe shop"
           ],
           "answer": 0,
-          "feedbackCorrect": "Richtig. In der Szene steht ein shop on the corner.",
-          "feedbackWrong": "Achte auf on the corner."
+          "feedbackCorrect": "Richtig. Du hast die Szene verstanden.",
+          "feedbackWrong": "Achte auf die Details in der Szene."
         },
         {
           "id": "g6-u2-m6-t08",
@@ -1181,39 +1062,32 @@
           "skill": "WRI",
           "difficulty": 2,
           "errorCategory": "directions-writing",
-          "prompt": "Write a short direction from your school to a place nearby.",
+          "prompt": "Write two to four sentences for the mission: Direction Quest.",
           "support": [
-            "Go straight on.",
-            "Turn left.",
-            "Turn right.",
-            "Go past the ...",
-            "It’s next to ..."
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
           ],
-          "minSentences": 3,
+          "minSentences": 2,
           "manualReview": true,
-          "feedbackAfterSubmit": "Gut. Eine Wegbeschreibung braucht kurze, klare Schritte."
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
         }
       ],
       "miniChallenge": [
         {
-          "prompt": "Turn left means ___.",
-          "acceptedAnswers": [
-            "links abbiegen"
-          ]
+          "prompt": "Name one word from this mission about directions.",
+          "type": "text-input",
+          "manualReview": true
         },
         {
-          "prompt": "Go straight on means ___.",
-          "acceptedAnswers": [
-            "geradeaus gehen"
-          ]
-        },
-        {
-          "prompt": "Excuse me is a ___ phrase.",
-          "acceptedAnswers": [
-            "polite",
-            "höfliche",
-            "friendly"
-          ]
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
         }
       ]
     },
@@ -1222,215 +1096,173 @@
       "missionTitle": "Neighbours Check",
       "bookSection": "Stop Check Go",
       "durationMinutes": 20,
-      "storyIntro": "Das Neighbourhood Gate ist fast vollständig hell. Im letzten Check wiederholst du die wichtigsten Themen aus Unit 2.",
+      "storyIntro": "Lumi startet die Mission 'Neighbours Check' in Neighbourhood Gate. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "Ich kann Unit 2 wiederholen.",
-        "Ich kann some und any unterscheiden.",
-        "Ich kann Fragen im Simple Past bilden.",
-        "Ich kann einfache Wegbeschreibungen verstehen.",
-        "Ich erkenne meine sicheren und unsicheren Bereiche."
+        "I can review Unit 2.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
       "skills": [
         "VOC",
         "GRA",
         "REA",
-        "LIS",
         "SPE",
         "WRI"
       ],
       "vocabFields": [
-        "neighbourhood",
+        "unit review",
+        "directions",
         "food",
-        "pets",
-        "directions"
+        "pets"
+      ],
+      "grammarFocus": [
+        "mixed Unit 2 grammar"
       ],
       "reward": {
         "stars": 3,
         "item": "Lichtkristall",
-        "badge": "Neighbourhood Hero",
-        "message": "Unit 2 abgeschlossen. Das Teen Talk Coast Gebiet wird freigeschaltet."
-      },
-      "assessment": {
-        "gold": 90,
-        "pass": 80,
-        "review": 60
+        "message": "Mission 'Neighbours Check' abgeschlossen."
       },
       "tasks": [
         {
           "id": "g6-u2-m7-t01",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "unit review-vocabulary",
+          "prompt": "Match words from the field: unit review, directions, food.",
+          "pairs": [
+            {
+              "left": "unit review",
+              "right": "unit review word field"
+            },
+            {
+              "left": "directions",
+              "right": "directions word field"
+            },
+            {
+              "left": "food",
+              "right": "food word field"
+            },
+            {
+              "left": "pets",
+              "right": "pets word field"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
+        },
+        {
+          "id": "g6-u2-m7-g01",
           "type": "multiple-choice",
           "skill": "GRA",
           "difficulty": 1,
-          "errorCategory": "some-any",
-          "prompt": "Choose the correct word: Would you like ___ orange juice?",
+          "errorCategory": "grammar-review",
+          "prompt": "Choose the correct sentence.",
           "options": [
-            "some",
-            "any",
-            "many"
+            "This sentence is correct.",
+            "Correct this sentence is.",
+            "Sentence correct this."
           ],
           "answer": 0,
-          "feedbackCorrect": "Richtig. Bei Angeboten benutzt du oft some.",
-          "feedbackWrong": "Bei freundlichen Angeboten passt meistens some."
-        },
-        {
-          "id": "g6-u2-m7-t02",
-          "type": "gap-fill",
-          "skill": "GRA",
-          "difficulty": 1,
-          "errorCategory": "some-any",
-          "prompt": "Complete the sentence: I don’t have ___ sandwiches.",
-          "acceptedAnswers": [
-            "any"
-          ],
-          "feedbackCorrect": "Genau. In Verneinungen passt any.",
-          "feedbackWrong": "Nach don’t have benutzt du hier any."
-        },
-        {
-          "id": "g6-u2-m7-t03",
-          "type": "multiple-choice",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "simple-past-questions",
-          "prompt": "Choose the correct question.",
-          "options": [
-            "Did you go to the party?",
-            "Did you went to the party?",
-            "Do you went to the party?"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Nach did steht go.",
-          "feedbackWrong": "Nach did benutzt du die Grundform."
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u2-m7-t04",
           "type": "multiple-choice",
-          "skill": "GRA",
+          "skill": "SPE",
           "difficulty": 1,
-          "errorCategory": "did-short-answers",
-          "prompt": "Did they visit the park? No, ___.",
+          "errorCategory": "unit review-phrases",
+          "prompt": "Which sentence fits this mission: Neighbours Check?",
           "options": [
-            "they didn’t",
-            "they don’t",
-            "they weren’t"
+            "I can review Unit 2.",
+            "The pencil is under yesterday.",
+            "Because football table."
           ],
           "answer": 0,
-          "feedbackCorrect": "Genau. Die Kurzantwort lautet No, they didn’t.",
-          "feedbackWrong": "Bei Did-Fragen antwortest du mit did oder didn’t."
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
           "id": "g6-u2-m7-t05",
-          "type": "matching",
-          "skill": "VOC",
-          "difficulty": 1,
-          "errorCategory": "directions",
-          "prompt": "Match the direction phrases.",
-          "pairs": [
-            {
-              "left": "turn right",
-              "right": "rechts abbiegen"
-            },
-            {
-              "left": "go straight on",
-              "right": "geradeaus gehen"
-            },
-            {
-              "left": "opposite",
-              "right": "gegenüber"
-            },
-            {
-              "left": "next to",
-              "right": "neben"
-            }
-          ],
-          "feedbackCorrect": "Sehr gut. Die Wegbeschreibung sitzt.",
-          "feedbackWrong": "Wiederhole die Richtungswörter noch einmal."
-        },
-        {
-          "id": "g6-u2-m7-t06",
           "type": "reading-check",
           "skill": "REA",
           "difficulty": 2,
-          "errorCategory": "reading-detail",
-          "text": "Nina moved to a new street last week. On Saturday, her neighbour showed her the park, the library and a small bakery. Nina liked the bakery best because the bread smelled great.",
-          "prompt": "Which place did Nina like best?",
+          "errorCategory": "unit review-reading",
+          "text": "Lumi is working on neighbours check at Neighbourhood Gate. The topic is unit review, directions, food. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
           "options": [
-            "the bakery",
-            "the library",
-            "the park"
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
           ],
           "answer": 0,
-          "feedbackCorrect": "Richtig. Nina mochte die bakery am liebsten.",
-          "feedbackWrong": "Achte auf liked ... best."
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u2-m7-t06",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "unit review"
+          ],
+          "answer": "Lumi helps with unit review.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
           "id": "g6-u2-m7-t07",
-          "type": "error-correction",
-          "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "simple-past-questions",
-          "prompt": "Correct the question: What did you watched?",
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "unit review-sentence",
+          "prompt": "Complete: I can talk about unit review in ___.",
           "acceptedAnswers": [
-            "What did you watch?"
+            "English"
           ],
-          "feedbackCorrect": "Sehr gut. Nach did steht watch.",
-          "feedbackWrong": "Did übernimmt die Vergangenheit. Das Verb bleibt in der Grundform."
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
           "id": "g6-u2-m7-t08",
-          "type": "multiple-choice",
-          "skill": "SPE",
-          "difficulty": 2,
-          "errorCategory": "offering-food",
-          "prompt": "Choose the best answer: Would you like some tea?",
-          "options": [
-            "Yes, please.",
-            "No, I didn’t.",
-            "I am a dog."
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Yes, please passt zu einem Angebot.",
-          "feedbackWrong": "Bei einem Angebot antwortest du höflich mit Yes, please oder No, thank you."
-        },
-        {
-          "id": "g6-u2-m7-t09",
-          "type": "sentence-builder",
-          "skill": "SPE",
-          "difficulty": 2,
-          "errorCategory": "directions",
-          "prompt": "Put the words in the correct order.",
-          "words": [
-            "the",
-            "Go",
-            "shop",
-            "past"
-          ],
-          "answer": "Go past the shop.",
-          "feedbackCorrect": "Genau. Das ist eine klare Weganweisung.",
-          "feedbackWrong": "Beginne mit Go."
-        },
-        {
-          "id": "g6-u2-m7-t10",
           "type": "mini-writing",
           "skill": "WRI",
-          "difficulty": 3,
-          "errorCategory": "unit-writing",
-          "prompt": "Write a short letter to a new neighbour. Use at least four sentences.",
-          "requirements": [
-            "Say hello.",
-            "Say your name.",
-            "Say one thing about your neighbourhood.",
-            "Ask one question."
-          ],
+          "difficulty": 2,
+          "errorCategory": "unit review-writing",
+          "prompt": "Write two to four sentences for the mission: Neighbours Check.",
           "support": [
-            "Dear ...",
-            "Welcome to our street.",
-            "My name is ...",
-            "There is ...",
-            "Would you like ...?",
-            "See you soon."
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
           ],
+          "minSentences": 2,
           "manualReview": true,
-          "feedbackAfterSubmit": "Sehr gut. Ein kurzer Brief mit klarer Struktur hilft auch in Tests."
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "Name one word from this mission about unit review.",
+          "type": "text-input",
+          "manualReview": true
+        },
+        {
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
         }
       ]
     }
@@ -1439,37 +1271,27 @@
     {
       "ifErrorCategory": "some-any",
       "recommendReviewMission": "g6-u2-m2",
-      "message": "Some und any brauchen noch Wiederholung."
+      "message": "Bitte wiederhole: some-any."
     },
     {
       "ifErrorCategory": "simple-past-questions",
       "recommendReviewMission": "g6-u2-m4",
-      "message": "Fragen im Simple Past sollten noch einmal geübt werden."
+      "message": "Bitte wiederhole: simple-past-questions."
     },
     {
       "ifErrorCategory": "did-short-answers",
       "recommendReviewMission": "g6-u2-m4",
-      "message": "Kurzantworten mit did und didn’t wiederholen."
+      "message": "Bitte wiederhole: did-short-answers."
     },
     {
       "ifErrorCategory": "directions",
       "recommendReviewMission": "g6-u2-m6",
-      "message": "Wegbeschreibungen noch einmal trainieren."
+      "message": "Bitte wiederhole: directions."
     },
     {
       "ifErrorCategory": "neighbourhood-vocabulary",
       "recommendReviewMission": "g6-u2-m1",
-      "message": "Wortschatz zur Nachbarschaft wiederholen."
-    },
-    {
-      "ifErrorCategory": "pets-vocabulary",
-      "recommendReviewMission": "g6-u2-m3",
-      "message": "Haustier-Wortschatz wiederholen."
-    },
-    {
-      "ifErrorCategory": "test-instructions",
-      "recommendReviewMission": "g6-u2-m5",
-      "message": "Arbeitsanweisungen in Tests noch einmal üben."
+      "message": "Bitte wiederhole: neighbourhood-vocabulary."
     }
   ]
 }

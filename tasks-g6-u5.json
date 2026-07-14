@@ -2,10 +2,10 @@
   "schemaVersion": "0.4.0",
   "fileType": "task-bank",
   "grade": 6,
-  "unitId": "g6-u1",
-  "unitTitle": "Together again",
-  "appWorld": "Back to Lighthouse Island",
-  "unitTheme": "Holidays, back at school, school clubs, friendship, simple past and better texts",
+  "unitId": "g6-u5",
+  "unitTitle": "Dartmoor adventures",
+  "appWorld": "Dartmoor Adventure Trail",
+  "unitTheme": "Trips, Dartmoor, directions, rules, will-future, adverbs, station announcements and emergency calls",
   "passThresholdPercent": 80,
   "estimatedTotalMissions": 7,
   "skillCodes": {
@@ -23,13 +23,13 @@
   "contentRule": "All tasks, texts, examples and feedback are original app content. The structure follows the textbook unit order and learning goals, but does not copy original exercises or reading texts.",
   "missions": [
     {
-      "missionId": "g6-u1-m1",
-      "missionTitle": "After the Holidays",
+      "missionId": "g6-u5-m1",
+      "missionTitle": "Enter Dartmoor",
       "bookSection": "Lead-in",
       "durationMinutes": 20,
-      "storyIntro": "Lumi startet die Mission 'After the Holidays' in Back to Lighthouse Island. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "storyIntro": "Lumi startet die Mission 'Enter Dartmoor' in Dartmoor Adventure Trail. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "I can talk about my holidays and the weather.",
+        "I can understand information about Dartmoor.",
         "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
         "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
@@ -41,413 +41,45 @@
         "WRI"
       ],
       "vocabFields": [
-        "holidays",
-        "weather",
-        "feelings"
+        "nature",
+        "Dartmoor",
+        "trips"
       ],
       "grammarFocus": [
-        "was/were"
+        "brochure reading"
       ],
       "reward": {
         "stars": 1,
         "item": "Lichtfunke",
-        "message": "Mission 'After the Holidays' abgeschlossen."
+        "message": "Mission 'Enter Dartmoor' abgeschlossen."
       },
       "tasks": [
         {
-          "id": "g6-u1-m1-t01",
+          "id": "g6-u5-m1-t01",
           "type": "matching",
           "skill": "VOC",
           "difficulty": 1,
-          "errorCategory": "holidays-vocabulary",
-          "prompt": "Match words from the field: holidays, weather, feelings.",
+          "errorCategory": "nature-vocabulary",
+          "prompt": "Match words from the field: nature, Dartmoor, trips.",
           "pairs": [
             {
-              "left": "holidays",
-              "right": "holidays word field"
+              "left": "nature",
+              "right": "nature word field"
             },
             {
-              "left": "weather",
-              "right": "weather word field"
+              "left": "Dartmoor",
+              "right": "Dartmoor word field"
             },
             {
-              "left": "feelings",
-              "right": "feelings word field"
+              "left": "trips",
+              "right": "trips word field"
             }
           ],
           "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
           "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u1-m1-g01",
-          "type": "multiple-choice",
-          "skill": "GRA",
-          "difficulty": 1,
-          "errorCategory": "was-were",
-          "prompt": "Choose the correct sentence.",
-          "options": [
-            "I were tired.",
-            "I was tired.",
-            "I am tired yesterday."
-          ],
-          "answer": 1,
-          "feedbackCorrect": "Richtig. Gut gemacht.",
-          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
-        },
-        {
-          "id": "g6-u1-m1-g02",
-          "type": "gap-fill",
-          "skill": "GRA",
-          "difficulty": 1,
-          "errorCategory": "simple-past-positive",
-          "prompt": "Yesterday we ___ football.",
-          "acceptedAnswers": [
-            "played"
-          ],
-          "feedbackCorrect": "Richtig.",
-          "feedbackWrong": "Fast. Achte auf die Form im Satz."
-        },
-        {
-          "id": "g6-u1-m1-t04",
-          "type": "multiple-choice",
-          "skill": "SPE",
-          "difficulty": 1,
-          "errorCategory": "holidays-phrases",
-          "prompt": "Which sentence fits this mission: After the Holidays?",
-          "options": [
-            "I can talk about my holidays and the weather.",
-            "The pencil is under yesterday.",
-            "Because football table."
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Gut gemacht.",
-          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
-        },
-        {
-          "id": "g6-u1-m1-t05",
-          "type": "reading-check",
-          "skill": "REA",
-          "difficulty": 2,
-          "errorCategory": "holidays-reading",
-          "text": "Lumi is working on after the holidays at Back to Lighthouse Island. The topic is holidays, weather, feelings. After a short task, the students understand the mission better and collect a new light spark.",
-          "prompt": "What do the students collect?",
-          "options": [
-            "a new light spark",
-            "a broken chair",
-            "a train ticket"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
-          "feedbackWrong": "Lies den Text noch einmal langsam."
-        },
-        {
-          "id": "g6-u1-m1-t06",
-          "type": "sentence-builder",
-          "skill": "WRI",
-          "difficulty": 2,
-          "errorCategory": "word-order",
-          "prompt": "Put the words in the correct order.",
-          "words": [
-            "Lumi",
-            "helps",
-            "with",
-            "holidays"
-          ],
-          "answer": "Lumi helps with holidays.",
-          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
-          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
-        },
-        {
-          "id": "g6-u1-m1-t07",
-          "type": "gap-fill",
-          "skill": "WRI",
-          "difficulty": 1,
-          "errorCategory": "holidays-sentence",
-          "prompt": "Complete: I can talk about holidays in ___.",
-          "acceptedAnswers": [
-            "English"
-          ],
-          "feedbackCorrect": "Richtig.",
-          "feedbackWrong": "Fast. Achte auf die Form im Satz."
-        },
-        {
-          "id": "g6-u1-m1-t08",
-          "type": "mini-writing",
-          "skill": "WRI",
-          "difficulty": 2,
-          "errorCategory": "holidays-writing",
-          "prompt": "Write two to four sentences for the mission: After the Holidays.",
-          "support": [
-            "I can say ...",
-            "I think ... because ...",
-            "First, ...",
-            "Then, ..."
-          ],
-          "minSentences": 2,
-          "manualReview": true,
-          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
-          "requirements": [
-            "Use clear English sentences.",
-            "Use one word from this mission."
-          ]
-        }
-      ],
-      "miniChallenge": [
-        {
-          "prompt": "Name one word from this mission about holidays.",
-          "type": "text-input",
-          "manualReview": true
-        },
-        {
-          "prompt": "Write one correct English sentence.",
-          "type": "mini-writing",
-          "manualReview": true
-        }
-      ]
-    },
-    {
-      "missionId": "g6-u1-m2",
-      "missionTitle": "Back at School",
-      "bookSection": "Theme 1",
-      "durationMinutes": 20,
-      "storyIntro": "Lumi startet die Mission 'Back at School' in Back to Lighthouse Island. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
-      "learningGoals": [
-        "I can talk about my first school day.",
-        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
-        "Ich kann Fehler erkennen und gezielt wiederholen."
-      ],
-      "skills": [
-        "VOC",
-        "GRA",
-        "REA",
-        "SPE",
-        "WRI"
-      ],
-      "vocabFields": [
-        "school",
-        "lessons",
-        "timetable"
-      ],
-      "grammarFocus": [
-        "was/were",
-        "simple past"
-      ],
-      "reward": {
-        "stars": 1,
-        "item": "Lichtfunke",
-        "message": "Mission 'Back at School' abgeschlossen."
-      },
-      "tasks": [
-        {
-          "id": "g6-u1-m2-t01",
-          "type": "matching",
-          "skill": "VOC",
-          "difficulty": 1,
-          "errorCategory": "school-vocabulary",
-          "prompt": "Match words from the field: school, lessons, timetable.",
-          "pairs": [
-            {
-              "left": "school",
-              "right": "school word field"
-            },
-            {
-              "left": "lessons",
-              "right": "lessons word field"
-            },
-            {
-              "left": "timetable",
-              "right": "timetable word field"
-            }
-          ],
-          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
-          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
-        },
-        {
-          "id": "g6-u1-m2-g01",
-          "type": "multiple-choice",
-          "skill": "GRA",
-          "difficulty": 1,
-          "errorCategory": "was-were",
-          "prompt": "Choose the correct sentence.",
-          "options": [
-            "I were tired.",
-            "I was tired.",
-            "I am tired yesterday."
-          ],
-          "answer": 1,
-          "feedbackCorrect": "Richtig. Gut gemacht.",
-          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
-        },
-        {
-          "id": "g6-u1-m2-g02",
-          "type": "gap-fill",
-          "skill": "GRA",
-          "difficulty": 1,
-          "errorCategory": "simple-past-positive",
-          "prompt": "Yesterday we ___ football.",
-          "acceptedAnswers": [
-            "played"
-          ],
-          "feedbackCorrect": "Richtig.",
-          "feedbackWrong": "Fast. Achte auf die Form im Satz."
-        },
-        {
-          "id": "g6-u1-m2-t04",
-          "type": "multiple-choice",
-          "skill": "SPE",
-          "difficulty": 1,
-          "errorCategory": "school-phrases",
-          "prompt": "Which sentence fits this mission: Back at School?",
-          "options": [
-            "I can talk about my first school day.",
-            "The pencil is under yesterday.",
-            "Because football table."
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Gut gemacht.",
-          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
-        },
-        {
-          "id": "g6-u1-m2-t05",
-          "type": "reading-check",
-          "skill": "REA",
-          "difficulty": 2,
-          "errorCategory": "school-reading",
-          "text": "Lumi is working on back at school at Back to Lighthouse Island. The topic is school, lessons, timetable. After a short task, the students understand the mission better and collect a new light spark.",
-          "prompt": "What do the students collect?",
-          "options": [
-            "a new light spark",
-            "a broken chair",
-            "a train ticket"
-          ],
-          "answer": 0,
-          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
-          "feedbackWrong": "Lies den Text noch einmal langsam."
-        },
-        {
-          "id": "g6-u1-m2-t06",
-          "type": "sentence-builder",
-          "skill": "WRI",
-          "difficulty": 2,
-          "errorCategory": "word-order",
-          "prompt": "Put the words in the correct order.",
-          "words": [
-            "Lumi",
-            "helps",
-            "with",
-            "school"
-          ],
-          "answer": "Lumi helps with school.",
-          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
-          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
-        },
-        {
-          "id": "g6-u1-m2-t07",
-          "type": "gap-fill",
-          "skill": "WRI",
-          "difficulty": 1,
-          "errorCategory": "school-sentence",
-          "prompt": "Complete: I can talk about school in ___.",
-          "acceptedAnswers": [
-            "English"
-          ],
-          "feedbackCorrect": "Richtig.",
-          "feedbackWrong": "Fast. Achte auf die Form im Satz."
-        },
-        {
-          "id": "g6-u1-m2-t08",
-          "type": "mini-writing",
-          "skill": "WRI",
-          "difficulty": 2,
-          "errorCategory": "school-writing",
-          "prompt": "Write two to four sentences for the mission: Back at School.",
-          "support": [
-            "I can say ...",
-            "I think ... because ...",
-            "First, ...",
-            "Then, ..."
-          ],
-          "minSentences": 2,
-          "manualReview": true,
-          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
-          "requirements": [
-            "Use clear English sentences.",
-            "Use one word from this mission."
-          ]
-        }
-      ],
-      "miniChallenge": [
-        {
-          "prompt": "Name one word from this mission about school.",
-          "type": "text-input",
-          "manualReview": true
-        },
-        {
-          "prompt": "Write one correct English sentence.",
-          "type": "mini-writing",
-          "manualReview": true
-        }
-      ]
-    },
-    {
-      "missionId": "g6-u1-m3",
-      "missionTitle": "Club Explorer",
-      "bookSection": "Theme 2",
-      "durationMinutes": 20,
-      "storyIntro": "Lumi startet die Mission 'Club Explorer' in Back to Lighthouse Island. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
-      "learningGoals": [
-        "I can talk about school clubs and give reasons.",
-        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
-        "Ich kann Fehler erkennen und gezielt wiederholen."
-      ],
-      "skills": [
-        "VOC",
-        "GRA",
-        "REA",
-        "SPE",
-        "WRI"
-      ],
-      "vocabFields": [
-        "school clubs",
-        "activities",
-        "because"
-      ],
-      "grammarFocus": [
-        "I’d like to",
-        "because"
-      ],
-      "reward": {
-        "stars": 1,
-        "item": "Lichtfunke",
-        "message": "Mission 'Club Explorer' abgeschlossen."
-      },
-      "tasks": [
-        {
-          "id": "g6-u1-m3-t01",
-          "type": "matching",
-          "skill": "VOC",
-          "difficulty": 1,
-          "errorCategory": "school clubs-vocabulary",
-          "prompt": "Match words from the field: school clubs, activities, because.",
-          "pairs": [
-            {
-              "left": "school clubs",
-              "right": "school clubs word field"
-            },
-            {
-              "left": "activities",
-              "right": "activities word field"
-            },
-            {
-              "left": "because",
-              "right": "because word field"
-            }
-          ],
-          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
-          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
-        },
-        {
-          "id": "g6-u1-m3-g01",
+          "id": "g6-u5-m1-g01",
           "type": "multiple-choice",
           "skill": "GRA",
           "difficulty": 1,
@@ -463,14 +95,14 @@
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m3-t04",
+          "id": "g6-u5-m1-t04",
           "type": "multiple-choice",
           "skill": "SPE",
           "difficulty": 1,
-          "errorCategory": "school clubs-phrases",
-          "prompt": "Which sentence fits this mission: Club Explorer?",
+          "errorCategory": "nature-phrases",
+          "prompt": "Which sentence fits this mission: Enter Dartmoor?",
           "options": [
-            "I can talk about school clubs and give reasons.",
+            "I can understand information about Dartmoor.",
             "The pencil is under yesterday.",
             "Because football table."
           ],
@@ -479,12 +111,12 @@
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m3-t05",
+          "id": "g6-u5-m1-t05",
           "type": "reading-check",
           "skill": "REA",
           "difficulty": 2,
-          "errorCategory": "school clubs-reading",
-          "text": "Lumi is working on club explorer at Back to Lighthouse Island. The topic is school clubs, activities, because. After a short task, the students understand the mission better and collect a new light spark.",
+          "errorCategory": "nature-reading",
+          "text": "Lumi is working on enter dartmoor at Dartmoor Adventure Trail. The topic is nature, Dartmoor, trips. After a short task, the students understand the mission better and collect a new light spark.",
           "prompt": "What do the students collect?",
           "options": [
             "a new light spark",
@@ -496,7 +128,7 @@
           "feedbackWrong": "Lies den Text noch einmal langsam."
         },
         {
-          "id": "g6-u1-m3-t06",
+          "id": "g6-u5-m1-t06",
           "type": "sentence-builder",
           "skill": "WRI",
           "difficulty": 2,
@@ -506,19 +138,19 @@
             "Lumi",
             "helps",
             "with",
-            "school clubs"
+            "nature"
           ],
-          "answer": "Lumi helps with school clubs.",
+          "answer": "Lumi helps with nature.",
           "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
           "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
-          "id": "g6-u1-m3-t07",
+          "id": "g6-u5-m1-t07",
           "type": "gap-fill",
           "skill": "WRI",
           "difficulty": 1,
-          "errorCategory": "school clubs-sentence",
-          "prompt": "Complete: I can talk about school clubs in ___.",
+          "errorCategory": "nature-sentence",
+          "prompt": "Complete: I can talk about nature in ___.",
           "acceptedAnswers": [
             "English"
           ],
@@ -526,12 +158,12 @@
           "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
-          "id": "g6-u1-m3-t08",
+          "id": "g6-u5-m1-t08",
           "type": "mini-writing",
           "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "school clubs-writing",
-          "prompt": "Write two to four sentences for the mission: Club Explorer.",
+          "errorCategory": "nature-writing",
+          "prompt": "Write two to four sentences for the mission: Enter Dartmoor.",
           "support": [
             "I can say ...",
             "I think ... because ...",
@@ -549,7 +181,7 @@
       ],
       "miniChallenge": [
         {
-          "prompt": "Name one word from this mission about school clubs.",
+          "prompt": "Name one word from this mission about nature.",
           "type": "text-input",
           "manualReview": true
         },
@@ -561,13 +193,13 @@
       ]
     },
     {
-      "missionId": "g6-u1-m4",
-      "missionTitle": "Past Pro",
-      "bookSection": "Focus on Language",
+      "missionId": "g6-u5-m2",
+      "missionTitle": "Trip Planner",
+      "bookSection": "Theme 1",
       "durationMinutes": 20,
-      "storyIntro": "Lumi startet die Mission 'Past Pro' in Back to Lighthouse Island. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "storyIntro": "Lumi startet die Mission 'Trip Planner' in Dartmoor Adventure Trail. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "I can say what happened and what didn’t happen.",
+        "I can plan a trip and choose equipment.",
         "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
         "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
@@ -579,83 +211,434 @@
         "WRI"
       ],
       "vocabFields": [
-        "regular verbs",
-        "irregular verbs",
-        "yesterday"
+        "planning",
+        "equipment",
+        "food"
       ],
       "grammarFocus": [
-        "simple past positive",
-        "simple past negative"
+        "suggestions"
       ],
       "reward": {
         "stars": 1,
         "item": "Lichtfunke",
-        "message": "Mission 'Past Pro' abgeschlossen."
+        "message": "Mission 'Trip Planner' abgeschlossen."
       },
       "tasks": [
         {
-          "id": "g6-u1-m4-t01",
+          "id": "g6-u5-m2-t01",
           "type": "matching",
           "skill": "VOC",
           "difficulty": 1,
-          "errorCategory": "regular verbs-vocabulary",
-          "prompt": "Match words from the field: regular verbs, irregular verbs, yesterday.",
+          "errorCategory": "planning-vocabulary",
+          "prompt": "Match words from the field: planning, equipment, food.",
           "pairs": [
             {
-              "left": "regular verbs",
-              "right": "regular verbs word field"
+              "left": "planning",
+              "right": "planning word field"
             },
             {
-              "left": "irregular verbs",
-              "right": "irregular verbs word field"
+              "left": "equipment",
+              "right": "equipment word field"
             },
             {
-              "left": "yesterday",
-              "right": "yesterday word field"
+              "left": "food",
+              "right": "food word field"
             }
           ],
           "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
           "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u1-m4-g01",
+          "id": "g6-u5-m2-g01",
           "type": "multiple-choice",
           "skill": "GRA",
-          "difficulty": 2,
-          "errorCategory": "simple-past-negative",
-          "prompt": "Choose the correct negative sentence.",
+          "difficulty": 1,
+          "errorCategory": "grammar-review",
+          "prompt": "Choose the correct sentence.",
           "options": [
-            "I didn’t watched TV.",
-            "I didn’t watch TV.",
-            "I don’t watched TV."
+            "This sentence is correct.",
+            "Correct this sentence is.",
+            "Sentence correct this."
           ],
-          "answer": 1,
+          "answer": 0,
           "feedbackCorrect": "Richtig. Gut gemacht.",
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m4-g02",
+          "id": "g6-u5-m2-t04",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "planning-phrases",
+          "prompt": "Which sentence fits this mission: Trip Planner?",
+          "options": [
+            "I can plan a trip and choose equipment.",
+            "The pencil is under yesterday.",
+            "Because football table."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u5-m2-t05",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "planning-reading",
+          "text": "Lumi is working on trip planner at Dartmoor Adventure Trail. The topic is planning, equipment, food. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
+          "options": [
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u5-m2-t06",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "planning"
+          ],
+          "answer": "Lumi helps with planning.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
+        },
+        {
+          "id": "g6-u5-m2-t07",
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "planning-sentence",
+          "prompt": "Complete: I can talk about planning in ___.",
+          "acceptedAnswers": [
+            "English"
+          ],
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
+        },
+        {
+          "id": "g6-u5-m2-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "planning-writing",
+          "prompt": "Write two to four sentences for the mission: Trip Planner.",
+          "support": [
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
+          ],
+          "minSentences": 2,
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "Name one word from this mission about planning.",
+          "type": "text-input",
+          "manualReview": true
+        },
+        {
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
+        }
+      ]
+    },
+    {
+      "missionId": "g6-u5-m3",
+      "missionTitle": "Adventure Centre Rules",
+      "bookSection": "Theme 2",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi startet die Mission 'Adventure Centre Rules' in Dartmoor Adventure Trail. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "learningGoals": [
+        "I can give directions and rules.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
+      ],
+      "skills": [
+        "VOC",
+        "GRA",
+        "REA",
+        "SPE",
+        "WRI"
+      ],
+      "vocabFields": [
+        "directions",
+        "rules",
+        "adverbs"
+      ],
+      "grammarFocus": [
+        "adverbs of manner"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Lichtfunke",
+        "message": "Mission 'Adventure Centre Rules' abgeschlossen."
+      },
+      "tasks": [
+        {
+          "id": "g6-u5-m3-t01",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "directions-vocabulary",
+          "prompt": "Match words from the field: directions, rules, adverbs.",
+          "pairs": [
+            {
+              "left": "directions",
+              "right": "directions word field"
+            },
+            {
+              "left": "rules",
+              "right": "rules word field"
+            },
+            {
+              "left": "adverbs",
+              "right": "adverbs word field"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
+        },
+        {
+          "id": "g6-u5-m3-g01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "adverbs-of-manner",
+          "prompt": "Choose the correct adverb: Walk ___.",
+          "options": [
+            "slowly",
+            "slow",
+            "slower"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u5-m3-g02",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "adverbs-of-manner",
+          "prompt": "Speak ___. Use quiet.",
+          "acceptedAnswers": [
+            "quietly"
+          ],
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
+        },
+        {
+          "id": "g6-u5-m3-t04",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "directions-phrases",
+          "prompt": "Which sentence fits this mission: Adventure Centre Rules?",
+          "options": [
+            "I can give directions and rules.",
+            "The pencil is under yesterday.",
+            "Because football table."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u5-m3-t05",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "directions-reading",
+          "text": "Lumi is working on adventure centre rules at Dartmoor Adventure Trail. The topic is directions, rules, adverbs. After a short task, the students understand the mission better and collect a new light spark.",
+          "prompt": "What do the students collect?",
+          "options": [
+            "a new light spark",
+            "a broken chair",
+            "a train ticket"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Du hast die Information gefunden.",
+          "feedbackWrong": "Lies den Text noch einmal langsam."
+        },
+        {
+          "id": "g6-u5-m3-t06",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Lumi",
+            "helps",
+            "with",
+            "directions"
+          ],
+          "answer": "Lumi helps with directions.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
+          "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
+        },
+        {
+          "id": "g6-u5-m3-t07",
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "directions-sentence",
+          "prompt": "Complete: I can talk about directions in ___.",
+          "acceptedAnswers": [
+            "English"
+          ],
+          "feedbackCorrect": "Richtig.",
+          "feedbackWrong": "Fast. Achte auf die Form im Satz."
+        },
+        {
+          "id": "g6-u5-m3-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "directions-writing",
+          "prompt": "Write two to four sentences for the mission: Adventure Centre Rules.",
+          "support": [
+            "I can say ...",
+            "I think ... because ...",
+            "First, ...",
+            "Then, ..."
+          ],
+          "minSentences": 2,
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, klare Sätze helfen dir in Klassenarbeiten.",
+          "requirements": [
+            "Use clear English sentences.",
+            "Use one word from this mission."
+          ]
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "Name one word from this mission about directions.",
+          "type": "text-input",
+          "manualReview": true
+        },
+        {
+          "prompt": "Write one correct English sentence.",
+          "type": "mini-writing",
+          "manualReview": true
+        }
+      ]
+    },
+    {
+      "missionId": "g6-u5-m4",
+      "missionTitle": "Future Forecast",
+      "bookSection": "Focus on Language",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi startet die Mission 'Future Forecast' in Dartmoor Adventure Trail. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "learningGoals": [
+        "I can make predictions with will.",
+        "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
+        "Ich kann Fehler erkennen und gezielt wiederholen."
+      ],
+      "skills": [
+        "VOC",
+        "GRA",
+        "REA",
+        "SPE",
+        "WRI"
+      ],
+      "vocabFields": [
+        "will-future",
+        "weather",
+        "predictions"
+      ],
+      "grammarFocus": [
+        "will/won’t"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Lichtfunke",
+        "message": "Mission 'Future Forecast' abgeschlossen."
+      },
+      "tasks": [
+        {
+          "id": "g6-u5-m4-t01",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "will-future-vocabulary",
+          "prompt": "Match words from the field: will-future, weather, predictions.",
+          "pairs": [
+            {
+              "left": "will-future",
+              "right": "will-future word field"
+            },
+            {
+              "left": "weather",
+              "right": "weather word field"
+            },
+            {
+              "left": "predictions",
+              "right": "predictions word field"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
+          "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
+        },
+        {
+          "id": "g6-u5-m4-g01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "will-future",
+          "prompt": "Tomorrow it ___ rain.",
+          "options": [
+            "will",
+            "was",
+            "did"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Gut gemacht.",
+          "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
+        },
+        {
+          "id": "g6-u5-m4-g02",
           "type": "error-correction",
           "skill": "GRA",
           "difficulty": 2,
-          "errorCategory": "simple-past-negative",
-          "prompt": "Correct: She didn’t went home.",
+          "errorCategory": "will-future",
+          "prompt": "Correct: She will goes home.",
           "acceptedAnswers": [
-            "She didn't go home.",
-            "She did not go home."
+            "She will go home."
           ],
           "feedbackCorrect": "Genau. So ist der Satz richtig.",
           "feedbackWrong": "Achte auf die Grammatikregel dieser Mission."
         },
         {
-          "id": "g6-u1-m4-t04",
+          "id": "g6-u5-m4-t04",
           "type": "multiple-choice",
           "skill": "SPE",
           "difficulty": 1,
-          "errorCategory": "regular verbs-phrases",
-          "prompt": "Which sentence fits this mission: Past Pro?",
+          "errorCategory": "will-future-phrases",
+          "prompt": "Which sentence fits this mission: Future Forecast?",
           "options": [
-            "I can say what happened and what didn’t happen.",
+            "I can make predictions with will.",
             "The pencil is under yesterday.",
             "Because football table."
           ],
@@ -664,12 +647,12 @@
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m4-t05",
+          "id": "g6-u5-m4-t05",
           "type": "reading-check",
           "skill": "REA",
           "difficulty": 2,
-          "errorCategory": "regular verbs-reading",
-          "text": "Lumi is working on past pro at Back to Lighthouse Island. The topic is regular verbs, irregular verbs, yesterday. After a short task, the students understand the mission better and collect a new light spark.",
+          "errorCategory": "will-future-reading",
+          "text": "Lumi is working on future forecast at Dartmoor Adventure Trail. The topic is will-future, weather, predictions. After a short task, the students understand the mission better and collect a new light spark.",
           "prompt": "What do the students collect?",
           "options": [
             "a new light spark",
@@ -681,7 +664,7 @@
           "feedbackWrong": "Lies den Text noch einmal langsam."
         },
         {
-          "id": "g6-u1-m4-t06",
+          "id": "g6-u5-m4-t06",
           "type": "sentence-builder",
           "skill": "WRI",
           "difficulty": 2,
@@ -691,19 +674,19 @@
             "Lumi",
             "helps",
             "with",
-            "regular verbs"
+            "will-future"
           ],
-          "answer": "Lumi helps with regular verbs.",
+          "answer": "Lumi helps with will-future.",
           "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
           "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
-          "id": "g6-u1-m4-t07",
+          "id": "g6-u5-m4-t07",
           "type": "gap-fill",
           "skill": "WRI",
           "difficulty": 1,
-          "errorCategory": "regular verbs-sentence",
-          "prompt": "Complete: I can talk about regular verbs in ___.",
+          "errorCategory": "will-future-sentence",
+          "prompt": "Complete: I can talk about will-future in ___.",
           "acceptedAnswers": [
             "English"
           ],
@@ -711,12 +694,12 @@
           "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
-          "id": "g6-u1-m4-t08",
+          "id": "g6-u5-m4-t08",
           "type": "mini-writing",
           "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "regular verbs-writing",
-          "prompt": "Write two to four sentences for the mission: Past Pro.",
+          "errorCategory": "will-future-writing",
+          "prompt": "Write two to four sentences for the mission: Future Forecast.",
           "support": [
             "I can say ...",
             "I think ... because ...",
@@ -734,7 +717,7 @@
       ],
       "miniChallenge": [
         {
-          "prompt": "Name one word from this mission about regular verbs.",
+          "prompt": "Name one word from this mission about will-future.",
           "type": "text-input",
           "manualReview": true
         },
@@ -746,13 +729,13 @@
       ]
     },
     {
-      "missionId": "g6-u1-m5",
-      "missionTitle": "Friendship Story",
+      "missionId": "g6-u5-m5",
+      "missionTitle": "Two-Tor Rescue",
       "bookSection": "Story",
       "durationMinutes": 20,
-      "storyIntro": "Lumi startet die Mission 'Friendship Story' in Back to Lighthouse Island. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "storyIntro": "Lumi startet die Mission 'Two-Tor Rescue' in Dartmoor Adventure Trail. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "I can understand a short story about friendship.",
+        "I can understand an adventure story.",
         "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
         "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
@@ -764,81 +747,68 @@
         "WRI"
       ],
       "vocabFields": [
-        "friendship",
-        "feelings",
-        "school"
+        "adventure",
+        "danger",
+        "rescue"
       ],
       "grammarFocus": [
-        "simple past in stories"
+        "story sequence"
       ],
       "reward": {
         "stars": 1,
         "item": "Lichtkristall",
-        "message": "Mission 'Friendship Story' abgeschlossen."
+        "message": "Mission 'Two-Tor Rescue' abgeschlossen."
       },
       "tasks": [
         {
-          "id": "g6-u1-m5-t01",
+          "id": "g6-u5-m5-t01",
           "type": "matching",
           "skill": "VOC",
           "difficulty": 1,
-          "errorCategory": "friendship-vocabulary",
-          "prompt": "Match words from the field: friendship, feelings, school.",
+          "errorCategory": "adventure-vocabulary",
+          "prompt": "Match words from the field: adventure, danger, rescue.",
           "pairs": [
             {
-              "left": "friendship",
-              "right": "friendship word field"
+              "left": "adventure",
+              "right": "adventure word field"
             },
             {
-              "left": "feelings",
-              "right": "feelings word field"
+              "left": "danger",
+              "right": "danger word field"
             },
             {
-              "left": "school",
-              "right": "school word field"
+              "left": "rescue",
+              "right": "rescue word field"
             }
           ],
           "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
           "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u1-m5-g01",
+          "id": "g6-u5-m5-g01",
           "type": "multiple-choice",
           "skill": "GRA",
           "difficulty": 1,
-          "errorCategory": "was-were",
+          "errorCategory": "grammar-review",
           "prompt": "Choose the correct sentence.",
           "options": [
-            "I were tired.",
-            "I was tired.",
-            "I am tired yesterday."
+            "This sentence is correct.",
+            "Correct this sentence is.",
+            "Sentence correct this."
           ],
-          "answer": 1,
+          "answer": 0,
           "feedbackCorrect": "Richtig. Gut gemacht.",
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m5-g02",
-          "type": "gap-fill",
-          "skill": "GRA",
-          "difficulty": 1,
-          "errorCategory": "simple-past-positive",
-          "prompt": "Yesterday we ___ football.",
-          "acceptedAnswers": [
-            "played"
-          ],
-          "feedbackCorrect": "Richtig.",
-          "feedbackWrong": "Fast. Achte auf die Form im Satz."
-        },
-        {
-          "id": "g6-u1-m5-t04",
+          "id": "g6-u5-m5-t04",
           "type": "multiple-choice",
           "skill": "SPE",
           "difficulty": 1,
-          "errorCategory": "friendship-phrases",
-          "prompt": "Which sentence fits this mission: Friendship Story?",
+          "errorCategory": "adventure-phrases",
+          "prompt": "Which sentence fits this mission: Two-Tor Rescue?",
           "options": [
-            "I can understand a short story about friendship.",
+            "I can understand an adventure story.",
             "The pencil is under yesterday.",
             "Because football table."
           ],
@@ -847,12 +817,12 @@
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m5-t05",
+          "id": "g6-u5-m5-t05",
           "type": "reading-check",
           "skill": "REA",
           "difficulty": 2,
-          "errorCategory": "friendship-reading",
-          "text": "Lumi is working on friendship story at Back to Lighthouse Island. The topic is friendship, feelings, school. After a short task, the students understand the mission better and collect a new light spark.",
+          "errorCategory": "adventure-reading",
+          "text": "Lumi is working on two-tor rescue at Dartmoor Adventure Trail. The topic is adventure, danger, rescue. After a short task, the students understand the mission better and collect a new light spark.",
           "prompt": "What do the students collect?",
           "options": [
             "a new light spark",
@@ -864,7 +834,7 @@
           "feedbackWrong": "Lies den Text noch einmal langsam."
         },
         {
-          "id": "g6-u1-m5-t06",
+          "id": "g6-u5-m5-t06",
           "type": "sentence-builder",
           "skill": "WRI",
           "difficulty": 2,
@@ -874,14 +844,14 @@
             "Lumi",
             "helps",
             "with",
-            "friendship"
+            "adventure"
           ],
-          "answer": "Lumi helps with friendship.",
+          "answer": "Lumi helps with adventure.",
           "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
           "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
-          "id": "g6-u1-m5-t07",
+          "id": "g6-u5-m5-t07",
           "type": "sorting",
           "skill": "REA",
           "difficulty": 2,
@@ -903,12 +873,12 @@
           "feedbackWrong": "Achte auf Wörter wie first, then, after that und finally."
         },
         {
-          "id": "g6-u1-m5-t08",
+          "id": "g6-u5-m5-t08",
           "type": "mini-writing",
           "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "friendship-writing",
-          "prompt": "Write two to four sentences for the mission: Friendship Story.",
+          "errorCategory": "adventure-writing",
+          "prompt": "Write two to four sentences for the mission: Two-Tor Rescue.",
           "support": [
             "I can say ...",
             "I think ... because ...",
@@ -926,7 +896,7 @@
       ],
       "miniChallenge": [
         {
-          "prompt": "Name one word from this mission about friendship.",
+          "prompt": "Name one word from this mission about adventure.",
           "type": "text-input",
           "manualReview": true
         },
@@ -938,13 +908,13 @@
       ]
     },
     {
-      "missionId": "g6-u1-m6",
-      "missionTitle": "Text Builder",
+      "missionId": "g6-u5-m6",
+      "missionTitle": "Emergency Call",
       "bookSection": "Skills",
       "durationMinutes": 20,
-      "storyIntro": "Lumi startet die Mission 'Text Builder' in Back to Lighthouse Island. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "storyIntro": "Lumi startet die Mission 'Emergency Call' in Dartmoor Adventure Trail. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "I can make short texts clearer.",
+        "I can give important emergency information.",
         "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
         "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
@@ -956,52 +926,46 @@
         "WRI"
       ],
       "vocabFields": [
-        "word fields",
-        "opposites",
-        "time words",
-        "linking words"
+        "station",
+        "emergency",
+        "correction"
       ],
       "grammarFocus": [
-        "because",
-        "so",
-        "but"
+        "mediation",
+        "text correction"
       ],
       "reward": {
         "stars": 1,
         "item": "Lichtfunke",
-        "message": "Mission 'Text Builder' abgeschlossen."
+        "message": "Mission 'Emergency Call' abgeschlossen."
       },
       "tasks": [
         {
-          "id": "g6-u1-m6-t01",
+          "id": "g6-u5-m6-t01",
           "type": "matching",
           "skill": "VOC",
           "difficulty": 1,
-          "errorCategory": "word fields-vocabulary",
-          "prompt": "Match words from the field: word fields, opposites, time words.",
+          "errorCategory": "station-vocabulary",
+          "prompt": "Match words from the field: station, emergency, correction.",
           "pairs": [
             {
-              "left": "word fields",
-              "right": "word fields word field"
+              "left": "station",
+              "right": "station word field"
             },
             {
-              "left": "opposites",
-              "right": "opposites word field"
+              "left": "emergency",
+              "right": "emergency word field"
             },
             {
-              "left": "time words",
-              "right": "time words word field"
-            },
-            {
-              "left": "linking words",
-              "right": "linking words word field"
+              "left": "correction",
+              "right": "correction word field"
             }
           ],
           "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
           "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u1-m6-g01",
+          "id": "g6-u5-m6-g01",
           "type": "multiple-choice",
           "skill": "GRA",
           "difficulty": 1,
@@ -1017,14 +981,14 @@
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m6-t04",
+          "id": "g6-u5-m6-t04",
           "type": "multiple-choice",
           "skill": "SPE",
           "difficulty": 1,
-          "errorCategory": "word fields-phrases",
-          "prompt": "Which sentence fits this mission: Text Builder?",
+          "errorCategory": "station-phrases",
+          "prompt": "Which sentence fits this mission: Emergency Call?",
           "options": [
-            "I can make short texts clearer.",
+            "I can give important emergency information.",
             "The pencil is under yesterday.",
             "Because football table."
           ],
@@ -1033,12 +997,12 @@
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m6-t05",
+          "id": "g6-u5-m6-t05",
           "type": "reading-check",
           "skill": "REA",
           "difficulty": 2,
-          "errorCategory": "word fields-reading",
-          "text": "Lumi is working on text builder at Back to Lighthouse Island. The topic is word fields, opposites, time words. After a short task, the students understand the mission better and collect a new light spark.",
+          "errorCategory": "station-reading",
+          "text": "Lumi is working on emergency call at Dartmoor Adventure Trail. The topic is station, emergency, correction. After a short task, the students understand the mission better and collect a new light spark.",
           "prompt": "What do the students collect?",
           "options": [
             "a new light spark",
@@ -1050,7 +1014,7 @@
           "feedbackWrong": "Lies den Text noch einmal langsam."
         },
         {
-          "id": "g6-u1-m6-t06",
+          "id": "g6-u5-m6-t06",
           "type": "sentence-builder",
           "skill": "WRI",
           "difficulty": 2,
@@ -1060,22 +1024,22 @@
             "Lumi",
             "helps",
             "with",
-            "word fields"
+            "station"
           ],
-          "answer": "Lumi helps with word fields.",
+          "answer": "Lumi helps with station.",
           "feedbackCorrect": "Sehr gut. Der Satz ist richtig gebaut.",
           "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
-          "id": "g6-u1-m6-t07",
+          "id": "g6-u5-m6-t07",
           "type": "viewing-scene",
           "skill": "VIE",
           "difficulty": 2,
-          "errorCategory": "word fields-viewing",
-          "sceneDescription": "A student looks at a scene about text builder. There are clues connected to word fields, opposites.",
+          "errorCategory": "station-viewing",
+          "sceneDescription": "A student looks at a scene about emergency call. There are clues connected to station, emergency.",
           "prompt": "What is the scene mainly about?",
           "options": [
-            "Text Builder",
+            "Emergency Call",
             "a maths test",
             "a shoe shop"
           ],
@@ -1084,12 +1048,12 @@
           "feedbackWrong": "Achte auf die Details in der Szene."
         },
         {
-          "id": "g6-u1-m6-t08",
+          "id": "g6-u5-m6-t08",
           "type": "mini-writing",
           "skill": "WRI",
           "difficulty": 2,
-          "errorCategory": "word fields-writing",
-          "prompt": "Write two to four sentences for the mission: Text Builder.",
+          "errorCategory": "station-writing",
+          "prompt": "Write two to four sentences for the mission: Emergency Call.",
           "support": [
             "I can say ...",
             "I think ... because ...",
@@ -1107,7 +1071,7 @@
       ],
       "miniChallenge": [
         {
-          "prompt": "Name one word from this mission about word fields.",
+          "prompt": "Name one word from this mission about station.",
           "type": "text-input",
           "manualReview": true
         },
@@ -1119,13 +1083,13 @@
       ]
     },
     {
-      "missionId": "g6-u1-m7",
-      "missionTitle": "Together Again Check",
+      "missionId": "g6-u5-m7",
+      "missionTitle": "Dartmoor Check",
       "bookSection": "Stop Check Go",
       "durationMinutes": 20,
-      "storyIntro": "Lumi startet die Mission 'Together Again Check' in Back to Lighthouse Island. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
+      "storyIntro": "Lumi startet die Mission 'Dartmoor Check' in Dartmoor Adventure Trail. Die Aufgaben verbinden die Buchreihenfolge mit einer eigenen App-Geschichte.",
       "learningGoals": [
-        "I can review Unit 1.",
+        "I can review Unit 5.",
         "Ich kann passende Wörter und Sätze zu diesem Buchabschnitt anwenden.",
         "Ich kann Fehler erkennen und gezielt wiederholen."
       ],
@@ -1138,49 +1102,49 @@
       ],
       "vocabFields": [
         "unit review",
-        "school",
-        "clubs",
-        "past"
+        "nature",
+        "future",
+        "adverbs"
       ],
       "grammarFocus": [
-        "mixed Unit 1 grammar"
+        "mixed Unit 5 grammar"
       ],
       "reward": {
         "stars": 3,
         "item": "Lichtkristall",
-        "message": "Mission 'Together Again Check' abgeschlossen."
+        "message": "Mission 'Dartmoor Check' abgeschlossen."
       },
       "tasks": [
         {
-          "id": "g6-u1-m7-t01",
+          "id": "g6-u5-m7-t01",
           "type": "matching",
           "skill": "VOC",
           "difficulty": 1,
           "errorCategory": "unit review-vocabulary",
-          "prompt": "Match words from the field: unit review, school, clubs.",
+          "prompt": "Match words from the field: unit review, nature, future.",
           "pairs": [
             {
               "left": "unit review",
               "right": "unit review word field"
             },
             {
-              "left": "school",
-              "right": "school word field"
+              "left": "nature",
+              "right": "nature word field"
             },
             {
-              "left": "clubs",
-              "right": "clubs word field"
+              "left": "future",
+              "right": "future word field"
             },
             {
-              "left": "past",
-              "right": "past word field"
+              "left": "adverbs",
+              "right": "adverbs word field"
             }
           ],
           "feedbackCorrect": "Sehr gut. Die Zuordnung stimmt.",
           "feedbackWrong": "Schau dir die Bedeutungen noch einmal genau an."
         },
         {
-          "id": "g6-u1-m7-g01",
+          "id": "g6-u5-m7-g01",
           "type": "multiple-choice",
           "skill": "GRA",
           "difficulty": 1,
@@ -1196,14 +1160,14 @@
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m7-t04",
+          "id": "g6-u5-m7-t04",
           "type": "multiple-choice",
           "skill": "SPE",
           "difficulty": 1,
           "errorCategory": "unit review-phrases",
-          "prompt": "Which sentence fits this mission: Together Again Check?",
+          "prompt": "Which sentence fits this mission: Dartmoor Check?",
           "options": [
-            "I can review Unit 1.",
+            "I can review Unit 5.",
             "The pencil is under yesterday.",
             "Because football table."
           ],
@@ -1212,12 +1176,12 @@
           "feedbackWrong": "Schau dir den Hinweis an und probiere es noch einmal."
         },
         {
-          "id": "g6-u1-m7-t05",
+          "id": "g6-u5-m7-t05",
           "type": "reading-check",
           "skill": "REA",
           "difficulty": 2,
           "errorCategory": "unit review-reading",
-          "text": "Lumi is working on together again check at Back to Lighthouse Island. The topic is unit review, school, clubs. After a short task, the students understand the mission better and collect a new light spark.",
+          "text": "Lumi is working on dartmoor check at Dartmoor Adventure Trail. The topic is unit review, nature, future. After a short task, the students understand the mission better and collect a new light spark.",
           "prompt": "What do the students collect?",
           "options": [
             "a new light spark",
@@ -1229,7 +1193,7 @@
           "feedbackWrong": "Lies den Text noch einmal langsam."
         },
         {
-          "id": "g6-u1-m7-t06",
+          "id": "g6-u5-m7-t06",
           "type": "sentence-builder",
           "skill": "WRI",
           "difficulty": 2,
@@ -1246,7 +1210,7 @@
           "feedbackWrong": "Achte auf Satzanfang, Verb und Satzende."
         },
         {
-          "id": "g6-u1-m7-t07",
+          "id": "g6-u5-m7-t07",
           "type": "gap-fill",
           "skill": "WRI",
           "difficulty": 1,
@@ -1259,12 +1223,12 @@
           "feedbackWrong": "Fast. Achte auf die Form im Satz."
         },
         {
-          "id": "g6-u1-m7-t08",
+          "id": "g6-u5-m7-t08",
           "type": "mini-writing",
           "skill": "WRI",
           "difficulty": 2,
           "errorCategory": "unit review-writing",
-          "prompt": "Write two to four sentences for the mission: Together Again Check.",
+          "prompt": "Write two to four sentences for the mission: Dartmoor Check.",
           "support": [
             "I can say ...",
             "I think ... because ...",
@@ -1296,29 +1260,29 @@
   ],
   "diagnosticRules": [
     {
-      "ifErrorCategory": "was-were",
-      "recommendReviewMission": "g6-u1-m1",
-      "message": "Bitte wiederhole: was-were."
+      "ifErrorCategory": "will-future",
+      "recommendReviewMission": "g6-u5-m4",
+      "message": "Bitte wiederhole: will-future."
     },
     {
-      "ifErrorCategory": "simple-past-positive",
-      "recommendReviewMission": "g6-u1-m4",
-      "message": "Bitte wiederhole: simple-past-positive."
+      "ifErrorCategory": "future-negative",
+      "recommendReviewMission": "g6-u5-m4",
+      "message": "Bitte wiederhole: future-negative."
     },
     {
-      "ifErrorCategory": "simple-past-negative",
-      "recommendReviewMission": "g6-u1-m4",
-      "message": "Bitte wiederhole: simple-past-negative."
+      "ifErrorCategory": "adverbs-of-manner",
+      "recommendReviewMission": "g6-u5-m3",
+      "message": "Bitte wiederhole: adverbs-of-manner."
     },
     {
-      "ifErrorCategory": "linking-words",
-      "recommendReviewMission": "g6-u1-m6",
-      "message": "Bitte wiederhole: linking-words."
+      "ifErrorCategory": "directions",
+      "recommendReviewMission": "g6-u5-m3",
+      "message": "Bitte wiederhole: directions."
     },
     {
-      "ifErrorCategory": "time-words",
-      "recommendReviewMission": "g6-u1-m6",
-      "message": "Bitte wiederhole: time-words."
+      "ifErrorCategory": "emergency-call",
+      "recommendReviewMission": "g6-u5-m6",
+      "message": "Bitte wiederhole: emergency-call."
     }
   ]
 }
