@@ -13,3 +13,7 @@ Alle Dateien aus diesem Ordner in das Repository hochladen und vorhandene Dateie
 - `icons/`
 
 Nach dem Commit wird GitHub Pages automatisch aktualisiert. Auf dem iPad die Seite danach einmal neu laden. Wenn noch die alte Version erscheint, Safari-Websitedaten für die GitHub-Pages-Adresse löschen.
+
+
+## v0.4.1
+Die Unit-1-Task-Bank ist zusätzlich direkt in `index.html` eingebettet. Dadurch startet die App auch dann, wenn die JSON-Datei beim ersten Laden noch nicht erreichbar ist.
