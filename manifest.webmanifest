@@ -1,7 +1,7 @@
 {
-  "name": "Lighthouse Coach",
-  "short_name": "Lighthouse",
-  "description": "Englisch-Lernsystem für Klasse 5 und 6 mit Fortschrittsanzeige und Offline-Modus.",
+  "name": "Lumi English Adventure",
+  "short_name": "Lumi English",
+  "description": "Englisch-Lernsystem für Klasse 5 und 6 mit Missionen, Fortschritt und Offline-Modus.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

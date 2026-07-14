@@ -1,18 +1,31 @@
-# Lighthouse Coach PWA
+# Lumi English Adventure PWA
 
-## Testen
-Eine PWA sollte über HTTPS oder localhost geöffnet werden. Ein direktes Öffnen der Datei `index.html` reicht für Installation und Offline-Modus nicht aus.
+Version 0.3
 
-## GitHub Pages
-1. Neues GitHub-Repository erstellen.
-2. Alle Dateien aus diesem Ordner in das Repository hochladen.
-3. In GitHub unter Settings > Pages als Quelle den Branch `main` und den Ordner `/root` auswählen.
-4. Die veröffentlichte HTTPS-Adresse in Safari öffnen.
-5. Teilen > Zum Home-Bildschirm.
+## Update auf GitHub Pages
 
-## Cloudflare Pages
-1. Bei Cloudflare Pages ein neues Projekt anlegen.
-2. Diesen Ordner oder das GitHub-Repository verbinden.
-3. Kein Build-Befehl nötig.
-4. Als Ausgabeordner `/` verwenden.
-5. Die veröffentlichte HTTPS-Adresse in Safari öffnen.
+1. ZIP-Datei entpacken.
+2. Im GitHub-Repository `Datei hinzufügen` > `Dateien hochladen`.
+3. Diese Dateien/Ordner hochladen und bestehende Dateien ersetzen:
+   - `index.html`
+   - `manifest.webmanifest`
+   - `service-worker.js`
+   - `icons/`
+4. Commit-Nachricht z. B. `Update auf Version 0.3`.
+5. Einige Minuten warten, dann die GitHub-Pages-Adresse neu laden.
+
+## iPad-Hinweis
+
+Falls nach einem Update noch die alte Version erscheint:
+- Safari-Seite einmal komplett neu laden.
+- Falls nötig: Einstellungen > Safari > Erweitert > Websitedaten und die Website-Daten dieser GitHub-Pages-Adresse löschen.
+- Danach die App erneut öffnen.
+
+## Inhalte
+
+Die Inhalte basieren auf dem bereitgestellten Strukturplan:
+- Klasse 5 als Wiederholung
+- Klasse 6 als Hauptpfad
+- 20-Minuten-Missionen
+- 80-Prozent-Bestehensgrenze
+- Fehlerdiagnose und Wiederholungsmissionen
