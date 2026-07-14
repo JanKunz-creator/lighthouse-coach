@@ -1,0 +1,1411 @@
+{
+  "schemaVersion": "0.3.0",
+  "fileType": "task-bank",
+  "grade": 6,
+  "unitId": "g6-u1",
+  "unitTitle": "Together again",
+  "appWorld": "Back to Lighthouse Island",
+  "unitTheme": "Back after the holidays, school life, clubs, friendship and simple past",
+  "passThresholdPercent": 80,
+  "estimatedTotalMissions": 7,
+  "contentRule": "All tasks, texts, examples and feedback are original app content. The structure follows the textbook unit order and learning goals, but does not copy original exercises or reading texts.",
+  "missions": [
+    {
+      "missionId": "g6-u1-m1",
+      "missionTitle": "After the Holidays",
+      "bookSection": "Lead-in",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi wartet am Hafen von Lighthouse Island. Alle kommen aus den Ferien zurück, aber die Erinnerungen sind durcheinander. Hilf Lumi, die Ferien-Sätze wieder richtig zusammenzusetzen.",
+      "learningGoals": [
+        "Ich kann kurz erzählen, wo ich in den Ferien war.",
+        "Ich kann sagen, wie das Wetter war.",
+        "Ich kann was und were in einfachen Sätzen unterscheiden."
+      ],
+      "skills": [
+        "VOC",
+        "GRA",
+        "SPE",
+        "LIS"
+      ],
+      "vocabFields": [
+        "holidays",
+        "weather",
+        "feelings"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Lichtfunke",
+        "message": "Der erste Ferien-Funken ist zurück im Leuchtturm."
+      },
+      "tasks": [
+        {
+          "id": "g6-u1-m1-t01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "was-were",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "I were at the beach.",
+            "I was at the beach.",
+            "I am at the beach yesterday."
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Genau. Bei I benutzt du in der Vergangenheit was.",
+          "feedbackWrong": "Schau auf das Verb. Bei I heißt es hier was."
+        },
+        {
+          "id": "g6-u1-m1-t02",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "weather-vocabulary",
+          "prompt": "Match the weather words.",
+          "pairs": [
+            {
+              "left": "sunny",
+              "right": "sonnig"
+            },
+            {
+              "left": "rainy",
+              "right": "regnerisch"
+            },
+            {
+              "left": "cloudy",
+              "right": "bewölkt"
+            },
+            {
+              "left": "windy",
+              "right": "windig"
+            }
+          ],
+          "feedbackCorrect": "Super. Diese Wörter brauchst du, um über Ferien zu sprechen.",
+          "feedbackWrong": "Kein Problem. Schau dir die Wetterwörter noch einmal genau an."
+        },
+        {
+          "id": "g6-u1-m1-t03",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "was-were",
+          "prompt": "Complete the sentence: The weather ___ cold.",
+          "acceptedAnswers": [
+            "was"
+          ],
+          "feedbackCorrect": "Richtig. The weather ist Singular, deshalb was.",
+          "feedbackWrong": "Denk an was und were. Bei einer Sache benutzt du meistens was."
+        },
+        {
+          "id": "g6-u1-m1-t04",
+          "type": "sentence-builder",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "holidays",
+            "were",
+            "My",
+            "great"
+          ],
+          "answer": "My holidays were great.",
+          "feedbackCorrect": "Sehr gut. Holidays ist Mehrzahl, deshalb were.",
+          "feedbackWrong": "Der Satz beginnt mit My holidays. Danach kommt were."
+        },
+        {
+          "id": "g6-u1-m1-t05",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "holidays-phrases",
+          "prompt": "Which answer fits? How were your holidays?",
+          "options": [
+            "They were great.",
+            "It was Monday.",
+            "I am in class six."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Genau. Die Frage fragt nach den Ferien.",
+          "feedbackWrong": "Die Antwort muss zu holidays passen."
+        },
+        {
+          "id": "g6-u1-m1-t06",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 1,
+          "errorCategory": "reading-detail",
+          "text": "Mia was in the mountains. The weather was cold, but she was happy. She liked the long walks.",
+          "prompt": "Where was Mia?",
+          "options": [
+            "At the beach",
+            "In the mountains",
+            "At school"
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Richtig. Mia war in den Bergen.",
+          "feedbackWrong": "Lies den ersten Satz noch einmal."
+        },
+        {
+          "id": "g6-u1-m1-t07",
+          "type": "error-correction",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "was-were",
+          "prompt": "Correct the sentence: We was in Spain.",
+          "acceptedAnswers": [
+            "We were in Spain."
+          ],
+          "feedbackCorrect": "Genau. Bei we benutzt du were.",
+          "feedbackWrong": "Bei we heißt es in der Vergangenheit were."
+        },
+        {
+          "id": "g6-u1-m1-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "holiday-writing",
+          "prompt": "Write one sentence about your holidays.",
+          "support": [
+            "I was at home.",
+            "I was in Italy.",
+            "My holidays were nice.",
+            "The weather was sunny."
+          ],
+          "minWords": 4,
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut gemacht. Ein kurzer Satz reicht am Anfang völlig."
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "I ___ at home.",
+          "acceptedAnswers": [
+            "was"
+          ]
+        },
+        {
+          "prompt": "We ___ in the country.",
+          "acceptedAnswers": [
+            "were"
+          ]
+        },
+        {
+          "prompt": "The weather ___ rainy.",
+          "acceptedAnswers": [
+            "was"
+          ]
+        }
+      ]
+    },
+    {
+      "missionId": "g6-u1-m2",
+      "missionTitle": "Back at School",
+      "bookSection": "Theme 1",
+      "durationMinutes": 20,
+      "storyIntro": "Der erste Schultag auf Lighthouse Island beginnt. Einige Kinder erzählen von ihren Ferien, andere suchen ihre Klasse. Lumi braucht Hilfe, die Gespräche richtig zu verstehen.",
+      "learningGoals": [
+        "Ich kann Freunde nach den Ferien begrüßen.",
+        "Ich kann kurz sagen, wie ein Schultag war.",
+        "Ich kann einfache Sätze über den ersten Schultag schreiben."
+      ],
+      "skills": [
+        "REA",
+        "SPE",
+        "WRI",
+        "VOC"
+      ],
+      "vocabFields": [
+        "school",
+        "lessons",
+        "timetable",
+        "friends"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Lichtfunke",
+        "message": "Das School Gate leuchtet wieder."
+      },
+      "tasks": [
+        {
+          "id": "g6-u1-m2-t01",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "school-greetings",
+          "prompt": "Choose the best greeting after the holidays.",
+          "options": [
+            "How was your summer?",
+            "How is your pencil?",
+            "Where is your sandwich?"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Genau. So kann man nach den Ferien ein Gespräch beginnen.",
+          "feedbackWrong": "Die passende Frage bezieht sich auf die Ferien."
+        },
+        {
+          "id": "g6-u1-m2-t02",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "was-were",
+          "prompt": "Complete the sentence: The first lesson ___ English.",
+          "acceptedAnswers": [
+            "was"
+          ],
+          "feedbackCorrect": "Richtig. Lesson ist Singular, deshalb was.",
+          "feedbackWrong": "Eine lesson ist eine einzelne Stunde. Dafür passt was."
+        },
+        {
+          "id": "g6-u1-m2-t03",
+          "type": "sentence-builder",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "was",
+            "My",
+            "nice",
+            "teacher"
+          ],
+          "answer": "My teacher was nice.",
+          "feedbackCorrect": "Sehr gut. Der Satz ist klar und richtig.",
+          "feedbackWrong": "Beginne mit My teacher."
+        },
+        {
+          "id": "g6-u1-m2-t04",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "reading-detail",
+          "text": "Tom was nervous in the morning. His first lesson was Maths. After the break, he met his friend Ben. Then he felt better.",
+          "prompt": "Why did Tom feel better?",
+          "options": [
+            "He met his friend.",
+            "He went home.",
+            "He had no lessons."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Ben hat ihm geholfen, sich besser zu fühlen.",
+          "feedbackWrong": "Achte auf den Satz nach der Pause."
+        },
+        {
+          "id": "g6-u1-m2-t05",
+          "type": "multiple-choice",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "school-vocabulary",
+          "prompt": "What is a timetable?",
+          "options": [
+            "ein Stundenplan",
+            "eine Sporthalle",
+            "eine Hausaufgabe"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Genau. Timetable heißt Stundenplan.",
+          "feedbackWrong": "Ein timetable zeigt, welche Stunden du wann hast."
+        },
+        {
+          "id": "g6-u1-m2-t06",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "irregular-verbs",
+          "prompt": "Complete the sentence: After the break, we ___ History.",
+          "acceptedAnswers": [
+            "had"
+          ],
+          "feedbackCorrect": "Gut. Had ist die Vergangenheitsform von have.",
+          "feedbackWrong": "Hier brauchst du die Vergangenheit von have."
+        },
+        {
+          "id": "g6-u1-m2-t07",
+          "type": "error-correction",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "was-were",
+          "prompt": "Correct the sentence: The first lesson were German.",
+          "acceptedAnswers": [
+            "The first lesson was German."
+          ],
+          "feedbackCorrect": "Genau. The first lesson ist Singular.",
+          "feedbackWrong": "Bei einer einzelnen Schulstunde benutzt du was."
+        },
+        {
+          "id": "g6-u1-m2-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "school-day-writing",
+          "prompt": "Write two sentences about your first school day after the holidays.",
+          "support": [
+            "My first lesson was ...",
+            "It was ...",
+            "My teacher was ...",
+            "After the break, I ..."
+          ],
+          "minSentences": 2,
+          "manualReview": true,
+          "feedbackAfterSubmit": "Sehr gut. Zwei klare Sätze sind besser als ein langer, unsicherer Satz."
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "The first lesson ___ PE.",
+          "acceptedAnswers": [
+            "was"
+          ]
+        },
+        {
+          "prompt": "My friends ___ happy.",
+          "acceptedAnswers": [
+            "were"
+          ]
+        },
+        {
+          "prompt": "Our teacher ___ friendly.",
+          "acceptedAnswers": [
+            "was"
+          ]
+        }
+      ]
+    },
+    {
+      "missionId": "g6-u1-m3",
+      "missionTitle": "Club Explorer",
+      "bookSection": "Theme 2",
+      "durationMinutes": 20,
+      "storyIntro": "Auf Lighthouse Island öffnen neue Clubs. Lumi möchte wissen, welchem Club du beitreten würdest und warum.",
+      "learningGoals": [
+        "Ich kann über Schulclubs sprechen.",
+        "Ich kann sagen, welchem Club ich beitreten möchte.",
+        "Ich kann eine einfache Begründung mit because geben."
+      ],
+      "skills": [
+        "VOC",
+        "SPE",
+        "WRI",
+        "STU"
+      ],
+      "vocabFields": [
+        "clubs",
+        "hobbies",
+        "school activities"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Lichtfunke",
+        "badge": "Club Explorer",
+        "message": "Du hast den Club Explorer Badge freigeschaltet."
+      },
+      "tasks": [
+        {
+          "id": "g6-u1-m3-t01",
+          "type": "multiple-choice",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "clubs-vocabulary",
+          "prompt": "What does join a club mean?",
+          "options": [
+            "einer AG beitreten",
+            "eine Schule schließen",
+            "einen Test schreiben"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Genau. Join a club heißt einer AG oder einem Club beitreten.",
+          "feedbackWrong": "Join bedeutet hier mitmachen oder beitreten."
+        },
+        {
+          "id": "g6-u1-m3-t02",
+          "type": "gap-fill",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "clubs-vocabulary",
+          "prompt": "Complete the sentence: I’d like to ___ the music club.",
+          "acceptedAnswers": [
+            "join"
+          ],
+          "feedbackCorrect": "Richtig. I’d like to join ist eine sehr nützliche Formulierung.",
+          "feedbackWrong": "Hier passt das Verb join."
+        },
+        {
+          "id": "g6-u1-m3-t03",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "join",
+            "to",
+            "the",
+            "drama club",
+            "I’d like"
+          ],
+          "answer": "I’d like to join the drama club.",
+          "feedbackCorrect": "Sehr gut. So klingt der Satz natürlich.",
+          "feedbackWrong": "Der Satz beginnt mit I’d like to."
+        },
+        {
+          "id": "g6-u1-m3-t04",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "clubs-vocabulary",
+          "prompt": "Match the clubs and activities.",
+          "pairs": [
+            {
+              "left": "drama club",
+              "right": "acting"
+            },
+            {
+              "left": "sports club",
+              "right": "football"
+            },
+            {
+              "left": "music club",
+              "right": "singing"
+            },
+            {
+              "left": "art club",
+              "right": "drawing"
+            }
+          ],
+          "feedbackCorrect": "Super. Jetzt kennst du wichtige Club-Wörter.",
+          "feedbackWrong": "Überlege, was man in dem jeweiligen Club macht."
+        },
+        {
+          "id": "g6-u1-m3-t05",
+          "type": "multiple-choice",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "linking-words",
+          "prompt": "Which word gives a reason?",
+          "options": [
+            "because",
+            "first",
+            "yesterday"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Genau. Because erklärt den Grund.",
+          "feedbackWrong": "Ein Grund wird meistens mit because eingeleitet."
+        },
+        {
+          "id": "g6-u1-m3-t06",
+          "type": "gap-fill",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "club-writing",
+          "prompt": "Complete the sentence: I’d like to join the art club because it is ___.",
+          "acceptedAnswers": [
+            "fun",
+            "interesting",
+            "cool",
+            "exciting",
+            "creative"
+          ],
+          "feedbackCorrect": "Gute Begründung.",
+          "feedbackWrong": "Hier passt ein positives Adjektiv, zum Beispiel fun oder interesting."
+        },
+        {
+          "id": "g6-u1-m3-t07",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "simple-present",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "In our club you learn to dance.",
+            "In our club you learns to dance.",
+            "In our club you learning to dance."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Nach you steht die Grundform learn.",
+          "feedbackWrong": "Achte auf you. Es heißt you learn."
+        },
+        {
+          "id": "g6-u1-m3-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "club-project",
+          "prompt": "Create your own school club.",
+          "fields": [
+            {
+              "label": "Club name",
+              "placeholder": "Bike Club"
+            },
+            {
+              "label": "What can students do?",
+              "placeholder": "Students can repair bikes."
+            },
+            {
+              "label": "Why is it interesting?",
+              "placeholder": "It is interesting because bikes are cool."
+            }
+          ],
+          "manualReview": true,
+          "feedbackAfterSubmit": "Stark. Du hast eine eigene AG-Idee auf Englisch geplant."
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "I’d like to join the ______ club because ______.",
+          "type": "sentence-frame",
+          "manualReview": true
+        }
+      ]
+    },
+    {
+      "missionId": "g6-u1-m4",
+      "missionTitle": "Past Pro",
+      "bookSection": "Focus on Language",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi findet ein altes Logbuch. Viele Verben fehlen. Hilf dabei, die Einträge aus der Vergangenheit wieder richtig einzusetzen.",
+      "learningGoals": [
+        "Ich kann regelmäßige Verben im Simple Past bilden.",
+        "Ich kann erste unregelmäßige Verben im Simple Past erkennen.",
+        "Ich kann negative Sätze mit didn’t und Grundform bilden."
+      ],
+      "skills": [
+        "GRA",
+        "WRI",
+        "STU"
+      ],
+      "vocabFields": [
+        "regular verbs",
+        "irregular verbs",
+        "yesterday phrases"
+      ],
+      "reward": {
+        "stars": 2,
+        "item": "Lichtfunke",
+        "badge": "Past Pro",
+        "message": "Das Logbuch ist wieder lesbar."
+      },
+      "ruleCard": {
+        "title": "Simple Past",
+        "rules": [
+          "Das Simple Past benutzt du, wenn etwas in der Vergangenheit passiert ist.",
+          "Regelmäßige Verben bekommen meistens -ed.",
+          "Bei Verneinungen benutzt du didn’t + Grundform.",
+          "Nach didn’t steht nicht die Past-Form."
+        ],
+        "examples": [
+          "I played football.",
+          "I didn’t play tennis.",
+          "She visited her friend.",
+          "She didn’t visit her cousin."
+        ]
+      },
+      "tasks": [
+        {
+          "id": "g6-u1-m4-t01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "simple-past-positive",
+          "prompt": "Yesterday I ___ football.",
+          "options": [
+            "play",
+            "played",
+            "playing"
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Richtig. Play wird im Simple Past zu played.",
+          "feedbackWrong": "Yesterday zeigt dir: Du brauchst die Vergangenheit."
+        },
+        {
+          "id": "g6-u1-m4-t02",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "simple-past-positive",
+          "prompt": "Complete the sentence: We ___ at home yesterday.",
+          "acceptedAnswers": [
+            "stayed"
+          ],
+          "feedbackCorrect": "Gut. Stay wird zu stayed.",
+          "feedbackWrong": "Bei regelmäßigen Verben kommt meistens -ed dazu."
+        },
+        {
+          "id": "g6-u1-m4-t03",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "simple-past-negative",
+          "prompt": "Choose the correct negative sentence.",
+          "options": [
+            "I didn’t watched TV.",
+            "I didn’t watch TV.",
+            "I don’t watched TV."
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Genau. Nach didn’t steht die Grundform.",
+          "feedbackWrong": "Nach didn’t benutzt du nicht watched, sondern watch."
+        },
+        {
+          "id": "g6-u1-m4-t04",
+          "type": "matching",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "regular-verbs",
+          "prompt": "Match the verbs with their Simple Past forms.",
+          "pairs": [
+            {
+              "left": "help",
+              "right": "helped"
+            },
+            {
+              "left": "visit",
+              "right": "visited"
+            },
+            {
+              "left": "walk",
+              "right": "walked"
+            },
+            {
+              "left": "like",
+              "right": "liked"
+            }
+          ],
+          "feedbackCorrect": "Sehr gut. Das sind regelmäßige Verben.",
+          "feedbackWrong": "Die Simple-Past-Form endet hier auf -ed oder -d."
+        },
+        {
+          "id": "g6-u1-m4-t05",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "irregular-verbs",
+          "prompt": "What is the Simple Past of go?",
+          "options": [
+            "goed",
+            "went",
+            "goes"
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Richtig. Go wird im Simple Past zu went.",
+          "feedbackWrong": "Go ist unregelmäßig. Die Form heißt went."
+        },
+        {
+          "id": "g6-u1-m4-t06",
+          "type": "error-correction",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "simple-past-negative",
+          "prompt": "Make the sentence negative: I played basketball.",
+          "acceptedAnswers": [
+            "I didn't play basketball.",
+            "I did not play basketball."
+          ],
+          "feedbackCorrect": "Sehr gut. Didn’t + Grundform.",
+          "feedbackWrong": "Bei der Verneinung übernimmt didn’t die Vergangenheit. Das Verb bleibt play."
+        },
+        {
+          "id": "g6-u1-m4-t07",
+          "type": "error-correction",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "simple-past-negative",
+          "prompt": "Correct the sentence: She didn’t went to school.",
+          "acceptedAnswers": [
+            "She didn't go to school.",
+            "She did not go to school."
+          ],
+          "feedbackCorrect": "Genau. Nach didn’t steht go.",
+          "feedbackWrong": "Nach didn’t steht die Grundform, also go."
+        },
+        {
+          "id": "g6-u1-m4-t08",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "was-were",
+          "prompt": "They ___ tired after school.",
+          "options": [
+            "was",
+            "were",
+            "is"
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Richtig. They braucht were.",
+          "feedbackWrong": "Bei they benutzt du were."
+        },
+        {
+          "id": "g6-u1-m4-t09",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "simple-past-positive",
+          "prompt": "Yesterday Max ___ his friend.",
+          "options": [
+            "visited",
+            "visit",
+            "visits"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Genau. Yesterday zeigt Simple Past: visited.",
+          "feedbackWrong": "Hier brauchst du die Vergangenheitsform."
+        },
+        {
+          "id": "g6-u1-m4-t10",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "simple-past-writing",
+          "prompt": "Write three sentences about yesterday.",
+          "requirements": [
+            "Use one positive Simple Past sentence.",
+            "Use one negative sentence with didn’t.",
+            "Use one sentence with was or were."
+          ],
+          "support": [
+            "Yesterday I ...",
+            "I didn’t ...",
+            "It was ..."
+          ],
+          "manualReview": true,
+          "feedbackAfterSubmit": "Super. Genau solche kurzen Sätze helfen später bei Klassenarbeiten."
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "play →",
+          "acceptedAnswers": [
+            "played"
+          ]
+        },
+        {
+          "prompt": "go →",
+          "acceptedAnswers": [
+            "went"
+          ]
+        },
+        {
+          "prompt": "I didn’t ___ football.",
+          "acceptedAnswers": [
+            "play"
+          ]
+        },
+        {
+          "prompt": "They ___ happy.",
+          "acceptedAnswers": [
+            "were"
+          ]
+        }
+      ]
+    },
+    {
+      "missionId": "g6-u1-m5",
+      "missionTitle": "Friendship Story",
+      "bookSection": "Story",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi erzählt eine Geschichte über einen neuen Schüler auf Lighthouse Island. Es geht darum, wie ein schwieriger Tag durch Freundschaft besser werden kann.",
+      "learningGoals": [
+        "Ich kann eine kurze Geschichte verstehen.",
+        "Ich kann erkennen, wie sich eine Person fühlt.",
+        "Ich kann eine Geschichte aus einer anderen Perspektive erzählen."
+      ],
+      "skills": [
+        "REA",
+        "WRI",
+        "VOC"
+      ],
+      "vocabFields": [
+        "friendship",
+        "feelings",
+        "school"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Lichtkristall",
+        "badge": "Good Friend",
+        "message": "Du hast den Freundschafts-Kristall gefunden."
+      },
+      "readingText": {
+        "id": "g6-u1-m5-reading-01",
+        "title": "A New Day",
+        "text": "A new boy came to Lighthouse School on Monday. His name was Noah. In the morning, he was quiet because he didn’t know anybody. At break, Mia asked him, “Do you want to play table tennis?” Noah smiled. They played together, and later Ben joined them too. After school, Noah wrote in his notebook: “My first day was not bad. I found two new friends.”"
+      },
+      "tasks": [
+        {
+          "id": "g6-u1-m5-t01",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 1,
+          "errorCategory": "reading-main-idea",
+          "prompt": "Who was new at school?",
+          "options": [
+            "Mia",
+            "Noah",
+            "Ben"
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Richtig. Noah war neu an der Schule.",
+          "feedbackWrong": "Lies den ersten Satz noch einmal."
+        },
+        {
+          "id": "g6-u1-m5-t02",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "feelings-vocabulary",
+          "prompt": "How did Noah feel in the morning?",
+          "options": [
+            "quiet and unsure",
+            "angry",
+            "very loud"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Genau. Er war ruhig und unsicher.",
+          "feedbackWrong": "Achte auf quiet und didn’t know anybody."
+        },
+        {
+          "id": "g6-u1-m5-t03",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 1,
+          "errorCategory": "reading-detail",
+          "prompt": "What did Mia ask Noah?",
+          "options": [
+            "if he wanted to play table tennis",
+            "if he had homework",
+            "if he liked Maths"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Mia fragte ihn, ob er Tischtennis spielen möchte.",
+          "feedbackWrong": "Lies den Satz mit Mia noch einmal."
+        },
+        {
+          "id": "g6-u1-m5-t04",
+          "type": "sorting",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "story-sequence",
+          "prompt": "Put the events in the correct order.",
+          "items": [
+            "Noah came to the school.",
+            "Mia asked him to play.",
+            "Ben joined them.",
+            "Noah wrote in his notebook."
+          ],
+          "answer": [
+            "Noah came to the school.",
+            "Mia asked him to play.",
+            "Ben joined them.",
+            "Noah wrote in his notebook."
+          ],
+          "feedbackCorrect": "Sehr gut. Du hast die Reihenfolge verstanden.",
+          "feedbackWrong": "Suche im Text nach Monday, at break, later und after school."
+        },
+        {
+          "id": "g6-u1-m5-t05",
+          "type": "multiple-choice",
+          "skill": "VOC",
+          "difficulty": 2,
+          "errorCategory": "vocabulary-in-context",
+          "prompt": "What does joined them mean?",
+          "options": [
+            "er machte mit",
+            "er ging weg",
+            "er vergaß sie"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Genau. Joined them heißt, dass Ben mitgemacht hat.",
+          "feedbackWrong": "Joined bedeutet hier: dazukommen und mitmachen."
+        },
+        {
+          "id": "g6-u1-m5-t06",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "perspective-writing",
+          "prompt": "Write two sentences from Mia’s perspective.",
+          "support": [
+            "I saw a new boy.",
+            "He was quiet.",
+            "I asked him to play table tennis.",
+            "Later, Ben joined us."
+          ],
+          "minSentences": 2,
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut gemacht. Du hast die Geschichte aus einer anderen Sicht erzählt."
+        },
+        {
+          "id": "g6-u1-m5-t07",
+          "type": "text-input",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "simple-past-recognition",
+          "prompt": "Find one Simple Past verb from the story.",
+          "acceptedAnswers": [
+            "came",
+            "was",
+            "asked",
+            "smiled",
+            "played",
+            "joined",
+            "wrote",
+            "found"
+          ],
+          "feedbackCorrect": "Richtig. Das ist ein Simple-Past-Verb aus der Geschichte.",
+          "feedbackWrong": "Suche nach Verben, die erzählen, was passiert ist."
+        },
+        {
+          "id": "g6-u1-m5-t08",
+          "type": "multiple-choice",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "reading-main-idea",
+          "prompt": "What is the message of the story?",
+          "options": [
+            "Friends can make a difficult day better.",
+            "School is always boring.",
+            "Table tennis is dangerous."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Genau. Die Geschichte zeigt, dass Freunde einen Tag besser machen können.",
+          "feedbackWrong": "Denk daran, wie Noah sich am Anfang und am Ende fühlt."
+        }
+      ]
+    },
+    {
+      "missionId": "g6-u1-m6",
+      "missionTitle": "Text Builder",
+      "bookSection": "Learning Words / Writing / Reading and Mediation / Viewing",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi hat einen Text geschrieben. Er ist verständlich, aber noch langweilig. Hilf ihr, bessere Wörter, time words und linking words zu benutzen.",
+      "learningGoals": [
+        "Ich kann Wörter nach Wortfeldern sortieren.",
+        "Ich kann Gegenteile erkennen.",
+        "Ich kann time words und linking words in kurzen Texten verwenden.",
+        "Ich kann einfache Schulregeln verstehen."
+      ],
+      "skills": [
+        "STU",
+        "WRI",
+        "MED",
+        "VIE",
+        "VOC"
+      ],
+      "vocabFields": [
+        "weather",
+        "hobbies",
+        "feelings",
+        "rules"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Lichtkristall",
+        "badge": "Text Builder",
+        "message": "Deine Texte bekommen mehr Struktur."
+      },
+      "tasks": [
+        {
+          "id": "g6-u1-m6-t01",
+          "type": "multiple-choice",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "word-fields",
+          "prompt": "Which word belongs to weather?",
+          "options": [
+            "sunny",
+            "football",
+            "nervous"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Sunny gehört zum Wetter.",
+          "feedbackWrong": "Weather bedeutet Wetter."
+        },
+        {
+          "id": "g6-u1-m6-t02",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "opposites",
+          "prompt": "Match the opposites.",
+          "pairs": [
+            {
+              "left": "happy",
+              "right": "unhappy"
+            },
+            {
+              "left": "interesting",
+              "right": "boring"
+            },
+            {
+              "left": "easy",
+              "right": "difficult"
+            },
+            {
+              "left": "good",
+              "right": "bad"
+            }
+          ],
+          "feedbackCorrect": "Super. Gegenteile helfen dir, Wörter besser zu lernen.",
+          "feedbackWrong": "Überlege, welches Wort das Gegenteil bedeutet."
+        },
+        {
+          "id": "g6-u1-m6-t03",
+          "type": "multiple-choice",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "linking-words",
+          "prompt": "Choose the best linking word: I was tired, ___ I went to bed early.",
+          "options": [
+            "because",
+            "so",
+            "but"
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Genau. So zeigt die Folge: Ich war müde, also ging ich früh schlafen.",
+          "feedbackWrong": "Hier brauchst du ein Wort für die Folge."
+        },
+        {
+          "id": "g6-u1-m6-t04",
+          "type": "multiple-choice",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "linking-words",
+          "prompt": "Choose the best linking word: I joined the music club ___ I like singing.",
+          "options": [
+            "because",
+            "but",
+            "then"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Because erklärt den Grund.",
+          "feedbackWrong": "Hier brauchst du ein Wort, das eine Begründung einleitet."
+        },
+        {
+          "id": "g6-u1-m6-t05",
+          "type": "multiple-choice",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "linking-words",
+          "prompt": "Choose the best linking word: The lesson was difficult, ___ it was interesting.",
+          "options": [
+            "but",
+            "so",
+            "because"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Genau. But zeigt einen Gegensatz.",
+          "feedbackWrong": "Difficult und interesting stehen hier im Gegensatz."
+        },
+        {
+          "id": "g6-u1-m6-t06",
+          "type": "sorting",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "time-words",
+          "prompt": "Put the sentences in a good order.",
+          "items": [
+            "After that, we played football.",
+            "Finally, I went home.",
+            "First, I had English.",
+            "Then, I met my friends."
+          ],
+          "answer": [
+            "First, I had English.",
+            "Then, I met my friends.",
+            "After that, we played football.",
+            "Finally, I went home."
+          ],
+          "feedbackCorrect": "Sehr gut. Time words machen einen Text klarer.",
+          "feedbackWrong": "First kommt an den Anfang, finally ans Ende."
+        },
+        {
+          "id": "g6-u1-m6-t07",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "writing-order",
+          "prompt": "Improve the text with at least two time words: I was at school. I had English. I played football. I went home.",
+          "support": [
+            "First",
+            "Then",
+            "After that",
+            "Finally"
+          ],
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut. Mit time words klingt dein Text viel geordneter."
+        },
+        {
+          "id": "g6-u1-m6-t08",
+          "type": "mediation-choice",
+          "skill": "MED",
+          "difficulty": 2,
+          "errorCategory": "school-rules",
+          "prompt": "German information: In der Schule darf man in der Pause draußen spielen, aber man darf nicht im Gebäude rennen. Choose the best English version.",
+          "options": [
+            "Students can play outside during the break, but they mustn’t run inside the building.",
+            "Students must play inside and run outside.",
+            "Students can’t play and must run."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Sehr gut. Das ist die passende englische Wiedergabe.",
+          "feedbackWrong": "Achte auf can und mustn’t."
+        },
+        {
+          "id": "g6-u1-m6-t09",
+          "type": "viewing-scene",
+          "skill": "VIE",
+          "difficulty": 1,
+          "errorCategory": "viewing-detail",
+          "sceneDescription": "A group of students is on a small stage. One student forgets his line. The others help him.",
+          "prompt": "What club is this probably?",
+          "options": [
+            "Drama Club",
+            "Football Club",
+            "Cooking Club"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Eine Bühne und Rollen passen zum Drama Club.",
+          "feedbackWrong": "Achte auf stage und line."
+        }
+      ]
+    },
+    {
+      "missionId": "g6-u1-m7",
+      "missionTitle": "Together Again Check",
+      "bookSection": "Stop Check Go",
+      "durationMinutes": 20,
+      "storyIntro": "Der erste große Lichtkristall liegt im Leuchtturmraum. Um ihn zu aktivieren, wiederholst du die wichtigsten Inhalte aus Unit 1.",
+      "learningGoals": [
+        "Ich kann Unit 1 wiederholen.",
+        "Ich kann erkennen, welche Themen sicher sind.",
+        "Ich bekomme gezielte Wiederholungen für Fehler."
+      ],
+      "skills": [
+        "VOC",
+        "GRA",
+        "REA",
+        "WRI",
+        "MED"
+      ],
+      "vocabFields": [
+        "holidays",
+        "school",
+        "clubs",
+        "rules",
+        "feelings"
+      ],
+      "reward": {
+        "stars": 3,
+        "item": "Lichtkristall",
+        "badge": "Back-to-School Hero",
+        "message": "Unit 1 abgeschlossen. Das nächste Gebiet wird freigeschaltet."
+      },
+      "assessment": {
+        "gold": 90,
+        "pass": 80,
+        "review": 60
+      },
+      "tasks": [
+        {
+          "id": "g6-u1-m7-t01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "simple-past-positive",
+          "prompt": "Yesterday I ___ at home.",
+          "options": [
+            "stayed",
+            "stay",
+            "staying"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Yesterday zeigt Simple Past.",
+          "feedbackWrong": "Hier brauchst du die Vergangenheitsform."
+        },
+        {
+          "id": "g6-u1-m7-t02",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "simple-past-negative",
+          "prompt": "Complete the sentence: I ___ have school yesterday.",
+          "acceptedAnswers": [
+            "didn't",
+            "did not"
+          ],
+          "feedbackCorrect": "Genau. Bei der Verneinung im Simple Past benutzt du didn’t.",
+          "feedbackWrong": "Hier brauchst du didn’t oder did not."
+        },
+        {
+          "id": "g6-u1-m7-t03",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "was-were",
+          "prompt": "My friends ___ happy.",
+          "options": [
+            "was",
+            "were",
+            "is"
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Richtig. Friends ist Mehrzahl, deshalb were.",
+          "feedbackWrong": "Bei Mehrzahl benutzt du were."
+        },
+        {
+          "id": "g6-u1-m7-t04",
+          "type": "multiple-choice",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "linking-words",
+          "prompt": "Choose the best linking word: I was nervous, ___ I asked my friend for help.",
+          "options": [
+            "so",
+            "because",
+            "but"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Genau. So zeigt hier die Folge.",
+          "feedbackWrong": "Ich war nervös, also bat ich um Hilfe."
+        },
+        {
+          "id": "g6-u1-m7-t05",
+          "type": "multiple-choice",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "clubs-vocabulary",
+          "prompt": "Which activity belongs to a drama club?",
+          "options": [
+            "acting",
+            "swimming",
+            "cooking"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Acting passt zum Drama Club.",
+          "feedbackWrong": "Drama Club hat mit Schauspiel zu tun."
+        },
+        {
+          "id": "g6-u1-m7-t06",
+          "type": "multiple-choice",
+          "skill": "MED",
+          "difficulty": 2,
+          "errorCategory": "school-rules",
+          "prompt": "What does We mustn’t run in the corridor mean?",
+          "options": [
+            "Wir dürfen nicht auf dem Flur rennen.",
+            "Wir müssen auf dem Flur rennen.",
+            "Wir können auf dem Flur schlafen."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Genau. Mustn’t bedeutet: nicht dürfen.",
+          "feedbackWrong": "Mustn’t ist ein Verbot."
+        },
+        {
+          "id": "g6-u1-m7-t07",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "reading-detail",
+          "text": "On Tuesday, Leo joined the nature club. He liked animals and wanted to learn more about birds. After school, he told his mum about the club.",
+          "prompt": "Why did Leo join the nature club?",
+          "options": [
+            "He liked animals.",
+            "He hated school.",
+            "He wanted to play the guitar."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Leo mochte Tiere.",
+          "feedbackWrong": "Lies den zweiten Satz noch einmal."
+        },
+        {
+          "id": "g6-u1-m7-t08",
+          "type": "error-correction",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "simple-past-negative",
+          "prompt": "Correct the sentence: We didn’t visited the museum.",
+          "acceptedAnswers": [
+            "We didn't visit the museum.",
+            "We did not visit the museum."
+          ],
+          "feedbackCorrect": "Sehr gut. Nach didn’t steht die Grundform.",
+          "feedbackWrong": "Nach didn’t heißt es visit, nicht visited."
+        },
+        {
+          "id": "g6-u1-m7-t09",
+          "type": "sorting",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "time-words",
+          "prompt": "Put the time words in a useful order.",
+          "items": [
+            "finally",
+            "first",
+            "after that",
+            "then"
+          ],
+          "answer": [
+            "first",
+            "then",
+            "after that",
+            "finally"
+          ],
+          "feedbackCorrect": "Perfekt. Das ist eine gute Reihenfolge für einen Text.",
+          "feedbackWrong": "First kommt zuerst, finally kommt zuletzt."
+        },
+        {
+          "id": "g6-u1-m7-t10",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 3,
+          "errorCategory": "unit-writing",
+          "prompt": "Write five sentences about your first week at school.",
+          "requirements": [
+            "Use one time word.",
+            "Use one Simple Past sentence.",
+            "Use one negative sentence.",
+            "Use one feeling word."
+          ],
+          "support": [
+            "First, ...",
+            "Yesterday I ...",
+            "I didn’t ...",
+            "I was ..."
+          ],
+          "manualReview": true,
+          "feedbackAfterSubmit": "Stark. Diese Schreibaufgabe ist nah an dem, was später in Klassenarbeiten wichtig wird."
+        }
+      ]
+    }
+  ],
+  "diagnosticRules": [
+    {
+      "ifErrorCategory": "was-were",
+      "recommendReviewMission": "g6-u1-m1",
+      "message": "Was und were brauchen noch Wiederholung."
+    },
+    {
+      "ifErrorCategory": "simple-past-negative",
+      "recommendReviewMission": "g6-u1-m4",
+      "message": "Wiederhole die Regel: didn’t + Grundform."
+    },
+    {
+      "ifErrorCategory": "simple-past-positive",
+      "recommendReviewMission": "g6-u1-m4",
+      "message": "Simple Past positive Sätze sollten noch einmal geübt werden."
+    },
+    {
+      "ifErrorCategory": "linking-words",
+      "recommendReviewMission": "g6-u1-m6",
+      "message": "Linking words wie because, so und but noch einmal trainieren."
+    },
+    {
+      "ifErrorCategory": "time-words",
+      "recommendReviewMission": "g6-u1-m6",
+      "message": "Time words helfen beim Schreiben besserer Texte."
+    },
+    {
+      "ifErrorCategory": "school-rules",
+      "recommendReviewMission": "g6-u1-m6",
+      "message": "Schulregeln mit can, have to und mustn’t wiederholen."
+    }
+  ]
+}

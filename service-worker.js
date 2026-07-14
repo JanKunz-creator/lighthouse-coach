@@ -1,11 +1,12 @@
-const CACHE_NAME = "lumi-english-adventure-v03";
+const CACHE_NAME = "lumi-english-adventure-v04";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./manifest.webmanifest",
   "./icons/icon-180.png",
   "./icons/icon-192.png",
-  "./icons/icon-512.png"
+  "./icons/icon-512.png",
+  "./tasks-g6-u1.json"
 ];
 
 self.addEventListener("install", event => {
