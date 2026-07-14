@@ -1,29 +1,1004 @@
-{
-  "name": "Lumi English Adventure",
-  "short_name": "Lumi English",
-  "description": "Englisch-Lernsystem für Klasse 5 und 6 mit Missionen, Fortschritt und Offline-Modus.",
-  "start_url": "./",
-  "scope": "./",
-  "display": "standalone",
-  "background_color": "#f4f7fb",
-  "theme_color": "#f4f7fb",
-  "orientation": "any",
-  "icons": [
-    {
-      "src": "icons/icon-180.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    },
-    {
-      "src": "icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+  <title>Lumi English Adventure</title>
+  <meta name="theme-color" content="#f4f7fb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Lumi English">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
+  <style>
+    :root {
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --ink:#203047;
+      --muted:#6a778a;
+      --line:#dde7f2;
+      --primary:#3b6eea;
+      --primary2:#6f91f3;
+      --green:#2a9d68;
+      --orange:#f0a029;
+      --red:#cf4d4d;
+      --soft:#eef3ff;
+      --shadow:0 12px 34px rgba(32,48,71,.10);
+      --radius:20px;
     }
-  ]
+    * { box-sizing:border-box; }
+    html { -webkit-text-size-adjust:100%; text-size-adjust:100%; background:var(--bg); }
+    body {
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display",Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(111,145,243,.22), transparent 34%),
+        radial-gradient(circle at 95% 12%, rgba(240,160,41,.16), transparent 28%),
+        var(--bg);
+      min-height:100vh; min-height:100dvh;
+      padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+      -webkit-tap-highlight-color:transparent;
+    }
+    button,input,textarea { font:inherit; font-size:16px; }
+    button,input,textarea { -webkit-appearance:none; appearance:none; }
+    button { touch-action:manipulation; }
+    :focus-visible { outline:3px solid rgba(59,110,234,.35); outline-offset:2px; }
+    .app { max-width:1220px; margin:0 auto; padding:clamp(12px,2vw,22px); }
+    header {
+      display:flex; justify-content:space-between; align-items:center; gap:14px;
+      margin:4px 0 16px;
+    }
+    .brand h1 { margin:0; font-size:clamp(25px,4vw,40px); letter-spacing:-.02em; }
+    .brand p { margin:5px 0 0; color:var(--muted); }
+    .top-stats { display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
+    .chip {
+      background:rgba(255,255,255,.86);
+      border:1px solid var(--line);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:800;
+      box-shadow:0 4px 14px rgba(32,48,71,.05);
+      white-space:nowrap;
+    }
+    .layout { display:grid; grid-template-columns:310px minmax(0,1fr); gap:18px; align-items:start; }
+    .card {
+      background:rgba(255,255,255,.92);
+      backdrop-filter:saturate(140%) blur(8px);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    aside { padding:16px; position:sticky; top:12px; }
+    main { padding:22px; min-height:700px; }
+    .stat { margin:0 0 15px; }
+    .stat-row { display:flex; justify-content:space-between; gap:10px; margin:0 0 7px; font-size:14px; color:var(--muted); }
+    .stat-row strong { color:var(--ink); }
+    .bar { height:12px; background:#e8eef7; border-radius:999px; overflow:hidden; }
+    .bar span { display:block; height:100%; width:0%; border-radius:999px; background:linear-gradient(90deg,var(--primary),var(--primary2)); transition:width .35s ease; }
+    nav { display:grid; gap:6px; }
+    nav button {
+      border:0; background:transparent; min-height:48px; padding:12px;
+      border-radius:13px; text-align:left; color:var(--ink); cursor:pointer;
+    }
+    nav button.active, nav button:hover { background:var(--soft); color:#244fb8; font-weight:900; }
+    .small { color:var(--muted); font-size:13px; }
+    .notice {
+      background:#fff8e7; border:1px solid #f2d48b; color:#75530f;
+      border-radius:14px; padding:13px 14px; margin:0 0 16px;
+    }
+    .hero {
+      display:flex; align-items:center; justify-content:space-between; gap:18px;
+      padding:24px; border-radius:18px; border:1px solid #d8e3ff;
+      background:linear-gradient(135deg,#edf3ff,#fbfdff);
+      margin-bottom:18px;
+    }
+    .hero h2 { margin:0 0 7px; font-size:clamp(24px,3vw,34px); }
+    .hero p { margin:0; color:var(--muted); max-width:760px; line-height:1.45; }
+    .btn {
+      border:0; border-radius:13px; min-height:48px; padding:12px 16px;
+      font-weight:900; cursor:pointer; background:var(--primary); color:white;
+      white-space:nowrap;
+    }
+    .btn.secondary { background:white; color:var(--ink); border:1px solid var(--line); }
+    .btn.ghost { background:var(--soft); color:#244fb8; }
+    .btn.warn { background:#fff2f2; color:#9b3131; border:1px solid #f1b4b4; }
+    .btn:disabled { opacity:.5; cursor:not-allowed; }
+    .grid2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+    .grid3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+    .mini { padding:16px; border:1px solid var(--line); border-radius:16px; background:#fff; }
+    .mini strong { display:block; font-size:26px; margin-bottom:2px; }
+    .grade-title { margin:24px 0 10px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .unit-list { display:grid; gap:12px; }
+    .unit {
+      display:grid; grid-template-columns:56px 1fr auto; gap:14px; align-items:center;
+      padding:16px; border:1px solid var(--line); border-radius:17px; background:#fff;
+    }
+    .unit.done { border-color:#9bdbbd; background:#f5fff9; }
+    .unit.locked { opacity:.58; }
+    .icon {
+      width:52px; height:52px; border-radius:16px; display:grid; place-items:center;
+      background:var(--soft); font-size:25px; font-weight:900;
+    }
+    .unit-title { font-weight:950; font-size:18px; }
+    .unit-meta { color:var(--muted); margin-top:4px; font-size:14px; line-height:1.35; }
+    .tagline { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+    .tag { padding:5px 8px; border-radius:999px; background:#f1f5fb; color:#536176; font-size:12px; font-weight:700; }
+    .missions { display:grid; gap:12px; }
+    .mission {
+      display:grid; grid-template-columns:46px 1fr auto; gap:13px; align-items:center;
+      padding:15px; border:1px solid var(--line); border-radius:16px; background:#fff;
+    }
+    .mission.done { border-color:#9bdbbd; background:#f6fff9; }
+    .mission.locked { opacity:.55; }
+    .mission .icon { width:44px; height:44px; border-radius:14px; font-size:20px; }
+    .skills { display:flex; gap:5px; flex-wrap:wrap; margin-top:8px; }
+    .skill { font-size:11px; font-weight:900; color:#244fb8; background:#edf3ff; padding:4px 7px; border-radius:999px; }
+    .lesson-head {
+      display:flex; justify-content:space-between; gap:18px; align-items:flex-start; margin-bottom:18px;
+    }
+    .lesson-head h2 { margin:0 0 4px; }
+    .pill { padding:7px 10px; border-radius:999px; background:#edf3ff; color:#244fb8; font-weight:900; font-size:13px; white-space:nowrap; }
+    .question { padding:20px; border:1px solid var(--line); border-radius:18px; background:#fff; margin-top:14px; }
+    .question h3 { margin:0 0 12px; font-size:21px; }
+    .question p { line-height:1.5; }
+    .answers { display:grid; gap:10px; margin-top:14px; }
+    .answer {
+      min-height:50px; padding:14px; border:1px solid var(--line); border-radius:13px;
+      background:#fff; cursor:pointer; text-align:left;
+    }
+    .answer:hover, .answer.selected { border-color:var(--primary); background:#eef3ff; }
+    .answer.correct { border-color:var(--green); background:#effcf5; }
+    .answer.wrong { border-color:var(--red); background:#fff1f1; }
+    input.text, textarea.text {
+      width:100%; min-height:50px; padding:13px; border:1px solid var(--line); border-radius:13px;
+      background:white; color:var(--ink);
+    }
+    textarea.text { min-height:110px; resize:vertical; }
+    .feedback { display:none; margin-top:14px; padding:13px; border-radius:13px; line-height:1.45; }
+    .feedback.show { display:block; }
+    .feedback.ok { background:#effcf5; color:#166944; }
+    .feedback.no { background:#fff4e5; color:#8b570d; }
+    .actions { display:flex; justify-content:flex-end; gap:10px; flex-wrap:wrap; margin-top:16px; }
+    .result { text-align:center; padding:36px 10px; }
+    .result .big { font-size:66px; }
+    .result h2 { margin:8px 0; font-size:30px; }
+    table { width:100%; border-collapse:collapse; background:white; border-radius:16px; overflow:hidden; }
+    th,td { padding:12px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { color:#526176; font-size:13px; }
+    .progress-row { display:flex; align-items:center; gap:8px; }
+    .progress-row .bar { flex:1; height:9px; }
+    .footer { color:var(--muted); font-size:12px; text-align:center; padding:16px; }
+    @media(max-width:920px) {
+      .layout { grid-template-columns:1fr; }
+      aside { position:static; }
+      nav { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      nav button { text-align:center; }
+      main { min-height:auto; padding:16px; }
+      .hero { flex-direction:column; align-items:flex-start; }
+      .grid2,.grid3 { grid-template-columns:1fr; }
+      .unit,.mission { grid-template-columns:48px 1fr; }
+      .unit .btn,.mission .btn { grid-column:1/-1; width:100%; }
+    }
+    @media(min-width:768px) and (max-width:1180px) {
+      .app { max-width:1040px; }
+    }
+    @media(orientation:landscape) and (max-height:700px) {
+      header { margin-bottom:10px; }
+      aside,main { padding:14px; }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      * { scroll-behavior:auto!important; transition:none!important; animation:none!important; }
+    }
+    @supports(-webkit-touch-callout:none) {
+      input,textarea { font-size:16px!important; }
+      .card { box-shadow:0 8px 26px rgba(32,48,71,.08); }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">
+        <h1>🌟 Lumi English Adventure</h1>
+        <p>Leuchtturmwagen · Klasse 5 & 6 · PWA-Version 0.4</p>
+      </div>
+      <div class="top-stats">
+        <span class="chip" id="sparkChip">✨ 0 Lichtfunken</span>
+        <span class="chip" id="crystalChip">💎 0 Lichtkristalle</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="card">
+        <div class="stat">
+          <div class="stat-row"><strong>Gesamtfortschritt</strong><span id="overallText">0 %</span></div>
+          <div class="bar"><span id="overallBar"></span></div>
+        </div>
+        <div class="stat">
+          <div class="stat-row"><span>🔥 Lernserie</span><strong id="streakText">0 Tage</strong></div>
+          <div class="stat-row"><span>✅ Missionen</span><strong id="missionDoneText">0</strong></div>
+        </div>
+        <nav>
+          <button class="active" data-view="dashboard">🏠 Übersicht</button>
+          <button data-view="path">🗺️ Lernpfad</button>
+          <button data-view="today">⏱️ Heute lernen</button>
+          <button data-view="review">🔁 Wiederholen</button>
+          <button data-view="parents">📊 Elternbereich</button>
+          <button data-view="settings">⚙️ Technik</button>
+        </nav>
+      </aside>
+
+      <section style="min-width:0">
+        <div id="installHint" class="notice" style="display:none">
+          <strong>Auf dem iPad installieren:</strong>
+          Diese GitHub-Pages-Adresse direkt in Safari öffnen, dann <strong>Teilen</strong> und
+          <strong>„Zum Home-Bildschirm“</strong> wählen.
+          <button class="btn secondary" style="min-height:38px;margin-left:8px;padding:7px 10px" onclick="dismissInstallHint()">Verstanden</button>
+        </div>
+        <main class="card" id="main"></main>
+      </section>
+    </div>
+    <div class="footer">Alle Übungen, Texte und Beispiele sind eigenständig für diese App formuliert. Der Lernpfad orientiert sich an den angegebenen Unit-Zielen.</div>
+  </div>
+
+<script>
+window.APP_CONTENT = {"schemaVersion":"0.2.0","appName":"Lumi English Adventure","contentScope":{"grades":[5,6],"futureGradesPrepared":[7,8,9,10],"dailyLearningTimeMinutes":20,"passThresholdPercent":80,"contentRule":"The app follows the textbook unit order and learning goals, but all exercises, texts, stories and examples are original app content."},"skillCodes":{"VOC":"Vocabulary","GRA":"Grammar","REA":"Reading","LIS":"Listening","SPE":"Speaking","WRI":"Writing","MED":"Mediation","VIE":"Viewing","STU":"Study skills","INT":"Intercultural competence"},"taskTypes":["multiple-choice","text-input","sentence-builder","matching","sorting","gap-fill","error-correction","mini-writing","reading-check","listening-check","speaking-prompt","mediation-choice","viewing-scene","unit-test"],"rewardSystem":{"basicReward":"Lichtfunke","majorReward":"Lichtkristall","starsPerMission":1,"starsPerUnitTest":3,"badges":["First Light","Word Explorer","Grammar Builder","Reading Hero","Speaking Star","Writing Wizard","Unit Champion"]},"missionTemplate":[{"step":1,"type":"mini-story","durationMinutes":1},{"step":2,"type":"learning-goal","durationMinutes":1},{"step":3,"type":"vocabulary-check","durationMinutes":4},{"step":4,"type":"main-practice","durationMinutes":9},{"step":5,"type":"mini-challenge","durationMinutes":3},{"step":6,"type":"feedback-and-reward","durationMinutes":2}],"grades":[{"grade":5,"gradeTitle":"Klasse 5","profileMode":"beginner","mainGoal":"Einen sicheren Einstieg in Englisch schaffen und Grundlagen spielerisch aufbauen.","tone":"spielerisch, langsam, erklärend, viele Erfolgserlebnisse","world":{"id":"g5-school-harbour","title":"School Harbour","storyArc":"Das Kind entdeckt Lighthouse Island zum ersten Mal und lernt die wichtigsten englischen Grundlagen, um sich auf der Insel zurechtzufinden."},"units":[{"id":"g5-u0","order":0,"bookUnit":"Nice to meet you!","appTitle":"First Steps on Lighthouse Island","status":"core","focus":["sich begrüßen","sich vorstellen","Farben","Sportarten","Hobbys","Tiere","Lieblingsgegenstände","erste einfache Sätze"],"grammarFocus":["I am","I like","I don't like","My favourite ... is ..."],"vocabFields":["greetings","colours","sports","hobbies","animals","things"],"missions":[{"id":"g5-u0-m1","section":"Meet Cyril","appMissionTitle":"Hello, Lighthouse Island","skills":["SPE","LIS","VOC"],"learningGoals":["Ich kann jemanden begrüßen.","Ich kann meinen Namen sagen.","Ich kann sagen, was ich auf einem Bild sehe."],"targetPhrases":["Hello.","Hi, I’m ...","My name is ...","I can see ..."],"taskTypes":["multiple-choice","matching","speaking-prompt"]},{"id":"g5-u0-m2","section":"My favourite colours","appMissionTitle":"Colour Code","skills":["VOC","SPE"],"learningGoals":["Ich kann Farben benennen.","Ich kann meine Lieblingsfarbe sagen."],"targetPhrases":["My favourite colour is ...","It is blue.","I like red."],"taskTypes":["matching","multiple-choice","text-input"]},{"id":"g5-u0-m3","section":"My favourite sports and hobbies","appMissionTitle":"Hobby Harbour","skills":["VOC","SPE","WRI"],"learningGoals":["Ich kann sagen, welche Hobbys ich mag.","Ich kann sagen, welche Hobbys ich nicht mag."],"targetPhrases":["I like football.","I don’t like watching TV.","My hobby is ..."],"taskTypes":["multiple-choice","sentence-builder","mini-writing"]},{"id":"g5-u0-m4","section":"My favourite animals","appMissionTitle":"Animal Friends","skills":["VOC","SPE"],"learningGoals":["Ich kann Lieblingstiere benennen.","Ich kann einen kurzen Satz über ein Tier sagen."],"targetPhrases":["My favourite animal is ...","It is big.","It is funny."],"taskTypes":["matching","text-input","speaking-prompt"]},{"id":"g5-u0-m5","section":"My favourite thing","appMissionTitle":"My Special Thing","skills":["VOC","WRI"],"learningGoals":["Ich kann meinen Lieblingsgegenstand beschreiben.","Ich kann einfache Adjektive benutzen."],"targetPhrases":["My favourite thing is ...","It’s new.","It’s big."],"taskTypes":["gap-fill","sentence-builder","mini-writing"]},{"id":"g5-u0-m6","section":"Story","appMissionTitle":"The Last Holiday Spark","skills":["REA","VOC"],"learningGoals":["Ich kann eine einfache Geschichte verstehen.","Ich kann einzelne Informationen aus einer Geschichte erkennen."],"taskTypes":["reading-check","multiple-choice","sorting"]}]},{"id":"g5-u1","order":1,"bookUnit":"Unit 1 · Welcome to our school","appTitle":"Welcome to School Harbour","status":"core","focus":["Schule","Klasse","sich und andere vorstellen","Stundenplan","Schulfächer","Schulräume","Schulalltag"],"grammarFocus":["to be positive","to be negative","I’m / he’s / they’re","I’m not / she isn’t / we aren’t"],"vocabFields":["school","classroom","lessons","days of the week","teachers","school things"],"missions":[{"id":"g5-u1-m1","section":"Lead-in","appMissionTitle":"The First Morning","skills":["LIS","SPE","VOC"],"learningGoals":["Ich kann jemanden in der Schule begrüßen.","Ich kann mich verabschieden."],"targetPhrases":["Hello, I’m ...","How are you?","Goodbye.","See you later."],"taskTypes":["listening-check","multiple-choice","speaking-prompt"]},{"id":"g5-u1-m2","section":"Theme 1","appMissionTitle":"Me and My Class","skills":["SPE","WRI","STU"],"learningGoals":["Ich kann mich vorstellen.","Ich kann andere Personen vorstellen.","Ich kann kurze Notizen über mich machen."],"targetPhrases":["I’m ...","I have ...","She’s ...","They’re ..."],"taskTypes":["sentence-builder","gap-fill","mini-writing"]},{"id":"g5-u1-m3","section":"Theme 2","appMissionTitle":"My First Timetable","skills":["LIS","SPE","INT"],"learningGoals":["Ich kann über einen Stundenplan sprechen.","Ich kenne wichtige Schulfächer und Wochentage."],"targetPhrases":["What’s the next lesson?","On Monday I have English.","My favourite lesson is ..."],"taskTypes":["matching","sorting","speaking-prompt"]},{"id":"g5-u1-m4","section":"Focus on Language","appMissionTitle":"The To Be Machine","skills":["GRA","WRI"],"learningGoals":["Ich kann Formen von to be benutzen.","Ich kann einfache Verneinungen bilden."],"targetPhrases":["I am","you are","he is","she isn’t","we aren’t"],"taskTypes":["gap-fill","error-correction","sentence-builder"],"errorCategories":["to-be-forms","to-be-negative"]},{"id":"g5-u1-m5","section":"Story / Reading","appMissionTitle":"The Uniform Question","skills":["REA","STU"],"learningGoals":["Ich kann eine Schulgeschichte verstehen.","Ich kann Wörter sinnvoll gruppieren."],"taskTypes":["reading-check","sorting","multiple-choice"]},{"id":"g5-u1-m6","section":"Skills","appMissionTitle":"Talking to Friends at School","skills":["SPE","WRI","STU"],"learningGoals":["Ich kann einfache Fragen zum Schulalltag stellen.","Ich kann kurze Antworten notieren."],"targetPhrases":["Who’s your favourite teacher?","What’s your favourite lesson?","The next lesson is ..."],"taskTypes":["speaking-prompt","mini-writing","matching"]},{"id":"g5-u1-m7","section":"Stop Check Go","appMissionTitle":"School Harbour Check","skills":["VOC","GRA","REA","LIS","SPE","WRI"],"learningGoals":["Ich wiederhole die wichtigsten Inhalte der Unit.","Ich erkenne, was ich schon sicher kann."],"taskTypes":["unit-test"]}]},{"id":"g5-u2","order":2,"bookUnit":"Unit 2 · At home with Ellie","appTitle":"Ellie’s Home Bay","status":"core","focus":["Zuhause","Wohnungen und Häuser","Familie","Zimmer","Besitz","Adressen","Telefonnummern","Buchstabieren"],"grammarFocus":["there is / there are","questions and short answers with be","possessive ideas","classroom English"],"vocabFields":["home","rooms","family","furniture","addresses","alphabet","phone numbers"],"missions":[{"id":"g5-u2-m1","section":"Lead-in","appMissionTitle":"Homes on the Island","skills":["SPE","LIS","VOC"],"learningGoals":["Ich kann Häuser und Wohnungen einfach beschreiben."],"targetPhrases":["My flat is big.","It has ...","There is ..."],"taskTypes":["matching","multiple-choice","speaking-prompt"]},{"id":"g5-u2-m2","section":"Theme 1","appMissionTitle":"Ellie’s Family","skills":["WRI","SPE","STU"],"learningGoals":["Ich kann über Familie sprechen.","Ich kann Wörter zum Thema Familie gruppieren."],"taskTypes":["sorting","sentence-builder","mini-writing"]},{"id":"g5-u2-m3","section":"Theme 2","appMissionTitle":"My Room","skills":["SPE","VOC","WRI"],"learningGoals":["Ich kann ein Zimmer beschreiben.","Ich kann sagen, was es in einem Zimmer gibt."],"targetPhrases":["There’s a desk.","There are two chairs.","My bed is next to the window."],"taskTypes":["gap-fill","sentence-builder","mini-writing"]},{"id":"g5-u2-m4","section":"Focus on Language","appMissionTitle":"Question Gate","skills":["GRA","SPE"],"learningGoals":["Ich kann Fragen mit be stellen.","Ich kann kurze Antworten geben."],"targetPhrases":["Are your friends fun?","Yes, they are.","No, they aren’t."],"taskTypes":["multiple-choice","gap-fill","sentence-builder"],"errorCategories":["to-be-questions","short-answers"]},{"id":"g5-u2-m5","section":"Story / Writing","appMissionTitle":"Two Homes Diary","skills":["REA","WRI"],"learningGoals":["Ich kann einen einfachen Tagebucheintrag verstehen.","Ich kann einen kurzen Tagebucheintrag schreiben."],"taskTypes":["reading-check","mini-writing"]},{"id":"g5-u2-m6","section":"Skills","appMissionTitle":"Address and Alphabet Mission","skills":["LIS","SPE","STU"],"learningGoals":["Ich kann eine Adresse verstehen.","Ich kann Wörter buchstabieren.","Ich kann nachfragen."],"targetPhrases":["What’s your address?","Can you spell that, please?","Can you say that again, please?"],"taskTypes":["listening-check","speaking-prompt","text-input"]},{"id":"g5-u2-m7","section":"Stop Check Go","appMissionTitle":"Home Bay Check","skills":["VOC","GRA","REA","LIS","SPE","WRI"],"taskTypes":["unit-test"]}]},{"id":"g5-u3","order":3,"bookUnit":"Unit 3 · My Plymouth","appTitle":"Plymouth Town Trail","status":"core","focus":["Wohnort","Stadt","Wochenende","Kleidung","Geburtstage","Datum","Preise","Einkaufen"],"grammarFocus":["simple present with frequency adverbs","always / sometimes / never","third person singular -s"],"vocabFields":["town","places","clothes","birthday","dates","prices","shopping"],"missions":[{"id":"g5-u3-m1","section":"Lead-in","appMissionTitle":"This Is My Town","skills":["LIS","SPE","VOC"],"learningGoals":["Ich kann meinen Wohnort einfach beschreiben."],"targetPhrases":["I live in ...","In my town we have ...","My favourite place is ..."],"taskTypes":["matching","speaking-prompt","mini-writing"]},{"id":"g5-u3-m2","section":"Theme 1","appMissionTitle":"Weekend in Town","skills":["SPE","VOC"],"learningGoals":["Ich kann sagen, was ich manchmal oder oft tue.","Ich kann sagen, welche Kleidung ich mag."],"targetPhrases":["I sometimes go to the market.","I often meet my friends.","I like the blue shoes."],"taskTypes":["gap-fill","sentence-builder","speaking-prompt"]},{"id":"g5-u3-m3","section":"Theme 2","appMissionTitle":"Birthday Calendar","skills":["SPE","WRI"],"learningGoals":["Ich kann nach Geburtstagen fragen.","Ich kann ein Datum auf Englisch nennen."],"targetPhrases":["When’s your birthday?","My birthday is in May."],"taskTypes":["matching","text-input","mini-writing"]},{"id":"g5-u3-m4","section":"Focus on Language","appMissionTitle":"Always, Sometimes, Never","skills":["GRA","WRI"],"learningGoals":["Ich kann Häufigkeitsadverbien richtig benutzen.","Ich kann einfache Sätze im Simple Present bilden."],"targetPhrases":["My dad always gets up early.","I never make breakfast."],"taskTypes":["sorting","gap-fill","error-correction"],"errorCategories":["simple-present-frequency","third-person-s"]},{"id":"g5-u3-m5","section":"Story / Reading","appMissionTitle":"Birthday Surprise","skills":["REA","WRI"],"learningGoals":["Ich kann eine Fotogeschichte verstehen.","Ich kann eine Geschichte kurz nacherzählen."],"taskTypes":["reading-check","sorting","mini-writing"]},{"id":"g5-u3-m6","section":"Skills","appMissionTitle":"Market Talk","skills":["LIS","SPE","REA"],"learningGoals":["Ich kann Preise verstehen.","Ich kann einen einfachen Einkaufsdialog führen.","Ich kann Poster grob verstehen."],"targetPhrases":["How much is it?","It’s £2.","I’ll take it."],"taskTypes":["listening-check","speaking-prompt","reading-check"]},{"id":"g5-u3-m7","section":"Stop Check Go","appMissionTitle":"Plymouth Town Check","skills":["VOC","GRA","REA","LIS","SPE","WRI"],"taskTypes":["unit-test"]}]},{"id":"g5-u4","order":4,"bookUnit":"Unit 4 · Berry’s world","appTitle":"Merryweather Farm","status":"core","focus":["Bauernhof","Tiere","Tagesablauf","Uhrzeit","Gefühle","Haustiere","Schilder","Einladungen"],"grammarFocus":["simple present questions with do / does","simple present negative with don’t / doesn’t"],"vocabFields":["farm animals","daily routine","time","feelings","pets","signs","invitations"],"missions":[{"id":"g5-u4-m1","section":"Lead-in","appMissionTitle":"Farm Arrival","skills":["SPE","VOC"],"learningGoals":["Ich kann Tiere auf dem Bauernhof benennen.","Ich kann sagen, was ich machen möchte."],"targetPhrases":["I want to go to ...","I can see a cow."],"taskTypes":["matching","multiple-choice","speaking-prompt"]},{"id":"g5-u4-m2","section":"Theme 1","appMissionTitle":"A Day on the Farm","skills":["WRI","LIS","SPE"],"learningGoals":["Ich kann einen Tagesablauf beschreiben.","Ich kann nach der Uhrzeit fragen."],"targetPhrases":["What’s the time, please?","I get up at seven.","My mum wakes me."],"taskTypes":["sorting","gap-fill","listening-check"]},{"id":"g5-u4-m3","section":"Theme 2","appMissionTitle":"Feelings Forest","skills":["SPE","WRI","REA"],"learningGoals":["Ich kann sagen, wie ich mich fühle.","Ich kann einen kurzen Text über Gefühle verstehen."],"targetPhrases":["I feel great when ...","I feel fed up when ..."],"taskTypes":["matching","reading-check","mini-writing"]},{"id":"g5-u4-m4","section":"Focus on Language","appMissionTitle":"Do and Does Gate","skills":["GRA","SPE"],"learningGoals":["Ich kann Fragen mit do und does stellen.","Ich kann Verneinungen mit don’t und doesn’t bilden."],"targetPhrases":["Do you have a pet?","Where does your pet live?","Mum doesn’t like cats."],"taskTypes":["gap-fill","sentence-builder","error-correction"],"errorCategories":["do-does-questions","doesnt-base-form"]},{"id":"g5-u4-m5","section":"Story / Reading","appMissionTitle":"Farm Sleepover","skills":["REA"],"learningGoals":["Ich kann eine szenische Geschichte verstehen."],"taskTypes":["reading-check","sorting"]},{"id":"g5-u4-m6","section":"Skills","appMissionTitle":"Signs and Invitations","skills":["REA","MED","WRI","STU"],"learningGoals":["Ich kann einfache englische Schilder verstehen.","Ich kann eine Einladung schreiben und beantworten.","Ich kann unbekannte Wörter erschließen."],"taskTypes":["mediation-choice","mini-writing","matching"]},{"id":"g5-u4-m7","section":"Stop Check Go","appMissionTitle":"Farm Check","skills":["VOC","GRA","REA","LIS","SPE","WRI"],"taskTypes":["unit-test"]}]},{"id":"g5-u5","order":5,"bookUnit":"Unit 5 · All about Adam","appTitle":"Harbour Music Club","status":"core","focus":["Hafen","Café","Essen und Trinken","Musik","Instrumente","Bildbeschreibung","Kurznachrichten","Rezepte"],"grammarFocus":["present progressive","be + verb-ing","describing what is happening now"],"vocabFields":["food","drinks","cafe phrases","music","instruments","picture description","messages"],"missions":[{"id":"g5-u5-m1","section":"Lead-in","appMissionTitle":"Harbour Pictures","skills":["SPE","VOC"],"learningGoals":["Ich kann einfache Bilder beschreiben."],"targetPhrases":["On the left there is ...","On the right there is ..."],"taskTypes":["viewing-scene","speaking-prompt","matching"]},{"id":"g5-u5-m2","section":"Theme 1","appMissionTitle":"In the Café","skills":["SPE","VOC","GRA"],"learningGoals":["Ich kann Essen und Trinken bestellen.","Ich kann sagen, was gerade passiert."],"targetPhrases":["A sandwich, please.","Anything else?","Mum is making sandwiches."],"taskTypes":["multiple-choice","sentence-builder","speaking-prompt"]},{"id":"g5-u5-m3","section":"Theme 2","appMissionTitle":"Music Mission","skills":["REA","SPE","VOC"],"learningGoals":["Ich kann über Musik sprechen.","Ich kann eine Bildergeschichte verstehen."],"targetPhrases":["Who’s your favourite singer?","Can you play an instrument?"],"taskTypes":["reading-check","matching","speaking-prompt"]},{"id":"g5-u5-m4","section":"Focus on Language","appMissionTitle":"Now Detector","skills":["GRA","WRI"],"learningGoals":["Ich kann das Present Progressive benutzen.","Ich kann beschreiben, was gerade passiert."],"targetPhrases":["She is singing.","They are playing.","I am reading."],"taskTypes":["gap-fill","sentence-builder","error-correction"],"errorCategories":["present-progressive-be","verb-ing"]},{"id":"g5-u5-m5","section":"Story / Reading","appMissionTitle":"Music Makes a Difference","skills":["REA"],"learningGoals":["Ich kann eine Geschichte über Musik verstehen."],"taskTypes":["reading-check","sorting"]},{"id":"g5-u5-m6","section":"Skills","appMissionTitle":"Pictures, Messages and Recipes","skills":["LIS","SPE","MED","WRI","REA"],"learningGoals":["Ich kann eine Bildbeschreibung verbessern.","Ich kann kurze Nachrichten verstehen und schreiben.","Ich kann ein einfaches Rezept verstehen."],"taskTypes":["viewing-scene","mediation-choice","mini-writing","reading-check"]},{"id":"g5-u5-m7","section":"Stop Check Go","appMissionTitle":"Music Club Check","skills":["VOC","GRA","REA","LIS","SPE","WRI"],"taskTypes":["unit-test"]}]},{"id":"g5-u6","order":6,"bookUnit":"Unit 6 · School is out – for summer","appTitle":"Summer Trip Bay","status":"optional-core","focus":["Ausflüge","Ferienpläne","Broschüren","Einkaufsliste","sich einigen","Sommerferien"],"grammarFocus":["plans with present progressive","phrases for suggestions and preferences"],"vocabFields":["trips","beach","summer","plans","shopping list","suggestions"],"missions":[{"id":"g5-u6-m1","section":"Lead-in","appMissionTitle":"Four Trips","skills":["LIS","REA","SPE"],"learningGoals":["Ich kann einfache Ausflugsziele verstehen.","Ich kann sagen, welches Ziel ich gut finde."],"targetPhrases":["What about a trip to ...?","I think that’s a great idea.","I’d prefer ..."],"taskTypes":["reading-check","listening-check","speaking-prompt"]},{"id":"g5-u6-m2","section":"Theme","appMissionTitle":"Beach Trip Plan","skills":["STU","SPE","VOC"],"learningGoals":["Ich kann Wörter in einem Network sammeln.","Ich kann mich auf eine Einkaufsliste einigen."],"taskTypes":["sorting","matching","speaking-prompt"]},{"id":"g5-u6-m3","section":"Story","appMissionTitle":"All Aboard","skills":["LIS","REA"],"learningGoals":["Ich kann eine Fantasiereise verstehen."],"taskTypes":["reading-check","listening-check","sorting"]},{"id":"g5-u6-m4","section":"Listening / Speaking","appMissionTitle":"Summer Plans","skills":["LIS","SPE"],"learningGoals":["Ich kann Ferienpläne verstehen.","Ich kann über eigene Ferienpläne sprechen."],"targetPhrases":["What are your summer plans?","I’m staying at home.","I’m visiting my grandparents."],"taskTypes":["listening-check","sentence-builder","speaking-prompt"]},{"id":"g5-u6-m5","section":"Viewing","appMissionTitle":"Ferry Trip","skills":["VIE","INT"],"learningGoals":["Ich kann eine einfache Filmszene oder Bildszene verstehen.","Ich lerne etwas über Plymouths Umgebung."],"taskTypes":["viewing-scene","multiple-choice"]},{"id":"g5-u6-m6","section":"Stop Check Go","appMissionTitle":"Summer Bay Check","skills":["VOC","REA","LIS","SPE","WRI"],"taskTypes":["unit-test"]}]}]},{"grade":6,"gradeTitle":"Klasse 6","profileMode":"builder","mainGoal":"Grundlagen festigen, Klasse-6-Stoff sicher beherrschen und gezielt Richtung bessere Klassenarbeiten trainieren.","tone":"motivierend, etwas reifer, challenge-orientiert","world":{"id":"g6-back-to-island","title":"Back to Lighthouse Island","storyArc":"Nach den Ferien ist der Leuchtturm schwächer geworden. Jede Unit bringt ein neues Gebiet der Insel zurück ins Licht."},"units":[{"id":"g6-u1","order":1,"bookUnit":"Unit 1 · Together again","appTitle":"Back to Lighthouse Island","status":"core","focus":["Ferien","Wetter","Schulstart","Schulclubs","Freundschaft","Wortfelder","bessere Texte","Schulregeln"],"grammarFocus":["simple past positive","simple past negative","was / were","didn’t + base form","time words","linking words"],"vocabFields":["holidays","weather","school","clubs","feelings","rules"],"missions":[{"id":"g6-u1-m1","section":"Lead-in","bookSectionTitle":"After the holidays","appMissionTitle":"After the Holidays","skills":["SPE","LIS","VOC"],"learningGoals":["Ich kann von den Ferien erzählen.","Ich kann sagen, wie das Wetter war."],"targetPhrases":["I was in the country.","How were your holidays?","It was sunny."],"taskTypes":["multiple-choice","matching","gap-fill","mini-writing"],"errorCategories":["was-were","weather-vocabulary"]},{"id":"g6-u1-m2","section":"Theme 1","bookSectionTitle":"Back at school","appMissionTitle":"Back at School","skills":["REA","SPE","WRI"],"learningGoals":["Ich kann Freunde nach den Ferien begrüßen.","Ich kann von einem Tag in der Schule berichten."],"targetPhrases":["How was your summer?","The first lesson was ..."],"taskTypes":["reading-check","sentence-builder","mini-writing"]},{"id":"g6-u1-m3","section":"Theme 2","bookSectionTitle":"School clubs","appMissionTitle":"Club Explorer","skills":["SPE","WRI","STU","INT"],"learningGoals":["Ich kann über Schulclubs sprechen.","Ich kann meine Lieblings-AG planen."],"targetPhrases":["I’d like to join the drama club.","In our club you learn to dance."],"taskTypes":["matching","sentence-builder","mini-writing"]},{"id":"g6-u1-m4","section":"Focus on Language","bookSectionTitle":"The simple past","appMissionTitle":"Past Pro","skills":["GRA","WRI","STU"],"learningGoals":["Ich kann positive Sätze im Simple Past bilden.","Ich kann negative Sätze mit didn’t bilden."],"targetPhrases":["Yesterday I stayed at home.","I didn’t have school."],"taskTypes":["gap-fill","error-correction","sentence-builder"],"errorCategories":["simple-past-positive","simple-past-negative","irregular-verbs"]},{"id":"g6-u1-m5","section":"Story","bookSectionTitle":"Everybody needs friends","appMissionTitle":"Friendship Story","skills":["REA","WRI"],"learningGoals":["Ich kann eine Geschichte über Freundschaft verstehen.","Ich kann eine Geschichte aus einer anderen Perspektive erzählen."],"taskTypes":["reading-check","sorting","mini-writing"]},{"id":"g6-u1-m6","section":"Learning Words / Writing / Reading and Mediation / Viewing","bookSectionTitle":"Better words, better texts and rules","appMissionTitle":"Text Builder","skills":["STU","WRI","MED","VIE"],"learningGoals":["Ich kann Wortfelder und Gegenteile nutzen.","Ich kann time words und linking words verwenden.","Ich kann einfache Schulregeln verstehen und formulieren."],"targetPhrases":["first","then","later","because","so","but","We have to ...","We mustn’t ...","We can ..."],"taskTypes":["sorting","gap-fill","mediation-choice","viewing-scene"],"errorCategories":["word-fields","opposites","time-words","linking-words","school-rules"]},{"id":"g6-u1-m7","section":"Stop Check Go","appMissionTitle":"Together Again Check","skills":["VOC","GRA","REA","LIS","SPE","WRI","MED"],"learningGoals":["Ich wiederhole Unit 1.","Ich erkenne, welche Bereiche ich sicher kann.","Ich bekomme gezielte Wiederholungen für Fehler."],"taskTypes":["unit-test"]}]},{"id":"g6-u2","order":2,"bookUnit":"Unit 2 · Neighbours","appTitle":"Neighbourhood Gate","status":"core","focus":["Nachbarschaft","Stadtviertel","Essen in Deutschland und Großbritannien","Guy Fawkes Day","etwas anbieten","Haustiere","Wegbeschreibung","Brief schreiben"],"grammarFocus":["some / any","simple past questions","short answers with did","directions"],"vocabFields":["neighbourhood","shops","food","festivals","pets","directions","letters"],"missions":[{"id":"g6-u2-m1","section":"Lead-in","bookSectionTitle":"A new neighbour","appMissionTitle":"New Neighbour Tour","skills":["LIS","WRI","SPE"],"learningGoals":["Ich kann einer Tour durch ein Stadtviertel folgen.","Ich kann von meiner Nachbarschaft erzählen."],"targetPhrases":["In my neighbourhood there’s ...","There is a supermarket."],"taskTypes":["listening-check","mini-writing","speaking-prompt"]},{"id":"g6-u2-m2","section":"Theme 1","bookSectionTitle":"Good neighbours","appMissionTitle":"Good Neighbours","skills":["LIS","SPE","STU","INT","WRI"],"learningGoals":["Ich kann etwas anbieten.","Ich kann some und any in einfachen Sätzen verwenden.","Ich lerne einen britischen Feiertag kennen."],"targetPhrases":["Would you like some tea?","I don’t have any fruit tea."],"taskTypes":["gap-fill","multiple-choice","mini-writing"],"errorCategories":["some-any"]},{"id":"g6-u2-m3","section":"Theme 2","bookSectionTitle":"At the dogs’ home","appMissionTitle":"Dogs’ Home Mission","skills":["LIS","REA","SPE"],"learningGoals":["Ich kann einem Hörtext Informationen entnehmen.","Ich kann sagen, welches Haustier geeignet ist."],"targetPhrases":["You need lots of time for a dog.","Who wants a dog?"],"taskTypes":["listening-check","reading-check","speaking-prompt"]},{"id":"g6-u2-m4","section":"Focus on Language","bookSectionTitle":"Simple past questions","appMissionTitle":"Did Detective","skills":["GRA","WRI","STU"],"learningGoals":["Ich kann Fragen im Simple Past bilden.","Ich kann kurze Antworten mit did und didn’t geben."],"targetPhrases":["Did you have fireworks?","No, we didn’t.","What did you eat?"],"taskTypes":["gap-fill","sentence-builder","error-correction"],"errorCategories":["simple-past-questions","did-short-answers"]},{"id":"g6-u2-m5","section":"Story / Do Better in Tests","bookSectionTitle":"A play / Do better in tests","appMissionTitle":"Test Smart","skills":["REA","SPE","STU","WRI"],"learningGoals":["Ich kann ein kurzes Theaterstück verstehen.","Ich kann Arbeitsanweisungen beachten.","Ich kann Beispiele für eigene Antworten nutzen."],"taskTypes":["reading-check","mini-writing","unit-test"]},{"id":"g6-u2-m6","section":"Speaking / Viewing","bookSectionTitle":"Understanding directions","appMissionTitle":"Direction Quest","skills":["LIS","SPE","VIE","INT"],"learningGoals":["Ich kann nach dem Weg fragen.","Ich kann einen einfachen Weg beschreiben.","Ich kann eine englische Nachbarschaft kennenlernen."],"targetPhrases":["Turn right at the traffic lights.","Go straight on.","Go past the shop."],"taskTypes":["listening-check","speaking-prompt","viewing-scene"]},{"id":"g6-u2-m7","section":"Stop Check Go","appMissionTitle":"Neighbours Check","skills":["VOC","GRA","REA","LIS","SPE","WRI"],"taskTypes":["unit-test"]}]},{"id":"g6-u3","order":3,"bookUnit":"Unit 3 · Teen talk","appTitle":"Teen Talk Coast","status":"core","focus":["Wochenende","Umfragen","Taschengeld","Jobs","Hausarbeit","Verabredungen","Zukunftspläne","Kurzvortrag","Fernsehprogramme"],"grammarFocus":["going to-future","comparison of adjectives","comparative","superlative"],"vocabFields":["weekend activities","pocket money","jobs","chores","arrangements","TV programmes","talk phrases"],"missions":[{"id":"g6-u3-m1","section":"Lead-in","bookSectionTitle":"What makes a perfect weekend?","appMissionTitle":"Perfect Weekend","skills":["LIS","SPE","WRI"],"learningGoals":["Ich kann sagen, was ich am Wochenende gerne tue.","Ich kann einfache Umfrageergebnisse wiedergeben."],"targetPhrases":["I like doing sport because it’s fun.","One student did sport."],"taskTypes":["multiple-choice","mini-writing","speaking-prompt"]},{"id":"g6-u3-m2","section":"Theme 1","bookSectionTitle":"Money questions","appMissionTitle":"Money Mission","skills":["LIS","SPE","REA"],"learningGoals":["Ich kann über Taschengeld sprechen.","Ich kann sagen, welche Arbeiten ich im Haus mache."],"targetPhrases":["I don’t get any pocket money.","I do lots of chores."],"taskTypes":["reading-check","gap-fill","speaking-prompt"]},{"id":"g6-u3-m3","section":"Theme 2","bookSectionTitle":"Making arrangements","appMissionTitle":"Plan the Future","skills":["REA","SPE","STU","LIS"],"learningGoals":["Ich kann Verabredungen machen.","Ich kann Pläne mit going to ausdrücken."],"targetPhrases":["Let’s meet at 6 o’clock.","I’m going to start a new class."],"taskTypes":["sentence-builder","gap-fill","speaking-prompt"],"errorCategories":["going-to-future"]},{"id":"g6-u3-m4","section":"Focus on Language","bookSectionTitle":"Comparison of adjectives","appMissionTitle":"Compare Tower","skills":["GRA","SPE","STU"],"learningGoals":["Ich kann Dinge und Personen vergleichen.","Ich kann Steigerungsformen bilden."],"targetPhrases":["I’m older than you.","nicer","the nicest","more popular","the most popular"],"taskTypes":["gap-fill","matching","error-correction"],"errorCategories":["comparison-adjectives"]},{"id":"g6-u3-m5","section":"Story","bookSectionTitle":"Money doesn’t grow on trees","appMissionTitle":"Money Story","skills":["REA","STU"],"learningGoals":["Ich kann einen Text verstehen.","Ich kann Bilder als Verständnishilfe nutzen."],"taskTypes":["reading-check","sorting"]},{"id":"g6-u3-m6","section":"Listening / Speaking / Reading / Viewing","bookSectionTitle":"Talks, TV and Dartmoor Zoo","appMissionTitle":"Short Talk Challenge","skills":["LIS","SPE","REA","VIE","INT","STU"],"learningGoals":["Ich kann einem Kurzvortrag Informationen entnehmen.","Ich kann einen kurzen Vortrag vorbereiten.","Ich kann sagen, welche Programme ich mag."],"targetPhrases":["I’m going to talk about ...","First ...","Thank you for listening.","I like comedies best because ..."],"taskTypes":["listening-check","speaking-prompt","reading-check","viewing-scene"]},{"id":"g6-u3-m7","section":"Stop Check Go","appMissionTitle":"Teen Talk Check","skills":["VOC","GRA","REA","LIS","SPE","WRI"],"taskTypes":["unit-test"]}]},{"id":"g6-u4","order":4,"bookUnit":"Unit 4 · Feeling good","appTitle":"Health Mountain","status":"core","focus":["Gesundheit","Sport","gesundes und ungesundes Essen","Krankheit","Ratschläge","Personenbeschreibung","E-Mails","Zustimmung und Ablehnung"],"grammarFocus":["much / many / lots of","should","present perfect","has / have + past participle"],"vocabFields":["health","food","illness","sport","body","people description","emails"],"missions":[{"id":"g6-u4-m1","section":"Lead-in","bookSectionTitle":"How healthy are you?","appMissionTitle":"Health Quiz","skills":["REA","SPE","LIS"],"learningGoals":["Ich kann ein Gesundheitsquiz verstehen.","Ich kann über Sport und Freizeit sprechen."],"targetPhrases":["Do you eat junk food?","Do you do sports in your free time?"],"taskTypes":["reading-check","listening-check","speaking-prompt"]},{"id":"g6-u4-m2","section":"Theme 1","bookSectionTitle":"Healthy food","appMissionTitle":"Food Balance","skills":["REA","SPE","WRI","STU"],"learningGoals":["Ich kann über gesundes und ungesundes Essen sprechen.","Ich kann much, many und lots of benutzen."],"targetPhrases":["Much fruit is healthy.","Many apples are healthy.","Lots of water is healthy."],"taskTypes":["gap-fill","sorting","mini-writing"],"errorCategories":["much-many-lots-of"]},{"id":"g6-u4-m3","section":"Theme 2","bookSectionTitle":"What’s the matter with Ellie?","appMissionTitle":"Doctor Lumi","skills":["REA","SPE"],"learningGoals":["Ich kann sagen, wie ich mich gesundheitlich fühle.","Ich kann einfache Empfehlungen geben."],"targetPhrases":["I have a headache.","I’m tired.","You should get some fresh air."],"taskTypes":["matching","sentence-builder","speaking-prompt"],"errorCategories":["should-advice"]},{"id":"g6-u4-m4","section":"Focus on Language","bookSectionTitle":"Present perfect","appMissionTitle":"Already Done","skills":["GRA","WRI","STU"],"learningGoals":["Ich kann über Dinge sprechen, die bereits geschehen sind.","Ich kann have/has mit dem past participle benutzen."],"targetPhrases":["Ellie has hoovered the house.","Zoe hasn’t helped.","Have you done your homework?"],"taskTypes":["gap-fill","error-correction","sentence-builder"],"errorCategories":["present-perfect-have-has","past-participle"]},{"id":"g6-u4-m5","section":"Story","bookSectionTitle":"I don’t feel like it!","appMissionTitle":"Comic Health Story","skills":["REA","SPE","WRI","STU"],"learningGoals":["Ich kann eine Comicgeschichte verstehen.","Ich kann ein Healthy-living-Poster erstellen."],"taskTypes":["reading-check","mini-writing"]},{"id":"g6-u4-m6","section":"Using a Dictionary / Reading and Writing / Listening and Speaking / Viewing","bookSectionTitle":"People, Emails and Sports","appMissionTitle":"Health Communication","skills":["STU","REA","WRI","LIS","SPE","VIE"],"learningGoals":["Ich kann Personen beschreiben.","Ich kann einfache E-Mails verstehen und schreiben.","Ich kann Zustimmung und Ablehnung ausdrücken."],"targetPhrases":["My friend is tall.","I’d like to try rugby because ...","I agree.","Let’s take it."],"taskTypes":["reading-check","mini-writing","listening-check","viewing-scene"]},{"id":"g6-u4-m7","section":"Stop Check Go","appMissionTitle":"Feeling Good Check","skills":["VOC","GRA","REA","LIS","SPE","WRI"],"taskTypes":["unit-test"]}]},{"id":"g6-u5","order":5,"bookUnit":"Unit 5 · Dartmoor adventures","appTitle":"Dartmoor Adventure Trail","status":"core","focus":["Dartmoor","Broschüren","Ausflug planen","sich einigen","Richtungsanweisungen","Regeln","Wettervorhersage","Bahnhofsdurchsagen","Notruf"],"grammarFocus":["will-future","adverbs of manner","weather forecast","future predictions"],"vocabFields":["nature","trips","directions","rules","weather","train station","emergency"],"missions":[{"id":"g6-u5-m1","section":"Lead-in","bookSectionTitle":"Visit Dartmoor","appMissionTitle":"Enter Dartmoor","skills":["REA","INT","LIS","SPE"],"learningGoals":["Ich kann einer Broschüre Informationen entnehmen.","Ich kann eine Fantasiereise machen und bewerten."],"targetPhrases":["Dartmoor is a wild place.","I saw rivers, trees and hills."],"taskTypes":["reading-check","listening-check","speaking-prompt"]},{"id":"g6-u5-m2","section":"Theme 1","bookSectionTitle":"Planning a trip","appMissionTitle":"Trip Planner","skills":["REA","SPE"],"learningGoals":["Ich kann einen Ausflug planen.","Ich kann mich einigen, was man mitnimmt."],"targetPhrases":["Where will we sleep?","Let’s take sweets.","Good idea."],"taskTypes":["sentence-builder","speaking-prompt","sorting"]},{"id":"g6-u5-m3","section":"Theme 2","bookSectionTitle":"At the adventure centre","appMissionTitle":"Adventure Centre Rules","skills":["SPE","LIS","WRI"],"learningGoals":["Ich kann Richtungsanweisungen geben und verstehen.","Ich kann gemeinsam Regeln finden.","Ich kann Adverbien der Art und Weise benutzen."],"targetPhrases":["Go straight on.","Turn left.","Walk slowly.","Speak quietly."],"taskTypes":["listening-check","gap-fill","speaking-prompt"],"errorCategories":["directions","adverbs-of-manner"]},{"id":"g6-u5-m4","section":"Focus on Language","bookSectionTitle":"Will-future","appMissionTitle":"Future Forecast","skills":["GRA","WRI","SPE"],"learningGoals":["Ich kann vermuten, was in der Zukunft passiert.","Ich kann Wettervorhersagen machen."],"targetPhrases":["Maybe he’ll call the police.","I’m sure they won’t eat the litter.","Tomorrow it’ll be sunny."],"taskTypes":["gap-fill","sentence-builder","error-correction"],"errorCategories":["will-future","future-negative","weather-forecast"]},{"id":"g6-u5-m5","section":"Story","bookSectionTitle":"The two-tor adventure","appMissionTitle":"Two-Tor Rescue","skills":["REA","STU"],"learningGoals":["Ich kann eine Abenteuergeschichte verstehen.","Ich kann Informationen in der Gruppe austauschen."],"taskTypes":["reading-check","sorting"]},{"id":"g6-u5-m6","section":"Listening / Speaking / Writing and Correcting / Viewing","bookSectionTitle":"Station, Emergency and Correction","appMissionTitle":"Emergency Call","skills":["LIS","MED","SPE","WRI","STU","VIE","INT"],"learningGoals":["Ich kann Bahnhofsdurchsagen verstehen.","Ich kann bei einem Unfall wichtige Informationen übermitteln.","Ich kann eigene Texte überprüfen und korrigieren."],"targetPhrases":["The train to Bristol will leave from platform 5.","We need help, please.","Nobody is hurt."],"taskTypes":["listening-check","mediation-choice","speaking-prompt","error-correction"]},{"id":"g6-u5-m7","section":"Stop Check Go","appMissionTitle":"Dartmoor Check","skills":["VOC","GRA","REA","LIS","SPE","WRI","MED"],"taskTypes":["unit-test"]}]},{"id":"g6-u6","order":6,"bookUnit":"Unit 6 · A journey in time","appTitle":"Time Castle","status":"optional-core","focus":["britische Geschichte","historische Personen","Theaterstück","Fantasy Play","Vergangenheit im Verlauf","Plymouth Sehenswürdigkeiten","Puppenspiel"],"grammarFocus":["past progressive","was / were + verb-ing","background actions in the past"],"vocabFields":["history","time travel","British history","theatre","sights","past events"],"missions":[{"id":"g6-u6-m1","section":"Lead-in","bookSectionTitle":"A journey in time","appMissionTitle":"Time Portal","skills":["SPE","LIS","INT"],"learningGoals":["Ich kann über Ereignisse und Personen der britischen Geschichte sprechen.","Ich kann historische Informationen zeitlich einordnen."],"targetPhrases":["I’d like to know more about ...","Francis Drake fought against the Spanish in 1588."],"taskTypes":["matching","sorting","speaking-prompt"]},{"id":"g6-u6-m2","section":"Story","bookSectionTitle":"The history kids – a fantasy play","appMissionTitle":"History Kids","skills":["REA","SPE"],"learningGoals":["Ich kann ein Theaterstück verstehen.","Ich kann eine kurze Szene aufführen oder nachsprechen."],"taskTypes":["reading-check","speaking-prompt","sorting"]},{"id":"g6-u6-m3","section":"Focus on Language","bookSectionTitle":"Past progressive","appMissionTitle":"What Was Happening?","skills":["GRA","WRI"],"learningGoals":["Ich kann über Handlungen sprechen, die in der Vergangenheit gerade im Gange waren.","Ich kann was/were + verb-ing benutzen."],"targetPhrases":["Arthur was wearing old clothes.","They were walking through the castle.","What were you doing?"],"taskTypes":["gap-fill","sentence-builder","error-correction"],"errorCategories":["past-progressive","was-were-ing"]},{"id":"g6-u6-m4","section":"Viewing","bookSectionTitle":"Where’s Anna? / Squashbox Theatre","appMissionTitle":"Theatre and Sights","skills":["VIE","INT"],"learningGoals":["Ich kann eine Bild- oder Filmszene zu Plymouth verstehen.","Ich lerne etwas über Theater und Sehenswürdigkeiten."],"taskTypes":["viewing-scene","multiple-choice"]},{"id":"g6-u6-m5","section":"Stop Check Go","appMissionTitle":"Time Castle Check","skills":["VOC","GRA","REA","SPE","VIE"],"taskTypes":["unit-test"]}]}]}],"diagnostics":{"errorCategories":[{"id":"to-be-forms","label":"Formen von to be","recommendedReview":["g5-u1-m4","g5-u2-m4"]},{"id":"to-be-negative","label":"Verneinung mit to be","recommendedReview":["g5-u1-m4"]},{"id":"there-is-there-are","label":"there is / there are","recommendedReview":["g5-u2-m3"]},{"id":"simple-present-frequency","label":"Simple Present mit Häufigkeitsadverbien","recommendedReview":["g5-u3-m4"]},{"id":"third-person-s","label":"Simple Present 3. Person Singular","recommendedReview":["g5-u3-m4","g5-u4-m4"]},{"id":"do-does-questions","label":"Fragen mit do / does","recommendedReview":["g5-u4-m4"]},{"id":"present-progressive-be","label":"Present Progressive mit be","recommendedReview":["g5-u5-m4"]},{"id":"verb-ing","label":"Verbform mit -ing","recommendedReview":["g5-u5-m4"]},{"id":"was-were","label":"was / were","recommendedReview":["g6-u1-m1","g6-u1-m4"]},{"id":"simple-past-positive","label":"Simple Past positive Aussagen","recommendedReview":["g6-u1-m4"]},{"id":"simple-past-negative","label":"Simple Past negative Aussagen","recommendedReview":["g6-u1-m4"]},{"id":"simple-past-questions","label":"Simple Past Fragen","recommendedReview":["g6-u2-m4"]},{"id":"did-short-answers","label":"Kurzantworten mit did / didn’t","recommendedReview":["g6-u2-m4"]},{"id":"some-any","label":"some / any","recommendedReview":["g6-u2-m2"]},{"id":"going-to-future","label":"going to-future","recommendedReview":["g6-u3-m3"]},{"id":"comparison-adjectives","label":"Steigerung von Adjektiven","recommendedReview":["g6-u3-m4"]},{"id":"much-many-lots-of","label":"much / many / lots of","recommendedReview":["g6-u4-m2"]},{"id":"should-advice","label":"Ratschläge mit should","recommendedReview":["g6-u4-m3"]},{"id":"present-perfect-have-has","label":"Present Perfect mit have / has","recommendedReview":["g6-u4-m4"]},{"id":"adverbs-of-manner","label":"Adverbs of manner","recommendedReview":["g6-u5-m3"]},{"id":"will-future","label":"will-future","recommendedReview":["g6-u5-m4"]},{"id":"past-progressive","label":"Past Progressive","recommendedReview":["g6-u6-m3"]}]},"profileModel":{"profiles":[{"id":"child-1","displayName":"Kind 1","currentGrade":6,"mode":"builder","currentUnitId":"g6-u1","progress":{"completedMissionIds":[],"completedUnitIds":[],"stars":0,"lightSparks":0,"lightCrystals":0,"streakDays":0,"wrongAnswers":[]}},{"id":"child-2","displayName":"Kind 2","currentGrade":5,"mode":"beginner","currentUnitId":"g5-u0","progress":{"completedMissionIds":[],"completedUnitIds":[],"stars":0,"lightSparks":0,"lightCrystals":0,"streakDays":0,"wrongAnswers":[]}}]},"unlockRules":{"missionUnlock":"A mission unlocks when the previous mission in the same unit is passed with at least 80 percent.","unitUnlock":"A unit unlocks when the previous unit test is passed with at least 80 percent.","reviewOverride":"Review missions can always be opened again.","parentOverride":"Parents can unlock units manually if needed."},"assessmentRules":{"gold":{"minPercent":90,"reward":"Goldener Lichtkristall"},"pass":{"minPercent":80,"reward":"Lichtkristall"},"practiceAgain":{"minPercent":60,"reward":"Wiederholungsmission"},"repeatRecommended":{"minPercent":0,"reward":"Lumi empfiehlt Grundlagen-Wiederholung"}}};
+window.TASK_BANKS = {"g6-u1":{"schemaVersion":"0.3.0","fileType":"task-bank","grade":6,"unitId":"g6-u1","unitTitle":"Together again","appWorld":"Back to Lighthouse Island","unitTheme":"Back after the holidays, school life, clubs, friendship and simple past","passThresholdPercent":80,"estimatedTotalMissions":7,"contentRule":"All tasks, texts, examples and feedback are original app content. The structure follows the textbook unit order and learning goals, but does not copy original exercises or reading texts.","missions":[{"missionId":"g6-u1-m1","missionTitle":"After the Holidays","bookSection":"Lead-in","durationMinutes":20,"storyIntro":"Lumi wartet am Hafen von Lighthouse Island. Alle kommen aus den Ferien zurück, aber die Erinnerungen sind durcheinander. Hilf Lumi, die Ferien-Sätze wieder richtig zusammenzusetzen.","learningGoals":["Ich kann kurz erzählen, wo ich in den Ferien war.","Ich kann sagen, wie das Wetter war.","Ich kann was und were in einfachen Sätzen unterscheiden."],"skills":["VOC","GRA","SPE","LIS"],"vocabFields":["holidays","weather","feelings"],"reward":{"stars":1,"item":"Lichtfunke","message":"Der erste Ferien-Funken ist zurück im Leuchtturm."},"tasks":[{"id":"g6-u1-m1-t01","type":"multiple-choice","skill":"GRA","difficulty":1,"errorCategory":"was-were","prompt":"Choose the correct sentence.","options":["I were at the beach.","I was at the beach.","I am at the beach yesterday."],"answer":1,"feedbackCorrect":"Genau. Bei I benutzt du in der Vergangenheit was.","feedbackWrong":"Schau auf das Verb. Bei I heißt es hier was."},{"id":"g6-u1-m1-t02","type":"matching","skill":"VOC","difficulty":1,"errorCategory":"weather-vocabulary","prompt":"Match the weather words.","pairs":[{"left":"sunny","right":"sonnig"},{"left":"rainy","right":"regnerisch"},{"left":"cloudy","right":"bewölkt"},{"left":"windy","right":"windig"}],"feedbackCorrect":"Super. Diese Wörter brauchst du, um über Ferien zu sprechen.","feedbackWrong":"Kein Problem. Schau dir die Wetterwörter noch einmal genau an."},{"id":"g6-u1-m1-t03","type":"gap-fill","skill":"GRA","difficulty":1,"errorCategory":"was-were","prompt":"Complete the sentence: The weather ___ cold.","acceptedAnswers":["was"],"feedbackCorrect":"Richtig. The weather ist Singular, deshalb was.","feedbackWrong":"Denk an was und were. Bei einer Sache benutzt du meistens was."},{"id":"g6-u1-m1-t04","type":"sentence-builder","skill":"GRA","difficulty":1,"errorCategory":"word-order","prompt":"Put the words in the correct order.","words":["holidays","were","My","great"],"answer":"My holidays were great.","feedbackCorrect":"Sehr gut. Holidays ist Mehrzahl, deshalb were.","feedbackWrong":"Der Satz beginnt mit My holidays. Danach kommt were."},{"id":"g6-u1-m1-t05","type":"multiple-choice","skill":"SPE","difficulty":1,"errorCategory":"holidays-phrases","prompt":"Which answer fits? How were your holidays?","options":["They were great.","It was Monday.","I am in class six."],"answer":0,"feedbackCorrect":"Genau. Die Frage fragt nach den Ferien.","feedbackWrong":"Die Antwort muss zu holidays passen."},{"id":"g6-u1-m1-t06","type":"reading-check","skill":"REA","difficulty":1,"errorCategory":"reading-detail","text":"Mia was in the mountains. The weather was cold, but she was happy. She liked the long walks.","prompt":"Where was Mia?","options":["At the beach","In the mountains","At school"],"answer":1,"feedbackCorrect":"Richtig. Mia war in den Bergen.","feedbackWrong":"Lies den ersten Satz noch einmal."},{"id":"g6-u1-m1-t07","type":"error-correction","skill":"GRA","difficulty":2,"errorCategory":"was-were","prompt":"Correct the sentence: We was in Spain.","acceptedAnswers":["We were in Spain."],"feedbackCorrect":"Genau. Bei we benutzt du were.","feedbackWrong":"Bei we heißt es in der Vergangenheit were."},{"id":"g6-u1-m1-t08","type":"mini-writing","skill":"WRI","difficulty":1,"errorCategory":"holiday-writing","prompt":"Write one sentence about your holidays.","support":["I was at home.","I was in Italy.","My holidays were nice.","The weather was sunny."],"minWords":4,"manualReview":true,"feedbackAfterSubmit":"Gut gemacht. Ein kurzer Satz reicht am Anfang völlig."}],"miniChallenge":[{"prompt":"I ___ at home.","acceptedAnswers":["was"]},{"prompt":"We ___ in the country.","acceptedAnswers":["were"]},{"prompt":"The weather ___ rainy.","acceptedAnswers":["was"]}]},{"missionId":"g6-u1-m2","missionTitle":"Back at School","bookSection":"Theme 1","durationMinutes":20,"storyIntro":"Der erste Schultag auf Lighthouse Island beginnt. Einige Kinder erzählen von ihren Ferien, andere suchen ihre Klasse. Lumi braucht Hilfe, die Gespräche richtig zu verstehen.","learningGoals":["Ich kann Freunde nach den Ferien begrüßen.","Ich kann kurz sagen, wie ein Schultag war.","Ich kann einfache Sätze über den ersten Schultag schreiben."],"skills":["REA","SPE","WRI","VOC"],"vocabFields":["school","lessons","timetable","friends"],"reward":{"stars":1,"item":"Lichtfunke","message":"Das School Gate leuchtet wieder."},"tasks":[{"id":"g6-u1-m2-t01","type":"multiple-choice","skill":"SPE","difficulty":1,"errorCategory":"school-greetings","prompt":"Choose the best greeting after the holidays.","options":["How was your summer?","How is your pencil?","Where is your sandwich?"],"answer":0,"feedbackCorrect":"Genau. So kann man nach den Ferien ein Gespräch beginnen.","feedbackWrong":"Die passende Frage bezieht sich auf die Ferien."},{"id":"g6-u1-m2-t02","type":"gap-fill","skill":"GRA","difficulty":1,"errorCategory":"was-were","prompt":"Complete the sentence: The first lesson ___ English.","acceptedAnswers":["was"],"feedbackCorrect":"Richtig. Lesson ist Singular, deshalb was.","feedbackWrong":"Eine lesson ist eine einzelne Stunde. Dafür passt was."},{"id":"g6-u1-m2-t03","type":"sentence-builder","skill":"GRA","difficulty":1,"errorCategory":"word-order","prompt":"Put the words in the correct order.","words":["was","My","nice","teacher"],"answer":"My teacher was nice.","feedbackCorrect":"Sehr gut. Der Satz ist klar und richtig.","feedbackWrong":"Beginne mit My teacher."},{"id":"g6-u1-m2-t04","type":"reading-check","skill":"REA","difficulty":2,"errorCategory":"reading-detail","text":"Tom was nervous in the morning. His first lesson was Maths. After the break, he met his friend Ben. Then he felt better.","prompt":"Why did Tom feel better?","options":["He met his friend.","He went home.","He had no lessons."],"answer":0,"feedbackCorrect":"Richtig. Ben hat ihm geholfen, sich besser zu fühlen.","feedbackWrong":"Achte auf den Satz nach der Pause."},{"id":"g6-u1-m2-t05","type":"multiple-choice","skill":"VOC","difficulty":1,"errorCategory":"school-vocabulary","prompt":"What is a timetable?","options":["ein Stundenplan","eine Sporthalle","eine Hausaufgabe"],"answer":0,"feedbackCorrect":"Genau. Timetable heißt Stundenplan.","feedbackWrong":"Ein timetable zeigt, welche Stunden du wann hast."},{"id":"g6-u1-m2-t06","type":"gap-fill","skill":"GRA","difficulty":2,"errorCategory":"irregular-verbs","prompt":"Complete the sentence: After the break, we ___ History.","acceptedAnswers":["had"],"feedbackCorrect":"Gut. Had ist die Vergangenheitsform von have.","feedbackWrong":"Hier brauchst du die Vergangenheit von have."},{"id":"g6-u1-m2-t07","type":"error-correction","skill":"GRA","difficulty":2,"errorCategory":"was-were","prompt":"Correct the sentence: The first lesson were German.","acceptedAnswers":["The first lesson was German."],"feedbackCorrect":"Genau. The first lesson ist Singular.","feedbackWrong":"Bei einer einzelnen Schulstunde benutzt du was."},{"id":"g6-u1-m2-t08","type":"mini-writing","skill":"WRI","difficulty":1,"errorCategory":"school-day-writing","prompt":"Write two sentences about your first school day after the holidays.","support":["My first lesson was ...","It was ...","My teacher was ...","After the break, I ..."],"minSentences":2,"manualReview":true,"feedbackAfterSubmit":"Sehr gut. Zwei klare Sätze sind besser als ein langer, unsicherer Satz."}],"miniChallenge":[{"prompt":"The first lesson ___ PE.","acceptedAnswers":["was"]},{"prompt":"My friends ___ happy.","acceptedAnswers":["were"]},{"prompt":"Our teacher ___ friendly.","acceptedAnswers":["was"]}]},{"missionId":"g6-u1-m3","missionTitle":"Club Explorer","bookSection":"Theme 2","durationMinutes":20,"storyIntro":"Auf Lighthouse Island öffnen neue Clubs. Lumi möchte wissen, welchem Club du beitreten würdest und warum.","learningGoals":["Ich kann über Schulclubs sprechen.","Ich kann sagen, welchem Club ich beitreten möchte.","Ich kann eine einfache Begründung mit because geben."],"skills":["VOC","SPE","WRI","STU"],"vocabFields":["clubs","hobbies","school activities"],"reward":{"stars":1,"item":"Lichtfunke","badge":"Club Explorer","message":"Du hast den Club Explorer Badge freigeschaltet."},"tasks":[{"id":"g6-u1-m3-t01","type":"multiple-choice","skill":"VOC","difficulty":1,"errorCategory":"clubs-vocabulary","prompt":"What does join a club mean?","options":["einer AG beitreten","eine Schule schließen","einen Test schreiben"],"answer":0,"feedbackCorrect":"Genau. Join a club heißt einer AG oder einem Club beitreten.","feedbackWrong":"Join bedeutet hier mitmachen oder beitreten."},{"id":"g6-u1-m3-t02","type":"gap-fill","skill":"VOC","difficulty":1,"errorCategory":"clubs-vocabulary","prompt":"Complete the sentence: I’d like to ___ the music club.","acceptedAnswers":["join"],"feedbackCorrect":"Richtig. I’d like to join ist eine sehr nützliche Formulierung.","feedbackWrong":"Hier passt das Verb join."},{"id":"g6-u1-m3-t03","type":"sentence-builder","skill":"WRI","difficulty":1,"errorCategory":"word-order","prompt":"Put the words in the correct order.","words":["join","to","the","drama club","I’d like"],"answer":"I’d like to join the drama club.","feedbackCorrect":"Sehr gut. So klingt der Satz natürlich.","feedbackWrong":"Der Satz beginnt mit I’d like to."},{"id":"g6-u1-m3-t04","type":"matching","skill":"VOC","difficulty":1,"errorCategory":"clubs-vocabulary","prompt":"Match the clubs and activities.","pairs":[{"left":"drama club","right":"acting"},{"left":"sports club","right":"football"},{"left":"music club","right":"singing"},{"left":"art club","right":"drawing"}],"feedbackCorrect":"Super. Jetzt kennst du wichtige Club-Wörter.","feedbackWrong":"Überlege, was man in dem jeweiligen Club macht."},{"id":"g6-u1-m3-t05","type":"multiple-choice","skill":"WRI","difficulty":1,"errorCategory":"linking-words","prompt":"Which word gives a reason?","options":["because","first","yesterday"],"answer":0,"feedbackCorrect":"Genau. Because erklärt den Grund.","feedbackWrong":"Ein Grund wird meistens mit because eingeleitet."},{"id":"g6-u1-m3-t06","type":"gap-fill","skill":"WRI","difficulty":2,"errorCategory":"club-writing","prompt":"Complete the sentence: I’d like to join the art club because it is ___.","acceptedAnswers":["fun","interesting","cool","exciting","creative"],"feedbackCorrect":"Gute Begründung.","feedbackWrong":"Hier passt ein positives Adjektiv, zum Beispiel fun oder interesting."},{"id":"g6-u1-m3-t07","type":"multiple-choice","skill":"GRA","difficulty":2,"errorCategory":"simple-present","prompt":"Choose the correct sentence.","options":["In our club you learn to dance.","In our club you learns to dance.","In our club you learning to dance."],"answer":0,"feedbackCorrect":"Richtig. Nach you steht die Grundform learn.","feedbackWrong":"Achte auf you. Es heißt you learn."},{"id":"g6-u1-m3-t08","type":"mini-writing","skill":"WRI","difficulty":2,"errorCategory":"club-project","prompt":"Create your own school club.","fields":[{"label":"Club name","placeholder":"Bike Club"},{"label":"What can students do?","placeholder":"Students can repair bikes."},{"label":"Why is it interesting?","placeholder":"It is interesting because bikes are cool."}],"manualReview":true,"feedbackAfterSubmit":"Stark. Du hast eine eigene AG-Idee auf Englisch geplant."}],"miniChallenge":[{"prompt":"I’d like to join the ______ club because ______.","type":"sentence-frame","manualReview":true}]},{"missionId":"g6-u1-m4","missionTitle":"Past Pro","bookSection":"Focus on Language","durationMinutes":20,"storyIntro":"Lumi findet ein altes Logbuch. Viele Verben fehlen. Hilf dabei, die Einträge aus der Vergangenheit wieder richtig einzusetzen.","learningGoals":["Ich kann regelmäßige Verben im Simple Past bilden.","Ich kann erste unregelmäßige Verben im Simple Past erkennen.","Ich kann negative Sätze mit didn’t und Grundform bilden."],"skills":["GRA","WRI","STU"],"vocabFields":["regular verbs","irregular verbs","yesterday phrases"],"reward":{"stars":2,"item":"Lichtfunke","badge":"Past Pro","message":"Das Logbuch ist wieder lesbar."},"ruleCard":{"title":"Simple Past","rules":["Das Simple Past benutzt du, wenn etwas in der Vergangenheit passiert ist.","Regelmäßige Verben bekommen meistens -ed.","Bei Verneinungen benutzt du didn’t + Grundform.","Nach didn’t steht nicht die Past-Form."],"examples":["I played football.","I didn’t play tennis.","She visited her friend.","She didn’t visit her cousin."]},"tasks":[{"id":"g6-u1-m4-t01","type":"multiple-choice","skill":"GRA","difficulty":1,"errorCategory":"simple-past-positive","prompt":"Yesterday I ___ football.","options":["play","played","playing"],"answer":1,"feedbackCorrect":"Richtig. Play wird im Simple Past zu played.","feedbackWrong":"Yesterday zeigt dir: Du brauchst die Vergangenheit."},{"id":"g6-u1-m4-t02","type":"gap-fill","skill":"GRA","difficulty":1,"errorCategory":"simple-past-positive","prompt":"Complete the sentence: We ___ at home yesterday.","acceptedAnswers":["stayed"],"feedbackCorrect":"Gut. Stay wird zu stayed.","feedbackWrong":"Bei regelmäßigen Verben kommt meistens -ed dazu."},{"id":"g6-u1-m4-t03","type":"multiple-choice","skill":"GRA","difficulty":2,"errorCategory":"simple-past-negative","prompt":"Choose the correct negative sentence.","options":["I didn’t watched TV.","I didn’t watch TV.","I don’t watched TV."],"answer":1,"feedbackCorrect":"Genau. Nach didn’t steht die Grundform.","feedbackWrong":"Nach didn’t benutzt du nicht watched, sondern watch."},{"id":"g6-u1-m4-t04","type":"matching","skill":"GRA","difficulty":1,"errorCategory":"regular-verbs","prompt":"Match the verbs with their Simple Past forms.","pairs":[{"left":"help","right":"helped"},{"left":"visit","right":"visited"},{"left":"walk","right":"walked"},{"left":"like","right":"liked"}],"feedbackCorrect":"Sehr gut. Das sind regelmäßige Verben.","feedbackWrong":"Die Simple-Past-Form endet hier auf -ed oder -d."},{"id":"g6-u1-m4-t05","type":"multiple-choice","skill":"GRA","difficulty":2,"errorCategory":"irregular-verbs","prompt":"What is the Simple Past of go?","options":["goed","went","goes"],"answer":1,"feedbackCorrect":"Richtig. Go wird im Simple Past zu went.","feedbackWrong":"Go ist unregelmäßig. Die Form heißt went."},{"id":"g6-u1-m4-t06","type":"error-correction","skill":"GRA","difficulty":2,"errorCategory":"simple-past-negative","prompt":"Make the sentence negative: I played basketball.","acceptedAnswers":["I didn't play basketball.","I did not play basketball."],"feedbackCorrect":"Sehr gut. Didn’t + Grundform.","feedbackWrong":"Bei der Verneinung übernimmt didn’t die Vergangenheit. Das Verb bleibt play."},{"id":"g6-u1-m4-t07","type":"error-correction","skill":"GRA","difficulty":2,"errorCategory":"simple-past-negative","prompt":"Correct the sentence: She didn’t went to school.","acceptedAnswers":["She didn't go to school.","She did not go to school."],"feedbackCorrect":"Genau. Nach didn’t steht go.","feedbackWrong":"Nach didn’t steht die Grundform, also go."},{"id":"g6-u1-m4-t08","type":"multiple-choice","skill":"GRA","difficulty":1,"errorCategory":"was-were","prompt":"They ___ tired after school.","options":["was","were","is"],"answer":1,"feedbackCorrect":"Richtig. They braucht were.","feedbackWrong":"Bei they benutzt du were."},{"id":"g6-u1-m4-t09","type":"multiple-choice","skill":"GRA","difficulty":2,"errorCategory":"simple-past-positive","prompt":"Yesterday Max ___ his friend.","options":["visited","visit","visits"],"answer":0,"feedbackCorrect":"Genau. Yesterday zeigt Simple Past: visited.","feedbackWrong":"Hier brauchst du die Vergangenheitsform."},{"id":"g6-u1-m4-t10","type":"mini-writing","skill":"WRI","difficulty":2,"errorCategory":"simple-past-writing","prompt":"Write three sentences about yesterday.","requirements":["Use one positive Simple Past sentence.","Use one negative sentence with didn’t.","Use one sentence with was or were."],"support":["Yesterday I ...","I didn’t ...","It was ..."],"manualReview":true,"feedbackAfterSubmit":"Super. Genau solche kurzen Sätze helfen später bei Klassenarbeiten."}],"miniChallenge":[{"prompt":"play →","acceptedAnswers":["played"]},{"prompt":"go →","acceptedAnswers":["went"]},{"prompt":"I didn’t ___ football.","acceptedAnswers":["play"]},{"prompt":"They ___ happy.","acceptedAnswers":["were"]}]},{"missionId":"g6-u1-m5","missionTitle":"Friendship Story","bookSection":"Story","durationMinutes":20,"storyIntro":"Lumi erzählt eine Geschichte über einen neuen Schüler auf Lighthouse Island. Es geht darum, wie ein schwieriger Tag durch Freundschaft besser werden kann.","learningGoals":["Ich kann eine kurze Geschichte verstehen.","Ich kann erkennen, wie sich eine Person fühlt.","Ich kann eine Geschichte aus einer anderen Perspektive erzählen."],"skills":["REA","WRI","VOC"],"vocabFields":["friendship","feelings","school"],"reward":{"stars":1,"item":"Lichtkristall","badge":"Good Friend","message":"Du hast den Freundschafts-Kristall gefunden."},"readingText":{"id":"g6-u1-m5-reading-01","title":"A New Day","text":"A new boy came to Lighthouse School on Monday. His name was Noah. In the morning, he was quiet because he didn’t know anybody. At break, Mia asked him, “Do you want to play table tennis?” Noah smiled. They played together, and later Ben joined them too. After school, Noah wrote in his notebook: “My first day was not bad. I found two new friends.”"},"tasks":[{"id":"g6-u1-m5-t01","type":"reading-check","skill":"REA","difficulty":1,"errorCategory":"reading-main-idea","prompt":"Who was new at school?","options":["Mia","Noah","Ben"],"answer":1,"feedbackCorrect":"Richtig. Noah war neu an der Schule.","feedbackWrong":"Lies den ersten Satz noch einmal."},{"id":"g6-u1-m5-t02","type":"reading-check","skill":"REA","difficulty":2,"errorCategory":"feelings-vocabulary","prompt":"How did Noah feel in the morning?","options":["quiet and unsure","angry","very loud"],"answer":0,"feedbackCorrect":"Genau. Er war ruhig und unsicher.","feedbackWrong":"Achte auf quiet und didn’t know anybody."},{"id":"g6-u1-m5-t03","type":"reading-check","skill":"REA","difficulty":1,"errorCategory":"reading-detail","prompt":"What did Mia ask Noah?","options":["if he wanted to play table tennis","if he had homework","if he liked Maths"],"answer":0,"feedbackCorrect":"Richtig. Mia fragte ihn, ob er Tischtennis spielen möchte.","feedbackWrong":"Lies den Satz mit Mia noch einmal."},{"id":"g6-u1-m5-t04","type":"sorting","skill":"REA","difficulty":2,"errorCategory":"story-sequence","prompt":"Put the events in the correct order.","items":["Noah came to the school.","Mia asked him to play.","Ben joined them.","Noah wrote in his notebook."],"answer":["Noah came to the school.","Mia asked him to play.","Ben joined them.","Noah wrote in his notebook."],"feedbackCorrect":"Sehr gut. Du hast die Reihenfolge verstanden.","feedbackWrong":"Suche im Text nach Monday, at break, later und after school."},{"id":"g6-u1-m5-t05","type":"multiple-choice","skill":"VOC","difficulty":2,"errorCategory":"vocabulary-in-context","prompt":"What does joined them mean?","options":["er machte mit","er ging weg","er vergaß sie"],"answer":0,"feedbackCorrect":"Genau. Joined them heißt, dass Ben mitgemacht hat.","feedbackWrong":"Joined bedeutet hier: dazukommen und mitmachen."},{"id":"g6-u1-m5-t06","type":"mini-writing","skill":"WRI","difficulty":2,"errorCategory":"perspective-writing","prompt":"Write two sentences from Mia’s perspective.","support":["I saw a new boy.","He was quiet.","I asked him to play table tennis.","Later, Ben joined us."],"minSentences":2,"manualReview":true,"feedbackAfterSubmit":"Gut gemacht. Du hast die Geschichte aus einer anderen Sicht erzählt."},{"id":"g6-u1-m5-t07","type":"text-input","skill":"GRA","difficulty":2,"errorCategory":"simple-past-recognition","prompt":"Find one Simple Past verb from the story.","acceptedAnswers":["came","was","asked","smiled","played","joined","wrote","found"],"feedbackCorrect":"Richtig. Das ist ein Simple-Past-Verb aus der Geschichte.","feedbackWrong":"Suche nach Verben, die erzählen, was passiert ist."},{"id":"g6-u1-m5-t08","type":"multiple-choice","skill":"REA","difficulty":2,"errorCategory":"reading-main-idea","prompt":"What is the message of the story?","options":["Friends can make a difficult day better.","School is always boring.","Table tennis is dangerous."],"answer":0,"feedbackCorrect":"Genau. Die Geschichte zeigt, dass Freunde einen Tag besser machen können.","feedbackWrong":"Denk daran, wie Noah sich am Anfang und am Ende fühlt."}]},{"missionId":"g6-u1-m6","missionTitle":"Text Builder","bookSection":"Learning Words / Writing / Reading and Mediation / Viewing","durationMinutes":20,"storyIntro":"Lumi hat einen Text geschrieben. Er ist verständlich, aber noch langweilig. Hilf ihr, bessere Wörter, time words und linking words zu benutzen.","learningGoals":["Ich kann Wörter nach Wortfeldern sortieren.","Ich kann Gegenteile erkennen.","Ich kann time words und linking words in kurzen Texten verwenden.","Ich kann einfache Schulregeln verstehen."],"skills":["STU","WRI","MED","VIE","VOC"],"vocabFields":["weather","hobbies","feelings","rules"],"reward":{"stars":1,"item":"Lichtkristall","badge":"Text Builder","message":"Deine Texte bekommen mehr Struktur."},"tasks":[{"id":"g6-u1-m6-t01","type":"multiple-choice","skill":"VOC","difficulty":1,"errorCategory":"word-fields","prompt":"Which word belongs to weather?","options":["sunny","football","nervous"],"answer":0,"feedbackCorrect":"Richtig. Sunny gehört zum Wetter.","feedbackWrong":"Weather bedeutet Wetter."},{"id":"g6-u1-m6-t02","type":"matching","skill":"VOC","difficulty":1,"errorCategory":"opposites","prompt":"Match the opposites.","pairs":[{"left":"happy","right":"unhappy"},{"left":"interesting","right":"boring"},{"left":"easy","right":"difficult"},{"left":"good","right":"bad"}],"feedbackCorrect":"Super. Gegenteile helfen dir, Wörter besser zu lernen.","feedbackWrong":"Überlege, welches Wort das Gegenteil bedeutet."},{"id":"g6-u1-m6-t03","type":"multiple-choice","skill":"WRI","difficulty":2,"errorCategory":"linking-words","prompt":"Choose the best linking word: I was tired, ___ I went to bed early.","options":["because","so","but"],"answer":1,"feedbackCorrect":"Genau. So zeigt die Folge: Ich war müde, also ging ich früh schlafen.","feedbackWrong":"Hier brauchst du ein Wort für die Folge."},{"id":"g6-u1-m6-t04","type":"multiple-choice","skill":"WRI","difficulty":2,"errorCategory":"linking-words","prompt":"Choose the best linking word: I joined the music club ___ I like singing.","options":["because","but","then"],"answer":0,"feedbackCorrect":"Richtig. Because erklärt den Grund.","feedbackWrong":"Hier brauchst du ein Wort, das eine Begründung einleitet."},{"id":"g6-u1-m6-t05","type":"multiple-choice","skill":"WRI","difficulty":2,"errorCategory":"linking-words","prompt":"Choose the best linking word: The lesson was difficult, ___ it was interesting.","options":["but","so","because"],"answer":0,"feedbackCorrect":"Genau. But zeigt einen Gegensatz.","feedbackWrong":"Difficult und interesting stehen hier im Gegensatz."},{"id":"g6-u1-m6-t06","type":"sorting","skill":"WRI","difficulty":2,"errorCategory":"time-words","prompt":"Put the sentences in a good order.","items":["After that, we played football.","Finally, I went home.","First, I had English.","Then, I met my friends."],"answer":["First, I had English.","Then, I met my friends.","After that, we played football.","Finally, I went home."],"feedbackCorrect":"Sehr gut. Time words machen einen Text klarer.","feedbackWrong":"First kommt an den Anfang, finally ans Ende."},{"id":"g6-u1-m6-t07","type":"mini-writing","skill":"WRI","difficulty":2,"errorCategory":"writing-order","prompt":"Improve the text with at least two time words: I was at school. I had English. I played football. I went home.","support":["First","Then","After that","Finally"],"manualReview":true,"feedbackAfterSubmit":"Gut. Mit time words klingt dein Text viel geordneter."},{"id":"g6-u1-m6-t08","type":"mediation-choice","skill":"MED","difficulty":2,"errorCategory":"school-rules","prompt":"German information: In der Schule darf man in der Pause draußen spielen, aber man darf nicht im Gebäude rennen. Choose the best English version.","options":["Students can play outside during the break, but they mustn’t run inside the building.","Students must play inside and run outside.","Students can’t play and must run."],"answer":0,"feedbackCorrect":"Sehr gut. Das ist die passende englische Wiedergabe.","feedbackWrong":"Achte auf can und mustn’t."},{"id":"g6-u1-m6-t09","type":"viewing-scene","skill":"VIE","difficulty":1,"errorCategory":"viewing-detail","sceneDescription":"A group of students is on a small stage. One student forgets his line. The others help him.","prompt":"What club is this probably?","options":["Drama Club","Football Club","Cooking Club"],"answer":0,"feedbackCorrect":"Richtig. Eine Bühne und Rollen passen zum Drama Club.","feedbackWrong":"Achte auf stage und line."}]},{"missionId":"g6-u1-m7","missionTitle":"Together Again Check","bookSection":"Stop Check Go","durationMinutes":20,"storyIntro":"Der erste große Lichtkristall liegt im Leuchtturmraum. Um ihn zu aktivieren, wiederholst du die wichtigsten Inhalte aus Unit 1.","learningGoals":["Ich kann Unit 1 wiederholen.","Ich kann erkennen, welche Themen sicher sind.","Ich bekomme gezielte Wiederholungen für Fehler."],"skills":["VOC","GRA","REA","WRI","MED"],"vocabFields":["holidays","school","clubs","rules","feelings"],"reward":{"stars":3,"item":"Lichtkristall","badge":"Back-to-School Hero","message":"Unit 1 abgeschlossen. Das nächste Gebiet wird freigeschaltet."},"assessment":{"gold":90,"pass":80,"review":60},"tasks":[{"id":"g6-u1-m7-t01","type":"multiple-choice","skill":"GRA","difficulty":1,"errorCategory":"simple-past-positive","prompt":"Yesterday I ___ at home.","options":["stayed","stay","staying"],"answer":0,"feedbackCorrect":"Richtig. Yesterday zeigt Simple Past.","feedbackWrong":"Hier brauchst du die Vergangenheitsform."},{"id":"g6-u1-m7-t02","type":"gap-fill","skill":"GRA","difficulty":2,"errorCategory":"simple-past-negative","prompt":"Complete the sentence: I ___ have school yesterday.","acceptedAnswers":["didn't","did not"],"feedbackCorrect":"Genau. Bei der Verneinung im Simple Past benutzt du didn’t.","feedbackWrong":"Hier brauchst du didn’t oder did not."},{"id":"g6-u1-m7-t03","type":"multiple-choice","skill":"GRA","difficulty":1,"errorCategory":"was-were","prompt":"My friends ___ happy.","options":["was","were","is"],"answer":1,"feedbackCorrect":"Richtig. Friends ist Mehrzahl, deshalb were.","feedbackWrong":"Bei Mehrzahl benutzt du were."},{"id":"g6-u1-m7-t04","type":"multiple-choice","skill":"WRI","difficulty":2,"errorCategory":"linking-words","prompt":"Choose the best linking word: I was nervous, ___ I asked my friend for help.","options":["so","because","but"],"answer":0,"feedbackCorrect":"Genau. So zeigt hier die Folge.","feedbackWrong":"Ich war nervös, also bat ich um Hilfe."},{"id":"g6-u1-m7-t05","type":"multiple-choice","skill":"VOC","difficulty":1,"errorCategory":"clubs-vocabulary","prompt":"Which activity belongs to a drama club?","options":["acting","swimming","cooking"],"answer":0,"feedbackCorrect":"Richtig. Acting passt zum Drama Club.","feedbackWrong":"Drama Club hat mit Schauspiel zu tun."},{"id":"g6-u1-m7-t06","type":"multiple-choice","skill":"MED","difficulty":2,"errorCategory":"school-rules","prompt":"What does We mustn’t run in the corridor mean?","options":["Wir dürfen nicht auf dem Flur rennen.","Wir müssen auf dem Flur rennen.","Wir können auf dem Flur schlafen."],"answer":0,"feedbackCorrect":"Genau. Mustn’t bedeutet: nicht dürfen.","feedbackWrong":"Mustn’t ist ein Verbot."},{"id":"g6-u1-m7-t07","type":"reading-check","skill":"REA","difficulty":2,"errorCategory":"reading-detail","text":"On Tuesday, Leo joined the nature club. He liked animals and wanted to learn more about birds. After school, he told his mum about the club.","prompt":"Why did Leo join the nature club?","options":["He liked animals.","He hated school.","He wanted to play the guitar."],"answer":0,"feedbackCorrect":"Richtig. Leo mochte Tiere.","feedbackWrong":"Lies den zweiten Satz noch einmal."},{"id":"g6-u1-m7-t08","type":"error-correction","skill":"GRA","difficulty":2,"errorCategory":"simple-past-negative","prompt":"Correct the sentence: We didn’t visited the museum.","acceptedAnswers":["We didn't visit the museum.","We did not visit the museum."],"feedbackCorrect":"Sehr gut. Nach didn’t steht die Grundform.","feedbackWrong":"Nach didn’t heißt es visit, nicht visited."},{"id":"g6-u1-m7-t09","type":"sorting","skill":"WRI","difficulty":2,"errorCategory":"time-words","prompt":"Put the time words in a useful order.","items":["finally","first","after that","then"],"answer":["first","then","after that","finally"],"feedbackCorrect":"Perfekt. Das ist eine gute Reihenfolge für einen Text.","feedbackWrong":"First kommt zuerst, finally kommt zuletzt."},{"id":"g6-u1-m7-t10","type":"mini-writing","skill":"WRI","difficulty":3,"errorCategory":"unit-writing","prompt":"Write five sentences about your first week at school.","requirements":["Use one time word.","Use one Simple Past sentence.","Use one negative sentence.","Use one feeling word."],"support":["First, ...","Yesterday I ...","I didn’t ...","I was ..."],"manualReview":true,"feedbackAfterSubmit":"Stark. Diese Schreibaufgabe ist nah an dem, was später in Klassenarbeiten wichtig wird."}]}],"diagnosticRules":[{"ifErrorCategory":"was-were","recommendReviewMission":"g6-u1-m1","message":"Was und were brauchen noch Wiederholung."},{"ifErrorCategory":"simple-past-negative","recommendReviewMission":"g6-u1-m4","message":"Wiederhole die Regel: didn’t + Grundform."},{"ifErrorCategory":"simple-past-positive","recommendReviewMission":"g6-u1-m4","message":"Simple Past positive Sätze sollten noch einmal geübt werden."},{"ifErrorCategory":"linking-words","recommendReviewMission":"g6-u1-m6","message":"Linking words wie because, so und but noch einmal trainieren."},{"ifErrorCategory":"time-words","recommendReviewMission":"g6-u1-m6","message":"Time words helfen beim Schreiben besserer Texte."},{"ifErrorCategory":"school-rules","recommendReviewMission":"g6-u1-m6","message":"Schulregeln mit can, have to und mustn’t wiederholen."}]},"g6-u2":{"schemaVersion":"0.3.0","fileType":"task-bank","grade":6,"unitId":"g6-u2","unitTitle":"Neighbours","appWorld":"Neighbourhood Gate","unitTheme":"Neighbourhood, good neighbours, food, pets, past questions and directions","passThresholdPercent":80,"estimatedTotalMissions":7,"contentRule":"All tasks, texts, examples and feedback are original app content. The structure follows the textbook unit order and learning goals, but does not copy original exercises or reading texts.","missions":[{"missionId":"g6-u2-m1","missionTitle":"New Neighbour Tour","bookSection":"Lead-in","durationMinutes":20,"storyIntro":"Lumi öffnet das Neighbourhood Gate. Ein neues Kind zieht auf Lighthouse Island ein. Um die Straße wieder zum Leuchten zu bringen, musst du die wichtigsten Orte in der Nachbarschaft erkennen und beschreiben.","learningGoals":["Ich kann einer einfachen Tour durch ein Stadtviertel folgen.","Ich kann von meiner eigenen Nachbarschaft erzählen.","Ich kann sagen, welche Orte es in meiner Umgebung gibt."],"skills":["LIS","WRI","SPE","VOC"],"vocabFields":["neighbourhood","shops","places","streets"],"reward":{"stars":1,"item":"Lichtfunke","message":"Das erste Haus im Neighbourhood Gate leuchtet wieder."},"tasks":[{"id":"g6-u2-m1-t01","type":"multiple-choice","skill":"VOC","difficulty":1,"errorCategory":"neighbourhood-vocabulary","prompt":"What is a neighbourhood?","options":["the area around your home","a school subject","a kind of sandwich"],"answer":0,"feedbackCorrect":"Genau. Neighbourhood bedeutet Nachbarschaft oder Wohnumgebung.","feedbackWrong":"Neighbourhood beschreibt die Gegend rund um dein Zuhause."},{"id":"g6-u2-m1-t02","type":"matching","skill":"VOC","difficulty":1,"errorCategory":"places-vocabulary","prompt":"Match the places.","pairs":[{"left":"supermarket","right":"where you buy food"},{"left":"hairdresser’s","right":"where you get a haircut"},{"left":"park","right":"where you can walk or play"},{"left":"library","right":"where you borrow books"}],"feedbackCorrect":"Super. Diese Wörter brauchst du für eine Nachbarschaftsbeschreibung.","feedbackWrong":"Überlege, was man an jedem Ort machen kann."},{"id":"g6-u2-m1-t03","type":"gap-fill","skill":"GRA","difficulty":1,"errorCategory":"there-is-there-are","prompt":"Complete the sentence: In my street there ___ a small shop.","acceptedAnswers":["is"],"feedbackCorrect":"Richtig. Ein shop ist Singular, deshalb there is.","feedbackWrong":"Bei einem einzelnen Ort benutzt du there is."},{"id":"g6-u2-m1-t04","type":"gap-fill","skill":"GRA","difficulty":1,"errorCategory":"there-is-there-are","prompt":"Complete the sentence: In my neighbourhood there ___ two parks.","acceptedAnswers":["are"],"feedbackCorrect":"Genau. Two parks ist Mehrzahl, deshalb there are.","feedbackWrong":"Bei mehreren Dingen benutzt du there are."},{"id":"g6-u2-m1-t05","type":"sentence-builder","skill":"WRI","difficulty":1,"errorCategory":"word-order","prompt":"Put the words in the correct order.","words":["is","a","near","There","bakery","my house"],"answer":"There is a bakery near my house.","feedbackCorrect":"Sehr gut. Das ist ein klarer Satz über deine Umgebung.","feedbackWrong":"Beginne mit There is."},{"id":"g6-u2-m1-t06","type":"reading-check","skill":"REA","difficulty":2,"errorCategory":"reading-detail","text":"Ella lives in a quiet street. There is a supermarket opposite her house and a small park behind the school. Her favourite place is the library because she loves books.","prompt":"What is Ella’s favourite place?","options":["the supermarket","the library","the school"],"answer":1,"feedbackCorrect":"Richtig. Ella mag die library am liebsten.","feedbackWrong":"Lies den letzten Satz noch einmal."},{"id":"g6-u2-m1-t07","type":"multiple-choice","skill":"VOC","difficulty":2,"errorCategory":"prepositions-place","prompt":"What does opposite mean in this sentence: The shop is opposite the school.","options":["gegenüber","hinter","zwischen"],"answer":0,"feedbackCorrect":"Genau. Opposite heißt gegenüber.","feedbackWrong":"Opposite beschreibt etwas auf der anderen Straßenseite."},{"id":"g6-u2-m1-t08","type":"mini-writing","skill":"WRI","difficulty":1,"errorCategory":"neighbourhood-writing","prompt":"Write two sentences about your neighbourhood.","support":["In my neighbourhood there is ...","There are ...","My favourite place is ...","Near my home there is ..."],"minSentences":2,"manualReview":true,"feedbackAfterSubmit":"Gut gemacht. Zwei einfache, richtige Sätze sind ein guter Start."}],"miniChallenge":[{"prompt":"There ___ a supermarket near my house.","acceptedAnswers":["is"]},{"prompt":"There ___ three shops in my street.","acceptedAnswers":["are"]},{"prompt":"Opposite means ___.","acceptedAnswers":["gegenüber","across from"]}]},{"missionId":"g6-u2-m2","missionTitle":"Good Neighbours","bookSection":"Theme 1","durationMinutes":20,"storyIntro":"Im Neighbourhood Gate findet ein kleines Straßenfest statt. Lumi möchte Tee anbieten, aber die Vorratskiste ist durcheinander. Du hilfst mit some und any.","learningGoals":["Ich kann etwas anbieten.","Ich kann some und any in einfachen Sätzen unterscheiden.","Ich kann einfache Informationen über Essen und Feste verstehen."],"skills":["LIS","SPE","GRA","INT","WRI"],"vocabFields":["food","drinks","festivals","offers"],"reward":{"stars":1,"item":"Lichtfunke","message":"Der Straßenfest-Stand ist bereit."},"ruleCard":{"title":"some und any","rules":["Some benutzt du oft in positiven Sätzen und bei Angeboten.","Any benutzt du oft in Verneinungen und Fragen.","Bei Angeboten klingt some freundlich und natürlich."],"examples":["I have some orange juice.","Would you like some tea?","I don’t have any lemonade.","Do you have any biscuits?"]},"tasks":[{"id":"g6-u2-m2-t01","type":"multiple-choice","skill":"GRA","difficulty":1,"errorCategory":"some-any","prompt":"Choose the correct word: I have ___ apples.","options":["some","any","much"],"answer":0,"feedbackCorrect":"Richtig. In einem positiven Satz passt some.","feedbackWrong":"In positiven Sätzen benutzt du oft some."},{"id":"g6-u2-m2-t02","type":"multiple-choice","skill":"GRA","difficulty":1,"errorCategory":"some-any","prompt":"Choose the correct word: I don’t have ___ fruit tea.","options":["some","any","many"],"answer":1,"feedbackCorrect":"Genau. In Verneinungen passt meistens any.","feedbackWrong":"Nach don’t have benutzt du hier any."},{"id":"g6-u2-m2-t03","type":"multiple-choice","skill":"SPE","difficulty":1,"errorCategory":"offering-food","prompt":"Which sentence is a friendly offer?","options":["Would you like some juice?","You must drink juice.","Juice is not here."],"answer":0,"feedbackCorrect":"Sehr gut. Would you like some ... ist ein freundliches Angebot.","feedbackWrong":"Ein Angebot klingt freundlich und beginnt oft mit Would you like ...?"},{"id":"g6-u2-m2-t04","type":"gap-fill","skill":"GRA","difficulty":2,"errorCategory":"some-any","prompt":"Complete the sentence: Do you have ___ sandwiches?","acceptedAnswers":["any"],"feedbackCorrect":"Richtig. In Fragen passt häufig any.","feedbackWrong":"In Fragen benutzt du oft any."},{"id":"g6-u2-m2-t05","type":"matching","skill":"VOC","difficulty":1,"errorCategory":"food-vocabulary","prompt":"Match the food words.","pairs":[{"left":"sausage","right":"Wurst"},{"left":"tea","right":"Tee"},{"left":"biscuit","right":"Keks"},{"left":"lemonade","right":"Limonade"}],"feedbackCorrect":"Gut. Diese Wörter passen zum Thema Essen und Trinken.","feedbackWrong":"Schau dir die Essenswörter noch einmal an."},{"id":"g6-u2-m2-t06","type":"reading-check","skill":"INT","difficulty":2,"errorCategory":"intercultural-food","text":"At the street party, Ben’s family brings sausages. Mia’s family brings bread and salad. Everybody tries something new. Ben says, “Food is a good way to meet neighbours.”","prompt":"What does Ben think?","options":["Food can help neighbours meet.","Nobody should try new food.","Street parties are boring."],"answer":0,"feedbackCorrect":"Richtig. Ben findet, dass Essen Menschen zusammenbringen kann.","feedbackWrong":"Achte auf den letzten Satz."},{"id":"g6-u2-m2-t07","type":"sentence-builder","skill":"SPE","difficulty":2,"errorCategory":"offering-food","prompt":"Put the words in the correct order.","words":["like","some","Would","tea","you"],"answer":"Would you like some tea?","feedbackCorrect":"Perfekt. Das ist ein höfliches Angebot.","feedbackWrong":"Die Frage beginnt mit Would you like."},{"id":"g6-u2-m2-t08","type":"mini-writing","skill":"WRI","difficulty":2,"errorCategory":"poster-writing","prompt":"Create a short poster for a street party. Write three short lines.","support":["Street Party on Saturday!","Bring some food.","Meet your neighbours.","Games, music and fun!"],"minLines":3,"manualReview":true,"feedbackAfterSubmit":"Gut. Ein Poster braucht kurze, klare Informationen."}],"miniChallenge":[{"prompt":"Would you like ___ tea?","acceptedAnswers":["some"]},{"prompt":"I don’t have ___ biscuits.","acceptedAnswers":["any"]},{"prompt":"Do you have ___ lemonade?","acceptedAnswers":["any"]}]},{"missionId":"g6-u2-m3","missionTitle":"Dogs’ Home Mission","bookSection":"Theme 2","durationMinutes":20,"storyIntro":"Im Dogs’ Home von Lighthouse Island suchen mehrere Hunde ein neues Zuhause. Lumi braucht Hilfe, die richtigen Informationen zu verstehen.","learningGoals":["Ich kann einem einfachen Text oder Hörtext Informationen entnehmen.","Ich kann sagen, welches Haustier zu einer Person passt.","Ich kann einfache Gründe nennen."],"skills":["LIS","REA","SPE","VOC"],"vocabFields":["pets","dogs","time","care"],"reward":{"stars":1,"item":"Lichtfunke","badge":"Pet Helper","message":"Ein Hund im Dogs’ Home hat ein passendes Zuhause gefunden."},"tasks":[{"id":"g6-u2-m3-t01","type":"multiple-choice","skill":"VOC","difficulty":1,"errorCategory":"pets-vocabulary","prompt":"What is a dogs’ home?","options":["a place for dogs without a family","a shop for shoes","a classroom for Maths"],"answer":0,"feedbackCorrect":"Genau. Ein dogs’ home ist ein Tierheim für Hunde.","feedbackWrong":"Dogs’ home hat mit Hunden zu tun, die ein Zuhause suchen."},{"id":"g6-u2-m3-t02","type":"matching","skill":"VOC","difficulty":1,"errorCategory":"pets-vocabulary","prompt":"Match the pet words.","pairs":[{"left":"walk the dog","right":"mit dem Hund spazieren gehen"},{"left":"feed the dog","right":"den Hund füttern"},{"left":"basket","right":"Körbchen"},{"left":"vet","right":"Tierarzt"}],"feedbackCorrect":"Super. Das sind wichtige Wörter rund um Haustiere.","feedbackWrong":"Überlege, was man für einen Hund tun muss."},{"id":"g6-u2-m3-t03","type":"reading-check","skill":"REA","difficulty":2,"errorCategory":"reading-detail","text":"Ruby is a small dog. She is friendly, but she needs a quiet home. She likes short walks and sleeps a lot. She is good for an older person.","prompt":"Who is Ruby good for?","options":["an older person","a very loud family","a football team"],"answer":0,"feedbackCorrect":"Richtig. Ruby passt gut zu einer älteren Person.","feedbackWrong":"Lies den letzten Satz noch einmal."},{"id":"g6-u2-m3-t04","type":"reading-check","skill":"REA","difficulty":2,"errorCategory":"reading-detail","text":"Max is a big dog. He needs long walks every day. He likes running and playing outside. He is not good for a small flat.","prompt":"Why is Max not good for a small flat?","options":["He needs a lot of exercise.","He hates people.","He is very old."],"answer":0,"feedbackCorrect":"Genau. Max braucht viel Bewegung.","feedbackWrong":"Achte auf long walks, running und playing outside."},{"id":"g6-u2-m3-t05","type":"multiple-choice","skill":"SPE","difficulty":2,"errorCategory":"giving-reasons","prompt":"Which sentence gives a good reason?","options":["Ruby is good for Grandma because she likes quiet homes.","Ruby Grandma good quiet.","Because Ruby."],"answer":0,"feedbackCorrect":"Sehr gut. Der Satz erklärt den Grund klar.","feedbackWrong":"Ein guter Grund hat meistens because und einen vollständigen Satz."},{"id":"g6-u2-m3-t06","type":"gap-fill","skill":"VOC","difficulty":1,"errorCategory":"pets-vocabulary","prompt":"Complete the sentence: A dog needs food, water and lots of ___.","acceptedAnswers":["time","love","walks"],"feedbackCorrect":"Richtig. Ein Haustier braucht Pflege und Zeit.","feedbackWrong":"Überlege, was ein Hund jeden Tag braucht."},{"id":"g6-u2-m3-t07","type":"sentence-builder","skill":"SPE","difficulty":2,"errorCategory":"word-order","prompt":"Put the words in the correct order.","words":["needs","A","lots","dog","time","of"],"answer":"A dog needs lots of time.","feedbackCorrect":"Genau. Der Satz ist klar und richtig.","feedbackWrong":"Beginne mit A dog."},{"id":"g6-u2-m3-t08","type":"mini-writing","skill":"WRI","difficulty":2,"errorCategory":"pet-recommendation","prompt":"Choose a pet for a family and write two sentences.","support":["I think Ruby is good for this family.","She is friendly.","She doesn’t need very long walks.","Max is good for active people."],"minSentences":2,"manualReview":true,"feedbackAfterSubmit":"Gut. Du hast eine Empfehlung mit einem einfachen Grund formuliert."}],"miniChallenge":[{"prompt":"A dog needs lots of ___.","acceptedAnswers":["time"]},{"prompt":"A quiet dog is good for a quiet ___.","acceptedAnswers":["home","family"]},{"prompt":"Because means ___.","acceptedAnswers":["weil"]}]},{"missionId":"g6-u2-m4","missionTitle":"Did Detective","bookSection":"Focus on Language","durationMinutes":20,"storyIntro":"Im Neighbourhood Gate sind Feuerwerksfunken verschwunden. Lumi wird zur Detektivin. Um Hinweise zu sammeln, musst du Fragen im Simple Past stellen.","learningGoals":["Ich kann Fragen im Simple Past bilden.","Ich kann kurze Antworten mit did und didn’t geben.","Ich kann Fragewörter mit did benutzen."],"skills":["GRA","WRI","SPE","STU"],"vocabFields":["past questions","short answers","events"],"reward":{"stars":2,"item":"Lichtfunke","badge":"Did Detective","message":"Du hast die Did-Detektivlupe freigeschaltet."},"ruleCard":{"title":"Simple Past questions","rules":["Fragen im Simple Past bildest du oft mit did.","Nach did steht das Verb in der Grundform.","Kurze Antworten lauten Yes, I did oder No, I didn’t.","Mit question words fragst du genauer: What did you do? Where did you go?"],"examples":["Did you watch the fireworks?","No, I didn’t.","What did you eat?","Where did they go?"]},"tasks":[{"id":"g6-u2-m4-t01","type":"multiple-choice","skill":"GRA","difficulty":1,"errorCategory":"simple-past-questions","prompt":"Choose the correct question.","options":["Did you watch the fireworks?","Did you watched the fireworks?","Do you watched the fireworks?"],"answer":0,"feedbackCorrect":"Richtig. Nach did steht die Grundform watch.","feedbackWrong":"Nach did benutzt du nicht watched, sondern watch."},{"id":"g6-u2-m4-t02","type":"gap-fill","skill":"GRA","difficulty":1,"errorCategory":"simple-past-questions","prompt":"Complete the question: ___ you have fun?","acceptedAnswers":["Did"],"feedbackCorrect":"Genau. Die Frage im Simple Past beginnt hier mit Did.","feedbackWrong":"Für eine Simple-Past-Frage brauchst du Did."},{"id":"g6-u2-m4-t03","type":"multiple-choice","skill":"GRA","difficulty":1,"errorCategory":"did-short-answers","prompt":"Choose the correct short answer: Did Mia call you? No, ___.","options":["she didn’t","she don’t","she wasn’t"],"answer":0,"feedbackCorrect":"Richtig. Die kurze Antwort ist No, she didn’t.","feedbackWrong":"Bei did-Fragen antwortest du kurz mit did oder didn’t."},{"id":"g6-u2-m4-t04","type":"sentence-builder","skill":"GRA","difficulty":2,"errorCategory":"simple-past-questions","prompt":"Put the words in the correct order.","words":["you","What","eat","did"],"answer":"What did you eat?","feedbackCorrect":"Sehr gut. What did you eat? ist korrekt.","feedbackWrong":"Nach dem Fragewort kommt did."},{"id":"g6-u2-m4-t05","type":"error-correction","skill":"GRA","difficulty":2,"errorCategory":"simple-past-questions","prompt":"Correct the question: Did he went home?","acceptedAnswers":["Did he go home?"],"feedbackCorrect":"Genau. Nach did steht go.","feedbackWrong":"Nach did steht die Grundform. Also go, nicht went."},{"id":"g6-u2-m4-t06","type":"multiple-choice","skill":"GRA","difficulty":2,"errorCategory":"question-words","prompt":"Choose the best question word: ___ did you go after school? To the park.","options":["Where","What","Who"],"answer":0,"feedbackCorrect":"Richtig. Where fragt nach einem Ort.","feedbackWrong":"To the park ist ein Ort. Dafür passt Where."},{"id":"g6-u2-m4-t07","type":"gap-fill","skill":"GRA","difficulty":2,"errorCategory":"question-words","prompt":"Complete the question: What ___ you do yesterday?","acceptedAnswers":["did"],"feedbackCorrect":"Genau. What did you do yesterday?","feedbackWrong":"Bei Simple-Past-Fragen brauchst du did."},{"id":"g6-u2-m4-t08","type":"multiple-choice","skill":"GRA","difficulty":2,"errorCategory":"did-short-answers","prompt":"Choose the correct answer: Did they visit the dogs’ home?","options":["Yes, they did.","Yes, they visited.","Yes, they do."],"answer":0,"feedbackCorrect":"Richtig. Die kurze Antwort lautet Yes, they did.","feedbackWrong":"Bei Did-Fragen benutzt du in der Kurzantwort did."},{"id":"g6-u2-m4-t09","type":"error-correction","skill":"GRA","difficulty":3,"errorCategory":"simple-past-questions","prompt":"Correct the question: What did you ate?","acceptedAnswers":["What did you eat?"],"feedbackCorrect":"Sehr gut. Nach did steht eat.","feedbackWrong":"Did übernimmt die Vergangenheit. Das Verb bleibt eat."},{"id":"g6-u2-m4-t10","type":"mini-writing","skill":"WRI","difficulty":2,"errorCategory":"past-question-writing","prompt":"Write three Simple Past questions for a friend.","requirements":["Use Did in one question.","Use What did ... in one question.","Use Where did ... in one question."],"support":["Did you ...?","What did you ...?","Where did you ...?"],"manualReview":true,"feedbackAfterSubmit":"Stark. Mit diesen Fragen kannst du über vergangene Ereignisse sprechen."}],"miniChallenge":[{"prompt":"___ you watch TV yesterday?","acceptedAnswers":["Did"]},{"prompt":"No, I ___.","acceptedAnswers":["didn't","did not"]},{"prompt":"What did you ___?","acceptedAnswers":["do","eat","see","watch"]}]},{"missionId":"g6-u2-m5","missionTitle":"Test Smart","bookSection":"Story / Do Better in Tests","durationMinutes":20,"storyIntro":"Im Nachbarschaftstheater wird ein kurzes Stück aufgeführt. Danach zeigt Lumi, wie man Aufgabenstellungen genauer liest und Beispiele clever nutzt.","learningGoals":["Ich kann ein kurzes Theaterstück verstehen.","Ich kann Arbeitsanweisungen genauer lesen.","Ich kann Beispiele nutzen, um eigene Antworten zu schreiben."],"skills":["REA","SPE","STU","WRI"],"vocabFields":["theatre","test instructions","letters"],"reward":{"stars":1,"item":"Lichtfunke","badge":"Test Smart","message":"Du hast die Test-Smart-Karte bekommen."},"readingText":{"id":"g6-u2-m5-reading-01","title":"The Missing Cake","text":"Scene 1: A small kitchen. Sam looks at an empty plate. Sam: Where is the cake? I put it here! Lily: Did you ask Dad? Sam: No, I didn’t. Dad comes in with a smile. Dad: Don’t worry. I took it to the street party. Everybody loved it!"},"tasks":[{"id":"g6-u2-m5-t01","type":"reading-check","skill":"REA","difficulty":1,"errorCategory":"reading-main-idea","prompt":"What is missing at the beginning?","options":["a cake","a dog","a school bag"],"answer":0,"feedbackCorrect":"Richtig. Der Kuchen fehlt.","feedbackWrong":"Lies den Anfang der Szene noch einmal."},{"id":"g6-u2-m5-t02","type":"reading-check","skill":"REA","difficulty":2,"errorCategory":"reading-detail","prompt":"Who took the cake?","options":["Dad","Lily","Sam"],"answer":0,"feedbackCorrect":"Genau. Dad hat den Kuchen mitgenommen.","feedbackWrong":"Achte auf Dads letzten Satz."},{"id":"g6-u2-m5-t03","type":"multiple-choice","skill":"REA","difficulty":2,"errorCategory":"story-reaction","prompt":"Why is Dad smiling?","options":["because everybody liked the cake","because the plate is broken","because he hates cake"],"answer":0,"feedbackCorrect":"Richtig. Der Kuchen war beim Straßenfest beliebt.","feedbackWrong":"Sein Lächeln passt zur guten Nachricht."},{"id":"g6-u2-m5-t04","type":"multiple-choice","skill":"STU","difficulty":1,"errorCategory":"test-instructions","prompt":"What should you do first in a test?","options":["Read the instruction carefully.","Guess all answers quickly.","Skip every example."],"answer":0,"feedbackCorrect":"Genau. Die Arbeitsanweisung ist der erste wichtige Hinweis.","feedbackWrong":"Erst verstehen, was die Aufgabe will."},{"id":"g6-u2-m5-t05","type":"multiple-choice","skill":"STU","difficulty":1,"errorCategory":"using-examples","prompt":"Why are examples useful?","options":["They show you how to answer.","They are always wrong.","They replace the whole task."],"answer":0,"feedbackCorrect":"Richtig. Beispiele zeigen dir das Muster.","feedbackWrong":"Ein Beispiel ist oft wie eine kleine Anleitung."},{"id":"g6-u2-m5-t06","type":"matching","skill":"STU","difficulty":2,"errorCategory":"test-instructions","prompt":"Match the instruction with the meaning.","pairs":[{"left":"Circle the correct answer.","right":"Kreise die richtige Antwort ein."},{"left":"Complete the sentence.","right":"Ergänze den Satz."},{"left":"Match the words.","right":"Ordne die Wörter zu."},{"left":"Write three sentences.","right":"Schreibe drei Sätze."}],"feedbackCorrect":"Sehr gut. Arbeitsanweisungen sind in Tests extrem wichtig.","feedbackWrong":"Achte auf Verben wie circle, complete, match und write."},{"id":"g6-u2-m5-t07","type":"mini-writing","skill":"WRI","difficulty":2,"errorCategory":"letter-writing","prompt":"Write the beginning of a short letter to a new neighbour.","support":["Dear ...","Welcome to our street.","My name is ...","I live next door."],"minSentences":3,"manualReview":true,"feedbackAfterSubmit":"Gut. Ein Brief beginnt freundlich und klar."},{"id":"g6-u2-m5-t08","type":"speaking-prompt","skill":"SPE","difficulty":2,"errorCategory":"reading-aloud","prompt":"Read Sam’s first line aloud: Where is the cake? I put it here!","manualReview":true,"feedbackAfterSubmit":"Gut gemacht. Beim Theaterstück darf die Stimme ruhig etwas lebendiger klingen."}],"miniChallenge":[{"prompt":"Complete means ___.","acceptedAnswers":["ergänzen","vervollständigen"]},{"prompt":"Match means ___.","acceptedAnswers":["zuordnen"]},{"prompt":"Write three sentences means: Schreibe ___ Sätze.","acceptedAnswers":["drei","3"]}]},{"missionId":"g6-u2-m6","missionTitle":"Direction Quest","bookSection":"Speaking / Viewing","durationMinutes":20,"storyIntro":"Lumi hat sich im Neighbourhood Gate verlaufen. Du hilfst ihr, mit englischen Wegbeschreibungen zurück zum Leuchtturmplatz zu finden.","learningGoals":["Ich kann nach dem Weg fragen.","Ich kann einfache Wegbeschreibungen verstehen.","Ich kann eine kurze Wegbeschreibung geben.","Ich kann eine Bildszene aus einer englischen Nachbarschaft verstehen."],"skills":["LIS","SPE","VIE","VOC"],"vocabFields":["directions","places","streets"],"reward":{"stars":1,"item":"Lichtkristall","badge":"Direction Guide","message":"Du hast Lumi sicher durch die Nachbarschaft geführt."},"tasks":[{"id":"g6-u2-m6-t01","type":"multiple-choice","skill":"SPE","difficulty":1,"errorCategory":"directions","prompt":"Which question asks for directions?","options":["Excuse me, how do I get to the park?","What is your favourite colour?","Can I have some tea?"],"answer":0,"feedbackCorrect":"Richtig. So fragst du höflich nach dem Weg.","feedbackWrong":"Achte auf how do I get to ..."},{"id":"g6-u2-m6-t02","type":"matching","skill":"VOC","difficulty":1,"errorCategory":"directions","prompt":"Match the direction phrases.","pairs":[{"left":"turn left","right":"links abbiegen"},{"left":"turn right","right":"rechts abbiegen"},{"left":"go straight on","right":"geradeaus gehen"},{"left":"go past the shop","right":"am Laden vorbeigehen"}],"feedbackCorrect":"Sehr gut. Diese Phrasen brauchst du für Wegbeschreibungen.","feedbackWrong":"Stell dir den Weg wie auf einer Karte vor."},{"id":"g6-u2-m6-t03","type":"multiple-choice","skill":"LIS","difficulty":1,"errorCategory":"directions","prompt":"You hear: Go straight on and turn right at the park. Where do you turn?","options":["at the park","at the supermarket","at the school"],"answer":0,"feedbackCorrect":"Richtig. Du biegst am Park rechts ab.","feedbackWrong":"Achte auf at the park."},{"id":"g6-u2-m6-t04","type":"sentence-builder","skill":"SPE","difficulty":2,"errorCategory":"directions","prompt":"Put the words in the correct order.","words":["straight","Go","on"],"answer":"Go straight on.","feedbackCorrect":"Genau. Das ist eine kurze, klare Weganweisung.","feedbackWrong":"Beginne mit Go."},{"id":"g6-u2-m6-t05","type":"gap-fill","skill":"VOC","difficulty":1,"errorCategory":"directions","prompt":"Complete the sentence: Turn ___ at the traffic lights.","acceptedAnswers":["left","right"],"feedbackCorrect":"Richtig. Turn left oder turn right sind beide mögliche Richtungsangaben.","feedbackWrong":"Nach turn passt left oder right."},{"id":"g6-u2-m6-t06","type":"multiple-choice","skill":"SPE","difficulty":2,"errorCategory":"polite-phrases","prompt":"Which sentence is the most polite?","options":["Excuse me, can you help me, please?","Help me now.","Where park?"],"answer":0,"feedbackCorrect":"Sehr gut. Excuse me und please machen die Frage höflich.","feedbackWrong":"Eine höfliche Frage beginnt oft mit Excuse me."},{"id":"g6-u2-m6-t07","type":"viewing-scene","skill":"VIE","difficulty":2,"errorCategory":"viewing-detail","sceneDescription":"You see a quiet street with small houses, a red post box, a shop on the corner and children walking home from school.","prompt":"Which place is probably on the corner?","options":["a shop","a beach","a mountain"],"answer":0,"feedbackCorrect":"Richtig. In der Szene steht ein shop on the corner.","feedbackWrong":"Achte auf on the corner."},{"id":"g6-u2-m6-t08","type":"mini-writing","skill":"WRI","difficulty":2,"errorCategory":"directions-writing","prompt":"Write a short direction from your school to a place nearby.","support":["Go straight on.","Turn left.","Turn right.","Go past the ...","It’s next to ..."],"minSentences":3,"manualReview":true,"feedbackAfterSubmit":"Gut. Eine Wegbeschreibung braucht kurze, klare Schritte."}],"miniChallenge":[{"prompt":"Turn left means ___.","acceptedAnswers":["links abbiegen"]},{"prompt":"Go straight on means ___.","acceptedAnswers":["geradeaus gehen"]},{"prompt":"Excuse me is a ___ phrase.","acceptedAnswers":["polite","höfliche","friendly"]}]},{"missionId":"g6-u2-m7","missionTitle":"Neighbours Check","bookSection":"Stop Check Go","durationMinutes":20,"storyIntro":"Das Neighbourhood Gate ist fast vollständig hell. Im letzten Check wiederholst du die wichtigsten Themen aus Unit 2.","learningGoals":["Ich kann Unit 2 wiederholen.","Ich kann some und any unterscheiden.","Ich kann Fragen im Simple Past bilden.","Ich kann einfache Wegbeschreibungen verstehen.","Ich erkenne meine sicheren und unsicheren Bereiche."],"skills":["VOC","GRA","REA","LIS","SPE","WRI"],"vocabFields":["neighbourhood","food","pets","directions"],"reward":{"stars":3,"item":"Lichtkristall","badge":"Neighbourhood Hero","message":"Unit 2 abgeschlossen. Das Teen Talk Coast Gebiet wird freigeschaltet."},"assessment":{"gold":90,"pass":80,"review":60},"tasks":[{"id":"g6-u2-m7-t01","type":"multiple-choice","skill":"GRA","difficulty":1,"errorCategory":"some-any","prompt":"Choose the correct word: Would you like ___ orange juice?","options":["some","any","many"],"answer":0,"feedbackCorrect":"Richtig. Bei Angeboten benutzt du oft some.","feedbackWrong":"Bei freundlichen Angeboten passt meistens some."},{"id":"g6-u2-m7-t02","type":"gap-fill","skill":"GRA","difficulty":1,"errorCategory":"some-any","prompt":"Complete the sentence: I don’t have ___ sandwiches.","acceptedAnswers":["any"],"feedbackCorrect":"Genau. In Verneinungen passt any.","feedbackWrong":"Nach don’t have benutzt du hier any."},{"id":"g6-u2-m7-t03","type":"multiple-choice","skill":"GRA","difficulty":2,"errorCategory":"simple-past-questions","prompt":"Choose the correct question.","options":["Did you go to the party?","Did you went to the party?","Do you went to the party?"],"answer":0,"feedbackCorrect":"Richtig. Nach did steht go.","feedbackWrong":"Nach did benutzt du die Grundform."},{"id":"g6-u2-m7-t04","type":"multiple-choice","skill":"GRA","difficulty":1,"errorCategory":"did-short-answers","prompt":"Did they visit the park? No, ___.","options":["they didn’t","they don’t","they weren’t"],"answer":0,"feedbackCorrect":"Genau. Die Kurzantwort lautet No, they didn’t.","feedbackWrong":"Bei Did-Fragen antwortest du mit did oder didn’t."},{"id":"g6-u2-m7-t05","type":"matching","skill":"VOC","difficulty":1,"errorCategory":"directions","prompt":"Match the direction phrases.","pairs":[{"left":"turn right","right":"rechts abbiegen"},{"left":"go straight on","right":"geradeaus gehen"},{"left":"opposite","right":"gegenüber"},{"left":"next to","right":"neben"}],"feedbackCorrect":"Sehr gut. Die Wegbeschreibung sitzt.","feedbackWrong":"Wiederhole die Richtungswörter noch einmal."},{"id":"g6-u2-m7-t06","type":"reading-check","skill":"REA","difficulty":2,"errorCategory":"reading-detail","text":"Nina moved to a new street last week. On Saturday, her neighbour showed her the park, the library and a small bakery. Nina liked the bakery best because the bread smelled great.","prompt":"Which place did Nina like best?","options":["the bakery","the library","the park"],"answer":0,"feedbackCorrect":"Richtig. Nina mochte die bakery am liebsten.","feedbackWrong":"Achte auf liked ... best."},{"id":"g6-u2-m7-t07","type":"error-correction","skill":"GRA","difficulty":2,"errorCategory":"simple-past-questions","prompt":"Correct the question: What did you watched?","acceptedAnswers":["What did you watch?"],"feedbackCorrect":"Sehr gut. Nach did steht watch.","feedbackWrong":"Did übernimmt die Vergangenheit. Das Verb bleibt in der Grundform."},{"id":"g6-u2-m7-t08","type":"multiple-choice","skill":"SPE","difficulty":2,"errorCategory":"offering-food","prompt":"Choose the best answer: Would you like some tea?","options":["Yes, please.","No, I didn’t.","I am a dog."],"answer":0,"feedbackCorrect":"Richtig. Yes, please passt zu einem Angebot.","feedbackWrong":"Bei einem Angebot antwortest du höflich mit Yes, please oder No, thank you."},{"id":"g6-u2-m7-t09","type":"sentence-builder","skill":"SPE","difficulty":2,"errorCategory":"directions","prompt":"Put the words in the correct order.","words":["the","Go","shop","past"],"answer":"Go past the shop.","feedbackCorrect":"Genau. Das ist eine klare Weganweisung.","feedbackWrong":"Beginne mit Go."},{"id":"g6-u2-m7-t10","type":"mini-writing","skill":"WRI","difficulty":3,"errorCategory":"unit-writing","prompt":"Write a short letter to a new neighbour. Use at least four sentences.","requirements":["Say hello.","Say your name.","Say one thing about your neighbourhood.","Ask one question."],"support":["Dear ...","Welcome to our street.","My name is ...","There is ...","Would you like ...?","See you soon."],"manualReview":true,"feedbackAfterSubmit":"Sehr gut. Ein kurzer Brief mit klarer Struktur hilft auch in Tests."}]}],"diagnosticRules":[{"ifErrorCategory":"some-any","recommendReviewMission":"g6-u2-m2","message":"Some und any brauchen noch Wiederholung."},{"ifErrorCategory":"simple-past-questions","recommendReviewMission":"g6-u2-m4","message":"Fragen im Simple Past sollten noch einmal geübt werden."},{"ifErrorCategory":"did-short-answers","recommendReviewMission":"g6-u2-m4","message":"Kurzantworten mit did und didn’t wiederholen."},{"ifErrorCategory":"directions","recommendReviewMission":"g6-u2-m6","message":"Wegbeschreibungen noch einmal trainieren."},{"ifErrorCategory":"neighbourhood-vocabulary","recommendReviewMission":"g6-u2-m1","message":"Wortschatz zur Nachbarschaft wiederholen."},{"ifErrorCategory":"pets-vocabulary","recommendReviewMission":"g6-u2-m3","message":"Haustier-Wortschatz wiederholen."},{"ifErrorCategory":"test-instructions","recommendReviewMission":"g6-u2-m5","message":"Arbeitsanweisungen in Tests noch einmal üben."}]},"g6-u3":{"schemaVersion":"0.3.0","fileType":"task-bank","grade":6,"unitId":"g6-u3","unitTitle":"Teen talk","appWorld":"Teen Talk Coast","unitTheme":"Weekend activities, pocket money, chores, arrangements, going to-future and comparisons","passThresholdPercent":80,"estimatedTotalMissions":7,"contentRule":"All tasks, texts, examples and feedback are original app content. The structure follows the textbook unit order and learning goals, but does not copy original exercises or reading texts.","missions":[{"missionId":"g6-u3-m1","missionTitle":"Perfect Weekend","bookSection":"Lead-in","durationMinutes":20,"storyIntro":"Lumi kommt an der Teen Talk Coast an. Alle reden über das perfekte Wochenende. Um das neue Gebiet zu öffnen, musst du verstehen, was Jugendliche gerne am Wochenende machen.","learningGoals":["Ich kann über Wochenendaktivitäten sprechen.","Ich kann einfache Umfrageergebnisse verstehen.","Ich kann sagen, warum ich eine Aktivität mag."],"skills":["VOC","SPE","LIS","WRI"],"vocabFields":["weekend activities","free time","opinions"],"reward":{"stars":1,"item":"Lichtfunke","message":"Der erste Funkpunkt an der Teen Talk Coast leuchtet."},"tasks":[{"id":"g6-u3-m1-t01","type":"multiple-choice","skill":"VOC","difficulty":1,"errorCategory":"weekend-vocabulary","prompt":"Which activity is a weekend activity?","options":["meet friends","spell a word","clean a grammar rule"],"answer":0,"feedbackCorrect":"Genau. Meet friends passt zum Thema Wochenende.","feedbackWrong":"Gesucht ist etwas, das man am Wochenende machen kann."},{"id":"g6-u3-m1-t02","type":"matching","skill":"VOC","difficulty":1,"errorCategory":"weekend-vocabulary","prompt":"Match the weekend activities.","pairs":[{"left":"go shopping","right":"einkaufen gehen"},{"left":"meet friends","right":"Freunde treffen"},{"left":"watch a film","right":"einen Film anschauen"},{"left":"do sport","right":"Sport machen"}],"feedbackCorrect":"Super. Diese Wörter brauchst du, um über dein Wochenende zu sprechen.","feedbackWrong":"Überlege, welche Aktivität zu welcher Bedeutung passt."},{"id":"g6-u3-m1-t03","type":"multiple-choice","skill":"SPE","difficulty":1,"errorCategory":"giving-reasons","prompt":"Which sentence gives a reason?","options":["I like gaming because it is fun.","I like gaming yesterday.","Gaming table friend."],"answer":0,"feedbackCorrect":"Richtig. Because erklärt den Grund.","feedbackWrong":"Ein guter Grund wird oft mit because eingeleitet."},{"id":"g6-u3-m1-t04","type":"gap-fill","skill":"WRI","difficulty":1,"errorCategory":"linking-words","prompt":"Complete the sentence: I like watching films ___ they are exciting.","acceptedAnswers":["because"],"feedbackCorrect":"Genau. Because leitet eine Begründung ein.","feedbackWrong":"Hier brauchst du ein Wort für den Grund."},{"id":"g6-u3-m1-t05","type":"reading-check","skill":"REA","difficulty":2,"errorCategory":"reading-detail","text":"Four students talked about their perfect weekend. Two students wanted to meet friends. One student wanted to play football. One student wanted to stay at home and read comics.","prompt":"How many students wanted to meet friends?","options":["one","two","four"],"answer":1,"feedbackCorrect":"Richtig. Zwei Schüler wollten Freunde treffen.","feedbackWrong":"Achte auf den zweiten Satz."},{"id":"g6-u3-m1-t06","type":"sentence-builder","skill":"WRI","difficulty":2,"errorCategory":"word-order","prompt":"Put the words in the correct order.","words":["like","because","I","fun","it","is","football"],"answer":"I like football because it is fun.","feedbackCorrect":"Sehr gut. Der Satz gibt eine klare Meinung mit Begründung.","feedbackWrong":"Beginne mit I like football."},{"id":"g6-u3-m1-t07","type":"multiple-choice","skill":"STU","difficulty":2,"errorCategory":"survey-language","prompt":"Which sentence describes a survey result?","options":["Three students like music best.","I am a new pencil.","Because the weekend."],"answer":0,"feedbackCorrect":"Genau. Das ist eine einfache Auswertung einer Umfrage.","feedbackWrong":"Ein survey result sagt, was mehrere Personen geantwortet haben."},{"id":"g6-u3-m1-t08","type":"mini-writing","skill":"WRI","difficulty":2,"errorCategory":"weekend-writing","prompt":"Write three sentences about your perfect weekend.","requirements":["Say one activity.","Use because once.","Use one opinion word."],"support":["My perfect weekend is ...","I like ...","It is fun because ...","I also want to ..."],"manualReview":true,"feedbackAfterSubmit":"Gut gemacht. Mit because klingt deine Meinung viel stärker."}],"miniChallenge":[{"prompt":"I like music ___ it is fun.","acceptedAnswers":["because"]},{"prompt":"Meet friends means ___.","acceptedAnswers":["Freunde treffen","freunde treffen"]},{"prompt":"A survey asks ___ people.","acceptedAnswers":["different","several","many","mehrere"]}]},{"missionId":"g6-u3-m2","missionTitle":"Money Mission","bookSection":"Theme 1","durationMinutes":20,"storyIntro":"Am Strand der Teen Talk Coast sprechen alle über Taschengeld, kleine Jobs und Aufgaben zu Hause. Lumi möchte wissen, wofür Jugendliche Geld bekommen und was sie dafür tun.","learningGoals":["Ich kann über Taschengeld sprechen.","Ich kann sagen, welche Aufgaben ich zu Hause erledige.","Ich kann einfache Aussagen über Jobs und Geld verstehen."],"skills":["VOC","REA","SPE","WRI"],"vocabFields":["pocket money","jobs","chores","money"],"reward":{"stars":1,"item":"Lichtfunke","message":"Die Money Mission ist geschafft."},"tasks":[{"id":"g6-u3-m2-t01","type":"multiple-choice","skill":"VOC","difficulty":1,"errorCategory":"money-vocabulary","prompt":"What does pocket money mean?","options":["Taschengeld","Hosentasche","Schulgeld"],"answer":0,"feedbackCorrect":"Richtig. Pocket money heißt Taschengeld.","feedbackWrong":"Pocket money ist Geld, das Kinder oder Jugendliche regelmäßig bekommen."},{"id":"g6-u3-m2-t02","type":"matching","skill":"VOC","difficulty":1,"errorCategory":"chores-vocabulary","prompt":"Match the chores.","pairs":[{"left":"tidy my room","right":"mein Zimmer aufräumen"},{"left":"walk the dog","right":"mit dem Hund spazieren gehen"},{"left":"lay the table","right":"den Tisch decken"},{"left":"wash the dishes","right":"das Geschirr spülen"}],"feedbackCorrect":"Sehr gut. Das sind wichtige Wörter für Aufgaben zu Hause.","feedbackWrong":"Chores sind Aufgaben, die man zu Hause erledigt."},{"id":"g6-u3-m2-t03","type":"multiple-choice","skill":"SPE","difficulty":1,"errorCategory":"money-phrases","prompt":"Which sentence is correct?","options":["I get pocket money every week.","I become pocket money every week.","I make pocket every money."],"answer":0,"feedbackCorrect":"Genau. Auf Englisch sagt man I get pocket money.","feedbackWrong":"Achte darauf: Taschengeld bekommen heißt get pocket money."},{"id":"g6-u3-m2-t04","type":"gap-fill","skill":"VOC","difficulty":1,"errorCategory":"chores-vocabulary","prompt":"Complete the sentence: I ___ my room every Saturday.","acceptedAnswers":["tidy","clean"],"feedbackCorrect":"Richtig. Tidy my room heißt mein Zimmer aufräumen.","feedbackWrong":"Hier passt ein Verb für Zimmer aufräumen oder putzen."},{"id":"g6-u3-m2-t05","type":"reading-check","skill":"REA","difficulty":2,"errorCategory":"reading-detail","text":"Amy gets five pounds every week. She has to tidy her room and feed the cat. She saves her money because she wants to buy new headphones.","prompt":"Why does Amy save her money?","options":["She wants to buy new headphones.","She wants a cat.","She hates money."],"answer":0,"feedbackCorrect":"Richtig. Amy spart für neue Kopfhörer.","feedbackWrong":"Lies den letzten Satz noch einmal."},{"id":"g6-u3-m2-t06","type":"multiple-choice","skill":"VOC","difficulty":2,"errorCategory":"money-vocabulary","prompt":"What does save money mean?","options":["Geld sparen","Geld verlieren","Geld malen"],"answer":0,"feedbackCorrect":"Genau. Save money heißt Geld sparen.","feedbackWrong":"Save bedeutet hier sparen."},{"id":"g6-u3-m2-t07","type":"sentence-builder","skill":"WRI","difficulty":2,"errorCategory":"word-order","prompt":"Put the words in the correct order.","words":["have","I","the","table","to","lay"],"answer":"I have to lay the table.","feedbackCorrect":"Sehr gut. Have to beschreibt eine Aufgabe oder Pflicht.","feedbackWrong":"Beginne mit I have to."},{"id":"g6-u3-m2-t08","type":"mini-writing","skill":"WRI","difficulty":2,"errorCategory":"money-writing","prompt":"Write three sentences about pocket money or chores.","support":["I get pocket money.","I don’t get pocket money.","I have to ...","I save money for ..."],"manualReview":true,"feedbackAfterSubmit":"Gut. Du kannst jetzt über Taschengeld und Aufgaben sprechen."}],"miniChallenge":[{"prompt":"Pocket money means ___.","acceptedAnswers":["Taschengeld","taschengeld"]},{"prompt":"I ___ my room.","acceptedAnswers":["tidy","clean"]},{"prompt":"Save money means Geld ___.","acceptedAnswers":["sparen"]}]},{"missionId":"g6-u3-m3","missionTitle":"Plan the Future","bookSection":"Theme 2","durationMinutes":20,"storyIntro":"An der Teen Talk Coast planen die Jugendlichen ihr nächstes Treffen. Lumi braucht Hilfe, Verabredungen zu verstehen und Zukunftspläne mit going to zu bilden.","learningGoals":["Ich kann eine Verabredung machen.","Ich kann Pläne mit going to ausdrücken.","Ich kann sagen, was ich vorhabe."],"skills":["GRA","SPE","REA","LIS","WRI"],"vocabFields":["arrangements","future plans","time phrases"],"reward":{"stars":2,"item":"Lichtfunke","badge":"Future Planner","message":"Du hast den Future Planner Badge freigeschaltet."},"ruleCard":{"title":"going to-future","rules":["Mit going to sprichst du über Pläne und Vorhaben.","Du brauchst eine Form von be: am, is oder are.","Danach kommt going to und die Grundform des Verbs."],"examples":["I am going to meet my friends.","She is going to watch a film.","We are going to play football.","Are you going to come with us?"]},"tasks":[{"id":"g6-u3-m3-t01","type":"multiple-choice","skill":"GRA","difficulty":1,"errorCategory":"going-to-future","prompt":"Choose the correct sentence.","options":["I am going to meet my friends.","I going to meet my friends.","I am go to meet my friends."],"answer":0,"feedbackCorrect":"Richtig. I am going to + Grundform ist korrekt.","feedbackWrong":"Du brauchst am going to und danach die Grundform."},{"id":"g6-u3-m3-t02","type":"gap-fill","skill":"GRA","difficulty":1,"errorCategory":"going-to-future","prompt":"Complete the sentence: She ___ going to start a new class.","acceptedAnswers":["is"],"feedbackCorrect":"Genau. Bei she benutzt du is.","feedbackWrong":"Bei she brauchst du is."},{"id":"g6-u3-m3-t03","type":"multiple-choice","skill":"SPE","difficulty":1,"errorCategory":"arrangements","prompt":"Which sentence is useful for making arrangements?","options":["Let’s meet at six.","My pencil is nervous.","The dog is a timetable."],"answer":0,"feedbackCorrect":"Genau. Let’s meet at six ist eine klare Verabredung.","feedbackWrong":"Gesucht ist ein Satz, mit dem man ein Treffen planen kann."},{"id":"g6-u3-m3-t04","type":"sentence-builder","skill":"GRA","difficulty":2,"errorCategory":"going-to-future","prompt":"Put the words in the correct order.","words":["are","We","play","going","football","to"],"answer":"We are going to play football.","feedbackCorrect":"Sehr gut. We are going to play football.","feedbackWrong":"Beginne mit We are going to."},{"id":"g6-u3-m3-t05","type":"error-correction","skill":"GRA","difficulty":2,"errorCategory":"going-to-future","prompt":"Correct the sentence: He going to watch TV.","acceptedAnswers":["He is going to watch TV."],"feedbackCorrect":"Genau. Bei he brauchst du is.","feedbackWrong":"Es fehlt die Form von be. Bei he ist das is."},{"id":"g6-u3-m3-t06","type":"reading-check","skill":"REA","difficulty":2,"errorCategory":"reading-detail","text":"Mia and Ben are going to meet at the cinema at half past five. After the film, they are going to eat pizza. Tom can’t come because he has to visit his grandma.","prompt":"Where are Mia and Ben going to meet?","options":["at the cinema","at the zoo","at school"],"answer":0,"feedbackCorrect":"Richtig. Sie treffen sich am Kino.","feedbackWrong":"Lies den ersten Satz noch einmal."},{"id":"g6-u3-m3-t07","type":"multiple-choice","skill":"SPE","difficulty":2,"errorCategory":"arrangements","prompt":"Choose the best reply: Let’s meet at five.","options":["Good idea.","I am a table.","No, yesterday."],"answer":0,"feedbackCorrect":"Richtig. Good idea passt als Antwort.","feedbackWrong":"Eine passende Antwort stimmt dem Vorschlag zu oder lehnt ihn höflich ab."},{"id":"g6-u3-m3-t08","type":"mini-writing","skill":"WRI","difficulty":2,"errorCategory":"future-writing","prompt":"Write three sentences about your plans for the weekend.","requirements":["Use going to in at least two sentences.","Use one time phrase."],"support":["On Saturday I am going to ...","I am going to meet ...","We are going to ...","At six o’clock ..."],"manualReview":true,"feedbackAfterSubmit":"Sehr gut. Going to hilft dir, echte Pläne auszudrücken."}],"miniChallenge":[{"prompt":"I ___ going to play football.","acceptedAnswers":["am"]},{"prompt":"She ___ going to watch a film.","acceptedAnswers":["is"]},{"prompt":"We ___ going to meet at six.","acceptedAnswers":["are"]}]},{"missionId":"g6-u3-m4","missionTitle":"Compare Tower","bookSection":"Focus on Language","durationMinutes":20,"storyIntro":"Auf einem Turm an der Küste vergleicht Lumi alles: Strände, Spiele, Filme und Clubs. Du hilfst ihr, Steigerungsformen richtig zu benutzen.","learningGoals":["Ich kann kurze Adjektive steigern.","Ich kann längere Adjektive mit more und most steigern.","Ich kann Dinge und Personen vergleichen."],"skills":["GRA","SPE","WRI","STU"],"vocabFields":["adjectives","opinions","comparisons"],"reward":{"stars":2,"item":"Lichtfunke","badge":"Compare Master","message":"Der Compare Tower ist wieder hell."},"ruleCard":{"title":"Comparison of adjectives","rules":["Kurze Adjektive bekommen oft -er und -est.","Nach dem Komparativ steht oft than.","Längere Adjektive steigerst du mit more und the most.","Bei Superlativen steht meistens the."],"examples":["small, smaller, the smallest","nice, nicer, the nicest","interesting, more interesting, the most interesting","Football is more exciting than tennis."]},"tasks":[{"id":"g6-u3-m4-t01","type":"multiple-choice","skill":"GRA","difficulty":1,"errorCategory":"comparison-adjectives","prompt":"Choose the correct form: My bike is ___ than yours.","options":["fast","faster","the fastest"],"answer":1,"feedbackCorrect":"Richtig. Mit than brauchst du faster.","feedbackWrong":"Bei einem Vergleich mit than passt die -er-Form."},{"id":"g6-u3-m4-t02","type":"gap-fill","skill":"GRA","difficulty":1,"errorCategory":"comparison-adjectives","prompt":"Complete the sentence: This is the ___ game in the shop. Use good.","acceptedAnswers":["best"],"feedbackCorrect":"Genau. Good wird zu the best.","feedbackWrong":"Good ist unregelmäßig: good, better, the best."},{"id":"g6-u3-m4-t03","type":"multiple-choice","skill":"GRA","difficulty":2,"errorCategory":"comparison-adjectives","prompt":"Choose the correct sentence.","options":["This film is more interesting than that film.","This film is interestinger than that film.","This film is the more interesting than that film."],"answer":0,"feedbackCorrect":"Richtig. Interesting ist länger, deshalb more interesting.","feedbackWrong":"Bei längeren Adjektiven benutzt du more."},{"id":"g6-u3-m4-t04","type":"matching","skill":"GRA","difficulty":2,"errorCategory":"comparison-adjectives","prompt":"Match the adjective forms.","pairs":[{"left":"big","right":"bigger"},{"left":"nice","right":"nicer"},{"left":"easy","right":"easier"},{"left":"good","right":"better"}],"feedbackCorrect":"Sehr gut. Du erkennst wichtige Vergleichsformen.","feedbackWrong":"Achte besonders auf easy und good."},{"id":"g6-u3-m4-t05","type":"error-correction","skill":"GRA","difficulty":2,"errorCategory":"comparison-adjectives","prompt":"Correct the sentence: My phone is expensiver than yours.","acceptedAnswers":["My phone is more expensive than yours."],"feedbackCorrect":"Genau. Expensive ist länger, deshalb more expensive.","feedbackWrong":"Bei expensive benutzt du more, nicht -er."},{"id":"g6-u3-m4-t06","type":"multiple-choice","skill":"GRA","difficulty":2,"errorCategory":"superlative","prompt":"Choose the superlative.","options":["the funniest","more funny","funny than"],"answer":0,"feedbackCorrect":"Richtig. Funny wird zu the funniest.","feedbackWrong":"Der Superlativ beginnt hier mit the."},{"id":"g6-u3-m4-t07","type":"sentence-builder","skill":"WRI","difficulty":2,"errorCategory":"comparison-word-order","prompt":"Put the words in the correct order.","words":["is","than","Tennis","football","easier"],"answer":"Tennis is easier than football.","feedbackCorrect":"Sehr gut. Easier than ist richtig eingesetzt.","feedbackWrong":"Beginne mit Tennis is."},{"id":"g6-u3-m4-t08","type":"mini-writing","skill":"WRI","difficulty":2,"errorCategory":"comparison-writing","prompt":"Write three comparison sentences.","requirements":["Use one sentence with than.","Use one sentence with more.","Use one sentence with the most or the -est form."],"support":["Football is more exciting than ...","Maths is easier than ...","This is the best ...","My phone is newer than ..."],"manualReview":true,"feedbackAfterSubmit":"Stark. Vergleiche machen deine Texte genauer."}],"miniChallenge":[{"prompt":"fast →","acceptedAnswers":["faster"]},{"prompt":"good →","acceptedAnswers":["better"]},{"prompt":"interesting →","acceptedAnswers":["more interesting"]}]},{"missionId":"g6-u3-m5","missionTitle":"Money Story","bookSection":"Story","durationMinutes":20,"storyIntro":"Lumi erzählt eine Geschichte über Geld, Wünsche und Entscheidungen. Nicht alles, was man haben möchte, kann man sofort kaufen.","learningGoals":["Ich kann eine Geschichte über Geld und Wünsche verstehen.","Ich kann erkennen, warum eine Figur eine Entscheidung trifft.","Ich kann Bilder oder Szenen als Verständnishilfe nutzen."],"skills":["REA","VOC","WRI","STU"],"vocabFields":["money","wishes","decisions","feelings"],"reward":{"stars":1,"item":"Lichtkristall","badge":"Smart Saver","message":"Du hast den Smart Saver Kristall gefunden."},"readingText":{"id":"g6-u3-m5-reading-01","title":"Not Enough Money","text":"Leo wanted a new skateboard. It was expensive, and he didn’t have enough money. On Saturday, his neighbour asked him to help in the garden. Leo worked for two hours and got five pounds. He was tired, but he was happy too. Later, he decided to save his money for the skateboard."},"tasks":[{"id":"g6-u3-m5-t01","type":"reading-check","skill":"REA","difficulty":1,"errorCategory":"reading-main-idea","prompt":"What did Leo want?","options":["a new skateboard","a new dog","a new school"],"answer":0,"feedbackCorrect":"Richtig. Leo wollte ein neues Skateboard.","feedbackWrong":"Lies den ersten Satz noch einmal."},{"id":"g6-u3-m5-t02","type":"reading-check","skill":"REA","difficulty":2,"errorCategory":"reading-detail","prompt":"Why couldn’t Leo buy the skateboard at first?","options":["He didn’t have enough money.","He didn’t like skateboards.","The shop was closed forever."],"answer":0,"feedbackCorrect":"Genau. Er hatte nicht genug Geld.","feedbackWrong":"Achte auf It was expensive und didn’t have enough money."},{"id":"g6-u3-m5-t03","type":"reading-check","skill":"REA","difficulty":2,"errorCategory":"reading-detail","prompt":"What did Leo do on Saturday?","options":["He helped in the garden.","He bought a car.","He went to the cinema."],"answer":0,"feedbackCorrect":"Richtig. Leo half im Garten.","feedbackWrong":"Lies den Satz mit Saturday noch einmal."},{"id":"g6-u3-m5-t04","type":"multiple-choice","skill":"VOC","difficulty":2,"errorCategory":"money-vocabulary","prompt":"What does expensive mean?","options":["teuer","billig","kaputt"],"answer":0,"feedbackCorrect":"Genau. Expensive heißt teuer.","feedbackWrong":"Expensive beschreibt etwas, das viel Geld kostet."},{"id":"g6-u3-m5-t05","type":"sorting","skill":"REA","difficulty":2,"errorCategory":"story-sequence","prompt":"Put the events in the correct order.","items":["Leo wanted a skateboard.","His neighbour asked for help.","Leo worked in the garden.","Leo decided to save his money."],"answer":["Leo wanted a skateboard.","His neighbour asked for help.","Leo worked in the garden.","Leo decided to save his money."],"feedbackCorrect":"Sehr gut. Du hast die Geschichte verstanden.","feedbackWrong":"Achte auf die Reihenfolge im Text."},{"id":"g6-u3-m5-t06","type":"multiple-choice","skill":"REA","difficulty":2,"errorCategory":"character-motivation","prompt":"Why was Leo happy after the work?","options":["He got money for his goal.","He lost his skateboard.","He had no homework ever again."],"answer":0,"feedbackCorrect":"Richtig. Er kam seinem Ziel näher.","feedbackWrong":"Denke daran, wofür er sparen wollte."},{"id":"g6-u3-m5-t07","type":"text-input","skill":"GRA","difficulty":2,"errorCategory":"simple-past-recognition","prompt":"Find one Simple Past verb from the story.","acceptedAnswers":["wanted","was","didn't","asked","worked","got","decided"],"feedbackCorrect":"Richtig. Das ist ein Verb aus der Vergangenheit.","feedbackWrong":"Suche nach Verben, die erzählen, was passiert ist."},{"id":"g6-u3-m5-t08","type":"mini-writing","skill":"WRI","difficulty":2,"errorCategory":"story-opinion-writing","prompt":"Write two sentences: Was Leo’s decision good? Why?","support":["I think it was a good decision because ...","Saving money is good because ...","I think Leo was smart."],"manualReview":true,"feedbackAfterSubmit":"Gut. Du hast eine Meinung mit Begründung geschrieben."}]},{"missionId":"g6-u3-m6","missionTitle":"Short Talk Challenge","bookSection":"Listening / Speaking / Reading / Viewing","durationMinutes":20,"storyIntro":"Auf der Bühne der Teen Talk Coast bereiten alle einen kurzen Vortrag vor. Danach geht es um Lieblingssendungen, Zoo-Pläne und klare Meinungen.","learningGoals":["Ich kann einem kurzen Vortrag wichtige Informationen entnehmen.","Ich kann einen kurzen Vortrag vorbereiten.","Ich kann über Fernsehprogramme sprechen.","Ich kann sagen, was ich am liebsten mag."],"skills":["LIS","SPE","REA","VIE","INT","STU","WRI"],"vocabFields":["short talks","TV programmes","zoo","opinions"],"reward":{"stars":1,"item":"Lichtkristall","badge":"Talk Star","message":"Du hast den Talk Star Kristall erhalten."},"tasks":[{"id":"g6-u3-m6-t01","type":"multiple-choice","skill":"SPE","difficulty":1,"errorCategory":"short-talk-phrases","prompt":"Which sentence is a good start for a short talk?","options":["Today I’m going to talk about my favourite hobby.","Yesterday chair because blue.","The end is first."],"answer":0,"feedbackCorrect":"Richtig. So kann ein Kurzvortrag beginnen.","feedbackWrong":"Ein Kurzvortrag beginnt klar mit dem Thema."},{"id":"g6-u3-m6-t02","type":"sorting","skill":"STU","difficulty":2,"errorCategory":"short-talk-structure","prompt":"Put the parts of a short talk in a useful order.","items":["Thank you for listening.","First, I want to tell you about ...","Today I’m going to talk about ...","My favourite part is ..."],"answer":["Today I’m going to talk about ...","First, I want to tell you about ...","My favourite part is ...","Thank you for listening."],"feedbackCorrect":"Sehr gut. Dein Vortrag hat eine klare Struktur.","feedbackWrong":"Beginne mit dem Thema und beende den Vortrag freundlich."},{"id":"g6-u3-m6-t03","type":"matching","skill":"VOC","difficulty":1,"errorCategory":"tv-vocabulary","prompt":"Match the TV programme types.","pairs":[{"left":"comedy","right":"funny programme"},{"left":"documentary","right":"programme with facts"},{"left":"quiz show","right":"programme with questions"},{"left":"cartoon","right":"animated programme"}],"feedbackCorrect":"Super. Jetzt kennst du wichtige TV-Wörter.","feedbackWrong":"Überlege, was man in der Sendung sieht."},{"id":"g6-u3-m6-t04","type":"multiple-choice","skill":"SPE","difficulty":1,"errorCategory":"tv-opinions","prompt":"Which sentence gives an opinion about TV?","options":["I like documentaries because they are interesting.","The TV is under Tuesday.","Cartoon table is money."],"answer":0,"feedbackCorrect":"Richtig. Der Satz enthält Meinung und Begründung.","feedbackWrong":"Eine Meinung enthält oft I like oder I don’t like."},{"id":"g6-u3-m6-t05","type":"reading-check","skill":"REA","difficulty":2,"errorCategory":"reading-detail","text":"Dartmoor Zoo is not a very big zoo, but many visitors like it because it has an interesting story. Families can see animals, learn about nature and spend a day outside.","prompt":"Why do many visitors like Dartmoor Zoo?","options":["because it has an interesting story","because it is under the sea","because it has no animals"],"answer":0,"feedbackCorrect":"Richtig. Viele Besucher mögen die interessante Geschichte.","feedbackWrong":"Lies den ersten Satz genau."},{"id":"g6-u3-m6-t06","type":"viewing-scene","skill":"VIE","difficulty":2,"errorCategory":"viewing-detail","sceneDescription":"You see a family standing in front of a zoo map. A girl points at the penguins. Her brother looks at the café sign.","prompt":"What does the girl point at?","options":["the penguins","the café","the car park"],"answer":0,"feedbackCorrect":"Richtig. Sie zeigt auf die Pinguine.","feedbackWrong":"Achte auf points at the penguins."},{"id":"g6-u3-m6-t07","type":"sentence-builder","skill":"SPE","difficulty":2,"errorCategory":"short-talk-phrases","prompt":"Put the words in the correct order.","words":["for","Thank","listening","you"],"answer":"Thank you for listening.","feedbackCorrect":"Perfekt. So beendest du einen Vortrag freundlich.","feedbackWrong":"Beginne mit Thank you."},{"id":"g6-u3-m6-t08","type":"mini-writing","skill":"WRI","difficulty":3,"errorCategory":"short-talk-writing","prompt":"Prepare a short talk about your favourite hobby, TV programme or animal.","requirements":["Write at least four sentences.","Use a clear beginning.","Use because once.","End with Thank you for listening."],"support":["Today I’m going to talk about ...","I like it because ...","My favourite part is ...","Thank you for listening."],"manualReview":true,"feedbackAfterSubmit":"Stark. Das ist ein guter Anfang für einen echten Kurzvortrag."}],"miniChallenge":[{"prompt":"A comedy is usually ___.","acceptedAnswers":["funny","lustig"]},{"prompt":"Thank you for ___.","acceptedAnswers":["listening"]},{"prompt":"Documentary means ___.","acceptedAnswers":["Dokumentation","dokumentation","facts","Sachsendung"]}]},{"missionId":"g6-u3-m7","missionTitle":"Teen Talk Check","bookSection":"Stop Check Go","durationMinutes":20,"storyIntro":"Der letzte Lichtkristall der Teen Talk Coast liegt auf dem Compare Tower. Im Unit Check wiederholst du Wochenende, Taschengeld, going to, Vergleiche und Kurzvorträge.","learningGoals":["Ich kann Unit 3 wiederholen.","Ich kann Pläne mit going to ausdrücken.","Ich kann Adjektive steigern.","Ich kann über Geld, Jobs und Wochenenden sprechen.","Ich erkenne, welche Themen ich noch wiederholen sollte."],"skills":["VOC","GRA","REA","SPE","WRI"],"vocabFields":["weekend","money","chores","future plans","comparisons"],"reward":{"stars":3,"item":"Lichtkristall","badge":"Teen Talk Hero","message":"Unit 3 abgeschlossen. Health Mountain wird freigeschaltet."},"assessment":{"gold":90,"pass":80,"review":60},"tasks":[{"id":"g6-u3-m7-t01","type":"multiple-choice","skill":"GRA","difficulty":1,"errorCategory":"going-to-future","prompt":"Choose the correct sentence.","options":["We are going to watch a film.","We going to watch a film.","We are going watch a film."],"answer":0,"feedbackCorrect":"Richtig. We are going to watch a film.","feedbackWrong":"Du brauchst are going to und danach die Grundform."},{"id":"g6-u3-m7-t02","type":"gap-fill","skill":"GRA","difficulty":1,"errorCategory":"going-to-future","prompt":"Complete the sentence: I ___ going to meet my friends.","acceptedAnswers":["am"],"feedbackCorrect":"Genau. Bei I heißt es am.","feedbackWrong":"Bei I brauchst du am."},{"id":"g6-u3-m7-t03","type":"multiple-choice","skill":"GRA","difficulty":2,"errorCategory":"comparison-adjectives","prompt":"Choose the correct form: This game is ___ than that game.","options":["more exciting","excitinger","the most exciting"],"answer":0,"feedbackCorrect":"Richtig. Exciting ist länger, deshalb more exciting.","feedbackWrong":"Bei längeren Adjektiven benutzt du more."},{"id":"g6-u3-m7-t04","type":"multiple-choice","skill":"GRA","difficulty":2,"errorCategory":"superlative","prompt":"Choose the correct sentence.","options":["This is the best weekend ever.","This is the goodest weekend ever.","This is the better weekend ever."],"answer":0,"feedbackCorrect":"Genau. Good, better, the best.","feedbackWrong":"Good ist unregelmäßig. Der Superlativ heißt the best."},{"id":"g6-u3-m7-t05","type":"matching","skill":"VOC","difficulty":1,"errorCategory":"chores-vocabulary","prompt":"Match the words.","pairs":[{"left":"pocket money","right":"Taschengeld"},{"left":"tidy my room","right":"mein Zimmer aufräumen"},{"left":"save money","right":"Geld sparen"},{"left":"do chores","right":"Aufgaben zu Hause erledigen"}],"feedbackCorrect":"Sehr gut. Der Wortschatz sitzt.","feedbackWrong":"Wiederhole Money Mission noch einmal."},{"id":"g6-u3-m7-t06","type":"reading-check","skill":"REA","difficulty":2,"errorCategory":"reading-detail","text":"On Saturday, Lily is going to help her dad in the garden. After that, she is going to meet her friends at the cinema. She thinks the new adventure film is more exciting than the comedy.","prompt":"What is Lily going to do after helping her dad?","options":["meet her friends at the cinema","buy a skateboard","clean the dog"],"answer":0,"feedbackCorrect":"Richtig. Sie trifft ihre Freunde am Kino.","feedbackWrong":"Achte auf After that."},{"id":"g6-u3-m7-t07","type":"error-correction","skill":"GRA","difficulty":2,"errorCategory":"going-to-future","prompt":"Correct the sentence: She going to visit her grandma.","acceptedAnswers":["She is going to visit her grandma."],"feedbackCorrect":"Genau. Bei she brauchst du is.","feedbackWrong":"Es fehlt is."},{"id":"g6-u3-m7-t08","type":"error-correction","skill":"GRA","difficulty":2,"errorCategory":"comparison-adjectives","prompt":"Correct the sentence: My bike is more fast than yours.","acceptedAnswers":["My bike is faster than yours."],"feedbackCorrect":"Richtig. Fast ist kurz, deshalb faster.","feedbackWrong":"Bei kurzen Adjektiven benutzt du meistens -er."},{"id":"g6-u3-m7-t09","type":"sentence-builder","skill":"SPE","difficulty":2,"errorCategory":"arrangements","prompt":"Put the words in the correct order.","words":["meet","at","Let's","six"],"answer":"Let's meet at six.","feedbackCorrect":"Perfekt. Das ist eine passende Verabredung.","feedbackWrong":"Beginne mit Let's."},{"id":"g6-u3-m7-t10","type":"mini-writing","skill":"WRI","difficulty":3,"errorCategory":"unit-writing","prompt":"Write five sentences about your next weekend.","requirements":["Use going to at least twice.","Use one comparison.","Use because once.","Mention one activity."],"support":["On Saturday I am going to ...","I am also going to ...","... is better than ...","I like it because ..."],"manualReview":true,"feedbackAfterSubmit":"Sehr gut. Das verbindet Zukunftspläne, Meinung und Vergleich."}]}],"diagnosticRules":[{"ifErrorCategory":"going-to-future","recommendReviewMission":"g6-u3-m3","message":"Going to-future sollte noch einmal geübt werden."},{"ifErrorCategory":"comparison-adjectives","recommendReviewMission":"g6-u3-m4","message":"Steigerung von Adjektiven braucht noch Wiederholung."},{"ifErrorCategory":"superlative","recommendReviewMission":"g6-u3-m4","message":"Superlative wie the best, the biggest und the most interesting wiederholen."},{"ifErrorCategory":"money-vocabulary","recommendReviewMission":"g6-u3-m2","message":"Wortschatz zu Taschengeld und Geld wiederholen."},{"ifErrorCategory":"chores-vocabulary","recommendReviewMission":"g6-u3-m2","message":"Wortschatz zu Aufgaben im Haushalt wiederholen."},{"ifErrorCategory":"arrangements","recommendReviewMission":"g6-u3-m3","message":"Verabredungen und passende Antworten noch einmal trainieren."},{"ifErrorCategory":"short-talk-phrases","recommendReviewMission":"g6-u3-m6","message":"Kurzvortrag-Formulierungen wiederholen."},{"ifErrorCategory":"weekend-vocabulary","recommendReviewMission":"g6-u3-m1","message":"Wochenendaktivitäten wiederholen."}]}};
+
+(function mergeTaskBanksIntoApp(){
+  const banks = window.TASK_BANKS || {};
+  const app = window.APP_CONTENT;
+  if (!app || !Array.isArray(app.grades)) return;
+  Object.values(banks).forEach(bank => {
+    const grade = app.grades.find(g => String(g.grade) === String(bank.grade));
+    if (!grade || !Array.isArray(grade.units)) return;
+    const unit = grade.units.find(u => u.id === bank.unitId);
+    if (!unit) return;
+    unit.taskBankMeta = {
+      schemaVersion: bank.schemaVersion,
+      fileType: bank.fileType,
+      unitTheme: bank.unitTheme,
+      estimatedTotalMissions: bank.estimatedTotalMissions,
+      loadedTaskFile: `tasks-${bank.unitId}.json`
+    };
+    unit.diagnosticRules = bank.diagnosticRules || [];
+    const byId = Object.fromEntries((unit.missions || []).map(m => [m.id, m]));
+    (bank.missions || []).forEach((bankMission, idx) => {
+      const mission = byId[bankMission.missionId] || (unit.missions || [])[idx];
+      if (!mission) return;
+      mission.id = bankMission.missionId;
+      mission.appMissionTitle = bankMission.missionTitle || mission.appMissionTitle;
+      mission.section = bankMission.bookSection || mission.section;
+      mission.durationMinutes = bankMission.durationMinutes || mission.durationMinutes || 20;
+      mission.storyIntro = bankMission.storyIntro || "";
+      mission.learningGoals = bankMission.learningGoals || mission.learningGoals || [];
+      mission.skills = bankMission.skills || mission.skills || [];
+      mission.vocabFields = bankMission.vocabFields || mission.vocabFields || [];
+      mission.reward = bankMission.reward || mission.reward || null;
+      mission.ruleCard = bankMission.ruleCard || null;
+      mission.readingText = bankMission.readingText || null;
+      mission.rawTasks = bankMission.tasks || [];
+      mission.miniChallenge = bankMission.miniChallenge || [];
+      mission.taskTypes = [...new Set((bankMission.tasks || []).map(t => t.type))];
+      mission.errorCategories = [...new Set((bankMission.tasks || []).map(t => t.errorCategory).filter(Boolean))];
+    });
+  });
+})();
+
+
+const STORAGE_KEY = "lumiEnglishAdventureState_v041";
+const APP = window.APP_CONTENT;
+const PASS = APP.contentScope.passThresholdPercent || 80;
+const GRADE_ICONS = {5:"⚓",6:"🗼"};
+const UNIT_ICONS = ["🏁","🏫","🏠","🏙️","🚜","🎵","☀️","🎒","🏘️","💬","🥗","🧭","🏰"];
+const SKILL_LABELS = APP.skillCodes || {};
+
+const defaultState = {
+  completedMissions: {},
+  completedUnits: {},
+  scores: {},
+  wrongAnswers: [],
+  lightSparks: 0,
+  lightCrystals: 0,
+  stars: 0,
+  streakDays: 0,
+  lastStudy: null,
+  currentMissionId: null,
+  manualUnlocks: {}
+};
+
+let state = loadState();
+let view = "dashboard";
+let activeUnitId = null;
+let currentQuestions = [];
+let currentIndex = 0;
+let answers = [];
+let checked = false;
+
+function clone(obj) { return JSON.parse(JSON.stringify(obj)); }
+function loadState() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return saved ? Object.assign(clone(defaultState), JSON.parse(saved)) : clone(defaultState);
+  } catch(e) {
+    console.warn("Konnte Fortschritt nicht laden", e);
+    return clone(defaultState);
+  }
 }
+function saveState() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+  catch(e) { console.warn("Safari konnte den Fortschritt nicht speichern.", e); }
+  updateSidebar();
+}
+function grades() { return APP.grades || []; }
+function allUnits() { return grades().flatMap(g => (g.units||[]).map((u,i)=>({...u, grade:g.grade, gradeTitle:g.gradeTitle, world:g.world, unitIndex:i}))); }
+function allMissions() { return allUnits().flatMap(u => (u.missions||[]).map((m,i)=>({...m, unit:u, missionIndex:i}))); }
+function getUnit(id) { return allUnits().find(u => u.id === id); }
+function getMission(id) { return allMissions().find(m => m.id === id); }
+function getGrade(grade) { return grades().find(g => g.grade === grade); }
+function isMissionComplete(id) { return !!state.completedMissions[id]; }
+function isUnitComplete(unit) { return (unit.missions||[]).length > 0 && unit.missions.every(m => isMissionComplete(m.id)); }
+function isUnitUnlocked(unit) {
+  if (state.manualUnlocks[unit.id]) return true;
+  const grade = getGrade(unit.grade);
+  const units = grade.units || [];
+  const idx = units.findIndex(u => u.id === unit.id);
+  if (idx === 0) return true;
+  const prev = units[idx - 1];
+  return prev ? isUnitComplete({...prev, grade:unit.grade}) : true;
+}
+function isMissionUnlocked(mission) {
+  if (state.manualUnlocks[mission.id]) return true;
+  const unit = mission.unit;
+  if (!isUnitUnlocked(unit)) return false;
+  if (mission.missionIndex === 0) return true;
+  const prev = unit.missions[mission.missionIndex - 1];
+  return prev ? isMissionComplete(prev.id) : true;
+}
+function percent(n,d) { return d ? Math.round(n/d*100) : 0; }
+function completedMissionCount() { return Object.keys(state.completedMissions).length; }
+function totalMissionCount() { return allMissions().length; }
+function overallPercent() { return percent(completedMissionCount(), totalMissionCount()); }
+
+function updateSidebar() {
+  const p = overallPercent();
+  document.getElementById("overallText").textContent = p + " %";
+  document.getElementById("overallBar").style.width = p + "%";
+  document.getElementById("missionDoneText").textContent = completedMissionCount() + " / " + totalMissionCount();
+  document.getElementById("streakText").textContent = (state.streakDays || 0) + " Tage";
+  document.getElementById("sparkChip").textContent = "✨ " + (state.lightSparks || 0) + " Lichtfunken";
+  document.getElementById("crystalChip").textContent = "💎 " + (state.lightCrystals || 0) + " Lichtkristalle";
+}
+
+function setView(v) {
+  view = v;
+  document.querySelectorAll("nav button").forEach(b => b.classList.toggle("active", b.dataset.view === v));
+  if (v === "dashboard") renderDashboard();
+  if (v === "path") renderPath();
+  if (v === "today") startToday();
+  if (v === "review") renderReview();
+  if (v === "parents") renderParents();
+  if (v === "settings") renderSettings();
+}
+
+function nextMission(preferGrade=6) {
+  const missions = allMissions().filter(m => m.unit.grade === preferGrade);
+  let next = missions.find(m => isMissionUnlocked(m) && !isMissionComplete(m.id));
+  if (next) return next;
+  return allMissions().find(m => isMissionUnlocked(m) && !isMissionComplete(m.id)) || null;
+}
+
+function renderDashboard() {
+  const next = nextMission(6) || nextMission(5);
+  const g6 = getGrade(6), g5 = getGrade(5);
+  const doneUnits = allUnits().filter(isUnitComplete).length;
+  document.getElementById("main").innerHTML = `
+    <section class="hero">
+      <div>
+        <h2>${next ? "Nächste Mission: " + esc(next.appMissionTitle) : "Alles geschafft! 🎉"}</h2>
+        <p>${next ? esc(next.unit.appTitle) + " · " + esc(next.learningGoals?.[0] || "Kurze Trainingseinheit") + " · geplant für etwa 20 Minuten." : "Alle aktuellen Missionen sind erledigt. Nutze die Wiederholung für schwierige Themen."}</p>
+      </div>
+      ${next ? `<button class="btn" onclick="startMission('${next.id}')">Jetzt lernen</button>` : `<button class="btn" onclick="renderReview()">Wiederholen</button>`}
+    </section>
+
+    <div class="grid3">
+      <div class="mini"><strong>${overallPercent()} %</strong><span class="small">Gesamtfortschritt</span></div>
+      <div class="mini"><strong>${completedMissionCount()}</strong><span class="small">Missionen erledigt</span></div>
+      <div class="mini"><strong>${doneUnits}</strong><span class="small">Units abgeschlossen</span></div>
+    </div>
+
+    <h2>Aktueller Aufbau</h2>
+    <div class="notice">
+      Der Lernpfad enthält Klasse 5 als Wiederholung und Klasse 6 als Hauptkurs. Jede Mission folgt dem 20-Minuten-Prinzip mit kurzem Ziel, Übung, Mini-Challenge und Belohnung.
+    </div>
+
+    <div class="grid2">
+      ${gradeOverview(g5)}
+      ${gradeOverview(g6)}
+    </div>
+  `;
+}
+
+function gradeOverview(g) {
+  const units = (g.units||[]).map(u => ({...u, grade:g.grade}));
+  const missions = units.flatMap(u => u.missions || []);
+  const done = missions.filter(m => isMissionComplete(m.id)).length;
+  return `<div class="mini">
+    <strong>${GRADE_ICONS[g.grade] || "📚"} ${esc(g.gradeTitle)}</strong>
+    <p class="small">${esc(g.mainGoal || "")}</p>
+    <div class="progress-row"><div class="bar"><span style="width:${percent(done, missions.length)}%"></span></div><span class="small">${done}/${missions.length}</span></div>
+    <button class="btn ghost" style="margin-top:12px" onclick="setView('path')">Lernpfad öffnen</button>
+  </div>`;
+}
+
+function renderPath() {
+  const parts = grades().map((g) => {
+    const units = (g.units||[]).map((u,i)=>renderUnitCard({...u, grade:g.grade, gradeTitle:g.gradeTitle, world:g.world, unitIndex:i})).join("");
+    return `<div class="grade-title"><h2>${GRADE_ICONS[g.grade] || "📚"} ${esc(g.gradeTitle)} · ${esc(g.world?.title || "")}</h2><span class="pill">${esc(g.profileMode || "")}</span></div>
+    <p class="small">${esc(g.world?.storyArc || g.mainGoal || "")}</p>
+    <div class="unit-list">${units}</div>`;
+  }).join("");
+  document.getElementById("main").innerHTML = `
+    <h2>🗺️ Lernpfad</h2>
+    <div class="notice">Klasse 5 ist als Wiederholung angelegt. Klasse 6 ist der Hauptpfad. Innerhalb einer Unit wird die nächste Mission erst nach bestandener vorheriger Mission freigeschaltet.</div>
+    ${parts}
+  `;
+}
+
+function renderUnitCard(unit) {
+  const missions = unit.missions || [];
+  const done = missions.filter(m => isMissionComplete(m.id)).length;
+  const unlocked = isUnitUnlocked(unit);
+  const complete = isUnitComplete(unit);
+  const icon = complete ? "✅" : unlocked ? (UNIT_ICONS[unit.unitIndex + (unit.grade===6 ? 7 : 0)] || "📘") : "🔒";
+  const focus = (unit.focus||[]).slice(0,5).map(x=>`<span class="tag">${esc(x)}</span>`).join("");
+  const grammar = (unit.grammarFocus||[]).slice(0,4).join(", ");
+  return `<div class="unit ${complete?'done':''} ${!unlocked?'locked':''}">
+    <div class="icon">${icon}</div>
+    <div>
+      <div class="unit-title">${esc(unit.appTitle)} <span class="small">(${esc(unit.bookUnit)})</span></div>
+      <div class="unit-meta">${done}/${missions.length} Missionen · ${esc(grammar)}</div>
+      <div class="tagline">${focus}</div>
+      <div class="bar" style="margin-top:10px"><span style="width:${percent(done, missions.length)}%"></span></div>
+    </div>
+    <button class="btn ghost" ${!unlocked?'disabled':''} onclick="openUnit('${unit.id}')">${complete?'Ansehen':unlocked?'Öffnen':'Gesperrt'}</button>
+  </div>`;
+}
+
+function openUnit(id) {
+  activeUnitId = id;
+  const unit = getUnit(id);
+  if (!unit) return renderPath();
+  const missions = (unit.missions||[]).map((m,i)=>renderMissionCard({...m, unit, missionIndex:i})).join("");
+  document.getElementById("main").innerHTML = `
+    <div class="lesson-head">
+      <div>
+        <button class="btn secondary" onclick="renderPath()">← Lernpfad</button>
+        <h2 style="margin-top:16px">${esc(unit.appTitle)}</h2>
+        <p class="small">${esc(unit.bookUnit)} · ${esc((unit.grammarFocus||[]).join(", "))}</p>
+      </div>
+      <span class="pill">${isUnitComplete(unit) ? "Unit geschafft" : "Unit offen"}</span>
+    </div>
+    <div class="notice">${esc((unit.focus||[]).join(" · "))}</div>
+    <div class="missions">${missions}</div>
+  `;
+}
+
+function renderMissionCard(mission) {
+  const done = isMissionComplete(mission.id);
+  const unlocked = isMissionUnlocked(mission);
+  const score = state.scores[mission.id];
+  const skillTags = (mission.skills||[]).map(s=>`<span class="skill" title="${esc(SKILL_LABELS[s]||s)}">${esc(s)}</span>`).join("");
+  return `<div class="mission ${done?'done':''} ${!unlocked?'locked':''}">
+    <div class="icon">${done?'✅':unlocked?'✨':'🔒'}</div>
+    <div>
+      <div class="unit-title">${esc(mission.appMissionTitle)}</div>
+      <div class="unit-meta">${esc(mission.section || "")}${mission.bookSectionTitle ? " · " + esc(mission.bookSectionTitle) : ""}${score!==undefined ? " · bestes Ergebnis: " + score + " %" : ""}</div>
+      <div class="skills">${skillTags}</div>
+      <p class="small">${esc((mission.learningGoals||[])[0] || "Kurze Übung")}</p>
+    </div>
+    <button class="btn ghost" ${!unlocked?'disabled':''} onclick="startMission('${mission.id}')">${done?'Wiederholen':'Starten'}</button>
+  </div>`;
+}
+
+
+function bankTaskToQuestion(task, mission) {
+  const base = {
+    id: task.id,
+    category: task.errorCategory || firstCategory(mission),
+    tip: task.feedbackWrong || "Schau dir die Aufgabe noch einmal genau an.",
+    feedbackCorrect: task.feedbackCorrect,
+    feedbackWrong: task.feedbackWrong,
+    skill: task.skill,
+    difficulty: task.difficulty
+  };
+  const type = task.type;
+  if (type === "multiple-choice" || type === "mediation-choice" || type === "viewing-scene") {
+    const prefix = task.sceneDescription ? "Szene: " + task.sceneDescription + "\n\n" : "";
+    return {...base, kind:"mc", q: prefix + task.prompt, options: task.options || [], correctText: (task.options || [])[task.answer]};
+  }
+  if (type === "reading-check") {
+    const text = task.text || mission.readingText?.text || "";
+    return {...base, kind:"mc", q: (text ? "Lies den Text:\n\n" + text + "\n\n" : "") + task.prompt, options: task.options || [], correctText: (task.options || [])[task.answer]};
+  }
+  if (type === "gap-fill" || type === "text-input" || type === "error-correction") {
+    return {...base, kind:"text", q: task.prompt, answers: task.acceptedAnswers || [], loose:true};
+  }
+  if (type === "sentence-builder") {
+    return {...base, kind:"text", q: task.prompt + "\n\nWords: " + (task.words || []).join(" · "), answers:[task.answer], loose:true};
+  }
+  if (type === "matching") {
+    const pair = (task.pairs || [])[0];
+    if (!pair) return null;
+    const rightOptions = shuffle((task.pairs || []).map(p => p.right));
+    return {...base, kind:"mc", q: task.prompt + "\n\nWhat matches “" + pair.left + "”?", options:rightOptions, correctText:pair.right};
+  }
+  if (type === "sorting") {
+    const correct = (task.answer || task.items || []).join(" → ");
+    const reversed = [...(task.answer || task.items || [])].reverse().join(" → ");
+    const mixed = [...(task.items || [])].sort().join(" → ");
+    return {...base, kind:"mc", q: task.prompt, options:shuffle([correct, reversed, mixed]).slice(0,3), correctText:correct};
+  }
+  if (type === "mini-writing") {
+    const support = task.support ? "\n\nHilfen:\n• " + task.support.join("\n• ") : "";
+    const fields = task.fields ? "\n\nFelder:\n• " + task.fields.map(f => f.label + ": " + (f.placeholder || "...")).join("\n• ") : "";
+    return {...base, kind:"write", q: task.prompt + support + fields, minChars: Math.max(18, (task.minWords || 4) * 4), tip: task.feedbackAfterSubmit || base.tip, feedbackCorrect: task.feedbackAfterSubmit || task.feedbackCorrect};
+  }
+  if (type === "listening-check" || type === "speaking-prompt") {
+    return {...base, kind:"self", q: task.prompt || "Sprich den Satz laut und deutlich.", label:"Erledigt"};
+  }
+  return null;
+}
+
+function makeQuestionsFromBank(mission) {
+  let qs = (mission.rawTasks || []).map(t => bankTaskToQuestion(t, mission)).filter(Boolean);
+  if (mission.ruleCard) {
+    const rules = (mission.ruleCard.rules || []).map(r => "• " + r).join("\n");
+    const examples = (mission.ruleCard.examples || []).map(e => "• " + e).join("\n");
+    qs.unshift({kind:"self", q:"Regelkarte: " + mission.ruleCard.title + "\n\n" + rules + (examples ? "\n\nBeispiele:\n" + examples : ""), label:"Regelkarte verstanden", tip:"Lies die Regelkarte in Ruhe. Danach geht es weiter.", category:firstCategory(mission)});
+  }
+  if (mission.storyIntro) {
+    qs.unshift({kind:"self", q:mission.storyIntro, label:"Startklar", tip:"Kurz lesen und dann loslegen.", category:"mission-intro"});
+  }
+  return qs;
+}
+
+function makeQuestions(mission) {
+  if (mission.rawTasks && mission.rawTasks.length) return makeQuestionsFromBank(mission);
+  const unit = mission.unit;
+  const tasks = mission.taskTypes || ["multiple-choice","gap-fill","mini-writing"];
+  let qs = [];
+  qs.push(makeGoalQuestion(mission));
+  for (const t of tasks) qs.push(...questionForTask(t, mission, unit));
+  if (tasks.includes("unit-test")) qs.push(...unitTestQuestions(unit));
+  qs = dedupeQuestions(qs).slice(0, tasks.includes("unit-test") ? 9 : 6);
+  while (qs.length < 5) qs.push(makeFallbackQuestion(mission, unit, qs.length));
+  return qs;
+}
+
+function makeGoalQuestion(mission) {
+  const goal = (mission.learningGoals||[])[0] || "Ich kann die Mission üben.";
+  const wrong = ["Ich wiederhole nur deutsche Grammatik.", "Ich übersetze einen langen Originaltext.", "Ich lerne Mathe-Vokabeln."];
+  return {
+    kind:"mc",
+    q:"Was ist das wichtigste Ziel dieser Mission?",
+    options:shuffle([goal, ...wrong]).slice(0,4),
+    correctText:goal,
+    tip:"Lies das Lernziel genau. Es steht am Anfang der Mission.",
+    category:"learning-goal"
+  };
+}
+
+function questionForTask(t, mission, unit) {
+  const phrase = cleanPhrase((mission.targetPhrases||[])[0] || (mission.learningGoals||[])[0] || "I can learn English.");
+  const focus = (unit.focus||[])[0] || "English";
+  if (t === "multiple-choice" || t === "matching") return [makePhraseChoice(mission, unit)];
+  if (t === "gap-fill") return [makeGrammarQuestion(unit, mission)];
+  if (t === "sentence-builder") return [makeSentenceBuilder(phrase)];
+  if (t === "error-correction") return [makeErrorCorrection(unit)];
+  if (t === "mini-writing") return [makeWritingPrompt(mission, unit)];
+  if (t === "reading-check") return [makeReadingQuestion(mission, unit)];
+  if (t === "listening-check") return [makeSelfCheck("Hör-Check", `Lies diesen Satz laut und achte auf klare Aussprache: “${phrase}”`, "reading-aloud")];
+  if (t === "speaking-prompt") return [makeSelfCheck("Sprech-Check", `Sag auf Englisch zwei Sätze zu: ${focus}. Nutze, wenn möglich: “${phrase}”`, "speaking")];
+  if (t === "sorting") return [makeSortingQuestion(unit)];
+  if (t === "mediation-choice") return [makeMediationQuestion(mission, unit)];
+  if (t === "viewing-scene") return [makeViewingQuestion(mission, unit)];
+  if (t === "unit-test") return [];
+  return [makeFallbackQuestion(mission, unit, 0)];
+}
+
+function makePhraseChoice(mission, unit) {
+  const phrase = cleanPhrase((mission.targetPhrases||[])[0] || "I can learn English.");
+  const options = shuffle([phrase, "She go yesterday.", "I am very yesterday.", "We can to English."]).slice(0,4);
+  return {kind:"mc", q:"Welche Formulierung passt am besten?", options, correctText:phrase, tip:"Achte auf eine natürliche englische Formulierung.", category:firstCategory(mission)};
+}
+
+function makeGrammarQuestion(unit, mission) {
+  const gf = (unit.grammarFocus||[]).join(" ").toLowerCase();
+  const cat = firstCategory(mission);
+  if (gf.includes("simple past") && gf.includes("negative")) return {kind:"text", q:"Complete: I ___ have school yesterday.", answers:["didn't","did not"], tip:"Im Simple Past steht did not + Grundform.", category:cat||"simple-past-negative"};
+  if (gf.includes("simple past")) return {kind:"text", q:"Complete: Yesterday I ___ (stay) at home.", answers:["stayed"], tip:"Regelmäßige Verben bekommen im Simple Past meist -ed.", category:cat||"simple-past-positive"};
+  if (gf.includes("was") || gf.includes("were")) return {kind:"text", q:"Complete: How ___ your holidays?", answers:["were"], tip:"Bei holidays im Plural verwenden wir were.", category:cat||"was-were"};
+  if (gf.includes("some") || gf.includes("any")) return {kind:"mc", q:"Choose the correct word: Would you like ___ tea?", options:shuffle(["some","any","many","much"]), correctText:"some", tip:"Bei Angeboten verwendet man oft some.", category:cat||"some-any"};
+  if (gf.includes("going to")) return {kind:"text", q:"Complete: I’m going ___ start a new class.", answers:["to"], tip:"going to + Grundform.", category:cat||"going-to-future"};
+  if (gf.includes("comparison") || gf.includes("comparative") || gf.includes("superlative")) return {kind:"text", q:"Complete: My bike is ___ (fast) than yours.", answers:["faster"], tip:"Kurze Adjektive bekommen meist -er.", category:cat||"comparison-adjectives"};
+  if (gf.includes("much") || gf.includes("many")) return {kind:"mc", q:"Choose the correct word: How ___ apples do we need?", options:shuffle(["many","much","any","some"]), correctText:"many", tip:"Zählbare Dinge im Plural: many.", category:cat||"much-many-lots-of"};
+  if (gf.includes("should")) return {kind:"text", q:"Complete: You ___ get some fresh air.", answers:["should"], tip:"should gibt einen Rat.", category:cat||"should-advice"};
+  if (gf.includes("present perfect")) return {kind:"mc", q:"Choose the correct form: Zoe ___ her homework.", options:shuffle(["has done","have done","did has","has do"]), correctText:"has done", tip:"Present Perfect: has/have + past participle.", category:cat||"present-perfect-have-has"};
+  if (gf.includes("will")) return {kind:"text", q:"Complete: Tomorrow it ___ be sunny.", answers:["will"], tip:"will + Grundform.", category:cat||"will-future"};
+  if (gf.includes("adverb")) return {kind:"text", q:"Complete the adverb: Walk ___ (slow).", answers:["slowly"], tip:"Viele Adverbien enden auf -ly.", category:cat||"adverbs-of-manner"};
+  if (gf.includes("past progressive")) return {kind:"text", q:"Complete: They were ___ (walk) through the castle.", answers:["walking"], tip:"Past Progressive: was/were + verb-ing.", category:cat||"past-progressive"};
+  if (gf.includes("present progressive")) return {kind:"text", q:"Complete: She is ___ (sing).", answers:["singing"], tip:"Present Progressive: be + verb-ing.", category:cat||"present-progressive-be"};
+  if (gf.includes("there is")) return {kind:"mc", q:"Choose the correct sentence.", options:shuffle(["There are two chairs.","There is two chairs.","There are a chair.","There am two chairs."]), correctText:"There are two chairs.", tip:"Bei mehreren Dingen: there are.", category:cat||"there-is-there-are"};
+  if (gf.includes("to be")) return {kind:"text", q:"Complete: We ___ in class 6.", answers:["are"], tip:"Bei we steht are.", category:cat||"to-be-forms"};
+  return {kind:"text", q:`Complete: ${cleanPhrase((mission.targetPhrases||[])[0] || "I like English.")}`, answers:[cleanPhrase((mission.targetPhrases||[])[0] || "I like English.")], tip:"Schreibe den Satz sorgfältig ab.", category:cat||"general"};
+}
+
+function makeSentenceBuilder(phrase) {
+  phrase = phrase || "I like English.";
+  return {kind:"text", q:`Baue den Satz korrekt: “${phrase}”`, answers:[phrase], loose:true, tip:"Achte auf Wortstellung, Großschreibung ist hier nicht entscheidend.", category:"sentence-builder"};
+}
+
+function makeErrorCorrection(unit) {
+  const gf = (unit.grammarFocus||[]).join(" ").toLowerCase();
+  if (gf.includes("simple past")) return {kind:"text", q:"Korrigiere den Satz: I didn’t went to school.", answers:["I didn’t go to school","I did not go to school"], loose:true, tip:"Nach didn’t steht die Grundform.", category:"simple-past-negative"};
+  if (gf.includes("going to")) return {kind:"text", q:"Korrigiere den Satz: I going to meet Tom.", answers:["I am going to meet Tom","I'm going to meet Tom"], loose:true, tip:"going to braucht eine Form von be.", category:"going-to-future"};
+  if (gf.includes("present perfect")) return {kind:"text", q:"Korrigiere den Satz: She have done it.", answers:["She has done it"], loose:true, tip:"Bei she steht has.", category:"present-perfect-have-has"};
+  if (gf.includes("past progressive")) return {kind:"text", q:"Korrigiere den Satz: They was walking.", answers:["They were walking"], loose:true, tip:"Bei they steht were.", category:"past-progressive"};
+  return {kind:"text", q:"Korrigiere den Satz: She don't like cats.", answers:["She doesn't like cats","She does not like cats"], loose:true, tip:"Bei she steht doesn’t + Grundform.", category:"third-person-s"};
+}
+
+function makeWritingPrompt(mission, unit) {
+  const phrase = cleanPhrase((mission.targetPhrases||[])[0] || "");
+  return {kind:"write", q:`Schreibe 2 kurze englische Sätze zu „${mission.appMissionTitle}“.${phrase ? " Nutze gerne: “" + phrase + "”" : ""}`, minChars:18, tip:"Es reicht kurz und sauber. Zwei einfache Sätze sind besser als ein zu langer Satz.", category:"mini-writing"};
+}
+
+function makeReadingQuestion(mission, unit) {
+  const place = unit.appTitle || "Lighthouse Island";
+  const goal = (mission.learningGoals||[])[0] || "practise English";
+  const phrase = cleanPhrase((mission.targetPhrases||[])[0] || "I can learn English.");
+  const text = `Lumi arrives at ${place}. Today the team practises one important goal: ${goal} They use a useful phrase: “${phrase}”`;
+  return {kind:"mc", q:`Lies den kurzen Text:\n\n${text}\n\nWhere does Lumi arrive?`, options:shuffle([place,"London Airport","a maths room","the supermarket"]), correctText:place, tip:"Die Antwort steht im ersten Satz.", category:"reading"};
+}
+
+function makeSortingQuestion(unit) {
+  return {kind:"mc", q:"Welche Reihenfolge passt für einen kurzen englischen Bericht?", options:shuffle(["first → then → later","later → first → then","because → first → later","but → so → first"]), correctText:"first → then → later", tip:"Time words helfen beim Ordnen.", category:"study-skills"};
+}
+
+function makeMediationQuestion(mission, unit) {
+  return {kind:"mc", q:"Du sollst einem Freund auf Englisch kurz helfen. Welche Antwort ist am passendsten?", options:shuffle(["We need help, please.","The apple is loudly.","I yesterday very.","He can to go."]), correctText:"We need help, please.", tip:"Mediation heißt: kurz, verständlich und passend vermitteln.", category:"mediation"};
+}
+
+function makeViewingQuestion(mission, unit) {
+  const focus = (unit.focus||[])[0] || "the scene";
+  return {kind:"self", q:`Bild-/Szenencheck: Stell dir eine Szene zu „${focus}“ vor. Nenne laut drei Dinge, die du sehen könntest.`, label:"Ich habe drei Dinge genannt", tip:"Nutze einfache Satzanfänge: I can see ..., There is ..., There are ...", category:"viewing"};
+}
+
+function makeSelfCheck(title, prompt, category) {
+  return {kind:"self", q:`${title}: ${prompt}`, label:"Erledigt", tip:"Laut sprechen zählt. Perfektion ist hier nicht nötig.", category};
+}
+
+function unitTestQuestions(unit) {
+  const mockMission = {...unit.missions[0], errorCategories:[], targetPhrases:(unit.missions||[]).flatMap(m=>m.targetPhrases||[]).slice(0,3)};
+  return [
+    makeGrammarQuestion(unit, mockMission),
+    makePhraseChoice(mockMission, unit),
+    makeReadingQuestion(unit.missions[0] || mockMission, unit),
+    makeSortingQuestion(unit),
+    makeWritingPrompt(unit.missions[0] || mockMission, unit)
+  ];
+}
+
+function makeFallbackQuestion(mission, unit, idx) {
+  if (idx % 2 === 0) return makePhraseChoice(mission, unit);
+  return makeGrammarQuestion(unit, mission);
+}
+
+function dedupeQuestions(qs) {
+  const seen = new Set();
+  return qs.filter(q => {
+    const key = q.kind + "|" + q.q;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function cleanPhrase(x) {
+  return String(x || "").replace(/\.\.\./g,"").replace(/\s+/g," ").trim();
+}
+function firstCategory(mission) {
+  return (mission.errorCategories || [])[0] || "";
+}
+function shuffle(arr) {
+  const a = arr.filter(Boolean).slice();
+  for (let i=a.length-1; i>0; i--) {
+    const j = Math.floor(((i+1)*9301 + a.join("").length*49297) % (i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+function esc(x) { return String(x ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[ch])); }
+function norm(x) { return String(x||"").trim().toLowerCase().replace(/[.!?]/g,"").replace(/’/g,"'").replace(/\s+/g," "); }
+
+function startToday() {
+  const m = nextMission(6) || nextMission(5);
+  if (m) startMission(m.id);
+  else renderReview();
+}
+
+function startMission(id) {
+  const mission = getMission(id);
+  if (!mission) return renderPath();
+  if (!isMissionUnlocked(mission)) return;
+  state.currentMissionId = id;
+  currentQuestions = makeQuestions(mission);
+  currentIndex = 0;
+  answers = [];
+  checked = false;
+  saveState();
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const mission = getMission(state.currentMissionId);
+  const q = currentQuestions[currentIndex];
+  const p = percent(currentIndex, currentQuestions.length);
+  let input = "";
+  if (q.kind === "mc") {
+    input = `<div class="answers">${q.options.map((o,i)=>`<button class="answer" data-i="${i}" onclick="selectAnswer(${i})">${esc(o)}</button>`).join("")}</div>`;
+  } else if (q.kind === "text") {
+    input = `<div class="answers"><input class="text" id="textAnswer" placeholder="Antwort eingeben…" autocomplete="off" autocapitalize="none"></div>`;
+  } else if (q.kind === "write") {
+    input = `<div class="answers"><textarea class="text" id="textAnswer" placeholder="Schreibe hier deine Sätze…"></textarea></div>`;
+  } else if (q.kind === "self") {
+    input = `<div class="answers"><button class="answer" data-self="1" onclick="selectAnswer(0)">${esc(q.label || "Erledigt")}</button></div>`;
+  }
+  document.getElementById("main").innerHTML = `
+    <div class="lesson-head">
+      <div>
+        <button class="btn secondary" onclick="openUnit('${mission.unit.id}')">← Unit</button>
+        <h2 style="margin-top:14px">${esc(mission.appMissionTitle)}</h2>
+        <p class="small">${esc(mission.unit.appTitle)} · ${esc((mission.learningGoals||[])[0] || "")}</p>
+      </div>
+      <span class="pill">Aufgabe ${currentIndex+1} / ${currentQuestions.length}</span>
+    </div>
+    <div class="bar"><span style="width:${p}%"></span></div>
+    <div class="question">
+      <h3>${esc(q.q).replace(/\n/g,"<br>")}</h3>
+      ${input}
+      <div id="feedback" class="feedback"></div>
+      <div class="actions">
+        <button class="btn secondary" onclick="openUnit('${mission.unit.id}')">Beenden</button>
+        <button class="btn" id="checkBtn" onclick="checkAnswer()">Prüfen</button>
+      </div>
+    </div>
+  `;
+}
+
+function selectAnswer(i) {
+  if (checked) return;
+  answers[currentIndex] = i;
+  document.querySelectorAll(".answer").forEach((b,j)=>b.classList.toggle("selected", i===j));
+}
+
+function checkAnswer() {
+  const mission = getMission(state.currentMissionId);
+  const q = currentQuestions[currentIndex];
+  if (checked) return nextQuestion();
+  let ok = false;
+  let userValue = null;
+
+  if (q.kind === "mc") {
+    const i = answers[currentIndex];
+    if (i === undefined) return;
+    userValue = q.options[i];
+    ok = norm(userValue) === norm(q.correctText);
+    document.querySelectorAll(".answer").forEach((b,idx) => {
+      if (norm(q.options[idx]) === norm(q.correctText)) b.classList.add("correct");
+      else if (idx === i) b.classList.add("wrong");
+    });
+  } else if (q.kind === "text") {
+    const el = document.getElementById("textAnswer");
+    userValue = el.value;
+    if (!userValue.trim()) return;
+    ok = (q.answers||[]).some(a => q.loose ? norm(userValue) === norm(a) : norm(userValue) === norm(a));
+    el.style.borderColor = ok ? "var(--green)" : "var(--red)";
+  } else if (q.kind === "write") {
+    const el = document.getElementById("textAnswer");
+    userValue = el.value;
+    if (!userValue.trim()) return;
+    ok = userValue.trim().length >= (q.minChars || 12) && userValue.trim().split(/\s+/).length >= 4;
+    el.style.borderColor = ok ? "var(--green)" : "var(--orange)";
+  } else if (q.kind === "self") {
+    if (answers[currentIndex] === undefined) return;
+    userValue = "done";
+    ok = true;
+    document.querySelector(".answer")?.classList.add("correct");
+  }
+
+  answers[currentIndex] = {ok, userValue, category:q.category};
+  if (!ok) {
+    state.wrongAnswers.push({
+      missionId: mission.id,
+      unitId: mission.unit.id,
+      question: q.q,
+      tip: q.tip,
+      category: q.category || "general",
+      at: new Date().toISOString()
+    });
+    state.wrongAnswers = state.wrongAnswers.slice(-80);
+  }
+  const fb = document.getElementById("feedback");
+  fb.className = "feedback show " + (ok ? "ok" : "no");
+  fb.innerHTML = ok ? "✅ " + esc(q.feedbackCorrect || "Gut gemacht. Weiter so!") : "💡 " + esc(q.feedbackWrong || q.tip || "Schau dir die Aufgabe noch einmal genau an.");
+  checked = true;
+  document.getElementById("checkBtn").textContent = currentIndex === currentQuestions.length - 1 ? "Ergebnis" : "Weiter";
+}
+
+function nextQuestion() {
+  currentIndex++;
+  checked = false;
+  if (currentIndex >= currentQuestions.length) finishMission();
+  else renderQuestion();
+}
+
+function finishMission() {
+  const mission = getMission(state.currentMissionId);
+  const correct = answers.filter(a=>a && a.ok).length;
+  const score = percent(correct, currentQuestions.length);
+  const passed = score >= PASS;
+  const wasDone = isMissionComplete(mission.id);
+  state.scores[mission.id] = Math.max(score, state.scores[mission.id] || 0);
+
+  if (passed) {
+    state.completedMissions[mission.id] = true;
+    if (!wasDone) {
+      const rewardStars = mission.reward?.stars || ((mission.taskTypes||[]).includes("unit-test") ? (APP.rewardSystem?.starsPerUnitTest || 3) : (APP.rewardSystem?.starsPerMission || 1));
+      if (mission.reward?.item === "Lichtkristall" || (mission.taskTypes||[]).includes("unit-test")) {
+        state.lightCrystals = (state.lightCrystals || 0) + rewardStars;
+      } else {
+        state.lightSparks = (state.lightSparks || 0) + rewardStars;
+      }
+    }
+    if (isUnitComplete(mission.unit)) state.completedUnits[mission.unit.id] = true;
+    updateStreak();
+  }
+  saveState();
+  const reward = passed ? (mission.reward?.badge || mission.reward?.item || (score >= 90 ? "Goldener Lichtkristall" : "Lichtkristall")) : (score >= 60 ? "Wiederholungsmission" : "Grundlagen-Wiederholung");
+  document.getElementById("main").innerHTML = `
+    <div class="result">
+      <div class="big">${passed ? (score>=90?'🏆':'💎') : '💪'}</div>
+      <h2>${passed ? "Mission geschafft!" : "Noch einmal üben"}</h2>
+      <p>Du hast <strong>${correct} von ${currentQuestions.length}</strong> Aufgaben geschafft.</p>
+      <div class="grid3">
+        <div class="mini"><strong>${score} %</strong><span class="small">Ergebnis</span></div>
+        <div class="mini"><strong>${PASS} %</strong><span class="small">Bestehensgrenze</span></div>
+        <div class="mini"><strong>${reward}</strong><span class="small">Belohnung</span></div>
+      </div>
+      <div class="actions" style="justify-content:center">
+        <button class="btn secondary" onclick="startMission('${mission.id}')">Noch einmal</button>
+        <button class="btn" onclick="openUnit('${mission.unit.id}')">Zur Unit</button>
+      </div>
+    </div>
+  `;
+}
+
+function updateStreak() {
+  const today = new Date(); today.setHours(0,0,0,0);
+  if (!state.lastStudy) state.streakDays = 1;
+  else {
+    const last = new Date(state.lastStudy); last.setHours(0,0,0,0);
+    const diff = Math.round((today - last)/86400000);
+    if (diff === 1) state.streakDays = (state.streakDays || 0) + 1;
+    else if (diff > 1) state.streakDays = 1;
+  }
+  state.lastStudy = new Date().toISOString();
+}
+
+function renderReview() {
+  const cats = APP.diagnostics?.errorCategories || [];
+  const byCat = {};
+  (state.wrongAnswers||[]).forEach(w => {
+    byCat[w.category] = (byCat[w.category] || 0) + 1;
+  });
+  const rows = Object.entries(byCat).sort((a,b)=>b[1]-a[1]).map(([cat,count]) => {
+    const info = cats.find(c => c.id === cat);
+    const label = info?.label || cat;
+    const review = (info?.recommendedReview || []).map(id => getMission(id)).filter(Boolean)[0];
+    return `<tr><td><strong>${esc(label)}</strong><br><span class="small">${count} Fehler gespeichert</span></td><td>${review ? esc(review.appMissionTitle) : "Allgemeine Wiederholung"}</td><td>${review ? `<button class="btn ghost" onclick="startMission('${review.id}')">Üben</button>` : ""}</td></tr>`;
+  }).join("");
+  document.getElementById("main").innerHTML = `
+    <h2>🔁 Wiederholen</h2>
+    <p class="small">Hier sammelt die App Fehlerschwerpunkte und verknüpft sie mit passenden Wiederholungsmissionen.</p>
+    ${rows ? `<table><thead><tr><th>Thema</th><th>Empfohlene Mission</th><th></th></tr></thead><tbody>${rows}</tbody></table>` : `<div class="notice">Noch keine Fehler gespeichert. Starte mit „Heute lernen“.</div>`}
+  `;
+}
+
+function renderParents() {
+  const unitRows = allUnits().map(unit => {
+    const missions = unit.missions || [];
+    const done = missions.filter(m=>isMissionComplete(m.id)).length;
+    const avg = missions.map(m=>state.scores[m.id]).filter(x=>x!==undefined);
+    const best = avg.length ? Math.round(avg.reduce((a,b)=>a+b,0)/avg.length) + " %" : "–";
+    return `<tr><td><strong>${esc(unit.gradeTitle)} · ${esc(unit.appTitle)}</strong><br><span class="small">${esc(unit.bookUnit)}</span></td><td><div class="progress-row"><div class="bar"><span style="width:${percent(done,missions.length)}%"></span></div><span class="small">${done}/${missions.length}</span></div></td><td>${best}</td><td>${isUnitComplete(unit) ? "✅ fertig" : isUnitUnlocked(unit) ? "offen" : "gesperrt"}</td></tr>`;
+  }).join("");
+  document.getElementById("main").innerHTML = `
+    <h2>📊 Elternbereich</h2>
+    <div class="grid3">
+      <div class="mini"><strong>${overallPercent()} %</strong><span class="small">Gesamtfortschritt</span></div>
+      <div class="mini"><strong>${state.lightSparks || 0}</strong><span class="small">Lichtfunken</span></div>
+      <div class="mini"><strong>${state.wrongAnswers?.length || 0}</strong><span class="small">Fehler im Speicher</span></div>
+    </div>
+    <h3>Units</h3>
+    <table><thead><tr><th>Unit</th><th>Fortschritt</th><th>Ø Ergebnis</th><th>Status</th></tr></thead><tbody>${unitRows}</tbody></table>
+  `;
+}
+
+function renderSettings() {
+  document.getElementById("main").innerHTML = `
+    <h2>⚙️ Technik</h2>
+    <div class="notice">Diese Version ist als PWA für GitHub Pages und Safari/iPad vorbereitet. Nach dem Upload auf GitHub kann Safari sie über „Zum Home-Bildschirm“ installieren.</div>
+    <div class="grid2">
+      <div class="mini">
+        <strong>Version 0.3</strong>
+        <p class="small">Datengetriebener Lernpfad mit Klassen 5 und 6, Missionen, Freischaltung, Fehlerdiagnose und lokalem Fortschritt.</p>
+      </div>
+      <div class="mini">
+        <strong>Offline bereit</strong>
+        <p class="small">Der Service Worker speichert App-Dateien im Browsercache. Bei Updates ggf. Seite einmal neu laden.</p>
+      </div>
+    </div>
+    <div class="actions" style="justify-content:flex-start">
+      <button class="btn ghost" onclick="unlockAllCurrent()">Alle sichtbaren Units freischalten</button>
+      <button class="btn warn" onclick="resetProgress()">Fortschritt zurücksetzen</button>
+    </div>
+  `;
+}
+
+function unlockAllCurrent() {
+  allUnits().forEach(u => state.manualUnlocks[u.id] = true);
+  saveState();
+  renderSettings();
+}
+function resetProgress() {
+  if (confirm("Wirklich den gesamten Fortschritt auf diesem Gerät löschen?")) {
+    state = clone(defaultState);
+    saveState();
+    renderDashboard();
+  }
+}
+
+function isIOS() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+}
+function isStandalone() {
+  return window.navigator.standalone === true || window.matchMedia("(display-mode: standalone)").matches;
+}
+function dismissInstallHint() {
+  try { localStorage.setItem("lumiInstallHintDismissed","1"); } catch(e) {}
+  document.getElementById("installHint").style.display = "none";
+}
+function maybeShowInstallHint() {
+  let dismissed = false;
+  try { dismissed = localStorage.getItem("lumiInstallHintDismissed") === "1"; } catch(e) {}
+  if (isIOS() && !isStandalone() && !dismissed) document.getElementById("installHint").style.display = "block";
+}
+
+document.querySelectorAll("nav button").forEach(b => b.addEventListener("click", () => setView(b.dataset.view)));
+window.addEventListener("orientationchange", () => setTimeout(()=>window.scrollTo(0,0),160));
+updateSidebar();
+renderDashboard();
+maybeShowInstallHint();
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js").catch(err => console.warn("Service Worker:", err));
+  });
+}
+</script>
+</body>
+</html>
