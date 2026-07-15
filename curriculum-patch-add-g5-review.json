@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "0.3.1",
+  "fileType": "curriculum-patch",
+  "purpose": "Add Grade 5 review module before Grade 6 Unit 1.",
+  "addToCurriculum": {
+    "grade": 6,
+    "insertBeforeUnitId": "g6-u1",
+    "unit": {
+      "id": "g5-review-for-g6",
+      "order": 0,
+      "bookUnit": "Klasse 5 Wiederholung",
+      "appTitle": "Foundation Island",
+      "status": "review-core",
+      "taskBankFile": "tasks-g5-review-for-g6.json",
+      "unlockCondition": "available-for-grade6-profiles",
+      "skipCondition": "final-check-score >= 90",
+      "focus": [
+        "to be",
+        "have got",
+        "there is / there are",
+        "simple present",
+        "do / does",
+        "present progressive",
+        "basic reading",
+        "basic writing"
+      ],
+      "grammarFocus": [
+        "am / is / are",
+        "have got / has got",
+        "there is / there are",
+        "simple present",
+        "third person singular -s",
+        "questions with do / does",
+        "present progressive"
+      ],
+      "vocabFields": [
+        "school",
+        "home",
+        "family",
+        "hobbies",
+        "daily routines",
+        "actions"
+      ]
+    }
+  }
+}

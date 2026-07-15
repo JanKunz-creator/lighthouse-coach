@@ -1,0 +1,1185 @@
+{
+  "schemaVersion": "0.3.1",
+  "fileType": "task-bank",
+  "grade": 5,
+  "unitId": "g5-review-for-g6",
+  "unitTitle": "Klasse 5 Wiederholung",
+  "appWorld": "Foundation Island",
+  "unitTheme": "Core revision before Grade 6: to be, have got, there is/are, simple present, do/does, present progressive and basic writing",
+  "placementRecommendation": {
+    "forGrade6Profiles": "Place this review module before g6-u1 or as an always available review area.",
+    "unlockNextAfter": "g6-u1",
+    "skipOption": "If the learner scores at least 90 percent in the final check, the app may mark the review as completed and unlock Grade 6 Unit 1 directly."
+  },
+  "passThresholdPercent": 80,
+  "estimatedTotalMissions": 6,
+  "contentRule": "All tasks, texts, examples and feedback are original app content. The module reviews central Grade 5 skills without copying textbook tasks or texts.",
+  "missions": [
+    {
+      "missionId": "g5-review-m1",
+      "missionTitle": "Back to Basics",
+      "bookSection": "Grade 5 Review · Starter",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi merkt, dass einige Grundlichter im Leuchtturm flackern. Bevor Klasse 6 startet, prüfen wir kurz die wichtigsten Basics.",
+      "learningGoals": [
+        "Ich kann einfache Begrüßungen verstehen.",
+        "Ich kann mich kurz vorstellen.",
+        "Ich kann einfache Wörter aus Schule, Familie und Freizeit erkennen."
+      ],
+      "skills": [
+        "VOC",
+        "SPE",
+        "REA"
+      ],
+      "vocabFields": [
+        "greetings",
+        "school",
+        "family",
+        "hobbies"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Grundlicht",
+        "message": "Das erste Grundlicht leuchtet wieder."
+      },
+      "tasks": [
+        {
+          "id": "g5-review-m1-t01",
+          "type": "multiple-choice",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "greetings",
+          "prompt": "Which answer fits? Hello, I’m Ben.",
+          "options": [
+            "Nice to meet you.",
+            "I’m a table.",
+            "Yesterday was blue."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Genau. So begrüßt man jemanden freundlich.",
+          "feedbackWrong": "Die passende Antwort ist eine Begrüßung."
+        },
+        {
+          "id": "g5-review-m1-t02",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "basic-vocabulary",
+          "prompt": "Match the words.",
+          "pairs": [
+            {
+              "left": "teacher",
+              "right": "Lehrer/in"
+            },
+            {
+              "left": "classroom",
+              "right": "Klassenzimmer"
+            },
+            {
+              "left": "brother",
+              "right": "Bruder"
+            },
+            {
+              "left": "football",
+              "right": "Fußball"
+            }
+          ],
+          "feedbackCorrect": "Super. Das sind wichtige Grundwörter.",
+          "feedbackWrong": "Schau dir die Grundwörter noch einmal an."
+        },
+        {
+          "id": "g5-review-m1-t03",
+          "type": "gap-fill",
+          "skill": "SPE",
+          "difficulty": 1,
+          "errorCategory": "introducing-yourself",
+          "prompt": "Complete: My name ___ Max.",
+          "acceptedAnswers": [
+            "is"
+          ],
+          "feedbackCorrect": "Richtig. My name is ...",
+          "feedbackWrong": "Bei My name benutzt du is."
+        },
+        {
+          "id": "g5-review-m1-t04",
+          "type": "sentence-builder",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "word-order",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "am",
+            "I",
+            "eleven"
+          ],
+          "answer": "I am eleven.",
+          "feedbackCorrect": "Sehr gut.",
+          "feedbackWrong": "Beginne mit I."
+        },
+        {
+          "id": "g5-review-m1-t05",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 1,
+          "errorCategory": "reading-detail",
+          "text": "Hi, I’m Mia. I’m eleven years old. I like music and basketball.",
+          "prompt": "What does Mia like?",
+          "options": [
+            "music and basketball",
+            "dogs and cats",
+            "Maths and history"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Mia mag Musik und Basketball.",
+          "feedbackWrong": "Lies den letzten Satz noch einmal."
+        },
+        {
+          "id": "g5-review-m1-t06",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 1,
+          "errorCategory": "starter-writing",
+          "prompt": "Write three short sentences about yourself.",
+          "support": [
+            "My name is ...",
+            "I am ... years old.",
+            "I like ..."
+          ],
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut gemacht. Kurze, sichere Sätze sind genau richtig.",
+          "minSentences": 3
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "My name ___ Ben.",
+          "acceptedAnswers": [
+            "is"
+          ]
+        },
+        {
+          "prompt": "I ___ twelve.",
+          "acceptedAnswers": [
+            "am"
+          ]
+        },
+        {
+          "prompt": "Nice to ___ you.",
+          "acceptedAnswers": [
+            "meet"
+          ]
+        }
+      ]
+    },
+    {
+      "missionId": "g5-review-m2",
+      "missionTitle": "To Be Tower",
+      "bookSection": "Grade 5 Review · Grammar",
+      "durationMinutes": 20,
+      "storyIntro": "Im To Be Tower sind die Formen durcheinandergeraten. Lumi braucht Hilfe mit am, is und are.",
+      "learningGoals": [
+        "Ich kann am, is und are richtig benutzen.",
+        "Ich kann einfache Verneinungen mit to be bilden.",
+        "Ich kann kurze Fragen mit to be verstehen."
+      ],
+      "skills": [
+        "GRA",
+        "WRI",
+        "SPE"
+      ],
+      "vocabFields": [
+        "to be",
+        "personal pronouns",
+        "short answers"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Grundlicht",
+        "badge": "To Be Builder",
+        "message": "Der To Be Tower steht wieder stabil."
+      },
+      "tasks": [
+        {
+          "id": "g5-review-m2-t01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "to-be-forms",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "She are my friend.",
+            "She is my friend.",
+            "She am my friend."
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Richtig. Bei she benutzt du is.",
+          "feedbackWrong": "Bei she heißt es is."
+        },
+        {
+          "id": "g5-review-m2-t02",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "to-be-forms",
+          "prompt": "Complete: We ___ in class six.",
+          "acceptedAnswers": [
+            "are"
+          ],
+          "feedbackCorrect": "Genau. Bei we benutzt du are.",
+          "feedbackWrong": "Bei we heißt es are."
+        },
+        {
+          "id": "g5-review-m2-t03",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "to-be-negative",
+          "prompt": "Choose the correct negative sentence.",
+          "options": [
+            "He not is tired.",
+            "He isn't tired.",
+            "He don't tired."
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Richtig. He isn't tired.",
+          "feedbackWrong": "Die Kurzform von is not ist isn't."
+        },
+        {
+          "id": "g5-review-m2-t04",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "to-be-forms",
+          "prompt": "Complete: I ___ not from London.",
+          "acceptedAnswers": [
+            "am"
+          ],
+          "feedbackCorrect": "Richtig. I am not.",
+          "feedbackWrong": "Bei I benutzt du am."
+        },
+        {
+          "id": "g5-review-m2-t05",
+          "type": "sentence-builder",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "to-be-questions",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "Are",
+            "you",
+            "ready"
+          ],
+          "answer": "Are you ready?",
+          "feedbackCorrect": "Sehr gut. Bei Fragen steht Are am Anfang.",
+          "feedbackWrong": "Die Frage beginnt mit Are."
+        },
+        {
+          "id": "g5-review-m2-t06",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "short-answers",
+          "prompt": "Are they happy? Choose the short answer.",
+          "options": [
+            "Yes, they are.",
+            "Yes, they is.",
+            "Yes, they do."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Genau. Yes, they are.",
+          "feedbackWrong": "Bei Are-Fragen antwortest du mit are."
+        },
+        {
+          "id": "g5-review-m2-t07",
+          "type": "error-correction",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "to-be-forms",
+          "prompt": "Correct: You is late.",
+          "acceptedAnswers": [
+            "You are late."
+          ],
+          "feedbackCorrect": "Richtig. Bei you benutzt du are.",
+          "feedbackWrong": "Bei you heißt es are."
+        },
+        {
+          "id": "g5-review-m2-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "to-be-writing",
+          "prompt": "Write four sentences with am, is or are.",
+          "support": [
+            "I am ...",
+            "My friend is ...",
+            "We are ...",
+            "They are ..."
+          ],
+          "manualReview": true,
+          "feedbackAfterSubmit": "Sehr gut. Diese Sätze sind die Basis für vieles in Klasse 6.",
+          "minSentences": 4
+        }
+      ],
+      "ruleCard": {
+        "title": "to be",
+        "rules": [
+          "I am",
+          "he/she/it is",
+          "you/we/they are",
+          "Verneinung: am not, isn't, aren't"
+        ],
+        "examples": [
+          "I am eleven.",
+          "She is my friend.",
+          "We are in class six.",
+          "He isn't tired."
+        ]
+      },
+      "miniChallenge": [
+        {
+          "prompt": "I ___ happy.",
+          "acceptedAnswers": [
+            "am"
+          ]
+        },
+        {
+          "prompt": "She ___ my sister.",
+          "acceptedAnswers": [
+            "is"
+          ]
+        },
+        {
+          "prompt": "They ___ at school.",
+          "acceptedAnswers": [
+            "are"
+          ]
+        }
+      ]
+    },
+    {
+      "missionId": "g5-review-m3",
+      "missionTitle": "Home and Things",
+      "bookSection": "Grade 5 Review · Home",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi sucht wichtige Dinge im Haus. Dafür brauchst du have got und there is / there are.",
+      "learningGoals": [
+        "Ich kann have got benutzen.",
+        "Ich kann sagen, was es in einem Zimmer gibt.",
+        "Ich kann there is und there are unterscheiden."
+      ],
+      "skills": [
+        "GRA",
+        "VOC",
+        "WRI",
+        "REA"
+      ],
+      "vocabFields": [
+        "home",
+        "family",
+        "rooms",
+        "furniture"
+      ],
+      "reward": {
+        "stars": 1,
+        "item": "Grundlicht",
+        "message": "Das Home-Light ist repariert."
+      },
+      "tasks": [
+        {
+          "id": "g5-review-m3-t01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "have-got",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "I has got a bike.",
+            "I have got a bike.",
+            "I got have a bike."
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Richtig. I have got ...",
+          "feedbackWrong": "Bei I heißt es have got."
+        },
+        {
+          "id": "g5-review-m3-t02",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "have-got",
+          "prompt": "Complete: She ___ got a brother.",
+          "acceptedAnswers": [
+            "has"
+          ],
+          "feedbackCorrect": "Genau. Bei she benutzt du has got.",
+          "feedbackWrong": "Bei she heißt es has got."
+        },
+        {
+          "id": "g5-review-m3-t03",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "there-is-there-are",
+          "prompt": "Complete: There ___ a desk in my room.",
+          "acceptedAnswers": [
+            "is"
+          ],
+          "feedbackCorrect": "Richtig. Ein desk: there is.",
+          "feedbackWrong": "Bei einer Sache benutzt du there is."
+        },
+        {
+          "id": "g5-review-m3-t04",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "there-is-there-are",
+          "prompt": "Complete: There ___ two chairs.",
+          "acceptedAnswers": [
+            "are"
+          ],
+          "feedbackCorrect": "Genau. Two chairs ist Mehrzahl.",
+          "feedbackWrong": "Bei mehreren Dingen benutzt du there are."
+        },
+        {
+          "id": "g5-review-m3-t05",
+          "type": "matching",
+          "skill": "VOC",
+          "difficulty": 1,
+          "errorCategory": "home-vocabulary",
+          "prompt": "Match the room words.",
+          "pairs": [
+            {
+              "left": "kitchen",
+              "right": "Küche"
+            },
+            {
+              "left": "bedroom",
+              "right": "Schlafzimmer"
+            },
+            {
+              "left": "bathroom",
+              "right": "Badezimmer"
+            },
+            {
+              "left": "living room",
+              "right": "Wohnzimmer"
+            }
+          ],
+          "feedbackCorrect": "Super. Die Zimmerwörter sitzen.",
+          "feedbackWrong": "Schau dir die Zimmerwörter noch einmal an."
+        },
+        {
+          "id": "g5-review-m3-t06",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "reading-detail",
+          "text": "Tom has got a small room. There is a bed next to the window. There are two posters on the wall.",
+          "prompt": "What is next to the window?",
+          "options": [
+            "a bed",
+            "two posters",
+            "a kitchen"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Das Bett steht am Fenster.",
+          "feedbackWrong": "Lies den zweiten Satz noch einmal."
+        },
+        {
+          "id": "g5-review-m3-t07",
+          "type": "error-correction",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "there-is-there-are",
+          "prompt": "Correct: There is three books.",
+          "acceptedAnswers": [
+            "There are three books."
+          ],
+          "feedbackCorrect": "Genau. Three books ist Mehrzahl.",
+          "feedbackWrong": "Bei mehreren Büchern brauchst du there are."
+        },
+        {
+          "id": "g5-review-m3-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "room-description-writing",
+          "prompt": "Write four sentences about your room or home.",
+          "support": [
+            "There is ...",
+            "There are ...",
+            "I have got ...",
+            "My room is ..."
+          ],
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut. Zimmerbeschreibungen sind eine wichtige Grundlage.",
+          "minSentences": 4
+        }
+      ],
+      "ruleCard": {
+        "title": "have got und there is / there are",
+        "rules": [
+          "I/you/we/they have got",
+          "he/she/it has got",
+          "there is für eine Sache",
+          "there are für mehrere Sachen"
+        ],
+        "examples": [
+          "I have got a sister.",
+          "She has got a dog.",
+          "There is a bed.",
+          "There are two chairs."
+        ]
+      },
+      "miniChallenge": [
+        {
+          "prompt": "I ___ got a bike.",
+          "acceptedAnswers": [
+            "have"
+          ]
+        },
+        {
+          "prompt": "She ___ got a cat.",
+          "acceptedAnswers": [
+            "has"
+          ]
+        },
+        {
+          "prompt": "There ___ two windows.",
+          "acceptedAnswers": [
+            "are"
+          ]
+        }
+      ]
+    },
+    {
+      "missionId": "g5-review-m4",
+      "missionTitle": "Simple Present Lab",
+      "bookSection": "Grade 5 Review · Grammar",
+      "durationMinutes": 20,
+      "storyIntro": "Im Simple Present Lab prüft Lumi, was jeden Tag passiert.",
+      "learningGoals": [
+        "Ich kann einfache Sätze im Simple Present bilden.",
+        "Ich kann das -s bei he, she und it beachten.",
+        "Ich kann Fragen und Verneinungen mit do und does bilden."
+      ],
+      "skills": [
+        "GRA",
+        "WRI",
+        "SPE",
+        "REA"
+      ],
+      "vocabFields": [
+        "daily routines",
+        "hobbies",
+        "do/does",
+        "frequency"
+      ],
+      "reward": {
+        "stars": 2,
+        "item": "Grundlicht",
+        "badge": "Present Pro",
+        "message": "Das Simple Present Lab läuft wieder."
+      },
+      "tasks": [
+        {
+          "id": "g5-review-m4-t01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "third-person-s",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "My brother play football.",
+            "My brother plays football.",
+            "My brother playing football."
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Richtig. My brother = he, deshalb plays.",
+          "feedbackWrong": "Bei he/she/it bekommt das Verb oft ein -s."
+        },
+        {
+          "id": "g5-review-m4-t02",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "do-does-questions",
+          "prompt": "Complete: ___ you like music?",
+          "acceptedAnswers": [
+            "Do"
+          ],
+          "feedbackCorrect": "Genau. Bei you benutzt du Do.",
+          "feedbackWrong": "Bei you beginnt die Frage mit Do."
+        },
+        {
+          "id": "g5-review-m4-t03",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "do-does-questions",
+          "prompt": "Complete: Where ___ your friend live?",
+          "acceptedAnswers": [
+            "does"
+          ],
+          "feedbackCorrect": "Richtig. Your friend = he/she, deshalb does.",
+          "feedbackWrong": "Bei he/she/it benutzt du does."
+        },
+        {
+          "id": "g5-review-m4-t04",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "doesnt-base-form",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "She doesn’t likes cats.",
+            "She doesn’t like cats.",
+            "She don’t like cats."
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Genau. Nach doesn’t steht die Grundform.",
+          "feedbackWrong": "Nach doesn’t kommt like, nicht likes."
+        },
+        {
+          "id": "g5-review-m4-t05",
+          "type": "sentence-builder",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "frequency-adverbs",
+          "prompt": "Put the words in the correct order.",
+          "words": [
+            "always",
+            "I",
+            "do",
+            "my homework"
+          ],
+          "answer": "I always do my homework.",
+          "feedbackCorrect": "Sehr gut. Always steht hier vor dem Vollverb.",
+          "feedbackWrong": "Beginne mit I always."
+        },
+        {
+          "id": "g5-review-m4-t06",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "reading-detail",
+          "text": "Emma gets up at seven. She always has breakfast with her family. After school, she often plays tennis.",
+          "prompt": "What does Emma often do after school?",
+          "options": [
+            "plays tennis",
+            "has breakfast",
+            "gets up"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Sie spielt oft Tennis.",
+          "feedbackWrong": "Lies den letzten Satz."
+        },
+        {
+          "id": "g5-review-m4-t07",
+          "type": "error-correction",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "third-person-s",
+          "prompt": "Correct: He go to school by bus.",
+          "acceptedAnswers": [
+            "He goes to school by bus."
+          ],
+          "feedbackCorrect": "Richtig. He goes.",
+          "feedbackWrong": "Bei he kommt hier -es an go."
+        },
+        {
+          "id": "g5-review-m4-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "routine-writing",
+          "prompt": "Write four sentences about your daily routine.",
+          "support": [
+            "I get up ...",
+            "I usually ...",
+            "After school, I ...",
+            "I don't ..."
+          ],
+          "manualReview": true,
+          "feedbackAfterSubmit": "Sehr gut. Solche Sätze helfen auch in Klasse 6.",
+          "minSentences": 4
+        }
+      ],
+      "ruleCard": {
+        "title": "Simple Present",
+        "rules": [
+          "Für Gewohnheiten und regelmäßige Dinge.",
+          "Bei he/she/it bekommt das Verb oft ein -s.",
+          "Fragen: do/does.",
+          "Verneinung: don’t/doesn’t + Grundform."
+        ],
+        "examples": [
+          "I play football.",
+          "She plays football.",
+          "Do you like music?",
+          "She doesn’t like cats."
+        ]
+      },
+      "miniChallenge": [
+        {
+          "prompt": "He ___ football.",
+          "acceptedAnswers": [
+            "plays"
+          ]
+        },
+        {
+          "prompt": "___ you like English?",
+          "acceptedAnswers": [
+            "Do"
+          ]
+        },
+        {
+          "prompt": "She doesn’t ___ cats.",
+          "acceptedAnswers": [
+            "like"
+          ]
+        }
+      ]
+    },
+    {
+      "missionId": "g5-review-m5",
+      "missionTitle": "Now or Usually",
+      "bookSection": "Grade 5 Review · Present Progressive",
+      "durationMinutes": 20,
+      "storyIntro": "Lumi sieht zwei Bilder: Was passiert gerade, und was passiert regelmäßig? Jetzt geht es um Present Progressive und Simple Present.",
+      "learningGoals": [
+        "Ich kann das Present Progressive bilden.",
+        "Ich kann Simple Present und Present Progressive unterscheiden.",
+        "Ich kann sagen, was gerade passiert."
+      ],
+      "skills": [
+        "GRA",
+        "WRI",
+        "SPE",
+        "REA"
+      ],
+      "vocabFields": [
+        "present progressive",
+        "actions",
+        "now signals"
+      ],
+      "reward": {
+        "stars": 2,
+        "item": "Grundlicht",
+        "badge": "Now Detector",
+        "message": "Der Now Detector funktioniert."
+      },
+      "tasks": [
+        {
+          "id": "g5-review-m5-t01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "present-progressive-be",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "Look! The dog runs.",
+            "Look! The dog is running.",
+            "Look! The dog running."
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Richtig. Look zeigt: Es passiert gerade.",
+          "feedbackWrong": "Gerade jetzt: be + verb-ing."
+        },
+        {
+          "id": "g5-review-m5-t02",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "verb-ing",
+          "prompt": "Complete: They are ___ basketball.",
+          "acceptedAnswers": [
+            "playing"
+          ],
+          "feedbackCorrect": "Genau. are playing.",
+          "feedbackWrong": "Nach are brauchst du die -ing-Form."
+        },
+        {
+          "id": "g5-review-m5-t03",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "present-progressive-be",
+          "prompt": "Complete: I ___ reading a comic.",
+          "acceptedAnswers": [
+            "am"
+          ],
+          "feedbackCorrect": "Richtig. I am reading.",
+          "feedbackWrong": "Bei I heißt es am."
+        },
+        {
+          "id": "g5-review-m5-t04",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "present-progressive-vs-simple-present",
+          "prompt": "Which signal word fits the Present Progressive?",
+          "options": [
+            "every Monday",
+            "usually",
+            "right now"
+          ],
+          "answer": 2,
+          "feedbackCorrect": "Genau. Right now zeigt, dass etwas gerade passiert.",
+          "feedbackWrong": "Present Progressive beschreibt oft, was gerade jetzt passiert."
+        },
+        {
+          "id": "g5-review-m5-t05",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "present-progressive-questions",
+          "prompt": "Choose the correct question.",
+          "options": [
+            "Is she sleeping?",
+            "Does she sleeping?",
+            "She is sleeping?"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Is steht am Anfang der Frage.",
+          "feedbackWrong": "Bei Fragen im Present Progressive steht die Form von be vorne."
+        },
+        {
+          "id": "g5-review-m5-t06",
+          "type": "error-correction",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "verb-ing",
+          "prompt": "Correct: We are play football.",
+          "acceptedAnswers": [
+            "We are playing football."
+          ],
+          "feedbackCorrect": "Genau. are playing.",
+          "feedbackWrong": "Nach are brauchst du playing."
+        },
+        {
+          "id": "g5-review-m5-t07",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "reading-detail",
+          "text": "In the picture, two girls are singing. A boy is playing the guitar. Their teacher is smiling.",
+          "prompt": "What is the boy doing?",
+          "options": [
+            "playing the guitar",
+            "singing",
+            "sleeping"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Der Junge spielt Gitarre.",
+          "feedbackWrong": "Lies den zweiten Satz."
+        },
+        {
+          "id": "g5-review-m5-t08",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 2,
+          "errorCategory": "picture-description-writing",
+          "prompt": "Write four sentences about what people are doing in a picture.",
+          "support": [
+            "A boy is ...",
+            "A girl is ...",
+            "They are ...",
+            "The teacher is ..."
+          ],
+          "manualReview": true,
+          "feedbackAfterSubmit": "Gut. Bildbeschreibungen brauchen genau solche Sätze.",
+          "minSentences": 4
+        }
+      ],
+      "ruleCard": {
+        "title": "Present Progressive",
+        "rules": [
+          "Für Dinge, die gerade passieren.",
+          "Form: am/is/are + verb-ing.",
+          "Signalwörter: now, right now, at the moment, Look!"
+        ],
+        "examples": [
+          "I am reading.",
+          "She is singing.",
+          "They are playing football."
+        ]
+      },
+      "miniChallenge": [
+        {
+          "prompt": "I ___ watching TV.",
+          "acceptedAnswers": [
+            "am"
+          ]
+        },
+        {
+          "prompt": "She is ___ a song.",
+          "acceptedAnswers": [
+            "singing"
+          ]
+        },
+        {
+          "prompt": "They ___ playing tennis.",
+          "acceptedAnswers": [
+            "are"
+          ]
+        }
+      ]
+    },
+    {
+      "missionId": "g5-review-m6",
+      "missionTitle": "Foundation Check",
+      "bookSection": "Grade 5 Review · Final Check",
+      "durationMinutes": 20,
+      "storyIntro": "Der letzte Grundlicht-Test prüft, ob die wichtigsten Themen aus Klasse 5 bereit für Klasse 6 sind.",
+      "learningGoals": [
+        "Ich wiederhole die wichtigsten Grundlagen aus Klasse 5.",
+        "Ich erkenne, welche Themen ich vor Klasse 6 noch üben sollte.",
+        "Ich kann einfache Sätze über mich, Schule, Alltag und Bilder schreiben."
+      ],
+      "skills": [
+        "VOC",
+        "GRA",
+        "REA",
+        "WRI",
+        "SPE"
+      ],
+      "vocabFields": [
+        "to be",
+        "have got",
+        "there is/are",
+        "simple present",
+        "present progressive"
+      ],
+      "reward": {
+        "stars": 3,
+        "item": "Grundkristall",
+        "badge": "Foundation Hero",
+        "message": "Klasse-5-Grundlagen abgeschlossen. Klasse 6 kann starten."
+      },
+      "tasks": [
+        {
+          "id": "g5-review-m6-t01",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "to-be-forms",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "We is happy.",
+            "We are happy.",
+            "We am happy."
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Richtig. We are.",
+          "feedbackWrong": "Bei we heißt es are."
+        },
+        {
+          "id": "g5-review-m6-t02",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "have-got",
+          "prompt": "Complete: He ___ got a new bike.",
+          "acceptedAnswers": [
+            "has"
+          ],
+          "feedbackCorrect": "Genau. He has got.",
+          "feedbackWrong": "Bei he benutzt du has."
+        },
+        {
+          "id": "g5-review-m6-t03",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 1,
+          "errorCategory": "there-is-there-are",
+          "prompt": "Complete: There ___ three books on the desk.",
+          "acceptedAnswers": [
+            "are"
+          ],
+          "feedbackCorrect": "Richtig. Three books ist Mehrzahl.",
+          "feedbackWrong": "Bei mehreren Dingen: there are."
+        },
+        {
+          "id": "g5-review-m6-t04",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "third-person-s",
+          "prompt": "Choose the correct sentence.",
+          "options": [
+            "She plays tennis every Friday.",
+            "She play tennis every Friday.",
+            "She playing tennis every Friday."
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. She plays.",
+          "feedbackWrong": "Bei she kommt -s ans Verb."
+        },
+        {
+          "id": "g5-review-m6-t05",
+          "type": "gap-fill",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "do-does-questions",
+          "prompt": "Complete: ___ your brother like football?",
+          "acceptedAnswers": [
+            "Does"
+          ],
+          "feedbackCorrect": "Genau. Your brother = he, deshalb Does.",
+          "feedbackWrong": "Bei he/she/it beginnt die Frage mit Does."
+        },
+        {
+          "id": "g5-review-m6-t06",
+          "type": "multiple-choice",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "present-progressive-vs-simple-present",
+          "prompt": "Choose the correct sentence: At the moment, we ___ English.",
+          "options": [
+            "learn",
+            "are learning",
+            "learns"
+          ],
+          "answer": 1,
+          "feedbackCorrect": "Richtig. At the moment zeigt Present Progressive.",
+          "feedbackWrong": "Gerade jetzt: are learning."
+        },
+        {
+          "id": "g5-review-m6-t07",
+          "type": "error-correction",
+          "skill": "GRA",
+          "difficulty": 2,
+          "errorCategory": "doesnt-base-form",
+          "prompt": "Correct: He doesn’t likes maths.",
+          "acceptedAnswers": [
+            "He doesn't like maths.",
+            "He does not like maths."
+          ],
+          "feedbackCorrect": "Genau. Nach doesn’t steht like.",
+          "feedbackWrong": "Nach doesn’t kommt die Grundform."
+        },
+        {
+          "id": "g5-review-m6-t08",
+          "type": "reading-check",
+          "skill": "REA",
+          "difficulty": 2,
+          "errorCategory": "reading-detail",
+          "text": "Max is in class six now. He has got a sister and a dog. He usually plays football after school, but today he is doing his homework.",
+          "prompt": "What does Max usually do after school?",
+          "options": [
+            "plays football",
+            "does homework",
+            "walks the dog"
+          ],
+          "answer": 0,
+          "feedbackCorrect": "Richtig. Usually spielt er Fußball.",
+          "feedbackWrong": "Achte auf usually."
+        },
+        {
+          "id": "g5-review-m6-t09",
+          "type": "mini-writing",
+          "skill": "WRI",
+          "difficulty": 3,
+          "errorCategory": "foundation-writing",
+          "prompt": "Write six sentences about yourself, your school day and what you are doing now.",
+          "support": [
+            "My name is ...",
+            "I am ... years old.",
+            "I have got ...",
+            "I usually ...",
+            "At the moment I am ...",
+            "My favourite subject is ..."
+          ],
+          "manualReview": true,
+          "feedbackAfterSubmit": "Stark. Das ist ein guter Abschluss der Klasse-5-Wiederholung.",
+          "minSentences": 6,
+          "requirements": [
+            "Use one sentence with to be.",
+            "Use one sentence with have got.",
+            "Use one Simple Present sentence.",
+            "Use one Present Progressive sentence."
+          ]
+        }
+      ],
+      "miniChallenge": [
+        {
+          "prompt": "We ___ in class six.",
+          "acceptedAnswers": [
+            "are"
+          ]
+        },
+        {
+          "prompt": "She ___ got a dog.",
+          "acceptedAnswers": [
+            "has"
+          ]
+        },
+        {
+          "prompt": "He doesn’t ___ football.",
+          "acceptedAnswers": [
+            "like"
+          ]
+        },
+        {
+          "prompt": "They are ___ TV.",
+          "acceptedAnswers": [
+            "watching"
+          ]
+        }
+      ]
+    }
+  ],
+  "diagnosticRules": [
+    {
+      "ifErrorCategory": "to-be-forms",
+      "recommendReviewMission": "g5-review-m2",
+      "message": "Formen von to be wiederholen."
+    },
+    {
+      "ifErrorCategory": "to-be-negative",
+      "recommendReviewMission": "g5-review-m2",
+      "message": "Verneinung mit to be wiederholen."
+    },
+    {
+      "ifErrorCategory": "have-got",
+      "recommendReviewMission": "g5-review-m3",
+      "message": "have got / has got wiederholen."
+    },
+    {
+      "ifErrorCategory": "there-is-there-are",
+      "recommendReviewMission": "g5-review-m3",
+      "message": "there is und there are wiederholen."
+    },
+    {
+      "ifErrorCategory": "third-person-s",
+      "recommendReviewMission": "g5-review-m4",
+      "message": "Simple Present mit he/she/it wiederholen."
+    },
+    {
+      "ifErrorCategory": "do-does-questions",
+      "recommendReviewMission": "g5-review-m4",
+      "message": "Fragen mit do und does wiederholen."
+    },
+    {
+      "ifErrorCategory": "doesnt-base-form",
+      "recommendReviewMission": "g5-review-m4",
+      "message": "Nach doesn't steht die Grundform."
+    },
+    {
+      "ifErrorCategory": "present-progressive-be",
+      "recommendReviewMission": "g5-review-m5",
+      "message": "Present Progressive mit am/is/are wiederholen."
+    },
+    {
+      "ifErrorCategory": "verb-ing",
+      "recommendReviewMission": "g5-review-m5",
+      "message": "Die -ing-Form wiederholen."
+    },
+    {
+      "ifErrorCategory": "present-progressive-vs-simple-present",
+      "recommendReviewMission": "g5-review-m5",
+      "message": "Simple Present und Present Progressive unterscheiden."
+    }
+  ]
+}
